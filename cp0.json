@@ -383,7 +383,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -570,7 +570,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -661,7 +661,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -672,7 +672,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -715,7 +715,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -726,7 +726,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -769,7 +769,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -1 }
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -780,7 +780,7 @@
             "max_value": 15,
             "display_hints": [
               { "type": "stack" },
-              { "type": "add", "value": -2 }
+              { "type": "add", "value": 2 }
             ]
           }
         ]
@@ -2885,7 +2885,7 @@
             "size": 8,
             "min_value": 0,
             "max_value": 254,
-            "display_hints": []
+            "display_hints": [{ "type": "add", "value": 1 }]
           }
         ]
       },
@@ -3257,7 +3257,7 @@
             "min_bits": 0,
             "max_refs": 3,
             "min_refs": 0,
-            "display_hints": []
+            "display_hints": [{ "type": "continuation" }]
           }
         ]
       },
@@ -3307,7 +3307,7 @@
             "min_bits": 0,
             "max_refs": 0,
             "min_refs": 0,
-            "display_hints": []
+            "display_hints": [{ "type": "continuation" }]
           }
         ]
       },
