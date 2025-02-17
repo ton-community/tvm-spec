@@ -30,6 +30,7 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 ## Projects based on tvm-spec
 1. [tvm-spec-example](https://github.com/hacker-volodya/tvm-spec-example), tiny TVM disassembler
 2. [tvm-research](https://github.com/hacker-volodya/tvm-research), collection of tool prototypes with the power of tvm-spec
+3. [ton-opcode](https://github.com/tact-lang/ton-opcode), full-fledged TVM disassembler
 
 ## Instruction Specification
 ### Example
