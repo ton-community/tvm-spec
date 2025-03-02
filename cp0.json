@@ -29425,14 +29425,20 @@
       },
       "bytecode": { "tlb": "#F4BC", "prefix": "F4BC", "operands": [] },
       "value_flow": {
-        "inputs": { "stack": [
+        "inputs": { 
+          "stack": [
             { "type": "simple", "name": "i", "value_types": ["Integer"] },
             { "type": "simple", "name": "D", "value_types": ["Slice", "Null"] },
             { "type": "simple", "name": "n", "value_types": ["Integer"] }
-          ], "registers": [] },
-        "outputs": { "stack": [
-          { "type": "simple", "name": "i", "value_types": ["Integer"] }
-        ], "registers": [] }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            { "type": "simple", "name": "i", "value_types": ["Integer"] }
+          ],
+          "registers": []
+        }
       },
       "control_flow": {
         "branches": [{ "type": "variable", "var_name": "x" }],
