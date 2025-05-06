@@ -31503,7 +31503,7 @@
       "since_version": 4,
       "doc": {
         "category": "app_crypto",
-        "description": "Recovers public key from a secp256k1 signature using the libsecp256k1 library, identical to Bitcoin/Ethereum operations. Takes 32-byte hash as uint256 `hash`; 65-byte signature as uint8 `v` and uint256 `r`, `s`. Returns `0` on failure, or the public key and `-1` on success. The 65-byte public key is returned as uint8 `h`, uint256 `x1`, `x2`.",
+        "description": "Recovers public key from a secp256k1 signature, identical to Bitcoin/Ethereum operations. Takes a 32-byte hash as `uint256 hash` and a 65-byte signature as `uint8 v` and `uint256 r`, `s`. In TON, the `v` parameter must be 0 or 1. Unlike Ethereum or Bitcoin, TON does not support extended values of `v` that include extra flags. Returns `0` if recovery fails. On success, returns the 65-byte public key as `uint8 h`, `uint256 x1`, `x2`, followed by `-1`.",
         "gas": "1526",
         "fift": "ECRECOVER",
         "fift_examples": [],
