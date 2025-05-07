@@ -2,129 +2,64 @@
   "$schema": "./schema.json",
   "instructions": [
     {
-      "mnemonic": "NOP",
-      "since_version": 0,
-      "doc": {
-        "category": "stack_basic",
-        "description": "Does nothing.",
-        "gas": "18",
-        "fift": "NOP",
-        "fift_examples": [],
-        "opcode": "00",
-        "stack": "-"
-      },
-      "bytecode": { "tlb": "#00", "prefix": "00", "operands": [] },
-      "value_flow": {
-        "inputs": { "stack": [], "registers": [] },
-        "outputs": { "stack": [], "registers": [] }
-      },
-      "control_flow": { "branches": [], "nobranch": true }
+      "name": "NOP",
+      "alias_of": "",
+      "tlb": "#00",
+      "doc_category": "stack_basic",
+      "doc_opcode": "00",
+      "doc_fift": "NOP",
+      "doc_stack": "-",
+      "doc_gas": 18,
+      "doc_description": "Does nothing.",
+      "implementation": {
+        "file": "stackops.cpp",
+        "line": 537,
+        "handler": "exec_nop",
+        "declaration": ".insert(OpcodeInstr::mksimple(0x00, 8, \"NOP\", exec_nop))\n      .insert(OpcodeInstr::mksimple(0x01, 8, \"SWAP\", exec_swap))\n      .insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))\n      .insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))\n      .insert(OpcodeInstr::mkfixed(0x11, 8, 8, instr::dump_1sr_l(\"XCHG \"), exec_xchg0_l))\n      .insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))\n      .insert(OpcodeInstr::mksimple(0x20, 8, \"DUP\", exec_dup))\n      .insert(OpcodeInstr::mksimple(0x21, 8, \"OVER\", exec_over))\n      .insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))\n      .insert(OpcodeInstr::mksimple(0x30, 8, \"DROP\", exec_drop))\n      .insert(OpcodeInstr::mksimple(0x31, 8, \"NIP\", exec_nip))\n      .insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))\n      .insert(OpcodeInstr::mkfixed(0x4, 4, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x50, 8, 8, instr::dump_2sr(\"XCHG2 \"), exec_xchg2))\n      .insert(OpcodeInstr::mkfixed(0x51, 8, 8, instr::dump_2sr(\"XCPU \"), exec_xcpu))\n      .insert(OpcodeInstr::mkfixed(0x52, 8, 8, instr::dump_2sr_adj(1, \"PUXC \"), exec_puxc))\n      .insert(OpcodeInstr::mkfixed(0x53, 8, 8, instr::dump_2sr(\"PUSH2 \"), exec_push2))\n      .insert(OpcodeInstr::mkfixed(0x540, 12, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x541, 12, 12, instr::dump_3sr(\"XC2PU \"), exec_xc2pu))\n      .insert(OpcodeInstr::mkfixed(0x542, 12, 12, instr::dump_3sr_adj(1, \"XCPUXC \"), exec_xcpuxc))\n      .insert(OpcodeInstr::mkfixed(0x543, 12, 12, instr::dump_3sr(\"XCPU2 \"), exec_xcpu2))\n      .insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr_adj(0x11, \"PUXC2 \"), exec_puxc2))\n      .insert(OpcodeInstr::mkfixed(0x545, 12, 12, instr::dump_3sr_adj(0x11, \"PUXCPU \"), exec_puxcpu))\n      .insert(OpcodeInstr::mkfixed(0x546, 12, 12, instr::dump_3sr_adj(0x12, \"PU2XC \"), exec_pu2xc))\n      .insert(OpcodeInstr::mkfixed(0x547, 12, 12, instr::dump_3sr(\"PUSH3 \"), exec_push3))\n      .insert(OpcodeInstr::mkfixed(0x55, 8, 8, instr::dump_2c_add(0x11, \"BLKSWAP \", \",\"), exec_blkswap))\n      .insert(OpcodeInstr::mkfixed(0x56, 8, 8, instr::dump_1sr_l(\"PUSH \"), exec_push_l))\n      .insert(OpcodeInstr::mkfixed(0x57, 8, 8, instr::dump_1sr_l(\"POP \"), exec_pop_l))\n      .insert(OpcodeInstr::mksimple(0x58, 8, \"ROT\", exec_rot))\n      .insert(OpcodeInstr::mksimple(0x59, 8, \"ROTREV\", exec_rotrev))\n      .insert(OpcodeInstr::mksimple(0x5a, 8, \"2SWAP\", exec_2swap))\n      .insert(OpcodeInstr::mksimple(0x5b, 8, \"2DROP\", exec_2drop))\n      .insert(OpcodeInstr::mksimple(0x5c, 8, \"2DUP\", exec_2dup))\n      .insert(OpcodeInstr::mksimple(0x5d, 8, \"2OVER\", exec_2over))\n      .insert(OpcodeInstr::mkfixed(0x5e, 8, 8, instr::dump_2c_add(0x20, \"REVERSE \", \",\"), exec_reverse))\n      .insert(OpcodeInstr::mkfixed(0x5f0, 12, 4, instr::dump_1c(\"BLKDROP \"), exec_blkdrop))\n      .insert(OpcodeInstr::mkfixedrange(0x5f10, 0x6000, 16, 8, instr::dump_2c(\"BLKPUSH \", \",\"), exec_blkpush))\n      .insert(OpcodeInstr::mksimple(0x60, 8, \"PICK\", exec_pick))\n      .insert(OpcodeInstr::mksimple(0x61, 8, \"ROLL\", exec_roll))\n      .insert(OpcodeInstr::mksimple(0x62, 8, \"ROLLREV\", exec_rollrev))\n      .insert(OpcodeInstr::mksimple(0x63, 8, \"BLKSWX\", exec_blkswap_x))\n      .insert(OpcodeInstr::mksimple(0x64, 8, \"REVX\", exec_reverse_x))\n      .insert(OpcodeInstr::mksimple(0x65, 8, \"DROPX\", exec_drop_x))\n      .insert(OpcodeInstr::mksimple(0x66, 8, \"TUCK\", exec_tuck))\n      .insert(OpcodeInstr::mksimple(0x67, 8, \"XCHGX\", exec_xchg_x))\n      .insert(OpcodeInstr::mksimple(0x68, 8, \"DEPTH\", exec_depth))\n      .insert(OpcodeInstr::mksimple(0x69, 8, \"CHKDEPTH\", exec_chkdepth))\n      .insert(OpcodeInstr::mksimple(0x6a, 8, \"ONLYTOPX\", exec_onlytop_x))\n      .insert(OpcodeInstr::mksimple(0x6b, 8, \"ONLYX\", exec_only_x))\n      .insert(OpcodeInstr::mkfixedrange(0x6c10, 0x6d00, 16, 8, instr::dump_2c(\"BLKDROP2 \", \",\"), exec_blkdrop2))",
+        "args": [],
+        "body": "VM_LOG(st) << \"execute NOP\\n\";\n  return 0;"
+      }
     },
     {
-      "mnemonic": "XCHG_0I",
-      "since_version": 0,
-      "doc": {
-        "category": "stack_basic",
-        "description": "Interchanges `s0` with `s[i]`, `1 <= i <= 15`.",
-        "gas": "18",
-        "fift": "s[i] XCHG0",
-        "fift_examples": [],
-        "opcode": "0i",
-        "stack": ""
-      },
-      "bytecode": {
-        "tlb": "#0 i:(## 4) {1 <= i}",
-        "prefix": "0",
-        "operands_range_check": { "length": 4, "from": 1, "to": 15 },
-        "operands": [
-          {
-            "name": "i",
-            "type": "uint",
-            "size": 4,
-            "min_value": 1,
-            "max_value": 15,
-            "display_hints": [{ "type": "stack" }]
-          }
-        ]
-      },
-      "value_flow": {
-        "inputs": { "registers": [] },
-        "outputs": { "registers": [] }
-      },
-      "control_flow": { "branches": [], "nobranch": true }
+      "name": "SWAP",
+      "alias_of": "XCHG_0I",
+      "tlb": "#01",
+      "doc_category": "stack_basic",
+      "doc_opcode": "01",
+      "doc_fift": "SWAP",
+      "doc_stack": "x y - y x",
+      "doc_gas": 18,
+      "doc_description": "Same as `s1 XCHG0`.",
+      "implementation": {
+        "file": "stackops.cpp",
+        "line": 538,
+        "handler": "exec_swap",
+        "declaration": ".insert(OpcodeInstr::mksimple(0x01, 8, \"SWAP\", exec_swap))\n      .insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))\n      .insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))\n      .insert(OpcodeInstr::mkfixed(0x11, 8, 8, instr::dump_1sr_l(\"XCHG \"), exec_xchg0_l))\n      .insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))\n      .insert(OpcodeInstr::mksimple(0x20, 8, \"DUP\", exec_dup))\n      .insert(OpcodeInstr::mksimple(0x21, 8, \"OVER\", exec_over))\n      .insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))\n      .insert(OpcodeInstr::mksimple(0x30, 8, \"DROP\", exec_drop))\n      .insert(OpcodeInstr::mksimple(0x31, 8, \"NIP\", exec_nip))\n      .insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))\n      .insert(OpcodeInstr::mkfixed(0x4, 4, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x50, 8, 8, instr::dump_2sr(\"XCHG2 \"), exec_xchg2))\n      .insert(OpcodeInstr::mkfixed(0x51, 8, 8, instr::dump_2sr(\"XCPU \"), exec_xcpu))\n      .insert(OpcodeInstr::mkfixed(0x52, 8, 8, instr::dump_2sr_adj(1, \"PUXC \"), exec_puxc))\n      .insert(OpcodeInstr::mkfixed(0x53, 8, 8, instr::dump_2sr(\"PUSH2 \"), exec_push2))\n      .insert(OpcodeInstr::mkfixed(0x540, 12, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x541, 12, 12, instr::dump_3sr(\"XC2PU \"), exec_xc2pu))\n      .insert(OpcodeInstr::mkfixed(0x542, 12, 12, instr::dump_3sr_adj(1, \"XCPUXC \"), exec_xcpuxc))\n      .insert(OpcodeInstr::mkfixed(0x543, 12, 12, instr::dump_3sr(\"XCPU2 \"), exec_xcpu2))\n      .insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr_adj(0x11, \"PUXC2 \"), exec_puxc2))\n      .insert(OpcodeInstr::mkfixed(0x545, 12, 12, instr::dump_3sr_adj(0x11, \"PUXCPU \"), exec_puxcpu))\n      .insert(OpcodeInstr::mkfixed(0x546, 12, 12, instr::dump_3sr_adj(0x12, \"PU2XC \"), exec_pu2xc))\n      .insert(OpcodeInstr::mkfixed(0x547, 12, 12, instr::dump_3sr(\"PUSH3 \"), exec_push3))\n      .insert(OpcodeInstr::mkfixed(0x55, 8, 8, instr::dump_2c_add(0x11, \"BLKSWAP \", \",\"), exec_blkswap))\n      .insert(OpcodeInstr::mkfixed(0x56, 8, 8, instr::dump_1sr_l(\"PUSH \"), exec_push_l))\n      .insert(OpcodeInstr::mkfixed(0x57, 8, 8, instr::dump_1sr_l(\"POP \"), exec_pop_l))\n      .insert(OpcodeInstr::mksimple(0x58, 8, \"ROT\", exec_rot))\n      .insert(OpcodeInstr::mksimple(0x59, 8, \"ROTREV\", exec_rotrev))\n      .insert(OpcodeInstr::mksimple(0x5a, 8, \"2SWAP\", exec_2swap))\n      .insert(OpcodeInstr::mksimple(0x5b, 8, \"2DROP\", exec_2drop))\n      .insert(OpcodeInstr::mksimple(0x5c, 8, \"2DUP\", exec_2dup))\n      .insert(OpcodeInstr::mksimple(0x5d, 8, \"2OVER\", exec_2over))\n      .insert(OpcodeInstr::mkfixed(0x5e, 8, 8, instr::dump_2c_add(0x20, \"REVERSE \", \",\"), exec_reverse))\n      .insert(OpcodeInstr::mkfixed(0x5f0, 12, 4, instr::dump_1c(\"BLKDROP \"), exec_blkdrop))\n      .insert(OpcodeInstr::mkfixedrange(0x5f10, 0x6000, 16, 8, instr::dump_2c(\"BLKPUSH \", \",\"), exec_blkpush))\n      .insert(OpcodeInstr::mksimple(0x60, 8, \"PICK\", exec_pick))\n      .insert(OpcodeInstr::mksimple(0x61, 8, \"ROLL\", exec_roll))\n      .insert(OpcodeInstr::mksimple(0x62, 8, \"ROLLREV\", exec_rollrev))\n      .insert(OpcodeInstr::mksimple(0x63, 8, \"BLKSWX\", exec_blkswap_x))\n      .insert(OpcodeInstr::mksimple(0x64, 8, \"REVX\", exec_reverse_x))\n      .insert(OpcodeInstr::mksimple(0x65, 8, \"DROPX\", exec_drop_x))\n      .insert(OpcodeInstr::mksimple(0x66, 8, \"TUCK\", exec_tuck))\n      .insert(OpcodeInstr::mksimple(0x67, 8, \"XCHGX\", exec_xchg_x))\n      .insert(OpcodeInstr::mksimple(0x68, 8, \"DEPTH\", exec_depth))\n      .insert(OpcodeInstr::mksimple(0x69, 8, \"CHKDEPTH\", exec_chkdepth))\n      .insert(OpcodeInstr::mksimple(0x6a, 8, \"ONLYTOPX\", exec_onlytop_x))\n      .insert(OpcodeInstr::mksimple(0x6b, 8, \"ONLYX\", exec_only_x))\n      .insert(OpcodeInstr::mkfixedrange(0x6c10, 0x6d00, 16, 8, instr::dump_2c(\"BLKDROP2 \", \",\"), exec_blkdrop2))",
+        "args": [],
+        "body": "Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute SWAP\\n\";\n  stack.check_underflow(2);\n  swap(stack[0], stack[1]);\n  return 0;"
+      }
     },
     {
-      "mnemonic": "XCHG_IJ",
-      "since_version": 0,
-      "doc": {
-        "category": "stack_basic",
-        "description": "Interchanges `s[i]` with `s[j]`, `1 <= i < j <= 15`.",
-        "gas": "26",
-        "fift": "s[i] s[j] XCHG",
-        "fift_examples": [],
-        "opcode": "10ij",
-        "stack": ""
-      },
-      "bytecode": {
-        "tlb": "#10 i:(## 4) j:(## 4) {1 <= i} {i + 1 <= j}",
-        "prefix": "10",
-        "operands_range_check": { "length": 4, "from": 1, "to": 15 },
-        "operands": [
-          {
-            "name": "i",
-            "type": "uint",
-            "size": 4,
-            "min_value": 1,
-            "max_value": 15,
-            "display_hints": [{ "type": "stack" }]
-          },
-          {
-            "name": "j",
-            "type": "uint",
-            "size": 4,
-            "min_value": 0,
-            "max_value": 15,
-            "display_hints": [{ "type": "stack" }]
-          }
-        ]
-      },
-      "value_flow": {
-        "inputs": { "registers": [] },
-        "outputs": { "registers": [] }
-      },
-      "control_flow": { "branches": [], "nobranch": true }
+      "name": "XCHG_0I",
+      "alias_of": "",
+      "tlb": "#0 i:(## 4) {1 <= i}",
+      "doc_category": "stack_basic",
+      "doc_opcode": "0i",
+      "doc_fift": "s[i] XCHG0",
+      "doc_stack": "",
+      "doc_gas": 18,
+      "doc_description": "Interchanges `s0` with `s[i]`, `1 <= i <= 15`."
     },
     {
-      "mnemonic": "XCHG_0I_LONG",
-      "since_version": 0,
-      "doc": {
-        "category": "stack_basic",
-        "description": "Interchanges `s0` with `s[ii]`, `0 <= ii <= 255`.",
-        "gas": "26",
-        "fift": "s0 [ii] s() XCHG",
-        "fift_examples": [],
-        "opcode": "11ii",
-        "stack": ""
-      },
-      "bytecode": {
-        "tlb": "#11 ii:uint8",
-        "prefix": "11",
-        "operands": [
-          {
-            "name": "i",
-            "type": "uint",
-            "size": 8,
-            "min_value": 0,
-            "max_value": 255,
-            "display_hints": [{ "type": "stack" }]
-          }
-        ]
-      },
-      "value_flow": {
-        "inputs": { "registers": [] },
-        "outputs": { "registers": [] }
-      },
-      "control_flow": { "branches": [], "nobranch": true }
+      "name": "XCHG_IJ",
+      "alias_of": "",
+      "tlb": "#10 i:(## 4) j:(## 4) {1 <= i} {i + 1 <= j}",
+      "doc_category": "stack_basic",
+      "doc_opcode": "10ij",
+      "doc_fift": "s[i] s[j] XCHG",
+      "doc_stack": "",
+      "doc_gas": 26,
+      "doc_description": "Interchanges `s[i]` with `s[j]`, `1 <= i < j <= 15`."
     },
     {
       "mnemonic": "XCHG_1I",
