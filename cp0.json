@@ -18,7 +18,15 @@
         "inputs": { "stack": [], "registers": [] },
         "outputs": { "stack": [], "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "line": 537,
+        "handler": "exec_nop",
+        "declaration": ".insert(OpcodeInstr::mksimple(0x00, 8, \"NOP\", exec_nop))\n      .insert(OpcodeInstr::mksimple(0x01, 8, \"SWAP\", exec_swap))\n      .insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))\n      .insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))\n      .insert(OpcodeInstr::mkfixed(0x11, 8, 8, instr::dump_1sr_l(\"XCHG \"), exec_xchg0_l))\n      .insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))\n      .insert(OpcodeInstr::mksimple(0x20, 8, \"DUP\", exec_dup))\n      .insert(OpcodeInstr::mksimple(0x21, 8, \"OVER\", exec_over))\n      .insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))\n      .insert(OpcodeInstr::mksimple(0x30, 8, \"DROP\", exec_drop))\n      .insert(OpcodeInstr::mksimple(0x31, 8, \"NIP\", exec_nip))\n      .insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))\n      .insert(OpcodeInstr::mkfixed(0x4, 4, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x50, 8, 8, instr::dump_2sr(\"XCHG2 \"), exec_xchg2))\n      .insert(OpcodeInstr::mkfixed(0x51, 8, 8, instr::dump_2sr(\"XCPU \"), exec_xcpu))\n      .insert(OpcodeInstr::mkfixed(0x52, 8, 8, instr::dump_2sr_adj(1, \"PUXC \"), exec_puxc))\n      .insert(OpcodeInstr::mkfixed(0x53, 8, 8, instr::dump_2sr(\"PUSH2 \"), exec_push2))\n      .insert(OpcodeInstr::mkfixed(0x540, 12, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x541, 12, 12, instr::dump_3sr(\"XC2PU \"), exec_xc2pu))\n      .insert(OpcodeInstr::mkfixed(0x542, 12, 12, instr::dump_3sr_adj(1, \"XCPUXC \"), exec_xcpuxc))\n      .insert(OpcodeInstr::mkfixed(0x543, 12, 12, instr::dump_3sr(\"XCPU2 \"), exec_xcpu2))\n      .insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr_adj(0x11, \"PUXC2 \"), exec_puxc2))\n      .insert(OpcodeInstr::mkfixed(0x545, 12, 12, instr::dump_3sr_adj(0x11, \"PUXCPU \"), exec_puxcpu))\n      .insert(OpcodeInstr::mkfixed(0x546, 12, 12, instr::dump_3sr_adj(0x12, \"PU2XC \"), exec_pu2xc))\n      .insert(OpcodeInstr::mkfixed(0x547, 12, 12, instr::dump_3sr(\"PUSH3 \"), exec_push3))\n      .insert(OpcodeInstr::mkfixed(0x55, 8, 8, instr::dump_2c_add(0x11, \"BLKSWAP \", \",\"), exec_blkswap))\n      .insert(OpcodeInstr::mkfixed(0x56, 8, 8, instr::dump_1sr_l(\"PUSH \"), exec_push_l))\n      .insert(OpcodeInstr::mkfixed(0x57, 8, 8, instr::dump_1sr_l(\"POP \"), exec_pop_l))\n      .insert(OpcodeInstr::mksimple(0x58, 8, \"ROT\", exec_rot))\n      .insert(OpcodeInstr::mksimple(0x59, 8, \"ROTREV\", exec_rotrev))\n      .insert(OpcodeInstr::mksimple(0x5a, 8, \"2SWAP\", exec_2swap))\n      .insert(OpcodeInstr::mksimple(0x5b, 8, \"2DROP\", exec_2drop))\n      .insert(OpcodeInstr::mksimple(0x5c, 8, \"2DUP\", exec_2dup))\n      .insert(OpcodeInstr::mksimple(0x5d, 8, \"2OVER\", exec_2over))\n      .insert(OpcodeInstr::mkfixed(0x5e, 8, 8, instr::dump_2c_add(0x20, \"REVERSE \", \",\"), exec_reverse))\n      .insert(OpcodeInstr::mkfixed(0x5f0, 12, 4, instr::dump_1c(\"BLKDROP \"), exec_blkdrop))\n      .insert(OpcodeInstr::mkfixedrange(0x5f10, 0x6000, 16, 8, instr::dump_2c(\"BLKPUSH \", \",\"), exec_blkpush))\n      .insert(OpcodeInstr::mksimple(0x60, 8, \"PICK\", exec_pick))\n      .insert(OpcodeInstr::mksimple(0x61, 8, \"ROLL\", exec_roll))\n      .insert(OpcodeInstr::mksimple(0x62, 8, \"ROLLREV\", exec_rollrev))\n      .insert(OpcodeInstr::mksimple(0x63, 8, \"BLKSWX\", exec_blkswap_x))\n      .insert(OpcodeInstr::mksimple(0x64, 8, \"REVX\", exec_reverse_x))\n      .insert(OpcodeInstr::mksimple(0x65, 8, \"DROPX\", exec_drop_x))\n      .insert(OpcodeInstr::mksimple(0x66, 8, \"TUCK\", exec_tuck))\n      .insert(OpcodeInstr::mksimple(0x67, 8, \"XCHGX\", exec_xchg_x))\n      .insert(OpcodeInstr::mksimple(0x68, 8, \"DEPTH\", exec_depth))\n      .insert(OpcodeInstr::mksimple(0x69, 8, \"CHKDEPTH\", exec_chkdepth))\n      .insert(OpcodeInstr::mksimple(0x6a, 8, \"ONLYTOPX\", exec_onlytop_x))\n      .insert(OpcodeInstr::mksimple(0x6b, 8, \"ONLYX\", exec_only_x))\n      .insert(OpcodeInstr::mkfixedrange(0x6c10, 0x6d00, 16, 8, instr::dump_2c(\"BLKDROP2 \", \",\"), exec_blkdrop2))",
+        "args": [],
+        "body": "VM_LOG(st) << \"execute NOP\\n\";\n  return 0;"
+      }
     },
     {
       "mnemonic": "XCHG_0I",
@@ -51,7 +59,15 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "line": 538,
+        "handler": "exec_swap",
+        "declaration": ".insert(OpcodeInstr::mksimple(0x01, 8, \"SWAP\", exec_swap))\n      .insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))\n      .insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))\n      .insert(OpcodeInstr::mkfixed(0x11, 8, 8, instr::dump_1sr_l(\"XCHG \"), exec_xchg0_l))\n      .insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))\n      .insert(OpcodeInstr::mksimple(0x20, 8, \"DUP\", exec_dup))\n      .insert(OpcodeInstr::mksimple(0x21, 8, \"OVER\", exec_over))\n      .insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))\n      .insert(OpcodeInstr::mksimple(0x30, 8, \"DROP\", exec_drop))\n      .insert(OpcodeInstr::mksimple(0x31, 8, \"NIP\", exec_nip))\n      .insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))\n      .insert(OpcodeInstr::mkfixed(0x4, 4, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x50, 8, 8, instr::dump_2sr(\"XCHG2 \"), exec_xchg2))\n      .insert(OpcodeInstr::mkfixed(0x51, 8, 8, instr::dump_2sr(\"XCPU \"), exec_xcpu))\n      .insert(OpcodeInstr::mkfixed(0x52, 8, 8, instr::dump_2sr_adj(1, \"PUXC \"), exec_puxc))\n      .insert(OpcodeInstr::mkfixed(0x53, 8, 8, instr::dump_2sr(\"PUSH2 \"), exec_push2))\n      .insert(OpcodeInstr::mkfixed(0x540, 12, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))\n      .insert(OpcodeInstr::mkfixed(0x541, 12, 12, instr::dump_3sr(\"XC2PU \"), exec_xc2pu))\n      .insert(OpcodeInstr::mkfixed(0x542, 12, 12, instr::dump_3sr_adj(1, \"XCPUXC \"), exec_xcpuxc))\n      .insert(OpcodeInstr::mkfixed(0x543, 12, 12, instr::dump_3sr(\"XCPU2 \"), exec_xcpu2))\n      .insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr_adj(0x11, \"PUXC2 \"), exec_puxc2))\n      .insert(OpcodeInstr::mkfixed(0x545, 12, 12, instr::dump_3sr_adj(0x11, \"PUXCPU \"), exec_puxcpu))\n      .insert(OpcodeInstr::mkfixed(0x546, 12, 12, instr::dump_3sr_adj(0x12, \"PU2XC \"), exec_pu2xc))\n      .insert(OpcodeInstr::mkfixed(0x547, 12, 12, instr::dump_3sr(\"PUSH3 \"), exec_push3))\n      .insert(OpcodeInstr::mkfixed(0x55, 8, 8, instr::dump_2c_add(0x11, \"BLKSWAP \", \",\"), exec_blkswap))\n      .insert(OpcodeInstr::mkfixed(0x56, 8, 8, instr::dump_1sr_l(\"PUSH \"), exec_push_l))\n      .insert(OpcodeInstr::mkfixed(0x57, 8, 8, instr::dump_1sr_l(\"POP \"), exec_pop_l))\n      .insert(OpcodeInstr::mksimple(0x58, 8, \"ROT\", exec_rot))\n      .insert(OpcodeInstr::mksimple(0x59, 8, \"ROTREV\", exec_rotrev))\n      .insert(OpcodeInstr::mksimple(0x5a, 8, \"2SWAP\", exec_2swap))\n      .insert(OpcodeInstr::mksimple(0x5b, 8, \"2DROP\", exec_2drop))\n      .insert(OpcodeInstr::mksimple(0x5c, 8, \"2DUP\", exec_2dup))\n      .insert(OpcodeInstr::mksimple(0x5d, 8, \"2OVER\", exec_2over))\n      .insert(OpcodeInstr::mkfixed(0x5e, 8, 8, instr::dump_2c_add(0x20, \"REVERSE \", \",\"), exec_reverse))\n      .insert(OpcodeInstr::mkfixed(0x5f0, 12, 4, instr::dump_1c(\"BLKDROP \"), exec_blkdrop))\n      .insert(OpcodeInstr::mkfixedrange(0x5f10, 0x6000, 16, 8, instr::dump_2c(\"BLKPUSH \", \",\"), exec_blkpush))\n      .insert(OpcodeInstr::mksimple(0x60, 8, \"PICK\", exec_pick))\n      .insert(OpcodeInstr::mksimple(0x61, 8, \"ROLL\", exec_roll))\n      .insert(OpcodeInstr::mksimple(0x62, 8, \"ROLLREV\", exec_rollrev))\n      .insert(OpcodeInstr::mksimple(0x63, 8, \"BLKSWX\", exec_blkswap_x))\n      .insert(OpcodeInstr::mksimple(0x64, 8, \"REVX\", exec_reverse_x))\n      .insert(OpcodeInstr::mksimple(0x65, 8, \"DROPX\", exec_drop_x))\n      .insert(OpcodeInstr::mksimple(0x66, 8, \"TUCK\", exec_tuck))\n      .insert(OpcodeInstr::mksimple(0x67, 8, \"XCHGX\", exec_xchg_x))\n      .insert(OpcodeInstr::mksimple(0x68, 8, \"DEPTH\", exec_depth))\n      .insert(OpcodeInstr::mksimple(0x69, 8, \"CHKDEPTH\", exec_chkdepth))\n      .insert(OpcodeInstr::mksimple(0x6a, 8, \"ONLYTOPX\", exec_onlytop_x))\n      .insert(OpcodeInstr::mksimple(0x6b, 8, \"ONLYX\", exec_only_x))\n      .insert(OpcodeInstr::mkfixedrange(0x6c10, 0x6d00, 16, 8, instr::dump_2c(\"BLKDROP2 \", \",\"), exec_blkdrop2))",
+        "args": [],
+        "body": "Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute SWAP\\n\";\n  stack.check_underflow(2);\n  swap(stack[0], stack[1]);\n  return 0;"
+      }
     },
     {
       "mnemonic": "XCHG_IJ",
@@ -189,7 +205,15 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "contops.cpp",
+        "line": 1027,
+        "handler": "exec_push_ctr",
+        "declaration": "reg_ctr_oprange(cp0, 0xed40, \"PUSH\", exec_push_ctr);",
+        "args": [],
+        "body": "unsigned idx = args & 15;\n  VM_LOG(st) << \"execute PUSH c\" << idx;\n  st->get_stack().push(st->get(idx));\n  return 0;"
+      }
     },
     {
       "mnemonic": "POP",
