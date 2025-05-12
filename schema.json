@@ -904,6 +904,46 @@
           }
         }
       },
+      "implementation": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["file", "line", "handler", "declaration", "args", "body"],
+        "properties": {
+          "file": {
+            "type": "string",
+            "title": "Source file",
+            "description": "Name of the source file containing the implementation"
+          },
+          "line": {
+            "type": "integer",
+            "title": "Line number",
+            "description": "Line number in the source file where the implementation is defined"
+          },
+          "handler": {
+            "type": "string",
+            "title": "Handler function",
+            "description": "Name of the handler function that implements the instruction"
+          },
+          "declaration": {
+            "type": "string",
+            "title": "Declaration",
+            "description": "Code snippet showing how the instruction is declared/registered"
+          },
+          "args": {
+            "type": "array",
+            "title": "Arguments",
+            "description": "List of arguments for the handler function",
+            "items": {
+              "type": "string"
+            }
+          },
+          "body": {
+            "type": "string",
+            "title": "Implementation body",
+            "description": "Code snippet showing the actual implementation of the handler function"
+          }
+        }
+      },
       "required": [
         "mnemonic",
         "doc",
