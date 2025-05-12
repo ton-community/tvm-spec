@@ -58,7 +58,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "VM_LOG(st) << \"execute XCHG s\" << x;\nstack.check_underflow_p(x);\nswap(stack[0], stack[x]);\nreturn 0;\n.insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))"
+        "body": "int x = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG s\" << x;\nstack.check_underflow_p(x);\nswap(stack[0], stack[x]);\nreturn 0; \n.insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))"
       }
     },
     {
@@ -103,8 +103,8 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "VM_LOG(st) << \"execute XCHG s\" << x << \",s\" << y;\nstack.check_underflow_p(y);\nswap(stack[x], stack[y]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))"
-    },
+        "body": "int x = (args >> 4) & 15, y = args & 15;\nif (!x || x >= y) {\n  throw VmError{Excno::inv_opcode, \"invalid XCHG arguments\"};\n}\nVM_LOG(st) << \"execute XCHG s\" << x << \",s\" << y;\nStack& stack = st->get_stack();\nstack.check_underflow_p(y);\nswap(stack[x], stack[y]);\nreturn 0; \n.insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))"
+      }
     {
       "mnemonic": "XCHG_0I_LONG",
       "since_version": 0,
