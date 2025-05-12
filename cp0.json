@@ -22949,7 +22949,7 @@
       "since_version": 0,
       "doc": {
         "category": "dict_serial",
-        "description": "Stores dictionary `D` into _Builder_ `b`, returing the resulting _Builder_ `b'`.\nIn other words, if `D` is a cell, performs `STONE` and `STREF`; if `D` is _Null_, performs `NIP` and `STZERO`; otherwise throws a type checking exception.",
+        "description": "Stores dictionary `D` into _Builder_ `b`, returning the resulting _Builder_ `b'`.\nIn other words, if `D` is a cell, performs `STONE` and `STREF`; if `D` is _Null_, performs `NIP` and `STZERO`; otherwise throws a type checking exception.",
         "gas": "26",
         "fift": "STDICT\nSTOPTREF",
         "fift_examples": [],
