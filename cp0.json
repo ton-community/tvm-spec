@@ -21,7 +21,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "line": 537,
+        "line": 28,
         "handler": "exec_nop",
         "declaration": ".insert(OpcodeInstr::mksimple(0x00, 8, \"NOP\", exec_nop))",
         "args": [],
@@ -62,7 +62,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "line": 539,
+        "line": 43,
         "handler": "exec_xchg0",
         "declaration": ".insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))",
         "args": ["args"],
@@ -111,7 +111,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "line": 540,
+        "line": 61,
         "handler": "exec_xchg",
         "declaration": ".insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))",
         "args": ["args"],
