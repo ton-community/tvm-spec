@@ -1083,7 +1083,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute 2SWAP\\n\";\nstack.check_underflow(4);\nswap(stack[1], stack[3]);\nswap(stack[0], stack[2]);\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x5A, 8, \"2SWAP\", exec_2swap))"
+      }
     },
     {
       "mnemonic": "DROP2",
@@ -1102,7 +1106,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute 2DROP\\n\";\nstack.check_underflow(2);\nstack.pop();\nstack.pop();\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x5B, 8, \"2DROP\", exec_2drop))"
+      }
     },
     {
       "mnemonic": "DUP2",
@@ -1121,7 +1129,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute 2DUP\\n\";\nstack.check_underflow(2);\nstack.push(stack.fetch(1));\nstack.push(stack.fetch(1));\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x5C, 8, \"2DUP\", exec_2dup))"
+      }
     },
     {
       "mnemonic": "OVER2",
