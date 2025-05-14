@@ -18,7 +18,11 @@
         "inputs": { "stack": [], "registers": [] },
         "outputs": { "stack": [], "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "VM_LOG(st) << \"execute NOP\\n\";\n  return 0;\n.insert(OpcodeInstr::mksimple(0x00, 8, \"NOP\", exec_nop))"
+      }
     },
     {
       "mnemonic": "XCHG_0I",
@@ -51,7 +55,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG s\" << x;\nstack.check_underflow_p(x);\nswap(stack[0], stack[x]);\nreturn 0; \n.insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))"
+      }
     },
     {
       "mnemonic": "XCHG_IJ",
@@ -92,8 +100,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
-    },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = (args >> 4) & 15, y = args & 15;\nif (!x || x >= y) {\n  throw VmError{Excno::inv_opcode, \"invalid XCHG arguments\"};\n}\nVM_LOG(st) << \"execute XCHG s\" << x << \",s\" << y;\nStack& stack = st->get_stack();\nstack.check_underflow_p(y);\nswap(stack[x], stack[y]);\nreturn 0; \n.insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))"
+      }
     {
       "mnemonic": "XCHG_0I_LONG",
       "since_version": 0,
@@ -22969,7 +22980,7 @@
       "since_version": 0,
       "doc": {
         "category": "dict_serial",
-        "description": "Stores dictionary `D` into _Builder_ `b`, returing the resulting _Builder_ `b'`.\nIn other words, if `D` is a cell, performs `STONE` and `STREF`; if `D` is _Null_, performs `NIP` and `STZERO`; otherwise throws a type checking exception.",
+        "description": "Stores dictionary `D` into _Builder_ `b`, returning the resulting _Builder_ `b'`.\nIn other words, if `D` is a cell, performs `STONE` and `STREF`; if `D` is _Null_, performs `NIP` and `STZERO`; otherwise throws a type checking exception.",
         "gas": "26",
         "fift": "STDICT\nSTOPTREF",
         "fift_examples": [],
