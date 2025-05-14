@@ -105,6 +105,7 @@
         "file": "stackops.cpp",
         "body": "int x = (args >> 4) & 15, y = args & 15;\nif (!x || x >= y) {\n  throw VmError{Excno::inv_opcode, \"invalid XCHG arguments\"};\n}\nVM_LOG(st) << \"execute XCHG s\" << x << \",s\" << y;\nStack& stack = st->get_stack();\nstack.check_underflow_p(y);\nswap(stack[x], stack[y]);\nreturn 0; \n.insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))"
       }
+    },
     {
       "mnemonic": "XCHG_0I_LONG",
       "since_version": 0,
