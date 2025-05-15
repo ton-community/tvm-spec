@@ -1093,7 +1093,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_2over(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute 2OVER\\n\";\n  stack.check_underflow(4);\n  stack.push(stack.fetch(3));\n  stack.push(stack.fetch(3));\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x5D, 8, \"OVER2\", exec_over2))"
+      }
     },
     {
       "mnemonic": "REVERSE",
@@ -1133,7 +1137,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_reverse(VmState* st, unsigned args) {\n  int x = ((args >> 4) & 15) + 2, y = (args & 15);\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute REVERSE \" << x << ',' << y;\n  stack.check_underflow(x + y);\n  std::reverse(stack.from_top(x + y), stack.from_top(y));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x5E, 8, 8, instr::dump_2c_add(0x20, \"REVERSE \", \",\"), exec_reverse))"
+      }
     },
     {
       "mnemonic": "BLKDROP",
@@ -1165,7 +1173,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_blkdrop(VmState* st, unsigned args) {\n  int x = (args & 15);\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute BLKDROP \" << x;\n  stack.check_underflow(x);\n  stack.pop_many(x);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x5F0, 12, 4, instr::dump_1c(\"BLKDROP \"), exec_blkdrop))"
+      }
     },
     {
       "mnemonic": "BLKPUSH",
@@ -1206,7 +1218,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_blkpush(VmState* st, unsigned args) {\n  int x = ((args >> 4) & 15), y = (args & 15);\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute BLKPUSH \" << x << ',' << y;\n  stack.check_underflow_p(y);\n  while (--x >= 0) {\n    stack.push(stack.fetch(y));\n  }\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x5F, 8, 8, instr::dump_2c(\"BLKPUSH \", \",\"), exec_blkpush))"
+      }
     },
     {
       "mnemonic": "PICK",
@@ -1225,7 +1241,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_pick(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PICK\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow_p(x);\n  stack.push(stack.fetch(x));\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x60, 8, \"PICK\", exec_pick))"
+      }
     },
     {
       "mnemonic": "ROLLX",
@@ -1244,7 +1264,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_roll(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute ROLL\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow_p(x);\n  st->consume_gas(std::max(x - 255, 0));\n  while (--x >= 0) {\n    swap(stack[x], stack[x + 1]);\n  }\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x61, 8, \"ROLL\", exec_roll))"
+      }
     },
     {
       "mnemonic": "-ROLLX",
@@ -1263,7 +1287,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_rollrev(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute ROLLREV\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow_p(x);\n  st->consume_gas(std::max(x - 255, 0));\n  for (int i = 0; i < x; i++) {\n    swap(stack[i], stack[i + 1]);\n  }\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x62, 8, \"ROLLREV\", exec_rollrev))"
+      }
     },
     {
       "mnemonic": "BLKSWX",
@@ -1282,7 +1310,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_blkswap_x(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute BLKSWX\\n\";\n  stack.check_underflow(2);\n  int y = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow(x + y);\n  if (x > 0 && y > 0) {\n    if (st->get_global_version() >= 4) {\n      st->consume_gas(std::max(x + y - 255, 0));\n    }\n    std::rotate(stack.from_top(x + y), stack.from_top(y), stack.top());\n  }\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x63, 8, \"BLKSWX\", exec_blkswap_x))"
+      }
     },
     {
       "mnemonic": "REVX",
@@ -1301,7 +1333,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_reverse_x(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute REVX\\n\";\n  stack.check_underflow(2);\n  int y = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow(x + y);\n  st->consume_gas(std::max(x - 255, 0));\n  std::reverse(stack.from_top(x + y), stack.from_top(y));\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x64, 8, \"REVX\", exec_reverse_x))"
+      }
     },
     {
       "mnemonic": "DROPX",
@@ -1320,7 +1356,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_drop_x(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute DROPX\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow(x);\n  stack.pop_many(x);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x65, 8, \"DROPX\", exec_drop_x))"
+      }
     },
     {
       "mnemonic": "TUCK",
@@ -1339,7 +1379,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_tuck(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute TUCK\\n\";\n  stack.check_underflow(2);\n  swap(stack[0], stack[1]);\n  stack.push(stack.fetch(1));\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x66, 8, \"TUCK\", exec_tuck))"
+      }
     },
     {
       "mnemonic": "XCHGX",
@@ -1358,7 +1402,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_xchg_x(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCHGX\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow_p(x);\n  swap(stack[0], stack[x]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x67, 8, \"XCHGX\", exec_xchg_x))"
+      }
     },
     {
       "mnemonic": "DEPTH",
@@ -1382,7 +1430,11 @@
           "registers": []
         }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_depth(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute DEPTH\\n\";\n  stack.push_smallint(stack.depth());\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x68, 8, \"DEPTH\", exec_depth))"
+      }
     },
     {
       "mnemonic": "CHKDEPTH",
@@ -1406,7 +1458,11 @@
         },
         "outputs": { "stack": [], "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_chkdepth(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute CHKDEPTH\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow(x);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x69, 8, \"CHKDEPTH\", exec_chkdepth))"
+      }
     },
     {
       "mnemonic": "ONLYTOPX",
@@ -1425,7 +1481,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_onlytop_x(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute ONLYTOPX\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow(x);\n  int n = stack.depth(), d = n - x;\n  if (d > 0) {\n    for (int i = n - 1; i >= d; i--) {\n      stack[i] = std::move(stack[i - d]);\n    }\n  }\n  stack.pop_many(d);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x6A, 8, \"ONLYTOPX\", exec_onlytop_x))"
+      }
     },
     {
       "mnemonic": "ONLYX",
@@ -1444,7 +1504,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_only_x(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute ONLYX\\n\";\n  stack.check_underflow(1);\n  int x = stack.pop_smallint_range(st->get_global_version() >= 4 ? (1 << 30) - 1 : 255);\n  stack.check_underflow(x);\n  stack.pop_many(stack.depth() - x);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x6B, 8, \"ONLYX\", exec_only_x))"
+      }
     },
     {
       "mnemonic": "BLKDROP2",
@@ -1485,7 +1549,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int exec_blkdrop2(VmState* st, unsigned args) {\n  int x = ((args >> 4) & 15), y = (args & 15);\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute BLKDROP2 \" << x << \",\" << y;\n  stack.check_underflow(x + y);\n  stack.pop_many(x, y);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x6C, 8, 8, instr::dump_2c(\"BLKDROP2 \", \",\"), exec_blkdrop2))"
+      }
     },
     {
       "mnemonic": "NULL",
