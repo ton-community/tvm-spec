@@ -902,24 +902,25 @@
               "description": "Can this instruction not perform any of specified branches in certain cases (do not modify cc)?"
             }
           }
-        }
-      },
-      "implementation": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["file", "body"],
-        "properties": {
-          "file": {
-            "type": "string",
-            "title": "Source file",
-            "description": "Name of the source file containing the implementation"
-          },
-          "body": {
-            "type": "string",
-            "title": "Implementation body",
-            "description": "Code snippet showing the actual implementation of the handler function"
+        },
+        "implementation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["file", "body"],
+          "properties": {
+            "file": {
+              "type": "string",
+              "title": "Source file",
+              "description": "Name of the source file containing the implementation"
+            },
+            "body": {
+              "type": "string",
+              "title": "Implementation body",
+              "description": "Code snippet showing the actual implementation of the handler function"
+            }
           }
         }
+      
       },
       "required": [
         "mnemonic",

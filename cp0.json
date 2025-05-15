@@ -103,8 +103,9 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 4) & 15, y = args & 15;\nif (!x || x >= y) {\n  throw VmError{Excno::inv_opcode, \"invalid XCHG arguments\"};\n}\nVM_LOG(st) << \"execute XCHG s\" << x << \",s\" << y;\nStack& stack = st->get_stack();\nstack.check_underflow_p(y);\nswap(stack[x], stack[y]);\nreturn 0; \n.insert(OpcodeInstr::mkfixed(0x10, 8, 8, dump_xchg, exec_xchg))"
+        "body": "int x = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG s\" << x;\nstack.check_underflow_p(x);\nswap(stack[0], stack[x]);\nreturn 0; \n.insert(OpcodeInstr::mkfixedrange(0x02, 0x10, 8, 4, instr::dump_1sr(\"XCHG \"), exec_xchg0))"
       }
+    },
     {
       "mnemonic": "XCHG_0I_LONG",
       "since_version": 0,
@@ -135,7 +136,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = args & 255;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG s\" << x;\nstack.check_underflow_p(x);\nswap(stack[0], stack[x]);\nreturn 0; \n.insert(OpcodeInstr::mkfixed(0x11, 8, 8, instr::dump_1sr_l(\"XCHG \"), exec_xchg0_l))"
+      }
     },
     {
       "mnemonic": "XCHG_1I",
@@ -168,7 +173,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = args & 15;\nassert(x >= 2);\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG s1,s\" << x;\nstack.check_underflow_p(x);\nswap(stack[1], stack[x]);\nreturn 0; \n.insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))"
+      }
     },
     {
       "mnemonic": "PUSH",
@@ -200,7 +209,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUSH s\" << x;\nstack.check_underflow_p(x);\nstack.push(stack.fetch(x));\nreturn 0; \n.insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))"
+      }
     },
     {
       "mnemonic": "POP",
@@ -232,7 +245,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute POP s\" << x;\nstack.check_underflow_p(x);\nstack.pop(stack[x]);\nreturn 0; \n.insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))"
+      }
     },
     {
       "mnemonic": "XCHG3",
@@ -280,7 +297,11 @@
         "inputs": { "registers": [] },
         "outputs": { "registers": [] }
       },
-      "control_flow": { "branches": [], "nobranch": true }
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": {
+        "file": "stackops.cpp",
+        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG3 s\" << x << \",s\" << y << \",s\" << z;\nstack.check_underflow_p(x, y, z, 2);\nswap(stack[2], stack[x]);\nswap(stack[1], stack[y]);\nswap(stack[0], stack[z]);\nreturn 0; \n.insert(OpcodeInstr::mkfixed(0x4, 4, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))"
+      }    
     },
     {
       "mnemonic": "XCHG2",
