@@ -324,7 +324,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 4) & 15, y = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG2 s\" << x << \",s\" << y;\nstack.check_underflow_p(x, y, 1);\nswap(stack[1], stack[x]);\nswap(stack[0], stack[y]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x50, 8, 8, instr::dump_2sr(\"XCHG2 \"), exec_xchg2))"
+        "body": "int exec_xchg2(VmState* st, unsigned args) {\n  int x = (args >> 4) & 15, y = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCHG2 s\" << x << \",s\" << y;\n  stack.check_underflow_p(x, y, 1);\n  swap(stack[1], stack[x]);\n  swap(stack[0], stack[y]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x50, 8, 8, instr::dump_2sr(\"XCHG2 \"), exec_xchg2))"
       }
     },
     {
@@ -368,7 +368,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 4) & 15, y = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCPU s\" << x << \",s\" << y;\nstack.check_underflow_p(x, y);\nswap(stack[0], stack[x]);\nstack.push(stack.fetch(y));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x51, 8, 8, instr::dump_2sr(\"XCPU \"), exec_xcpu))"
+        "body": "int exec_xcpu(VmState* st, unsigned args) {\n  int x = (args >> 4) & 15, y = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCPU s\" << x << \",s\" << y;\n  stack.check_underflow_p(x, y);\n  swap(stack[0], stack[x]);\n  stack.push(stack.fetch(y));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x51, 8, 8, instr::dump_2sr(\"XCPU \"), exec_xcpu))"
       }
     },
     {
@@ -415,7 +415,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 4) & 15, y = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUXC s\" << x << \",s\" << y - 1;\nstack.check_underflow_p(x).check_underflow(y);\nstack.push(stack.fetch(x));\nswap(stack[0], stack[1]);\nswap(stack[0], stack[y]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x52, 8, 8, instr::dump_2sr(\"PUXC \"), exec_puxc))"
+        "body": "int exec_puxc(VmState* st, unsigned args) {\n  int x = (args >> 4) & 15, y = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUXC s\" << x << \",s\" << y - 1;\n\n  stack.check_underflow_p(x).check_underflow(y);\n  stack.push(stack.fetch(x));\n  swap(stack[0], stack[1]);\n  swap(stack[0], stack[y]);\n\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x52, 8, 8, instr::dump_2sr(\"PUXC \"), exec_puxc))"
       }
     },
     {
@@ -459,7 +459,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 4) & 15, y = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUSH2 s\" << x << \",s\" << y;\nstack.check_underflow_p(x, y);\nstack.push(stack.fetch(x));\nstack.push(stack.fetch(y + 1));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x53, 8, 8, instr::dump_2sr(\"PUSH2 \"), exec_push2))"
+        "body": "int exec_push2(VmState* st, unsigned args) {\n  int x = (args >> 4) & 15, y = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUSH2 s\" << x << \",s\" << y;\n  stack.check_underflow_p(x, y);\n  stack.push(stack.fetch(x));\n  stack.push(stack.fetch(y + 1));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x53, 8, 8, instr::dump_2sr(\"PUSH2 \"), exec_push2))"
       }
     },
     {
@@ -511,7 +511,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCHG3 s\" << x << \",s\" << y << \",s\" << z;\nstack.check_underflow_p(x, y, z, 2);\nswap(stack[2], stack[x]);\nswap(stack[1], stack[y]);\nswap(stack[0], stack[z]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x540, 12, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))"
+        "body": "int exec_xchg3(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCHG3 s\" << x << \",s\" << y << \",s\" << z;\n  stack.check_underflow_p(x, y, z, 2);\n  swap(stack[2], stack[x]);\n  swap(stack[1], stack[y]);\n  swap(stack[0], stack[z]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x540, 12, 12, instr::dump_3sr(\"XCHG3 \"), exec_xchg3))"
       }
     },
     {
@@ -563,7 +563,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XC2PU s\" << x << \",s\" << y << \",s\" << z;\nstack.check_underflow_p(x, y, z, 1);\nswap(stack[1], stack[x]);\nswap(stack[0], stack[y]);\nstack.push(stack.fetch(z));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x541, 12, 12, instr::dump_3sr(\"XC2PU \"), exec_xc2pu))"
+        "body": "int exec_xc2pu(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XC2PU s\" << x << \",s\" << y << \",s\" << z;\n  stack.check_underflow_p(x, y, z, 1);\n  swap(stack[1], stack[x]);\n  swap(stack[0], stack[y]);\n  stack.push(stack.fetch(z));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x541, 12, 12, instr::dump_3sr(\"XC2PU \"), exec_xc2pu))"
       }
     },
     {
@@ -618,7 +618,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCPUXC s\" << x << \",s\" << y << \",s\" << z - 1;\nstack.check_underflow_p(x, y, 1).check_underflow(z);\nswap(stack[1], stack[x]);\nstack.push(stack.fetch(y));\nswap(stack[0], stack[1]);\nswap(stack[0], stack[z]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x542, 12, 12, instr::dump_3sr(\"XCPUXC \"), exec_xcpuxc))"
+        "body": "int exec_xcpuxc(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCPUXC s\" << x << \",s\" << y << \",s\" << z - 1;\n  stack.check_underflow_p(x, y, 1).check_underflow(z);\n  swap(stack[1], stack[x]);\n  stack.push(stack.fetch(y));\n  swap(stack[0], stack[1]);\n  swap(stack[0], stack[z]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x542, 12, 12, instr::dump_3sr(\"XCPUXC \"), exec_xcpuxc))"
       }
     },
     {
@@ -670,7 +670,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute XCPU2 s\" << x << \",s\" << y << \",s\" << z;\nstack.check_underflow_p(x, y, z);\nswap(stack[0], stack[x]);\nstack.push(stack.fetch(y));\nstack.push(stack.fetch(z + 1));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x543, 12, 12, instr::dump_3sr(\"XCPU2 \"), exec_xcpu2))"
+        "body": "int exec_puxc2(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUXC2 s\" << x << \",s\" << y - 1 << \",s\" << z - 1;\n  stack.check_underflow_p(x, 1).check_underflow(y, z);\n  stack.push(stack.fetch(x));\n  swap(stack[2], stack[0]);\n  swap(stack[1], stack[y]);\n  swap(stack[0], stack[z]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr(\"PUXC2 \"), exec_puxc2))"
       }
     },
     {
@@ -728,7 +728,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUXC2 s\" << x << \",s\" << y - 1 << \",s\" << z - 1;\nstack.check_underflow_p(x, 1).check_underflow(y, z);\nstack.push(stack.fetch(x));\nswap(stack[2], stack[0]);\nswap(stack[1], stack[y]);\nswap(stack[0], stack[z]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr(\"PUXC2 \"), exec_puxc2))"
+        "body": "int exec_puxc2(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUXC2 s\" << x << \",s\" << y - 1 << \",s\" << z - 1;\n  stack.check_underflow_p(x, 1).check_underflow(y, z);\n  stack.push(stack.fetch(x));\n  swap(stack[2], stack[0]);\n  swap(stack[1], stack[y]);\n  swap(stack[0], stack[z]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x544, 12, 12, instr::dump_3sr(\"PUXC2 \"), exec_puxc2))"
       }
     },
     {
@@ -786,7 +786,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUXCPU s\" << x << \",s\" << y - 1 << \",s\" << z - 1;\nstack.check_underflow_p(x).check_underflow(y, z);\nstack.push(stack.fetch(x));\nswap(stack[0], stack[1]);\nswap(stack[0], stack[y]);\nstack.push(stack.fetch(z));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x545, 12, 12, instr::dump_3sr(\"PUXCPU \"), exec_puxcpu))"
+        "body": "int exec_puxcpu(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUXCPU s\" << x << \",s\" << y - 1 << \",s\" << z - 1;\n  stack.check_underflow_p(x).check_underflow(y, z);\n  stack.push(stack.fetch(x));\n  swap(stack[0], stack[1]);\n  swap(stack[0], stack[y]);\n  stack.push(stack.fetch(z));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x545, 12, 12, instr::dump_3sr(\"PUXCPU \"), exec_puxcpu))"
       }
     },
     {
@@ -844,7 +844,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PU2XC s\" << x << \",s\" << y - 1 << \",s\" << z - 2;\nstack.check_underflow_p(x).check_underflow(y, z - 1);\nstack.push(stack.fetch(x));\nswap(stack[1], stack[0]);\nstack.push(stack.fetch(y));\nswap(stack[1], stack[0]);\nswap(stack[0], stack[z]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x546, 12, 12, instr::dump_3sr(\"PU2XC \"), exec_pu2xc))"
+        "body": "int exec_pu2xc(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PU2XC s\" << x << \",s\" << y - 1 << \",s\" << z - 2;\n  stack.check_underflow_p(x).check_underflow(y, z - 1);\n  stack.push(stack.fetch(x));\n  swap(stack[1], stack[0]);\n  stack.push(stack.fetch(y));\n  swap(stack[1], stack[0]);\n  swap(stack[0], stack[z]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x546, 12, 12, instr::dump_3sr(\"PU2XC \"), exec_pu2xc))"
       }
     },
     {
@@ -896,7 +896,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUSH3 s\" << x << \",s\" << y << \",s\" << z;\nstack.check_underflow_p(x, y, z);\nstack.push(stack.fetch(x));\nstack.push(stack.fetch(y + 1));\nstack.push(stack.fetch(z + 2));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x547, 12, 12, instr::dump_3sr(\"PUSH3 \"), exec_push3))"
+        "body": "int exec_push3(VmState* st, unsigned args) {\n  int x = (args >> 8) & 15, y = (args >> 4) & 15, z = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUSH3 s\" << x << \",s\" << y << \",s\" << z;\n  stack.check_underflow_p(x, y, z);\n  stack.push(stack.fetch(x));\n  stack.push(stack.fetch(y + 1));\n  stack.push(stack.fetch(z + 2));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x547, 12, 12, instr::dump_3sr(\"PUSH3 \"), exec_push3))"
       }
     },
     {
@@ -946,7 +946,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = ((args >> 4) & 15) + 1, y = (args & 15) + 1;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute BLKSWAP \" << x << \",\" << y;\nstack.check_underflow(x + y);\nstd::rotate(stack.from_top(x + y), stack.from_top(y), stack.top());\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x55, 8, 8, instr::dump_2c_add(0x11, \"BLKSWAP \", \",\"), exec_blkswap))"
+        "body": "int exec_blkswap(VmState* st, unsigned args) {\n  int x = ((args >> 4) & 15) + 1, y = (args & 15) + 1;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute BLKSWAP \" << x << \",\" << y;\n  stack.check_underflow(x + y);\n  std::rotate(stack.from_top(x + y), stack.from_top(y), stack.top());\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x55, 8, 8, instr::dump_2c_add(0x11, \"BLKSWAP \", \",\"), exec_blkswap))"
       }
     },
     {
@@ -982,7 +982,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = args & 255;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute PUSH s\" << x;\nstack.check_underflow_p(x);\nstack.push(stack.fetch(x));\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x56, 8, 8, instr::dump_1sr_l(\"PUSH \"), exec_push_l))"
+        "body": "int exec_push_l(VmState* st, unsigned args) {\n  int x = args & 255;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUSH s\" << x;\n  stack.check_underflow_p(x);\n  stack.push(stack.fetch(x));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x56, 8, 8, instr::dump_1sr_l(\"PUSH \"), exec_push_l))"
       }
     },
     {
@@ -1018,7 +1018,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int x = args & 255;\nStack& stack = st->get_stack();\nVM_LOG(st) << \"execute POP s\" << x;\nstack.check_underflow_p(x);\nstack.pop(stack[x]);\nreturn 0;\n.insert(OpcodeInstr::mkfixed(0x57, 8, 8, instr::dump_1sr_l(\"POP \"), exec_pop_l))"
+        "body": "int exec_pop_l(VmState* st, unsigned args) {\n  int x = args & 255;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute POP s\" << x;\n  stack.check_underflow_p(x);\n  stack.pop(stack[x]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixed(0x57, 8, 8, instr::dump_1sr_l(\"POP \"), exec_pop_l))"
       }
     },
     {
@@ -1041,7 +1041,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute ROT\\n\";\nstack.check_underflow(3);\nswap(stack[1], stack[2]);\nswap(stack[0], stack[1]);\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x58, 8, \"ROT\", exec_rot))"
+        "body": "int exec_rot(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute ROT\";\n  stack.check_underflow(3);\n  swap(stack[1], stack[2]);\n  swap(stack[0], stack[1]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x58, 8, \"ROT\", exec_rot))"
       }
     },
     {
@@ -1064,7 +1064,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute ROTREV\\n\";\nstack.check_underflow(3);\nswap(stack[0], stack[1]);\nswap(stack[1], stack[2]);\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x59, 8, \"ROTREV\", exec_rotrev))"
+        "body": "int exec_rotrev(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute ROTREV\";\n  stack.check_underflow(3);\n  swap(stack[0], stack[1]);\n  swap(stack[1], stack[2]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x59, 8, \"ROTREV\", exec_rotrev))"
       }
     },
     {
@@ -1087,7 +1087,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute 2SWAP\\n\";\nstack.check_underflow(4);\nswap(stack[1], stack[3]);\nswap(stack[0], stack[2]);\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x5A, 8, \"2SWAP\", exec_2swap))"
+        "body": "int exec_2swap(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute 2SWAP\";\n  stack.check_underflow(4);\n  swap(stack[1], stack[3]);\n  swap(stack[0], stack[2]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x5A, 8, \"2SWAP\", exec_2swap))"
       }
     },
     {
@@ -1110,7 +1110,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute 2DROP\\n\";\nstack.check_underflow(2);\nstack.pop();\nstack.pop();\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x5B, 8, \"2DROP\", exec_2drop))"
+        "body": "int exec_2drop(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute 2DROP\";\n  stack.check_underflow(2);\n  stack.pop();\n  stack.pop();\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x5B, 8, \"2DROP\", exec_2drop))"
       }
     },
     {
@@ -1133,7 +1133,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "Stack& stack = st->get_stack();\nVM_LOG(st) << \"execute 2DUP\\n\";\nstack.check_underflow(2);\nstack.push(stack.fetch(1));\nstack.push(stack.fetch(1));\nreturn 0;\n.insert(OpcodeInstr::mksimple(0x5C, 8, \"2DUP\", exec_2dup))"
+        "body": "int exec_2dup(VmState* st) {\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute 2DUP\";\n  stack.check_underflow(2);\n  stack.push(stack.fetch(1));\n  stack.push(stack.fetch(1));\n  return 0;\n}\n\n.insert(OpcodeInstr::mksimple(0x5C, 8, \"2DUP\", exec_2dup))"
       }
     },
     {
