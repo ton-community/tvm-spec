@@ -176,7 +176,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int exec_xchg1(VmState* st, unsigned args) {\n  int x = args & 15;\n  assert(x >= 2);\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCHG s1,s\" << x;\n  stack.check_underflow_p(x);\n  swap(stack[1], stack[x]);\n  return 0;\n}\n.insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))"
+        "body": "int exec_xchg1(VmState* st, unsigned args) {\n  int x = args & 15;\n  assert(x >= 2);\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute XCHG s1,s\" << x;\n  stack.check_underflow_p(x);\n  swap(stack[1], stack[x]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixedrange(0x12, 0x20, 8, 4, instr::dump_1sr(\"XCHG s1,\"), exec_xchg1))"
       }
     },
     {
@@ -212,7 +212,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int exec_push(VmState* st, unsigned args) {\n  int x = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUSH s\" << x;\n  stack.check_underflow_p(x);\n  stack.push(stack.fetch(x));\n  return 0;\n}\n.insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))"
+        "body": "int exec_push(VmState* st, unsigned args) {\n  int x = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute PUSH s\" << x;\n  stack.check_underflow_p(x);\n  stack.push(stack.fetch(x));\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixedrange(0x22, 0x30, 8, 4, instr::dump_1sr(\"PUSH \"), exec_push))"
       }
     },
     {
@@ -248,7 +248,7 @@
       "control_flow": { "branches": [], "nobranch": true },
       "implementation": {
         "file": "stackops.cpp",
-        "body": "int exec_pop(VmState* st, unsigned args) {\n  int x = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute POP s\" << x;\n  stack.check_underflow_p(x);\n  stack.pop(stack[x]);\n  return 0;\n}\n.insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))"
+        "body": "int exec_pop(VmState* st, unsigned args) {\n  int x = args & 15;\n  Stack& stack = st->get_stack();\n  VM_LOG(st) << \"execute POP s\" << x;\n  stack.check_underflow_p(x);\n  stack.pop(stack[x]);\n  return 0;\n}\n\n.insert(OpcodeInstr::mkfixedrange(0x32, 0x40, 8, 4, instr::dump_1sr(\"POP \"), exec_pop))"
       }
     },
     {
