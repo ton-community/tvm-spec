@@ -195,17 +195,14 @@ export type continuation =
   | continuation_special_pushint
   | continuation_fallback;
 
-/** Where a snippet lives in source code. */
+
 export interface code_location {
   path: string;
   line: number;
-  /** Optional function or symbol name referenced */
   function_name?: string;
-  /** Optional commit hash or version tag */
   commit?: string;
 }
 
-/** Full instruction definition. */
 export interface instruction {
   mnemonic: string;
   since_version: number;
@@ -232,11 +229,9 @@ export interface instruction {
     branches: continuation[];
     nobranch: boolean;
   };
-  /** One or more source references for this instruction. */
   implementation: code_location[];
 }
 
-/** Root object. */
 export interface root_schema {
   $schema?: string;
   instructions: instruction[];
