@@ -1586,6 +1586,50 @@
       "control_flow": { "branches": [], "nobranch": true }
     },
     {
+      "mnemonic": "TRIPLE",
+      "since_version": 0,
+      "doc": {
+        "category": "tuple",
+        "description": "Creates a new _Tuple_ `t=(x, y, z)` containing three values.",
+        "gas": "26+3",
+        "fift": "TRIPLE",
+        "fift_examples": [],
+        "opcode": "6F03",
+        "stack": "x y z - t"
+      },
+      "bytecode": {
+        "tlb": "#6F03",
+        "prefix": "6F0",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 4,
+            "min_value": 3,
+            "max_value": 3,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            { "type": "simple", "name": "x", "value_types": ["Integer"] },
+            { "type": "simple", "name": "y", "value_types": ["Integer"] },
+            { "type": "simple", "name": "z", "value_types": ["Integer"] }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            { "type": "simple", "name": "t", "value_types": ["Tuple"] }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true }
+    },
+    {
       "mnemonic": "INDEX",
       "since_version": 0,
       "doc": {
