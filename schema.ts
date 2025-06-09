@@ -229,6 +229,10 @@ export interface instruction {
     branches: continuation[];
     nobranch: boolean;
   };
+    /**
+   * Implementation details: where this instruction is implemented in the code.
+   * @items code_location
+   */
   implementation: code_location[];
 }
 
