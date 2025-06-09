@@ -7,17 +7,15 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-# ---------------------------------------------------------------------------
+
 # Load JSON
-# ---------------------------------------------------------------------------
 def load_cp0_json(json_path):
     with open(json_path, "r") as f:
         data = json.load(f)
     return {i["mnemonic"]: i.get("description", "") for i in data.get("instructions", [])}
 
-# ---------------------------------------------------------------------------
+
 # Download C++ file from GitHub
-# ---------------------------------------------------------------------------
 def download_cpp_from_github(github_raw_url):
     logging.info(f"Fetching {github_raw_url}...")
     response = requests.get(github_raw_url)
@@ -28,9 +26,8 @@ def download_cpp_from_github(github_raw_url):
         logging.error(f"Failed to download file. Status code: {response.status_code}")
         return ""
 
-# ---------------------------------------------------------------------------
+
 # Extract C++ functions
-# ---------------------------------------------------------------------------
 def extract_functions_cpp(code_text):
     functions = re.findall(
         r"(?:int|void)\s+(exec_\w+)\s*\(.*?\)\s*{([^{}]*(?:{[^{}]*}[^{}]*)*)}",
@@ -40,17 +37,15 @@ def extract_functions_cpp(code_text):
     logging.info(f"Extracted {len(functions)} functions from source code.")
     return {name: body for name, body in functions}
 
-# ---------------------------------------------------------------------------
+
 # Reverse-flag helper  (leading “-” OR trailing “REV”)
-# ---------------------------------------------------------------------------
 def is_reverse_variant(mnemonic: str, func_name: str) -> bool:
     m_rev = mnemonic.startswith("-") or mnemonic.lower().endswith("rev")
     f_rev = re.search(r"rev$", func_name, re.IGNORECASE) is not None
     return m_rev == f_rev
 
-# ---------------------------------------------------------------------------
+
 # Core matcher
-# ---------------------------------------------------------------------------
 def match_functions_to_mnemonics(func_map, mnemonics):
     def split_name(name: str, drop_exec=False):
         if drop_exec and name.startswith("exec_"):
@@ -94,7 +89,7 @@ def match_functions_to_mnemonics(func_map, mnemonics):
         matches[mnemonic] = (best_match, best_score)
     return matches
 
-
+# Generate report
 def generate_report(matches, threshold=0.7):
     return [
         {

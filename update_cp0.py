@@ -3,10 +3,12 @@ import re
 import requests
 from pathlib import Path
 
+#load cp0.json file
 def load_cp0_json(json_path):
     with open(json_path, "r") as f:
         return json.load(f)
 
+# Download C++ file from GitHub
 def download_cpp_from_github(github_raw_url):
     print(f"Fetching {github_raw_url}...")
     response = requests.get(github_raw_url)
@@ -32,11 +34,13 @@ def update_cp0_with_implementation(cp0_data, matches, cpp_lines, github_raw_url)
                     break
     return cp0_data
 
+# Save the enriched cp0.json file
 def save_cp0_json(cp0_data, out_path):
     with open(out_path, "w") as f:
         json.dump(cp0_data, f, indent=2)
     print(f"✅ Enriched file saved as {out_path}")
 
+# Main function to open the cp0.json, match with C++ functions, and save the enriched file
 def main():
     cp0_path = Path("cp0.json")
     matches_path = Path("match_report.json")
