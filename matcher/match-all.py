@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 import subprocess, sys
 
 # always run stack first, then tuple

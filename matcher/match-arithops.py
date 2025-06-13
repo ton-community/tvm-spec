@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-"""Match arithmetic mnemonics from cp0.json to exec_* handlers in arithops.cpp.
-
-Highlights
-==========
-* **Zero manual alias tables** – every relationship is inferred at runtime.
-* Canonical string normalisation (no underscores, no R/C/_VAR suffixes, case‑folded).
-* Generic *push‑size* mapping: any `exec_push_*` handler is reachable via
-  its **numeric** form only (e.g. `PUSHINT16`, `PUSHINT32`, `PUSHINT64`).
-  No extra textual aliases like `PUSHINT_LONG` are emitted.
-* Multi‑stage similarity metric (explicit log, substring, fuzzy) keeps matches
-  reliable without lowering the threshold.
-"""
 from __future__ import annotations
 
 import argparse
