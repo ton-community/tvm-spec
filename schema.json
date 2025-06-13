@@ -904,7 +904,7 @@
           }
         },
         "implementation": {
-          "type": "array",
+          "type": "object",
           "additionalProperties": false,
           "required": ["file", "body"],
           "properties": {
