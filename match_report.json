@@ -649,11 +649,11 @@
   },
   {
     "mnemonic": "PUSHINT_LONG",
-    "function": "exec_push_tinyint4",
-    "score": 0.78,
+    "function": "exec_push_int",
+    "score": 1.0,
     "category": "const_int",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 31
+    "source_line": 76
   },
   {
     "mnemonic": "PUSHPOW2",

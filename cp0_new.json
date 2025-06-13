@@ -16,11 +16,7 @@
       "bytecode": {
         "tlb": "#0 i:(## 4) {1 <= i}",
         "prefix": "0",
-        "operands_range_check": {
-          "length": 4,
-          "from": 1,
-          "to": 15
-        },
+        "operands_range_check": { "length": 4, "from": 1, "to": 15 },
         "operands": [
           {
             "name": "i",
@@ -29,31 +25,18 @@
             "min_value": 1,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 43,
-          "function_name": "exec_xchg0"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 43, "function_name": "exec_xchg0" }
       ]
     },
     {
@@ -79,31 +62,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 109,
-          "function_name": "exec_push"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 109, "function_name": "exec_push" }
       ]
     },
     {
@@ -121,23 +91,13 @@
       "bytecode": {
         "tlb": "#82 l:(## 5) xxx:(int (8 * l + 19))",
         "prefix": "82",
-        "operands_range_check": {
-          "length": 5,
-          "from": 0,
-          "to": 30
-        },
+        "operands_range_check": { "length": 5, "from": 0, "to": 30 },
         "operands": [
-          {
-            "name": "x",
-            "type": "pushint_long"
-          }
+          { "name": "x", "type": "pushint_long" }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -151,16 +111,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 31,
-          "function_name": "exec_push_tinyint4"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 76, "function_name": "exec_push_int" }
       ]
     },
     {
@@ -190,10 +143,7 @@
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -207,16 +157,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 61,
-          "function_name": "exec_push_smallint"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 61, "function_name": "exec_push_smallint" }
       ]
     },
     {
@@ -242,31 +185,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 143,
-          "function_name": "exec_pop"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 143, "function_name": "exec_pop" }
       ]
     },
     {
@@ -292,18 +222,13 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "pushint4"
-              }
+              { "type": "pushint4" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -317,16 +242,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 31,
-          "function_name": "exec_push_tinyint4"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 31, "function_name": "exec_push_tinyint4" }
       ]
     },
     {
@@ -344,11 +262,7 @@
       "bytecode": {
         "tlb": "#1 i:(## 4) {2 <= i}",
         "prefix": "1",
-        "operands_range_check": {
-          "length": 4,
-          "from": 2,
-          "to": 15
-        },
+        "operands_range_check": { "length": 4, "from": 2, "to": 15 },
         "operands": [
           {
             "name": "i",
@@ -357,31 +271,18 @@
             "min_value": 2,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 83,
-          "function_name": "exec_xchg1"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 83, "function_name": "exec_xchg1" }
       ]
     },
     {
@@ -407,31 +308,18 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 52,
-          "function_name": "exec_xchg0_l"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 52, "function_name": "exec_xchg0_l" }
       ]
     },
     {
@@ -446,29 +334,14 @@
         "opcode": "59",
         "stack": "a b c - c a b"
       },
-      "bytecode": {
-        "tlb": "#59",
-        "prefix": "59",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#59", "prefix": "59", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 317,
-          "function_name": "exec_rotrev"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 317, "function_name": "exec_rotrev" }
       ]
     },
     {
@@ -483,11 +356,7 @@
         "opcode": "A4",
         "stack": "x - x+1"
       },
-      "bytecode": {
-        "tlb": "#A4",
-        "prefix": "A4",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A4", "prefix": "A4", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -514,16 +383,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 197,
-          "function_name": "exec_inc"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 197, "function_name": "exec_inc" }
       ]
     },
     {
@@ -549,9 +411,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -561,31 +421,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 163,
-          "function_name": "exec_xchg2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 163, "function_name": "exec_xchg2" }
       ]
     },
     {
@@ -603,11 +450,7 @@
       "bytecode": {
         "tlb": "#10 i:(## 4) j:(## 4) {1 <= i} {i + 1 <= j}",
         "prefix": "10",
-        "operands_range_check": {
-          "length": 4,
-          "from": 1,
-          "to": 15
-        },
+        "operands_range_check": { "length": 4, "from": 1, "to": 15 },
         "operands": [
           {
             "name": "i",
@@ -616,9 +459,7 @@
             "min_value": 1,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -628,31 +469,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 61,
-          "function_name": "exec_xchg"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 61, "function_name": "exec_xchg" }
       ]
     },
     {
@@ -670,11 +498,7 @@
       "bytecode": {
         "tlb": "#6C i:(## 4) j:uint4 {1 <= i}",
         "prefix": "6C",
-        "operands_range_check": {
-          "length": 4,
-          "from": 1,
-          "to": 15
-        },
+        "operands_range_check": { "length": 4, "from": 1, "to": 15 },
         "operands": [
           {
             "name": "i",
@@ -695,23 +519,12 @@
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 380,
-          "function_name": "exec_blkdrop2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 380, "function_name": "exec_blkdrop2" }
       ]
     },
     {
@@ -729,11 +542,7 @@
       "bytecode": {
         "tlb": "#83 xx:uint8",
         "prefix": "83",
-        "operands_range_check": {
-          "length": 8,
-          "from": 0,
-          "to": 254
-        },
+        "operands_range_check": { "length": 8, "from": 0, "to": 254 },
         "operands": [
           {
             "name": "x",
@@ -742,19 +551,13 @@
             "min_value": 0,
             "max_value": 254,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -768,16 +571,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 110,
-          "function_name": "exec_push_pow2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 110, "function_name": "exec_push_pow2" }
       ]
     },
     {
@@ -807,10 +603,7 @@
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -824,16 +617,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 46,
-          "function_name": "exec_push_tinyint8"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 46, "function_name": "exec_push_tinyint8" }
       ]
     },
     {
@@ -863,23 +649,12 @@
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 371,
-          "function_name": "exec_blkdrop"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 371, "function_name": "exec_blkdrop" }
       ]
     },
     {
@@ -894,29 +669,14 @@
         "opcode": "58",
         "stack": "a b c - b c a"
       },
-      "bytecode": {
-        "tlb": "#58",
-        "prefix": "58",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#58", "prefix": "58", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 308,
-          "function_name": "exec_rot"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 308, "function_name": "exec_rot" }
       ]
     },
     {
@@ -942,9 +702,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -954,35 +712,19 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 183,
-          "function_name": "exec_puxc"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 183, "function_name": "exec_puxc" }
       ]
     },
     {
@@ -997,11 +739,7 @@
         "opcode": "B0",
         "stack": "x y - x&y"
       },
-      "bytecode": {
-        "tlb": "#B0",
-        "prefix": "B0",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B0", "prefix": "B0", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -1035,16 +773,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 769,
-          "function_name": "exec_and"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 769, "function_name": "exec_and" }
       ]
     },
     {
@@ -1059,11 +790,7 @@
         "opcode": "A0",
         "stack": "x y - x+y"
       },
-      "bytecode": {
-        "tlb": "#A0",
-        "prefix": "A0",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A0", "prefix": "A0", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -1097,16 +824,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 162,
-          "function_name": "exec_add"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 162, "function_name": "exec_add" }
       ]
     },
     {
@@ -1132,13 +852,8 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -1148,35 +863,19 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 299,
-          "function_name": "exec_blkswap"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 299, "function_name": "exec_blkswap" }
       ]
     },
     {
@@ -1191,11 +890,7 @@
         "opcode": "A1",
         "stack": "x y - x-y"
       },
-      "bytecode": {
-        "tlb": "#A1",
-        "prefix": "A1",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A1", "prefix": "A1", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -1229,16 +924,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 171,
-          "function_name": "exec_sub"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 171, "function_name": "exec_sub" }
       ]
     },
     {
@@ -1264,9 +952,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1276,9 +962,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1288,31 +972,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 204,
-          "function_name": "exec_xchg3"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 204, "function_name": "exec_xchg3" }
       ]
     },
     {
@@ -1338,9 +1009,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1350,31 +1019,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 194,
-          "function_name": "exec_push2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 194, "function_name": "exec_push2" }
       ]
     },
     {
@@ -1400,31 +1056,18 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 152,
-          "function_name": "exec_pop_l"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 152, "function_name": "exec_pop_l" }
       ]
     },
     {
@@ -1450,9 +1093,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1462,31 +1103,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 173,
-          "function_name": "exec_xcpu"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 173, "function_name": "exec_xcpu" }
       ]
     },
     {
@@ -1523,10 +1151,7 @@
               "name": "tuple_elements",
               "length_var": "n",
               "array_entry": [
-                {
-                  "type": "simple",
-                  "name": "x"
-                }
+                { "type": "simple", "name": "x" }
               ]
             }
           ],
@@ -1545,16 +1170,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 88,
-          "function_name": "exec_mktuple"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 88, "function_name": "exec_mktuple" }
       ]
     },
     {
@@ -1569,11 +1187,7 @@
         "opcode": "6FA1",
         "stack": "x - x or null x"
       },
-      "bytecode": {
-        "tlb": "#6FA1",
-        "prefix": "6FA1",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6FA1", "prefix": "6FA1", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -1596,11 +1210,7 @@
                 {
                   "value": 0,
                   "stack": [
-                    {
-                      "type": "const",
-                      "value": null,
-                      "value_type": "Null"
-                    }
+                    { "type": "const", "value": null, "value_type": "Null" }
                   ]
                 }
               ],
@@ -1617,16 +1227,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 41,
-          "function_name": "exec_null_swap_if"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 41, "function_name": "exec_null_swap_if" }
       ]
     },
     {
@@ -1641,37 +1244,19 @@
         "opcode": "6D",
         "stack": " - null"
       },
-      "bytecode": {
-        "tlb": "#6D",
-        "prefix": "6D",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6D", "prefix": "6D", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
-            {
-              "type": "const",
-              "value": null,
-              "value_type": "Null"
-            }
+            { "type": "const", "value": null, "value_type": "Null" }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 28,
-          "function_name": "exec_push_null"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 28, "function_name": "exec_push_null" }
       ]
     },
     {
@@ -1697,19 +1282,13 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -1723,16 +1302,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 129,
-          "function_name": "exec_push_pow2dec"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 129, "function_name": "exec_push_pow2dec" }
       ]
     },
     {
@@ -1758,9 +1330,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1770,13 +1340,8 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -1786,35 +1351,19 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 261,
-          "function_name": "exec_puxcpu"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 261, "function_name": "exec_puxcpu" }
       ]
     },
     {
@@ -1829,11 +1378,7 @@
         "opcode": "A3",
         "stack": "x - -x"
       },
-      "bytecode": {
-        "tlb": "#A3",
-        "prefix": "A3",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A3", "prefix": "A3", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -1860,16 +1405,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 189,
-          "function_name": "exec_negate"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 189, "function_name": "exec_negate" }
       ]
     },
     {
@@ -1884,11 +1422,7 @@
         "opcode": "A8",
         "stack": "x y - x*y"
       },
-      "bytecode": {
-        "tlb": "#A8",
-        "prefix": "A8",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A8", "prefix": "A8", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -1922,16 +1456,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 231, "function_name": "exec_mul" }
       ]
     },
     {
@@ -1957,9 +1484,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1969,9 +1494,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -1981,31 +1504,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 215,
-          "function_name": "exec_xc2pu"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 215, "function_name": "exec_xc2pu" }
       ]
     },
     {
@@ -2020,11 +1530,7 @@
         "opcode": "6E",
         "stack": "x - ?"
       },
-      "bytecode": {
-        "tlb": "#6E",
-        "prefix": "6E",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6E", "prefix": "6E", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -2051,16 +1557,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 34,
-          "function_name": "exec_is_null"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 34, "function_name": "exec_is_null" }
       ]
     },
     {
@@ -2075,11 +1574,7 @@
         "opcode": "B1",
         "stack": "x y - x|y"
       },
-      "bytecode": {
-        "tlb": "#B1",
-        "prefix": "B1",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B1", "prefix": "B1", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -2113,16 +1608,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 778,
-          "function_name": "exec_or"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 778, "function_name": "exec_or" }
       ]
     },
     {
@@ -2137,29 +1625,14 @@
         "opcode": "5B",
         "stack": "a b - "
       },
-      "bytecode": {
-        "tlb": "#5B",
-        "prefix": "5B",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#5B", "prefix": "5B", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 335,
-          "function_name": "exec_2drop"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 335, "function_name": "exec_2drop" }
       ]
     },
     {
@@ -2185,9 +1658,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -2197,9 +1668,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -2209,35 +1678,19 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 226,
-          "function_name": "exec_xcpuxc"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 226, "function_name": "exec_xcpuxc" }
       ]
     },
     {
@@ -2252,11 +1705,7 @@
         "opcode": "A904",
         "stack": "x y - q"
       },
-      "bytecode": {
-        "tlb": "#A904",
-        "prefix": "A904",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A904", "prefix": "A904", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -2290,16 +1739,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 266,
-          "function_name": "exec_divmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 266, "function_name": "exec_divmod" }
       ]
     },
     {
@@ -2325,31 +1767,18 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 118,
-          "function_name": "exec_push_l"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 118, "function_name": "exec_push_l" }
       ]
     },
     {
@@ -2375,9 +1804,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -2387,9 +1814,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -2399,31 +1824,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 286,
-          "function_name": "exec_push3"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 286, "function_name": "exec_push3" }
       ]
     },
     {
@@ -2438,11 +1850,7 @@
         "opcode": "B3",
         "stack": "x - ~x"
       },
-      "bytecode": {
-        "tlb": "#B3",
-        "prefix": "B3",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B3", "prefix": "B3", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -2469,16 +1877,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 796,
-          "function_name": "exec_not"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 796, "function_name": "exec_not" }
       ]
     },
     {
@@ -2504,10 +1905,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -2538,16 +1936,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -2562,29 +1953,14 @@
         "opcode": "5A",
         "stack": "a b c d - c d a b"
       },
-      "bytecode": {
-        "tlb": "#5A",
-        "prefix": "5A",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#5A", "prefix": "5A", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 326,
-          "function_name": "exec_2swap"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 326, "function_name": "exec_2swap" }
       ]
     },
     {
@@ -2633,26 +2009,16 @@
               "name": "tuple_elements",
               "length_var": "n",
               "array_entry": [
-                {
-                  "type": "simple",
-                  "name": "x"
-                }
+                { "type": "simple", "name": "x" }
               ]
             }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 158,
-          "function_name": "exec_untuple"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 158, "function_name": "exec_untuple" }
       ]
     },
     {
@@ -2678,10 +2044,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -2719,16 +2082,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -2772,24 +2128,14 @@
         },
         "outputs": {
           "stack": [
-            {
-              "type": "simple",
-              "name": "x"
-            }
+            { "type": "simple", "name": "x" }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 106,
-          "function_name": "exec_tuple_index"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 106, "function_name": "exec_tuple_index" }
       ]
     },
     {
@@ -2804,11 +2150,7 @@
         "opcode": "A984",
         "stack": "x y z - q"
       },
-      "bytecode": {
-        "tlb": "#A984",
-        "prefix": "A984",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A984", "prefix": "A984", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -2849,16 +2191,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 434,
-          "function_name": "exec_muldivmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 434, "function_name": "exec_muldivmod" }
       ]
     },
     {
@@ -2884,10 +2219,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -2918,16 +2250,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 749,
-          "function_name": "exec_rshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 749, "function_name": "exec_rshift" }
       ]
     },
     {
@@ -2982,16 +2307,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 213,
-          "function_name": "exec_add_tinyint8"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 213, "function_name": "exec_add_tinyint8" }
       ]
     },
     {
@@ -3006,11 +2324,7 @@
         "opcode": "B608",
         "stack": "x y - x or y"
       },
-      "bytecode": {
-        "tlb": "#B608",
-        "prefix": "B608",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B608", "prefix": "B608", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3044,16 +2358,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 197,
-          "function_name": "exec_inc"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 197, "function_name": "exec_inc" }
       ]
     },
     {
@@ -3068,29 +2375,14 @@
         "opcode": "66",
         "stack": "a b - b a b"
       },
-      "bytecode": {
-        "tlb": "#66",
-        "prefix": "66",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#66", "prefix": "66", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 474,
-          "function_name": "exec_tuck"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 474, "function_name": "exec_tuck" }
       ]
     },
     {
@@ -3105,29 +2397,14 @@
         "opcode": "5C",
         "stack": "a b - a b a b"
       },
-      "bytecode": {
-        "tlb": "#5C",
-        "prefix": "5C",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#5C", "prefix": "5C", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 344,
-          "function_name": "exec_2dup"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 344, "function_name": "exec_2dup" }
       ]
     },
     {
@@ -3153,9 +2430,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -3165,13 +2440,8 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -3181,35 +2451,19 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 2
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 2 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 249,
-          "function_name": "exec_puxc2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 249, "function_name": "exec_puxc2" }
       ]
     },
     {
@@ -3235,9 +2489,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -3247,9 +2499,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -3259,31 +2509,18 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 215,
-          "function_name": "exec_xc2pu"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 215, "function_name": "exec_xc2pu" }
       ]
     },
     {
@@ -3298,11 +2535,7 @@
         "opcode": "6FA5",
         "stack": "x - x or null null x"
       },
-      "bytecode": {
-        "tlb": "#6FA5",
-        "prefix": "6FA5",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6FA5", "prefix": "6FA5", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3325,16 +2558,8 @@
                 {
                   "value": 0,
                   "stack": [
-                    {
-                      "type": "const",
-                      "value": null,
-                      "value_type": "Null"
-                    },
-                    {
-                      "type": "const",
-                      "value": null,
-                      "value_type": "Null"
-                    }
+                    { "type": "const", "value": null, "value_type": "Null" },
+                    { "type": "const", "value": null, "value_type": "Null" }
                   ]
                 }
               ],
@@ -3351,16 +2576,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 56,
-          "function_name": "exec_null_swap_if_many"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 56, "function_name": "exec_null_swap_if_many" }
       ]
     },
     {
@@ -3375,11 +2593,7 @@
         "opcode": "A985",
         "stack": "x y z - q'"
       },
-      "bytecode": {
-        "tlb": "#A985",
-        "prefix": "A985",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A985", "prefix": "A985", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3420,16 +2634,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 434,
-          "function_name": "exec_muldivmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 434, "function_name": "exec_muldivmod" }
       ]
     },
     {
@@ -3455,9 +2662,7 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              }
+              { "type": "stack" }
             ]
           },
           {
@@ -3467,13 +2672,8 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           },
           {
@@ -3483,35 +2683,19 @@
             "min_value": 0,
             "max_value": 15,
             "display_hints": [
-              {
-                "type": "stack"
-              },
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "stack" },
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 249,
-          "function_name": "exec_puxc2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 249, "function_name": "exec_puxc2" }
       ]
     },
     {
@@ -3566,16 +2750,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 222,
-          "function_name": "exec_mul_tinyint8"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 222, "function_name": "exec_mul_tinyint8" }
       ]
     },
     {
@@ -3590,11 +2767,7 @@
         "opcode": "A5",
         "stack": "x - x-1"
       },
-      "bytecode": {
-        "tlb": "#A5",
-        "prefix": "A5",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A5", "prefix": "A5", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3621,16 +2794,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 205,
-          "function_name": "exec_dec"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 205, "function_name": "exec_dec" }
       ]
     },
     {
@@ -3645,11 +2811,7 @@
         "opcode": "6F8C",
         "stack": "t x - t'"
       },
-      "bytecode": {
-        "tlb": "#6F8C",
-        "prefix": "6F8C",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F8C", "prefix": "6F8C", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3660,10 +2822,7 @@
                 "Tuple"
               ]
             },
-            {
-              "type": "simple",
-              "name": "x"
-            }
+            { "type": "simple", "name": "x" }
           ],
           "registers": []
         },
@@ -3680,16 +2839,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 296,
-          "function_name": "exec_tuple_push"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 296, "function_name": "exec_tuple_push" }
       ]
     },
     {
@@ -3727,23 +2879,12 @@
         ]
       },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 362,
-          "function_name": "exec_reverse"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 362, "function_name": "exec_reverse" }
       ]
     },
     {
@@ -3758,11 +2899,7 @@
         "opcode": "6F88",
         "stack": "t - n"
       },
-      "bytecode": {
-        "tlb": "#6F88",
-        "prefix": "6F88",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F88", "prefix": "6F88", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3789,16 +2926,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 265,
-          "function_name": "exec_tuple_length"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 265, "function_name": "exec_tuple_length" }
       ]
     },
     {
@@ -3813,11 +2943,7 @@
         "opcode": "A908",
         "stack": "x y - r"
       },
-      "bytecode": {
-        "tlb": "#A908",
-        "prefix": "A908",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A908", "prefix": "A908", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3851,16 +2977,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 266,
-          "function_name": "exec_divmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 266, "function_name": "exec_divmod" }
       ]
     },
     {
@@ -3886,10 +3005,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -3920,16 +3036,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 758,
-          "function_name": "exec_pow2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 758, "function_name": "exec_pow2" }
       ]
     },
     {
@@ -3944,11 +3053,7 @@
         "opcode": "B609",
         "stack": "x y - x or y"
       },
-      "bytecode": {
-        "tlb": "#B609",
-        "prefix": "B609",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B609", "prefix": "B609", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -3982,16 +3087,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 914,
-          "function_name": "exec_minmax"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 914, "function_name": "exec_minmax" }
       ]
     },
     {
@@ -4006,29 +3104,14 @@
         "opcode": "5D",
         "stack": "a b c d - a b c d a b"
       },
-      "bytecode": {
-        "tlb": "#5D",
-        "prefix": "5D",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#5D", "prefix": "5D", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 353,
-          "function_name": "exec_2over"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 353, "function_name": "exec_2over" }
       ]
     },
     {
@@ -4043,11 +3126,7 @@
         "opcode": "AE",
         "stack": "y - 2^y"
       },
-      "bytecode": {
-        "tlb": "#AE",
-        "prefix": "AE",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#AE", "prefix": "AE", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4074,16 +3153,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 758,
-          "function_name": "exec_pow2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 758, "function_name": "exec_pow2" }
       ]
     },
     {
@@ -4098,11 +3170,7 @@
         "opcode": "6F81",
         "stack": "t k - x"
       },
-      "bytecode": {
-        "tlb": "#6F81",
-        "prefix": "6F81",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F81", "prefix": "6F81", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4125,24 +3193,14 @@
         },
         "outputs": {
           "stack": [
-            {
-              "type": "simple",
-              "name": "x"
-            }
+            { "type": "simple", "name": "x" }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 112,
-          "function_name": "exec_tuple_index_var"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 112, "function_name": "exec_tuple_index_var" }
       ]
     },
     {
@@ -4157,11 +3215,7 @@
         "opcode": "A906",
         "stack": "x y - q''"
       },
-      "bytecode": {
-        "tlb": "#A906",
-        "prefix": "A906",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A906", "prefix": "A906", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4195,16 +3249,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 266,
-          "function_name": "exec_divmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 266, "function_name": "exec_divmod" }
       ]
     },
     {
@@ -4219,11 +3266,7 @@
         "opcode": "B60B",
         "stack": "x - |x|"
       },
-      "bytecode": {
-        "tlb": "#B60B",
-        "prefix": "B60B",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B60B", "prefix": "B60B", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4250,16 +3293,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 936,
-          "function_name": "exec_abs"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 936, "function_name": "exec_abs" }
       ]
     },
     {
@@ -4274,11 +3310,7 @@
         "opcode": "A986",
         "stack": "x y z - q'"
       },
-      "bytecode": {
-        "tlb": "#A986",
-        "prefix": "A986",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A986", "prefix": "A986", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4319,16 +3351,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 434,
-          "function_name": "exec_muldivmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 434, "function_name": "exec_muldivmod" }
       ]
     },
     {
@@ -4343,11 +3368,7 @@
         "opcode": "A90C",
         "stack": "x y - q r"
       },
-      "bytecode": {
-        "tlb": "#A90C",
-        "prefix": "A90C",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A90C", "prefix": "A90C", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4388,16 +3409,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 266,
-          "function_name": "exec_divmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 266, "function_name": "exec_divmod" }
       ]
     },
     {
@@ -4412,11 +3426,7 @@
         "opcode": "B2",
         "stack": "x y - x xor y"
       },
-      "bytecode": {
-        "tlb": "#B2",
-        "prefix": "B2",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B2", "prefix": "B2", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4450,16 +3460,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 787,
-          "function_name": "exec_xor"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 787, "function_name": "exec_xor" }
       ]
     },
     {
@@ -4474,11 +3477,7 @@
         "opcode": "A98C",
         "stack": "x y z - q r"
       },
-      "bytecode": {
-        "tlb": "#A98C",
-        "prefix": "A98C",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A98C", "prefix": "A98C", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4526,16 +3525,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 434,
-          "function_name": "exec_muldivmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 434, "function_name": "exec_muldivmod" }
       ]
     },
     {
@@ -4550,11 +3542,7 @@
         "opcode": "6F8D",
         "stack": "t - t' x"
       },
-      "bytecode": {
-        "tlb": "#6F8D",
-        "prefix": "6F8D",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F8D", "prefix": "6F8D", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4577,24 +3565,14 @@
                 "Tuple"
               ]
             },
-            {
-              "type": "simple",
-              "name": "x"
-            }
+            { "type": "simple", "name": "x" }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 308,
-          "function_name": "exec_tuple_pop"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 308, "function_name": "exec_tuple_pop" }
       ]
     },
     {
@@ -4609,11 +3587,7 @@
         "opcode": "B603",
         "stack": "x - c"
       },
-      "bytecode": {
-        "tlb": "#B603",
-        "prefix": "B603",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B603", "prefix": "B603", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4640,16 +3614,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 856,
-          "function_name": "exec_bitsize"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 856, "function_name": "exec_bitsize" }
       ]
     },
     {
@@ -4664,11 +3631,7 @@
         "opcode": "6F85",
         "stack": "t x k - t'"
       },
-      "bytecode": {
-        "tlb": "#6F85",
-        "prefix": "6F85",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F85", "prefix": "6F85", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4679,10 +3642,7 @@
                 "Tuple"
               ]
             },
-            {
-              "type": "simple",
-              "name": "x"
-            },
+            { "type": "simple", "name": "x" },
             {
               "type": "simple",
               "name": "k",
@@ -4706,16 +3666,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 229,
-          "function_name": "exec_tuple_set_index_var"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 229, "function_name": "exec_tuple_set_index_var" }
       ]
     },
     {
@@ -4730,31 +3683,14 @@
         "opcode": "00",
         "stack": "-"
       },
-      "bytecode": {
-        "tlb": "#00",
-        "prefix": "00",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#00", "prefix": "00", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
-        "outputs": {
-          "stack": [],
-          "registers": []
-        }
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": { "stack": [], "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 28,
-          "function_name": "exec_nop"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 28, "function_name": "exec_nop" }
       ]
     },
     {
@@ -4769,11 +3705,7 @@
         "opcode": "6F84",
         "stack": "t n - x_1 ... x_m m"
       },
-      "bytecode": {
-        "tlb": "#6F84",
-        "prefix": "6F84",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F84", "prefix": "6F84", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4801,10 +3733,7 @@
               "name": "tuple_elements",
               "length_var": "m",
               "array_entry": [
-                {
-                  "type": "simple",
-                  "name": "x"
-                }
+                { "type": "simple", "name": "x" }
               ]
             },
             {
@@ -4818,16 +3747,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 202,
-          "function_name": "exec_explode_tuple_var"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 202, "function_name": "exec_explode_tuple_var" }
       ]
     },
     {
@@ -4842,11 +3764,7 @@
         "opcode": "B601",
         "stack": "x c - x"
       },
-      "bytecode": {
-        "tlb": "#B601",
-        "prefix": "B601",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B601", "prefix": "B601", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4880,16 +3798,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 843,
-          "function_name": "exec_ufits"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 843, "function_name": "exec_ufits" }
       ]
     },
     {
@@ -4904,11 +3815,7 @@
         "opcode": "AC",
         "stack": "x y - x*2^y"
       },
-      "bytecode": {
-        "tlb": "#AC",
-        "prefix": "AC",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#AC", "prefix": "AC", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -4942,16 +3849,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -4977,10 +3877,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5011,16 +3908,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -5035,11 +3925,7 @@
         "opcode": "AD",
         "stack": "x y - floor(x/2^y)"
       },
-      "bytecode": {
-        "tlb": "#AD",
-        "prefix": "AD",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#AD", "prefix": "AD", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -5073,16 +3959,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 749,
-          "function_name": "exec_rshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 749, "function_name": "exec_rshift" }
       ]
     },
     {
@@ -5097,37 +3976,19 @@
         "opcode": "83FF",
         "stack": "- NaN"
       },
-      "bytecode": {
-        "tlb": "#83FF",
-        "prefix": "83FF",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#83FF", "prefix": "83FF", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
-            {
-              "type": "const",
-              "value_type": "Integer",
-              "value": null
-            }
+            { "type": "const", "value_type": "Integer", "value": null }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 120,
-          "function_name": "exec_push_nan"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 120, "function_name": "exec_push_nan" }
       ]
     },
     {
@@ -5166,10 +4027,7 @@
                 "Tuple"
               ]
             },
-            {
-              "type": "simple",
-              "name": "x"
-            }
+            { "type": "simple", "name": "x" }
           ],
           "registers": []
         },
@@ -5186,16 +4044,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 222,
-          "function_name": "exec_tuple_set_index"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 222, "function_name": "exec_tuple_set_index" }
       ]
     },
     {
@@ -5210,11 +4061,7 @@
         "opcode": "6F89",
         "stack": "t - n or -1"
       },
-      "bytecode": {
-        "tlb": "#6F89",
-        "prefix": "6F89",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#6F89", "prefix": "6F89", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -5241,16 +4088,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 273,
-          "function_name": "exec_tuple_length_quiet"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 273, "function_name": "exec_tuple_length_quiet" }
       ]
     },
     {
@@ -5276,10 +4116,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5317,16 +4154,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -5352,10 +4182,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5386,16 +4213,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -5410,11 +4230,7 @@
         "opcode": "B7A8",
         "stack": "x y - x*y"
       },
-      "bytecode": {
-        "tlb": "#B7A8",
-        "prefix": "B7A8",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B7A8", "prefix": "B7A8", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -5448,16 +4264,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 231, "function_name": "exec_mul" }
       ]
     },
     {
@@ -5472,11 +4281,7 @@
         "opcode": "B7A98C",
         "stack": "x y z - q r"
       },
-      "bytecode": {
-        "tlb": "#B7A98C",
-        "prefix": "B7A98C",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#B7A98C", "prefix": "B7A98C", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -5517,16 +4322,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 434,
-          "function_name": "exec_muldivmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 434, "function_name": "exec_muldivmod" }
       ]
     },
     {
@@ -5552,10 +4350,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5593,16 +4388,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -5628,10 +4416,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5669,16 +4454,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -5704,10 +4482,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5745,16 +4520,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 497,
-          "function_name": "exec_mulshrmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 497, "function_name": "exec_mulshrmod" }
       ]
     },
     {
@@ -5769,11 +4537,7 @@
         "opcode": "A9CD",
         "stack": "x y z - q=round(2^z*x/y) r=2^z*x-q*y"
       },
-      "bytecode": {
-        "tlb": "#A9CD",
-        "prefix": "A9CD",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A9CD", "prefix": "A9CD", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -5814,16 +4578,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 595,
-          "function_name": "exec_shldivmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 595, "function_name": "exec_shldivmod" }
       ]
     },
     {
@@ -5838,11 +4595,7 @@
         "opcode": "A925",
         "stack": "x y - round(x/2^y)"
       },
-      "bytecode": {
-        "tlb": "#A925",
-        "prefix": "A925",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A925", "prefix": "A925", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -5876,16 +4629,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 740, "function_name": "exec_lshift" }
       ]
     },
     {
@@ -5911,10 +4657,7 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
@@ -5945,16 +4688,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 843,
-          "function_name": "exec_ufits"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 843, "function_name": "exec_ufits" }
       ]
     },
     {
@@ -5969,11 +4705,7 @@
         "opcode": "A905",
         "stack": "x y - q'"
       },
-      "bytecode": {
-        "tlb": "#A905",
-        "prefix": "A905",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#A905", "prefix": "A905", "operands": [] },
       "value_flow": {
         "inputs": {
           "stack": [
@@ -6007,16 +4739,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 266,
-          "function_name": "exec_divmod"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 266, "function_name": "exec_divmod" }
       ]
     },
     {
@@ -6042,19 +4767,13 @@
             "min_value": 0,
             "max_value": 255,
             "display_hints": [
-              {
-                "type": "add",
-                "value": 1
-              }
+              { "type": "add", "value": 1 }
             ]
           }
         ]
       },
       "value_flow": {
-        "inputs": {
-          "stack": [],
-          "registers": []
-        },
+        "inputs": { "stack": [], "registers": [] },
         "outputs": {
           "stack": [
             {
@@ -6068,16 +4787,9 @@
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 139,
-          "function_name": "exec_push_negpow2"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp", "line": 139, "function_name": "exec_push_negpow2" }
       ]
     },
     {
@@ -6092,29 +4804,14 @@
         "opcode": "63",
         "stack": ""
       },
-      "bytecode": {
-        "tlb": "#63",
-        "prefix": "63",
-        "operands": []
-      },
+      "bytecode": { "tlb": "#63", "prefix": "63", "operands": [] },
       "value_flow": {
-        "inputs": {
-          "registers": []
-        },
-        "outputs": {
-          "registers": []
-        }
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
-          "line": 436,
-          "function_name": "exec_blkswap_x"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp", "line": 436, "function_name": "exec_blkswap_x" }
       ]
     },
     {
@@ -6159,24 +4856,14 @@
         },
         "outputs": {
           "stack": [
-            {
-              "type": "simple",
-              "name": "x"
-            }
+            { "type": "simple", "name": "x" }
           ],
           "registers": []
         }
       },
-      "control_flow": {
-        "branches": [],
-        "nobranch": true
-      },
+      "control_flow": { "branches": [], "nobranch": true },
       "implementation": [
-        {
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
-          "line": 124,
-          "function_name": "exec_tuple_quiet_index"
-        }
+        { "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp", "line": 124, "function_name": "exec_tuple_quiet_index" }
       ]
     }
   ],
