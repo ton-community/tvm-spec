@@ -54,11 +54,19 @@ def main() -> None:
         picked.append(inst)
 
     logging.info("✅ wrote %d instructions → %s", len(picked), args.out)
-    json.dump({
+    json.dump(
+    {
         "$schema": "./schema.json",
         "instructions": picked,
-        "aliases": []          # keep aliases empty for this trimmed file
-    }, open(args.out, "w", encoding="utf-8"), indent=2)
+        "aliases": []
+    },
+    open(args.out, "w", encoding="utf-8"),
+    indent=2,              # 2-space indent keeps it readable but tight
+    separators=(",", ": "), # no extra spaces after “,”, single space after “:”
+    ensure_ascii=False
+)
 
 if __name__ == "__main__":
     main()
+
+
