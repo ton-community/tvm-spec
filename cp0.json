@@ -2661,7 +2661,7 @@
         "fift_examples": [],
         "opcode": "6FBij",
         "stack": "t - x"
-      },
+      }, 
       "bytecode": {
         "tlb": "#6FB i:uint2 j:uint2",
         "prefix": "6FB",
