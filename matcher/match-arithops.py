@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-"""
-Match mnemonics from cp0.json to exec_* handlers in arithops.cpp.
-
-Fixes
-=====
-• Canonicalisation no longer strips a lone trailing “R” or “C”.
-  So SUB ≠ SUBR, ADD ≠ ADDR, etc.
-• `_similarity()` still treats {R,C,VAR} as *related* flags and
-  rejects matches that differ by exactly one of them.
-• No hard-coded alias tables; PUSHINT<size> aliases are inferred
-  from exec_push_* handler names.
-"""
-
 from __future__ import annotations
 import argparse, json, logging, re
 from collections import OrderedDict
