@@ -624,6 +624,1542 @@
     "source_line": 340
   },
   {
+    "mnemonic": "PUSHREF",
+    "function": "exec_push_ref",
+    "score": 1.0,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 32
+  },
+  {
+    "mnemonic": "PUSHREFSLICE",
+    "function": "exec_push_slice",
+    "score": 0.86,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 117
+  },
+  {
+    "mnemonic": "PUSHREFCONT",
+    "function": "exec_push_cont",
+    "score": 0.84,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 165
+  },
+  {
+    "mnemonic": "PUSHSLICE",
+    "function": "exec_push_slice",
+    "score": 1.0,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 117
+  },
+  {
+    "mnemonic": "PUSHSLICE_REFS",
+    "function": "exec_push_slice_r",
+    "score": 0.87,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 129
+  },
+  {
+    "mnemonic": "PUSHSLICE_LONG",
+    "function": "exec_push_slice",
+    "score": 0.82,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 117
+  },
+  {
+    "mnemonic": "PUSHCONT",
+    "function": "exec_push_cont",
+    "score": 1.0,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 165
+  },
+  {
+    "mnemonic": "PUSHCONT_SHORT",
+    "function": "exec_push_cont",
+    "score": 0.76,
+    "category": "const_data",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 165
+  },
+  {
+    "mnemonic": "NEWC",
+    "function": "exec_new_builder",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 334
+  },
+  {
+    "mnemonic": "ENDC",
+    "function": "exec_builder_to_cell",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 341
+  },
+  {
+    "mnemonic": "STI",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STU",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STREF",
+    "function": "exec_store_ref",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 415
+  },
+  {
+    "mnemonic": "STBREFR",
+    "function": "exec_store_builder_as_ref_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 484
+  },
+  {
+    "mnemonic": "STSLICE",
+    "function": "exec_store_slice",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 507
+  },
+  {
+    "mnemonic": "STIX",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STUX",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STIXR",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STUXR",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STIXQ",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STUXQ",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STIXRQ",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STUXRQ",
+    "function": "exec_store_int_var",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 599
+  },
+  {
+    "mnemonic": "STI_ALT",
+    "function": "exec_store_int_fixed",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 622
+  },
+  {
+    "mnemonic": "STU_ALT",
+    "function": "exec_store_int_fixed",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 622
+  },
+  {
+    "mnemonic": "STIR",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STUR",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STIQ",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STUQ",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STIRQ",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STURQ",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STREF_ALT",
+    "function": "exec_store_ref",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 415
+  },
+  {
+    "mnemonic": "STBREF",
+    "function": "exec_store_builder_as_ref",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 461
+  },
+  {
+    "mnemonic": "STSLICE_ALT",
+    "function": "exec_store_slice",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 507
+  },
+  {
+    "mnemonic": "STB",
+    "function": "exec_store_builder",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 553
+  },
+  {
+    "mnemonic": "STREFR",
+    "function": "exec_store_ref_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 438
+  },
+  {
+    "mnemonic": "STBREFR_ALT",
+    "function": "exec_store_builder_as_ref_rev",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 484
+  },
+  {
+    "mnemonic": "STSLICER",
+    "function": "exec_store_slice_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 530
+  },
+  {
+    "mnemonic": "STBR",
+    "function": "exec_store_builder_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 576
+  },
+  {
+    "mnemonic": "STREFQ",
+    "function": "exec_store_ref",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 415
+  },
+  {
+    "mnemonic": "STBREFQ",
+    "function": "exec_store_builder_as_ref",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 461
+  },
+  {
+    "mnemonic": "STSLICEQ",
+    "function": "exec_store_slice",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 507
+  },
+  {
+    "mnemonic": "STBQ",
+    "function": "exec_store_builder",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 553
+  },
+  {
+    "mnemonic": "STREFRQ",
+    "function": "exec_store_ref_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 438
+  },
+  {
+    "mnemonic": "STBREFRQ",
+    "function": "exec_store_builder_as_ref_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 484
+  },
+  {
+    "mnemonic": "STSLICERQ",
+    "function": "exec_store_slice_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 530
+  },
+  {
+    "mnemonic": "STBRQ",
+    "function": "exec_store_builder_rev",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 576
+  },
+  {
+    "mnemonic": "STREFCONST",
+    "function": "exec_store_ref",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 415
+  },
+  {
+    "mnemonic": "STREF2CONST",
+    "function": "exec_store_ref",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 415
+  },
+  {
+    "mnemonic": "ENDXC",
+    "function": "exec_builder_to_special_cell",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 349
+  },
+  {
+    "mnemonic": "STILE4",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STULE4",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STILE8",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "STULE8",
+    "function": "exec_store_int",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 407
+  },
+  {
+    "mnemonic": "BDEPTH",
+    "function": "exec_int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 834
+  },
+  {
+    "mnemonic": "BBITS",
+    "function": "exec_int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 837
+  },
+  {
+    "mnemonic": "BREFS",
+    "function": "exec_int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 840
+  },
+  {
+    "mnemonic": "BBITREFS",
+    "function": "exec_2int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 843
+  },
+  {
+    "mnemonic": "BREMBITS",
+    "function": "exec_int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 847
+  },
+  {
+    "mnemonic": "BREMREFS",
+    "function": "exec_int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 850
+  },
+  {
+    "mnemonic": "BREMBITREFS",
+    "function": "exec_2int_builder_func",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 853
+  },
+  {
+    "mnemonic": "BCHKBITS",
+    "function": "exec_builder_chk_bits_refs",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 737
+  },
+  {
+    "mnemonic": "BCHKBITS_VAR",
+    "function": "exec_builder_chk_bits",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 723
+  },
+  {
+    "mnemonic": "BCHKREFS",
+    "function": "exec_builder_chk_bits_refs",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 737
+  },
+  {
+    "mnemonic": "BCHKBITREFS",
+    "function": "exec_builder_chk_bits_refs",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 737
+  },
+  {
+    "mnemonic": "BCHKBITSQ",
+    "function": "exec_builder_chk_bits_refs",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 737
+  },
+  {
+    "mnemonic": "BCHKBITSQ_VAR",
+    "function": "exec_builder_chk_bits",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 723
+  },
+  {
+    "mnemonic": "BCHKREFSQ",
+    "function": "exec_builder_chk_bits_refs",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 737
+  },
+  {
+    "mnemonic": "BCHKBITREFSQ",
+    "function": "exec_builder_chk_bits_refs",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 737
+  },
+  {
+    "mnemonic": "STZEROES",
+    "function": "exec_store_same",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 752
+  },
+  {
+    "mnemonic": "STONES",
+    "function": "exec_store_same",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 752
+  },
+  {
+    "mnemonic": "STSAME",
+    "function": "exec_store_same",
+    "score": 1.0,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 752
+  },
+  {
+    "mnemonic": "STSLICECONST",
+    "function": "exec_store_slice",
+    "score": 0.9,
+    "category": "cell_build",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 507
+  },
+  {
+    "mnemonic": "CTOS",
+    "function": "exec_cell_to_slice",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 873
+  },
+  {
+    "mnemonic": "ENDS",
+    "function": "exec_slice_chk_empty",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 936
+  },
+  {
+    "mnemonic": "LDI",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDU",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDREF",
+    "function": "exec_load_ref",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1003
+  },
+  {
+    "mnemonic": "LDREFRTOS",
+    "function": "exec_load_ref_rev_to_slice",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1026
+  },
+  {
+    "mnemonic": "LDSLICE",
+    "function": "exec_load_slice",
+    "score": 0.88,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1127
+  },
+  {
+    "mnemonic": "LDIX",
+    "function": "exec_load_int_var",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1080
+  },
+  {
+    "mnemonic": "LDUX",
+    "function": "exec_load_int_var",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1080
+  },
+  {
+    "mnemonic": "PLDIX",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDUX",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDIXQ",
+    "function": "exec_load_int_var",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1080
+  },
+  {
+    "mnemonic": "LDUXQ",
+    "function": "exec_load_int_var",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1080
+  },
+  {
+    "mnemonic": "PLDIXQ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDUXQ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDI_ALT",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDU_ALT",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "PLDI",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDU",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDIQ",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDUQ",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "PLDIQ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDUQ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDUZ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDSLICEX",
+    "function": "exec_load_slice",
+    "score": 0.82,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1127
+  },
+  {
+    "mnemonic": "PLDSLICEX",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDSLICEXQ",
+    "function": "exec_load_slice",
+    "score": 0.78,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1127
+  },
+  {
+    "mnemonic": "PLDSLICEXQ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDSLICE_ALT",
+    "function": "exec_load_slice",
+    "score": 0.74,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1127
+  },
+  {
+    "mnemonic": "PLDSLICE",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDSLICEQ",
+    "function": "exec_load_slice",
+    "score": 0.82,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1127
+  },
+  {
+    "mnemonic": "PLDSLICEQ",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "SDCUTFIRST",
+    "function": "exec_slice_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1459
+  },
+  {
+    "mnemonic": "SDSKIPFIRST",
+    "function": "exec_slice_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1462
+  },
+  {
+    "mnemonic": "SDCUTLAST",
+    "function": "exec_slice_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1465
+  },
+  {
+    "mnemonic": "SDSKIPLAST",
+    "function": "exec_slice_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1468
+  },
+  {
+    "mnemonic": "SDSUBSTR",
+    "function": "exec_slice_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1472
+  },
+  {
+    "mnemonic": "SDBEGINSX",
+    "function": "exec_slice_begins_with",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1205
+  },
+  {
+    "mnemonic": "SDBEGINSXQ",
+    "function": "exec_slice_begins_with",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1205
+  },
+  {
+    "mnemonic": "SCUTFIRST",
+    "function": "exec_slice_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1480
+  },
+  {
+    "mnemonic": "SSKIPFIRST",
+    "function": "exec_slice_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1484
+  },
+  {
+    "mnemonic": "SCUTLAST",
+    "function": "exec_slice_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1488
+  },
+  {
+    "mnemonic": "SSKIPLAST",
+    "function": "exec_slice_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1492
+  },
+  {
+    "mnemonic": "SUBSLICE",
+    "function": "exec_subslice",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1236
+  },
+  {
+    "mnemonic": "SPLIT",
+    "function": "exec_split",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1250
+  },
+  {
+    "mnemonic": "SPLITQ",
+    "function": "exec_split",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1250
+  },
+  {
+    "mnemonic": "XCTOS",
+    "function": "exec_cell_to_slice_maybe_special",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 881
+  },
+  {
+    "mnemonic": "XLOAD",
+    "function": "exec_load_special_cell",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 891
+  },
+  {
+    "mnemonic": "XLOADQ",
+    "function": "exec_load_special_cell",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 891
+  },
+  {
+    "mnemonic": "SCHKBITS",
+    "function": "exec_slice_chk_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1501
+  },
+  {
+    "mnemonic": "SCHKREFS",
+    "function": "exec_slice_chk_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1504
+  },
+  {
+    "mnemonic": "SCHKBITREFS",
+    "function": "exec_slice_chk_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1508
+  },
+  {
+    "mnemonic": "SCHKBITSQ",
+    "function": "exec_slice_chk_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1511
+  },
+  {
+    "mnemonic": "SCHKREFSQ",
+    "function": "exec_slice_chk_op_args",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1514
+  },
+  {
+    "mnemonic": "SCHKBITREFSQ",
+    "function": "exec_slice_chk_op_args2",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1518
+  },
+  {
+    "mnemonic": "PLDREFVAR",
+    "function": "exec_preload_ref",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 990
+  },
+  {
+    "mnemonic": "SBITS",
+    "function": "exec_slice_bits_refs",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1308
+  },
+  {
+    "mnemonic": "SREFS",
+    "function": "exec_slice_bits_refs",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1308
+  },
+  {
+    "mnemonic": "SBITREFS",
+    "function": "exec_slice_bits_refs",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1308
+  },
+  {
+    "mnemonic": "PLDREFIDX",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDILE4",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDULE4",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDILE8",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDULE8",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "PLDILE4",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDULE4",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDILE8",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDULE8",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDILE4Q",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDULE4Q",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDILE8Q",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "LDULE8Q",
+    "function": "exec_load_int_fixed",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 971
+  },
+  {
+    "mnemonic": "PLDILE4Q",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDULE4Q",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDILE8Q",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "PLDULE8Q",
+    "function": "exec_load_int_fixed2",
+    "score": 0.9,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1092
+  },
+  {
+    "mnemonic": "LDZEROES",
+    "function": "exec_load_same",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1361
+  },
+  {
+    "mnemonic": "LDONES",
+    "function": "exec_load_same",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1361
+  },
+  {
+    "mnemonic": "LDSAME",
+    "function": "exec_load_same",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1361
+  },
+  {
+    "mnemonic": "SDEPTH",
+    "function": "exec_slice_depth",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1386
+  },
+  {
+    "mnemonic": "CDEPTH",
+    "function": "exec_cell_depth",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1378
+  },
+  {
+    "mnemonic": "CLEVEL",
+    "function": "exec_cell_level",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1394
+  },
+  {
+    "mnemonic": "CLEVELMASK",
+    "function": "exec_cell_level_mask",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1402
+  },
+  {
+    "mnemonic": "CHASHI",
+    "function": "exec_cell_hash_i",
+    "score": 0.8,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1410
+  },
+  {
+    "mnemonic": "CDEPTHI",
+    "function": "exec_cell_depth_i",
+    "score": 0.82,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1428
+  },
+  {
+    "mnemonic": "CHASHIX",
+    "function": "exec_cell_hash_i",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1410
+  },
+  {
+    "mnemonic": "CDEPTHIX",
+    "function": "exec_cell_depth_i",
+    "score": 1.0,
+    "category": "cell_parse",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 1428
+  },
+  {
+    "mnemonic": "SGN",
+    "function": "exec_sgn",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 961
+  },
+  {
+    "mnemonic": "LESS",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "EQUAL",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "LEQ",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "GREATER",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "NEQ",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "GEQ",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "CMP",
+    "function": "exec_cmp",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 975
+  },
+  {
+    "mnemonic": "EQINT",
+    "function": "exec_cmp_int",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 992
+  },
+  {
+    "mnemonic": "LESSINT",
+    "function": "exec_cmp_int",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 992
+  },
+  {
+    "mnemonic": "GTINT",
+    "function": "exec_cmp_int",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 992
+  },
+  {
+    "mnemonic": "NEQINT",
+    "function": "exec_cmp_int",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 992
+  },
+  {
+    "mnemonic": "ISNAN",
+    "function": "exec_is_nan",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 1007
+  },
+  {
+    "mnemonic": "CHKNAN",
+    "function": "exec_chk_nan",
+    "score": 1.0,
+    "category": "compare_int",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+    "source_line": 1016
+  },
+  {
+    "mnemonic": "SEMPTY",
+    "function": "reg_un_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 314
+  },
+  {
+    "mnemonic": "SDEMPTY",
+    "function": "reg_un_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "SREMPTY",
+    "function": "reg_un_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 316
+  },
+  {
+    "mnemonic": "SDFIRST",
+    "function": "reg_un_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 317
+  },
+  {
+    "mnemonic": "SDLEXCMP",
+    "function": "reg_ibin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 318
+  },
+  {
+    "mnemonic": "SDEQ",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 319
+  },
+  {
+    "mnemonic": "SDPFX",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 320
+  },
+  {
+    "mnemonic": "SDPFXREV",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 321
+  },
+  {
+    "mnemonic": "SDPPFX",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 322
+  },
+  {
+    "mnemonic": "SDPPFXREV",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 323
+  },
+  {
+    "mnemonic": "SDSFX",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 324
+  },
+  {
+    "mnemonic": "SDSFXREV",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 325
+  },
+  {
+    "mnemonic": "SDPSFX",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 326
+  },
+  {
+    "mnemonic": "SDPSFXREV",
+    "function": "reg_bin_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 327
+  },
+  {
+    "mnemonic": "SDCNTLEAD0",
+    "function": "reg_iun_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 328
+  },
+  {
+    "mnemonic": "SDCNTLEAD1",
+    "function": "reg_iun_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 329
+  },
+  {
+    "mnemonic": "SDCNTTRAIL0",
+    "function": "reg_iun_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 330
+  },
+  {
+    "mnemonic": "SDCNTTRAIL1",
+    "function": "reg_iun_cs_cmp",
+    "category": "compare_other",
+    "score": 1.0,
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+    "source_line": 331
+  },
+  {
     "mnemonic": "PUSHINT_4",
     "function": "exec_push_tinyint4",
     "score": 1.0,
@@ -792,46 +2328,6 @@
     "source_line": 266
   },
   {
-    "mnemonic": "DIVR",
-    "function": "exec_divmod",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
-  },
-  {
-    "mnemonic": "DIVC",
-    "function": "exec_divmod",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
-  },
-  {
-    "mnemonic": "MOD",
-    "function": "exec_divmod",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
-  },
-  {
-    "mnemonic": "MODR",
-    "function": "exec_divmod",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
-  },
-  {
-    "mnemonic": "MODC",
-    "function": "exec_divmod",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
-  },
-  {
     "mnemonic": "DIVMOD",
     "function": "exec_divmod",
     "score": 1.0,
@@ -856,30 +2352,6 @@
     "source_line": 434
   },
   {
-    "mnemonic": "ADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "ADDRSHIFTMODR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "ADDRSHIFTMODC",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
     "mnemonic": "RSHIFTR_VAR",
     "function": "exec_lshift",
     "score": 0.77,
@@ -894,30 +2366,6 @@
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 740
-  },
-  {
-    "mnemonic": "MODPOW2_VAR",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "MODPOW2R_VAR",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "MODPOW2C_VAR",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
   },
   {
     "mnemonic": "RSHIFTMOD_VAR",
@@ -944,22 +2392,6 @@
     "source_line": 749
   },
   {
-    "mnemonic": "ADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "ADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
     "mnemonic": "RSHIFTR",
     "function": "exec_lshift",
     "score": 0.77,
@@ -974,30 +2406,6 @@
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 740
-  },
-  {
-    "mnemonic": "MODPOW2",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "MODPOW2R",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "MODPOW2C",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
   },
   {
     "mnemonic": "RSHIFTMOD",
@@ -1120,28 +2528,12 @@
     "source_line": 266
   },
   {
-    "mnemonic": "MULADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
     "mnemonic": "MULADDRSHIFTRMOD",
     "function": "exec_mulshrmod",
     "score": 0.72,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 497
-  },
-  {
-    "mnemonic": "MULADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
   },
   {
     "mnemonic": "MULRSHIFT_VAR",
@@ -1166,30 +2558,6 @@
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 740
-  },
-  {
-    "mnemonic": "MULMODPOW2_VAR",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "MULMODPOW2R_VAR",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "MULMODPOW2C_VAR",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
   },
   {
     "mnemonic": "MULRSHIFTMOD_VAR",
@@ -1240,30 +2608,6 @@
     "source_line": 740
   },
   {
-    "mnemonic": "MULMODPOW2",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "MULMODPOW2R",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "MULMODPOW2C",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
     "mnemonic": "MULRSHIFTMOD",
     "function": "exec_mulshrmod",
     "score": 0.76,
@@ -1286,30 +2630,6 @@
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 497
-  },
-  {
-    "mnemonic": "LSHIFTADDDIVMOD_VAR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "LSHIFTADDDIVMODR_VAR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "LSHIFTADDDIVMODC_VAR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
   },
   {
     "mnemonic": "LSHIFTDIV_VAR",
@@ -1382,30 +2702,6 @@
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 595
-  },
-  {
-    "mnemonic": "LSHIFTADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "LSHIFTADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "LSHIFTADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_div",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
   },
   {
     "mnemonic": "LSHIFTDIV",
@@ -1600,22 +2896,6 @@
     "source_line": 856
   },
   {
-    "mnemonic": "MIN",
-    "function": "exec_inc",
-    "score": 0.8,
-    "category": "arithm_logical",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 197
-  },
-  {
-    "mnemonic": "MAX",
-    "function": "exec_minmax",
-    "score": 1.0,
-    "category": "arithm_logical",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 914
-  },
-  {
     "mnemonic": "MINMAX",
     "function": "exec_minmax",
     "score": 1.0,
@@ -1656,28 +2936,12 @@
     "source_line": 180
   },
   {
-    "mnemonic": "QNEGATE",
-    "function": "exec_negate",
-    "score": 1.0,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 189
-  },
-  {
     "mnemonic": "QINC",
     "function": "exec_inc",
     "score": 0.86,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 197
-  },
-  {
-    "mnemonic": "QDEC",
-    "function": "exec_dec",
-    "score": 1.0,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 205
   },
   {
     "mnemonic": "QMUL",
@@ -1712,30 +2976,6 @@
     "source_line": 266
   },
   {
-    "mnemonic": "QMOD",
-    "function": "exec_or",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 778
-  },
-  {
-    "mnemonic": "QMODR",
-    "function": "exec_or",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 778
-  },
-  {
-    "mnemonic": "QMODC",
-    "function": "exec_or",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 778
-  },
-  {
     "mnemonic": "QDIVMOD",
     "function": "exec_divmod",
     "score": 0.92,
@@ -1760,30 +3000,6 @@
     "source_line": 266
   },
   {
-    "mnemonic": "QADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QADDRSHIFTMODR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QADDRSHIFTMODC",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
     "mnemonic": "QRSHIFTR_VAR",
     "function": "exec_rshift",
     "score": 0.86,
@@ -1798,30 +3014,6 @@
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 749
-  },
-  {
-    "mnemonic": "QMODPOW2_VAR",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "QMODPOW2R_VAR",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "QMODPOW2C_VAR",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
   },
   {
     "mnemonic": "QRSHIFTMOD_VAR",
@@ -1848,22 +3040,6 @@
     "source_line": 749
   },
   {
-    "mnemonic": "QADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
     "mnemonic": "QRSHIFTR",
     "function": "exec_rshift",
     "score": 0.86,
@@ -1878,30 +3054,6 @@
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 749
-  },
-  {
-    "mnemonic": "QMODPOW2",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "QMODPOW2R",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
-  },
-  {
-    "mnemonic": "QMODPOW2C",
-    "function": "exec_pow2",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
   },
   {
     "mnemonic": "QRSHIFTMOD",
@@ -2024,30 +3176,6 @@
     "source_line": 434
   },
   {
-    "mnemonic": "QMULADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QMULADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QMULADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
     "mnemonic": "QMULRSHIFT_VAR",
     "function": "exec_lshift",
     "score": 0.75,
@@ -2070,30 +3198,6 @@
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 740
-  },
-  {
-    "mnemonic": "QMULMODPOW2_VAR",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "QMULMODPOW2R_VAR",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "QMULMODPOW2C_VAR",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
   },
   {
     "mnemonic": "QMULRSHIFTMOD_VAR",
@@ -2144,30 +3248,6 @@
     "source_line": 740
   },
   {
-    "mnemonic": "QMULMODPOW2",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "QMULMODPOW2R",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
-    "mnemonic": "QMULMODPOW2C",
-    "function": "exec_mul",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
-  },
-  {
     "mnemonic": "QMULRSHIFTMOD",
     "function": "exec_mulshrmod",
     "score": 0.73,
@@ -2190,30 +3270,6 @@
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 497
-  },
-  {
-    "mnemonic": "QLSHIFTADDDIVMOD_VAR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QLSHIFTADDDIVMODR_VAR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QLSHIFTADDDIVMODC_VAR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
   },
   {
     "mnemonic": "QLSHIFTDIV_VAR",
@@ -2286,30 +3342,6 @@
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 595
-  },
-  {
-    "mnemonic": "QLSHIFTADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QLSHIFTADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
-  },
-  {
-    "mnemonic": "QLSHIFTADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.9,
-    "category": "arithm_quiet",
-    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
   },
   {
     "mnemonic": "QLSHIFTDIV",
