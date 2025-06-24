@@ -259,6 +259,57 @@
       ]
     },
     {
+      "mnemonic": "THROWIFNOT",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "For `0 <= n < 2^11`, an encoding of `[n] THROWIFNOT` for larger values of `n`.",
+        "gas": "34/84",
+        "fift": "[n] THROWIFNOT",
+        "fift_examples": [],
+        "opcode": "F2E4_n",
+        "stack": "f - "
+      },
+      "bytecode": {
+        "tlb": "#F2E4_ n:uint11",
+        "prefix": "F2E4_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 11,
+            "min_value": 0,
+            "max_value": 2047,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "f",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1130,
+          "function_name": "exec_throw_fixed"
+        }
+      ]
+    },
+    {
       "mnemonic": "PUSHINT_16",
       "since_version": 0,
       "doc": {
@@ -868,6 +919,57 @@
       ]
     },
     {
+      "mnemonic": "THROWIFNOT_SHORT",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n <= 63` with parameter zero only if integer `f=0`.",
+        "gas": "26/76",
+        "fift": "[n] THROWIFNOT",
+        "fift_examples": [],
+        "opcode": "F2A_n",
+        "stack": "f - "
+      },
+      "bytecode": {
+        "tlb": "#F2A_ n:uint6",
+        "prefix": "F2A_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 6,
+            "min_value": 0,
+            "max_value": 63,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "f",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1130,
+          "function_name": "exec_throw_fixed"
+        }
+      ]
+    },
+    {
       "mnemonic": "ROTREV",
       "since_version": 0,
       "doc": {
@@ -940,6 +1042,57 @@
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
           "line": 197,
           "function_name": "exec_inc"
+        }
+      ]
+    },
+    {
+      "mnemonic": "THROWIF_SHORT",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n <= 63` with  parameter zero only if integer `f!=0`.",
+        "gas": "26/76",
+        "fift": "[n] THROWIF",
+        "fift_examples": [],
+        "opcode": "F26_n",
+        "stack": "f - "
+      },
+      "bytecode": {
+        "tlb": "#F26_ n:uint6",
+        "prefix": "F26_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 6,
+            "min_value": 0,
+            "max_value": 63,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "f",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1130,
+          "function_name": "exec_throw_fixed"
         }
       ]
     },
@@ -2031,6 +2184,57 @@
       ]
     },
     {
+      "mnemonic": "THROWIF",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "For `0 <= n < 2^11`, an encoding of `[n] THROWIF` for larger values of `n`.",
+        "gas": "34/84",
+        "fift": "[n] THROWIF",
+        "fift_examples": [],
+        "opcode": "F2D4_n",
+        "stack": "f - "
+      },
+      "bytecode": {
+        "tlb": "#F2D4_ n:uint11",
+        "prefix": "F2D4_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 11,
+            "min_value": 0,
+            "max_value": 2047,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "f",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1130,
+          "function_name": "exec_throw_fixed"
+        }
+      ]
+    },
+    {
       "mnemonic": "SUB",
       "since_version": 0,
       "doc": {
@@ -3067,6 +3271,44 @@
       ]
     },
     {
+      "mnemonic": "THROWANY",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n < 2^16` with parameter zero.\nApproximately equivalent to `ZERO` `SWAP` `THROWARGANY`.",
+        "gas": "76",
+        "fift": "THROWANY",
+        "fift_examples": [],
+        "opcode": "F2F0",
+        "stack": "n - 0 n"
+      },
+      "bytecode": { "tlb": "#F2F0", "prefix": "F2F0", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": false },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1153,
+          "function_name": "exec_throw_any"
+        }
+      ]
+    },
+    {
       "mnemonic": "XC2PU",
       "since_version": 0,
       "doc": {
@@ -3696,6 +3938,51 @@
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
           "line": 796,
           "function_name": "exec_not"
+        }
+      ]
+    },
+    {
+      "mnemonic": "THROWANYIFNOT",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n<2^16` with parameter zero only if `f=0`.",
+        "gas": "26/76",
+        "fift": "THROWANYIFNOT",
+        "fift_examples": [],
+        "opcode": "F2F4",
+        "stack": "n f - "
+      },
+      "bytecode": { "tlb": "#F2F4", "prefix": "F2F4", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "f",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1153,
+          "function_name": "exec_throw_any"
         }
       ]
     },
@@ -5212,6 +5499,51 @@
       ]
     },
     {
+      "mnemonic": "THROWANYIF",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n < 2^16` with parameter zero only if `f!=0`.",
+        "gas": "26/76",
+        "fift": "THROWANYIF",
+        "fift_examples": [],
+        "opcode": "F2F2",
+        "stack": "n f - "
+      },
+      "bytecode": { "tlb": "#F2F2", "prefix": "F2F2", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "f",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1153,
+          "function_name": "exec_throw_any"
+        }
+      ]
+    },
+    {
       "mnemonic": "PUSHREF",
       "since_version": 0,
       "doc": {
@@ -5301,6 +5633,46 @@
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
           "line": 205,
           "function_name": "exec_dec"
+        }
+      ]
+    },
+    {
+      "mnemonic": "THROW",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "For `0 <= n < 2^11`, an encoding of `[n] THROW` for larger values of `n`.",
+        "gas": "84",
+        "fift": "[n] THROW",
+        "fift_examples": [],
+        "opcode": "F2C4_n",
+        "stack": "- 0 nn"
+      },
+      "bytecode": {
+        "tlb": "#F2C4_ n:uint11",
+        "prefix": "F2C4_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 11,
+            "min_value": 0,
+            "max_value": 2047,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": false },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1130,
+          "function_name": "exec_throw_fixed"
         }
       ]
     },
@@ -5568,6 +5940,126 @@
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
           "line": 1127,
           "function_name": "exec_load_slice"
+        }
+      ]
+    },
+    {
+      "mnemonic": "TRY",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Sets `c2` to `c'`, first saving the old value of `c2` both into the savelist of `c'` and into the savelist of the current continuation, which is stored into `c.c0` and `c'.c0`. Then runs `c` similarly to `EXECUTE`. If `c` does not throw any exceptions, the original value of `c2` is automatically restored on return from `c`. If an exception occurs, the execution is transferred to `c'`, but the original value of `c2` is restored in the process, so that `c'` can re-throw the exception by `THROWANY` if it cannot handle it by itself.",
+        "gas": "26",
+        "fift": "TRY",
+        "fift_examples": [
+          { "fift": "TRY:<{ code1 }>CATCH<{ code2 }>", "description": "Equivalent to `<{ code1 }> CONT` `<{ code2 }> CONT` `TRY`." }
+        ],
+        "opcode": "F2FF",
+        "stack": "c c' - "
+      },
+      "bytecode": { "tlb": "#F2FF", "prefix": "F2FF", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "c2",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": {
+        "branches": [
+          {
+            "type": "variable",
+            "var_name": "c",
+            "save": {
+              "c0": {
+                "type": "cc",
+                "save": {
+                  "c0": { "type": "register", "index": 0 },
+                  "c1": { "type": "register", "index": 1 },
+                  "c2": { "type": "register", "index": 2 }
+                }
+              },
+              "c2": {
+                "type": "variable",
+                "var_name": "c2",
+                "save": {
+                  "c0": {
+                    "type": "cc",
+                    "save": {
+                      "c0": { "type": "register", "index": 0 },
+                      "c1": { "type": "register", "index": 1 },
+                      "c2": { "type": "register", "index": 2 }
+                    }
+                  },
+                  "c2": { "type": "register", "index": 2 }
+                }
+              }
+            }
+          }
+        ],
+        "nobranch": false
+      },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1186,
+          "function_name": "exec_try"
+        }
+      ]
+    },
+    {
+      "mnemonic": "THROW_SHORT",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n <= 63` with parameter zero.\nIn other words, it transfers control to the continuation in `c2`, pushing `0` and `n` into its stack, and discarding the old stack altogether.",
+        "gas": "76",
+        "fift": "[n] THROW",
+        "fift_examples": [],
+        "opcode": "F22_n",
+        "stack": " - 0 n"
+      },
+      "bytecode": {
+        "tlb": "#F22_ n:uint6",
+        "prefix": "F22_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 6,
+            "min_value": 0,
+            "max_value": 63,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": false },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1130,
+          "function_name": "exec_throw_fixed"
         }
       ]
     },
@@ -8766,6 +9258,51 @@
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
           "line": 1092,
           "function_name": "exec_load_int_fixed2"
+        }
+      ]
+    },
+    {
+      "mnemonic": "THROWARG",
+      "since_version": 0,
+      "doc": {
+        "category": "exceptions",
+        "description": "Throws exception `0 <= n <  2^11` with parameter `x`, by copying `x` and `n` into the stack of `c2` and transferring control to `c2`.",
+        "gas": "84",
+        "fift": "[n] THROWARG",
+        "fift_examples": [],
+        "opcode": "F2CC_n",
+        "stack": "x - x nn"
+      },
+      "bytecode": {
+        "tlb": "#F2CC_ n:uint11",
+        "prefix": "F2CC_",
+        "operands": [
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 11,
+            "min_value": 0,
+            "max_value": 2047,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            { "type": "simple", "name": "x" }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": false },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 1140,
+          "function_name": "exec_throw_arg_fixed"
         }
       ]
     },

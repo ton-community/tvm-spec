@@ -3518,5 +3518,141 @@
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
     "source_line": 843
+  },
+  {
+    "mnemonic": "THROW_SHORT",
+    "function": "exec_throw_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1130
+  },
+  {
+    "mnemonic": "THROWIF_SHORT",
+    "function": "exec_throw_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1130
+  },
+  {
+    "mnemonic": "THROWIFNOT_SHORT",
+    "function": "exec_throw_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1130
+  },
+  {
+    "mnemonic": "THROW",
+    "function": "exec_throw_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1130
+  },
+  {
+    "mnemonic": "THROWARG",
+    "function": "exec_throw_arg_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1140
+  },
+  {
+    "mnemonic": "THROWIF",
+    "function": "exec_throw_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1130
+  },
+  {
+    "mnemonic": "THROWARGIF",
+    "function": "exec_throw_arg_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1140
+  },
+  {
+    "mnemonic": "THROWIFNOT",
+    "function": "exec_throw_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1130
+  },
+  {
+    "mnemonic": "THROWARGIFNOT",
+    "function": "exec_throw_arg_fixed",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1140
+  },
+  {
+    "mnemonic": "THROWANY",
+    "function": "exec_throw_any",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1153
+  },
+  {
+    "mnemonic": "THROWARGANY",
+    "function": "exec_throw_any",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1153
+  },
+  {
+    "mnemonic": "THROWANYIF",
+    "function": "exec_throw_any",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1153
+  },
+  {
+    "mnemonic": "THROWARGANYIF",
+    "function": "exec_throw_any",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1153
+  },
+  {
+    "mnemonic": "THROWANYIFNOT",
+    "function": "exec_throw_any",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1153
+  },
+  {
+    "mnemonic": "THROWARGANYIFNOT",
+    "function": "exec_throw_any",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1153
+  },
+  {
+    "mnemonic": "TRY",
+    "function": "exec_try",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1186
+  },
+  {
+    "mnemonic": "TRYARGS",
+    "function": "exec_try",
+    "score": 1.0,
+    "category": "exceptions",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+    "source_line": 1186
   }
 ]
