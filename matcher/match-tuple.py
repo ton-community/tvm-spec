@@ -6,176 +6,194 @@ import logging
 import re
 from collections import OrderedDict
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Any, Dict, List, Tuple
 
 import requests
 from fuzzywuzzy import fuzz
 
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+# ───────────────────────────── logging ──────────────────────────────
+logging.basicConfig(level=logging.INFO,
+                    format="%(levelname)s: %(message)s")
 
-TUPLEOPS_URL = (
+# ─────────────────────────── constants ──────────────────────────────
+CPP_URL = (
     "https://raw.githubusercontent.com/ton-blockchain/ton/"
     "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp"
 )
 CATEGORY = "tuple"
+EXEC_HEAD_RX = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
 
-# ──────────────────────────────────────────────────────────────────────────────
-# C++ helpers
-# ──────────────────────────────────────────────────────────────────────────────
-def download(url: str) -> str:
-    logging.info("Fetching %s …", url)
-    r = requests.get(url, timeout=30)
-    r.raise_for_status()
-    return r.text
+# ─────────────────────── C++ helpers ────────────────────────────────
+def download_cpp(url: str) -> str:
+    logging.info("↳ fetching %s", url)
+    resp = requests.get(url, timeout=30)
+    resp.raise_for_status()
+    logging.info("  ✓ %-18s (%d bytes)", Path(url).name, len(resp.text))
+    return resp.text
 
 
-def extract_exec_bodies(code: str, src_path: str) -> Dict[str, Dict]:
+def extract_exec_bodies(code: str, src_path: str) -> Dict[str, Dict[str, Any]]:
     """
-    Return exec_name → {body, line, path}.
-    `line` is the 1-based line number where the `exec_*` definition starts.
+    Return {exec_name → {'body', 'line', 'path'}}.  (1-based line #).
     """
-    out: Dict[str, Dict] = {}
-    pat = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.MULTILINE)
-    for m in pat.finditer(code):
+    out: Dict[str, Dict[str, Any]] = {}
+    for m in EXEC_HEAD_RX.finditer(code):
         name = m.group(1)
-        start = m.end()
-        brace = 1
-        i = start
-        while i < len(code) and brace:
-            brace += code[i] == "{"
-            brace -= code[i] == "}"
+        level, i = 1, m.end()
+        while i < len(code) and level:
+            level += code[i] == "{"
+            level -= code[i] == "}"
             i += 1
-        body = code[start:i]
-        line_nr = code.count("\n", 0, m.start()) + 1
-        out[name] = {"body": body, "line": line_nr, "path": src_path}
-    logging.info("Extracted %d exec_* fns from %s", len(out), src_path)
+        out[name] = {
+            "body": code[m.end(): i],
+            "line": code.count("\n", 0, m.start()) + 1,
+            "path": src_path,
+        }
+    logging.info("    • %-18s → %3d exec_* handlers", Path(src_path).name, len(out))
     return out
 
 
-def extract_reg_pairs(code: str) -> Dict[str, str]:
-    """Map MNEMONIC → exec_func using mksimple / mkfixed macros."""
+def extract_macro_pairs(code: str) -> Dict[str, str]:
+    """
+    From `mksimple/mkfixed` macros build {MNEMONIC → exec_fn}.
+    """
     pairs: Dict[str, str] = {}
     for macro in ("mksimple", "mkfixed"):
-        for m in re.finditer(rf"{macro}\([^)]*\)", code, re.DOTALL):
-            mnem = re.search(r'\"([A-Z0-9_ ]+)\"', m.group(0))
-            fn   = re.search(r"exec_\w+", m.group(0))
+        for mm in re.finditer(rf"{macro}\([^)]*\)", code, re.S):
+            mnem = re.search(r'"([A-Z0-9_ ]+)"', mm.group())
+            fn   = re.search(r"exec_\w+", mm.group())
             if mnem and fn:
-                pairs[mnem.group(1).strip()] = fn.group(0)
-    if "PUSHNULL" in pairs:          # handy alias
+                pairs[mnem.group(1).strip()] = fn.group()
+    # handy alias: PUSHNULL ⇆ NULL
+    if "PUSHNULL" in pairs and "NULL" not in pairs:
         pairs["NULL"] = pairs["PUSHNULL"]
     return pairs
 
 
-def add_function_aliases(regs: Dict[str, str], funcs: Dict[str, Dict]) -> None:
-    """Add INDEX2 / INDEX3 aliases when those exec_* handlers exist."""
+def add_index_aliases(reg_pairs: Dict[str, str], funcs: Dict[str, Any]) -> None:
+    """Add INDEX2 / 3 when the corresponding exec exists."""
     for fn in funcs:
         m = re.match(r"exec_tuple_index([23])$", fn)
         if m:
-            regs[f"INDEX{m.group(1)}"] = fn
+            reg_pairs[f"INDEX{m.group(1)}"] = fn
 
-# ──────────────────────────────────────────────────────────────────────────────
-# Matching logic
-# ──────────────────────────────────────────────────────────────────────────────
-def _norm(t: str) -> str:
-    return re.sub(r"[^a-z0-9]", "", t.lower())
+# ───────────────────── heuristic similarity ─────────────────────────
+def _norm(txt: str) -> str:
+    return re.sub(r"[^a-z0-9]", "", txt.lower())
 
 
-def _similarity(mnem: str, fn: str, body: str, desc: str) -> float:
-    if re.search(rf"execute\s+{re.escape(mnem)}", body, re.IGNORECASE):
+def similarity(mnem: str, fn: str, body: str, desc: str) -> float:
+    # mnemonic literally emitted in the body? → perfect
+    if re.search(rf"\b{re.escape(mnem)}\b", body, re.I):
         return 1.0
-    score = fuzz.ratio(_norm(mnem), _norm(fn)) / 100
+
+    score = fuzz.ratio(_norm(mnem), _norm(fn)) / 100.0
     if desc:
-        overlap = len(set(desc.lower().split()) & set(body.lower().split()))
+        words_b = set(body.lower().split())
+        overlap = len(set(desc.lower().split()) & words_b)
         score = max(score, 0.6 + 0.4 * overlap / max(len(desc.split()), 1))
     return score
 
-
+# ───────────────────── matching ------------------------------------------------
 def match_all(
-    mnems: Dict[str, Dict],
-    funcs: Dict[str, Dict],
-    regs: Dict[str, str],
-) -> Dict[str, Tuple[str, float, str, int]]:
-    """
-    Return mnemonic → (exec_fn, score, path, line).
-    """
-    out: Dict[str, Tuple[str, float, str, int]] = {}
+    mnems: Dict[str, Dict[str, str]],
+    funcs: Dict[str, Dict[str, Any]],
+    reg_pairs: Dict[str, str],
+) -> Dict[str, Tuple[str | None, float, str, int]]:
+    matched: Dict[str, Tuple[str | None, float, str, int]] = {}
+
     for mnem, meta in mnems.items():
-        # 1) explicit macro link
-        if regs.get(mnem) in funcs:
-            fn = regs[mnem]
-            info = funcs[fn]
-            out[mnem] = (fn, 1.0, info["path"], info["line"])
+        # macro link
+        fn_name = reg_pairs.get(mnem)
+        if fn_name and fn_name in funcs:
+            info = funcs[fn_name]
+            matched[mnem] = (fn_name, 1.0, info["path"], info["line"])
             continue
 
-        # 2) similarity fallback
-        best, best_s, best_path, best_ln = None, 0.0, "", 0
+        # best-effort similarity
+        best_fn, best_sc, best_path, best_ln = None, 0.0, "", 0
         for fn, info in funcs.items():
-            s = _similarity(mnem, fn, info["body"], meta.get("description", ""))
-            if s > best_s:
-                best, best_s = fn, s
-                best_path, best_ln = info["path"], info["line"]
-        out[mnem] = (best, best_s, best_path, best_ln)
-    return out
+            sc = similarity(mnem, fn, info["body"], meta.get("description", ""))
+            if sc > best_sc:
+                best_fn, best_sc, best_path, best_ln = fn, sc, info["path"], info["line"]
+        matched[mnem] = (best_fn, best_sc, best_path, best_ln)
 
-# ──────────────────────────────────────────────────────────────────────────────
-# JSON save helper
-# ──────────────────────────────────────────────────────────────────────────────
-def save_json(rows: List[Dict], out_path: Path, append: bool) -> None:
-    old: List[Dict] = []
-    if append and out_path.exists():
-        old = json.load(open(out_path, "r", encoding="utf-8"))
+    return matched
 
-    ordered: "OrderedDict[str, Dict]" = OrderedDict((r["mnemonic"], r) for r in old)
+# ─────────────────────── persist JSON -----------------------------------------
+def save_json(rows: List[Dict[str, Any]], dest: Path, append: bool) -> None:
+    prev = json.load(dest.open()) if append and dest.exists() else []
+    ordered: "OrderedDict[str, Dict[str, Any]]" = OrderedDict((r["mnemonic"], r) for r in prev)
     for r in rows:
-        if r["mnemonic"] in ordered:
-            ordered[r["mnemonic"]].update(r)
-        else:
-            ordered[r["mnemonic"]] = r   # new → bottom
+        ordered[r["mnemonic"]] = r
+    json.dump(list(ordered.values()), dest.open("w"), indent=2)
+    logging.info("✎ report saved → %s  (%d entries)", dest, len(ordered))
 
-    json.dump(list(ordered.values()), open(out_path, "w", encoding="utf-8"), indent=2)
-    logging.info("Saved %d entries → %s", len(ordered), out_path)
+# ────────────────────────── pretty summary ------------------------------------
+def pretty_summary(total_mnem: int,
+                   file_handlers: int,
+                   matched: int,
+                   unmatched: List[str],
+                   thr: float) -> None:
+    bar = "═" * 65
+    logging.info("\n%s\n%*s%s\n%s", bar, 36, "SUMMARY", "", bar)
+    logging.info("• Category         : %s", CATEGORY)
+    logging.info("• cp0.json         : %d mnemonics", total_mnem)
+    pct = matched / total_mnem * 100
+    logging.info("• Matched (≥ %.2f)  : %d/%d  (%.1f %%)", thr, matched, total_mnem, pct)
+    if unmatched:
+        logging.warning("⚠ Unmatched        : %d → %s", len(unmatched), ", ".join(unmatched))
+    else:
+        logging.info("✓ All mnemonics matched")
+    logging.info(bar)
 
-# ──────────────────────────────────────────────────────────────────────────────
-# CLI
-# ──────────────────────────────────────────────────────────────────────────────
+# ───────────────────────────── CLI --------------------------------------------
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cp0", default="cp0.json")
-    ap.add_argument("--thr", type=float, default=0.7)
-    ap.add_argument("--out", default="match_report.json")
+    ap.add_argument("--thr", type=float, default=0.70)
+    ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
-    # -------- cp0.json (tuple mnemonics only)
+    # load tuple mnemonics -------------------------------------------------
     cp0 = json.load(open(args.cp0, encoding="utf-8"))
     mnems = {
         ins["mnemonic"]: {"description": ins.get("doc", {}).get("description", "")}
         for ins in cp0["instructions"]
-        if ins.get("doc", {}).get("category", "") == CATEGORY
+        if ins.get("doc", {}).get("category") == CATEGORY
     }
+    logging.info("• mnemonics loaded : %d", len(mnems))
 
-    # -------- C++ extraction
-    code = download(TUPLEOPS_URL)
-    funcs = extract_exec_bodies(code, TUPLEOPS_URL)
-    regs  = extract_reg_pairs(code)
-    add_function_aliases(regs, funcs)
+    # grab & parse tupleops.cpp -------------------------------------------
+    code  = download_cpp(CPP_URL)
+    funcs = extract_exec_bodies(code, CPP_URL)
+    regs  = extract_macro_pairs(code)
+    add_index_aliases(regs, funcs)
 
-    # -------- match
+    # match ---------------------------------------------------------------
     matches = match_all(mnems, funcs, regs)
     rows = [
         {
             "mnemonic": m,
             "function": fn,
-            "score"   : round(sc, 2),
+            "score": round(sc, 2),
             "category": CATEGORY,
-            "source_path" : path,
-            "source_line" : line,
+            "source_path": path,
+            "source_line": line,
         }
         for m, (fn, sc, path, line) in matches.items()
         if fn and sc >= args.thr
     ]
+    matched = len(rows)
+    unmatched = [m for m, (fn, sc, *_r) in matches.items()
+                 if not fn or sc < args.thr]
 
+    # save ----------------------------------------------------------------
     save_json(rows, Path(args.out), append=args.append)
+
+    # summary -------------------------------------------------------------
+    pretty_summary(len(mnems), len(funcs), matched, unmatched, args.thr)
 
 
 if __name__ == "__main__":

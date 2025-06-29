@@ -1,147 +1,148 @@
-#!/usr/bin/env python3
-
 from __future__ import annotations
 
 import argparse
 import json
 import logging
 import re
-from pathlib import Path
+import sys
 from collections import OrderedDict
+from pathlib import Path
 from typing import Dict, List, Tuple
 
 import requests
 
-# --------------------------------------------------------------------------- #
+
+#  ───────────────────────────  Constants & tiny helpers ─────────────────────────── 
 ARITHOPS_URL = (
     "https://raw.githubusercontent.com/ton-blockchain/ton/"
     "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp"
 )
-CATEGORY_OK = {"compare_int"}
+CATEGORY = "compare_int"
 
-# --------------------------------------------------------------------------- #
-def _download(url: str) -> str:
-    logging.info("Fetching %s …", url)
+_BAR = "═" * 65
+
+
+def fetch(url: str) -> str:
+    """Download *url* and return its text."""
+    logging.info("↳ fetching %s", url)
     r = requests.get(url, timeout=30)
     r.raise_for_status()
-    logging.info("  OK (%d bytes)", len(r.text))
+    logging.info("  ✓ %-12s (%d bytes)", Path(url).name, len(r.text))
     return r.text
 
 
-def _extract_exec_bodies(src: str, path: str) -> Dict[str, Dict]:
-    pat = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
-    out: Dict[str, Dict] = {}
-    for m in pat.finditer(src):
+def exec_lines(code: str) -> Dict[str, int]:
+    """
+    Return `exec_fn → 1-based line number` for *arithops.cpp*.
+    We only need five distinct handlers.
+    """
+    rx = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
+    out: Dict[str, int] = {}
+    for m in rx.finditer(code):
         fn = m.group(1)
-        brace, i = 1, m.end()
-        while i < len(src) and brace:
-            brace += src[i] == "{"
-            brace -= src[i] == "}"
-            i += 1
-        out[fn] = {
-            "body": src[m.end() : i],
-            "line": src.count("\n", 0, m.start()) + 1,
-            "path": path,
-        }
-    logging.info("Extracted %d exec_* handlers", len(out))
+        out[fn] = code.count("\n", 0, m.start()) + 1
+    # Sanity: must have the five handlers we care about
+    need = {"exec_cmp", "exec_cmp_int", "exec_sgn", "exec_is_nan", "exec_chk_nan"}
+    if not need.issubset(out):
+        logging.error("Missing expected exec_* declarations – abort")
+        sys.exit(1)
     return out
 
 
-# --------------------------------------------------------------------------- #
-def _load_compare_int_mnemonics(cp0_path: str) -> List[Tuple[str, str]]:
-    data = json.load(open(cp0_path, encoding="utf-8"))
+#  ───────────────────────────  cp0.json helpers ─────────────────────────── 
+def load_mnemonics(cp0_path: str | Path) -> List[str]:
+    """Return all mnemonics with doc.category == 'compare_int'."""
+    with open(cp0_path, encoding="utf-8") as f:
+        data = json.load(f)
     instr = data.get("instructions", data)
     return [
-        (
-            i["mnemonic"],
-            (i.get("doc", {}).get("category") or i.get("category") or "compare_int"),
-        )
-        for i in instr
-        if (i.get("doc", {}).get("category") or i.get("category")) in CATEGORY_OK
+        ins["mnemonic"]
+        for ins in instr
+        if (ins.get("doc", {}).get("category") or ins.get("category")) == CATEGORY
     ]
 
-
-# --------------------------------------------------------------------------- #
-def _build_rows(mnems: List[Tuple[str, str]], funcs: Dict[str, Dict]) -> List[Dict]:
-    get_line = lambda fn: funcs[fn]["line"]
-    rows: List[Dict] = []
-
-    cmp_int_line = get_line("exec_cmp_int")
-    cmp_line = get_line("exec_cmp")
-    sgn_line = get_line("exec_sgn")
-    isnan_line = get_line("exec_is_nan")
-    chknan_line = get_line("exec_chk_nan")
-
+#  ───────────────────────────  Build rows (deterministic map) ─────────────────────────── 
+def build_rows(mnems: List[str], lines: Dict[str, int]) -> List[Dict]:
+    """Create the JSON-serialisable rows for the report."""
+    # fixed mapping tables
     special = {
-        "SGN": ("exec_sgn", sgn_line),
-        "ISNAN": ("exec_is_nan", isnan_line),
-        "CHKNAN": ("exec_chk_nan", chknan_line),
-        "CMP": ("exec_cmp", cmp_line),
+        "SGN":     "exec_sgn",
+        "ISNAN":   "exec_is_nan",
+        "CHKNAN":  "exec_chk_nan",
+        "CMP":     "exec_cmp",
     }
-    cmp_int_set = {"EQINT", "LESSINT", "GTINT", "NEQINT"}
-    cmp_set = {"LESS", "EQUAL", "LEQ", "GEQ", "GREATER", "NEQ"}
+    cmp_set      = {"LESS", "EQUAL", "LEQ", "GEQ", "GREATER", "NEQ"}
+    cmp_int_set  = {"EQINT", "LESSINT", "GTINT", "NEQINT"}
 
-    for mnem, cat in mnems:
-        if mnem in special:
-            fn, line = special[mnem]
-        elif mnem in cmp_int_set:
-            fn, line = "exec_cmp_int", cmp_int_line
-        elif mnem in cmp_set:
-            fn, line = "exec_cmp", cmp_line
-        else:               
-            fn, line = "exec_cmp_int", cmp_int_line
+    rows: List[Dict] = []
+    for m in mnems:
+        if m in special:
+            fn = special[m]
+        elif m in cmp_set:
+            fn = "exec_cmp"
+        elif m in cmp_int_set:
+            fn = "exec_cmp_int"
+        else:                       # fallback – still deterministic
+            fn = "exec_cmp_int"
 
         rows.append(
             {
-                "mnemonic": mnem,
-                "function": fn,
-                "score": 1.0,
-                "category": cat,
+                "mnemonic":   m,
+                "function":   fn,
+                "score":      1.0,
+                "category":   CATEGORY,
                 "source_path": ARITHOPS_URL,
-                "source_line": line,
+                "source_line": lines[fn],
             }
         )
-
-    logging.info("Prepared %d compare_int rows", len(rows))
     return rows
-
-
-# --------------------------------------------------------------------------- #
-def _save_json(rows: List[Dict], out_path: Path, append: bool) -> None:
-    prev = json.load(open(out_path)) if append and out_path.exists() else []
-    key = lambda r: (r.get("category", ""), r["mnemonic"])
-    ordered: "OrderedDict[Tuple[str, str], Dict]" = OrderedDict((key(r), r) for r in prev)
-
+#  ───────────────────────────  JSON persistence ─────────────────────────── 
+def save_json(rows: List[Dict], dest: Path, append: bool) -> None:
+    prev = json.load(dest.open()) if append and dest.exists() else []
+    key  = lambda r: r["mnemonic"]
+    merged = OrderedDict((key(r), r) for r in prev)
     for r in rows:
-        ordered[key(r)] = {**ordered.get(key(r), {}), **r}
-
-    json.dump(list(ordered.values()), open(out_path, "w"), indent=2)
-    logging.info(
-        "✅  Saved %d new / updated rows  →  %s  (total %d)",
-        len(rows),
-        out_path,
-        len(ordered),
-    )
+        merged[key(r)] = r
+    json.dump(list(merged.values()), dest.open("w"), indent=2)
+    logging.info("✎ report saved → %s  (%d total entries)", dest, len(merged))
 
 
-# --------------------------------------------------------------------------- #
+# ───────────────────────────   CLI entry-point ─────────────────────────── 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Strict matcher for compare_int mnemonics (append-safe)."
-    )
-    parser.add_argument("--cp0", default="cp0.json", help="Path to cp0.json")
-    parser.add_argument("--out", default="match_report.json", help="Output JSON file")
-    parser.add_argument("--append", action="store_true", help="Merge with existing file")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--out", default="match-report.json")
+    ap.add_argument("--append", action="store_true")
+    args = ap.parse_args()
 
-    mnems = _load_compare_int_mnemonics(args.cp0)
-    src = _download(ARITHOPS_URL)
-    funcs = _extract_exec_bodies(src, ARITHOPS_URL)
-    rows = _build_rows(mnems, funcs)
-    _save_json(rows, Path(args.out), append=args.append)
+    # 1. cp0.json -------------------------------------------------------
+    mnems = load_mnemonics(args.cp0)
+    logging.info("• cp0.json        : %d compare_int mnemonics", len(mnems))
+
+    # 2. arithops.cpp ---------------------------------------------------
+    cpp_text = fetch(ARITHOPS_URL)
+    line_tbl = exec_lines(cpp_text)
+
+    # 3. build rows -----------------------------------------------------
+    rows = build_rows(mnems, line_tbl)
+    logging.info("• rows generated  : %d", len(rows))
+
+    # 4. save / merge ---------------------------------------------------
+    save_json(rows, Path(args.out), append=args.append)
+
+    # 5. pretty summary -------------------------------------------------
+    pct = len(rows) / len(mnems) * 100 if mnems else 100.0
+    print(f"\n{_BAR}\n{'SUMMARY':^65}\n{_BAR}")
+    print(f"• cp0.json        : {len(mnems)} mnemonics")
+    print(f"• Matched         : {len(rows):>3}/{len(mnems)}  ({pct:5.1f} %)")
+    if pct < 100.0:
+        print("⚠ Something went wrong – not all mnemonics mapped!")
+        sys.exit(1)
+    else:
+        print("✓ All compare_int mnemonics mapped")
+    print(_BAR)
 
 
-# --------------------------------------------------------------------------- #
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
     main()

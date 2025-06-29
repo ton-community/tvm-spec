@@ -168,7 +168,7 @@ def main() -> None:
     ap.add_argument("--cp0", default="cp0.json")
     ap.add_argument("--cats", nargs="+", default=None)
     ap.add_argument("--thr", type=float, default=0.70)
-    ap.add_argument("--out", default="match_report.json")
+    ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
@@ -190,6 +190,22 @@ def main() -> None:
     logging.info("Matched %d mnemonics (≥ %.2f)", len(rows), args.thr)
 
     _save_json(rows, Path(args.out), append=args.append)
+
+
+        # Print summary box
+    total = len(mnems)
+    matched = len(rows)
+    unmatched = total - matched
+    print("\n" + "═" * 66)
+    print("                             SUMMARY")
+    print("═" * 66)
+    print(f"• Categories      : {', '.join(cats)}")
+    print(f"• cp0.json        : {total} mnemonics")
+    print(f"• exec_* handlers : {len(funcs)} extracted from source")
+    print(f"• Matched (≥ {args.thr:.2f}) : {matched}/{total}  ({(matched/total*100):.1f} %)")
+    print(f"• Unmatched       : {unmatched}")
+    print("═" * 66)
+
 
 if __name__ == "__main__":
     main()
