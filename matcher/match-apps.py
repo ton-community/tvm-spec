@@ -1,13 +1,3 @@
-#!/usr/bin/env python3
-"""
-Improved “app_*” matcher – covers *every* mnemonic in the app-category
-subset of cp0.json (≈ 96 in tonops.cpp at the commit below).
-
-▪ deterministic regex → exact category / function
-▪ manual one-offs  → to catch the weird spellings
-▪ fuzzy fallback    → normalised strings, 75 % cutoff
-"""
-
 from __future__ import annotations
 import argparse, json, logging, pathlib, re, sys, unicodedata
 from collections import OrderedDict

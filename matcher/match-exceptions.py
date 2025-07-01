@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-"""
-Match cp0.json mnemonics in the *exceptions* category to exec_* handlers inside
-contops.cpp and append the result to match_report.json   (–append keeps previous
-entries).  Designed to behave exactly like the other matchers you’re already
-using for stack / tuple / cont.
-"""
 from __future__ import annotations
 import argparse, json, logging, re, requests
 from pathlib import Path
@@ -73,9 +66,9 @@ def _extract_reg_pairs(src: str) -> Dict[str, str]:
 # ─────────────────────────── override helper ───────────────────────────
 def _override_from_pattern(mnem: str) -> str | None:
     """
-    Map tricky exception mnemonics to the right exec_* manually.
+    Map tricky exception mnemonics to the right exec_*.
     """
-    base = mnem.replace("_SHORT", "")  # unify *and* cover normal forms
+    base = mnem.replace("_SHORT", "") 
     if base.startswith("THROWARGANY"):
         return "exec_throw_any"
     if base.startswith("THROWANY"):
