@@ -1,20 +1,3 @@
-#!/usr/bin/env python3
-"""
-Match DEBUG-family mnemonics from cp0.json to exec_* handlers.
-
-usage:
-  python matcher/match-debug.py --cp0 cp0.json
-         [--cpp debugops.cpp] [--out match_debug.json] [--append]
-
-Notes
-─────
-*   Only cp0-instructions whose `category` is exactly **"debug"** are processed.
-*   The script prints
-      • how many “debug” instructions exist in cp0.json  
-      • how many were successfully written to <out>.  
-    If some remain unmatched, their mnemonics are listed as warnings.
-"""
-
 from __future__ import annotations
 import argparse, json, logging, pathlib, re, requests
 from collections import OrderedDict

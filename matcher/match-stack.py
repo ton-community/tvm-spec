@@ -1,15 +1,3 @@
-#!/usr/bin/env python3
-"""
-Match stack-related mnemonics from **cp0.json** to `exec_*` handlers
-defined in one or more *stackops.cpp*-like files and save the mapping
-into *match.json* (or a custom path).
-
-Behaviour is identical to the original script; only comments,
-logging and a *manual override* for the single outlier **REVX → 
-exec_reverse_x** have been added so that **100 %** of the 45
-stack-mnemonics now resolve.
-"""
-
 from __future__ import annotations
 
 import argparse
@@ -22,7 +10,7 @@ from pathlib import Path
 from typing import Any, Dict, List, Set, Tuple
 
 import requests
-from fuzzywuzzy import fuzz  # type: ignore
+from fuzzywuzzy import fuzz
 
 # ─────────────────────────────── logging ──────────────────────────────
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -39,14 +27,12 @@ CPP_FALLBACK_URL = (
 EXEC_HEAD_RX = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
 _SPLIT_NON_ALPHA = re.compile(r"[^A-Za-z]")
 
-# ------------------------------------------------------------------+
-# Manual aliases for weird or ambiguous names                       |
+
+# Manual aliases for weird or ambiguous names                       
 # ------------------------------------------------------------------+
 MANUAL_OVERRIDES = {
-    "REVX": "exec_reverse_x",      # reverse-segment helper
+    "REVX": "exec_reverse_x",     
 }
-# ------------------------------------------------------------------+
-
 
 # ───────────────────────────── cp0 helpers ────────────────────────────
 def _load_cp0(path: Path | str, cats: List[str]) -> Dict[str, Dict[str, str]]:

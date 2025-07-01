@@ -1,0 +1,1146 @@
+[
+  {
+    "mnemonic": "STDICT",
+    "function": "exec_store_dict",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 53
+  },
+  {
+    "mnemonic": "SKIPDICT",
+    "function": "exec_skip_dict",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 82
+  },
+  {
+    "mnemonic": "LDDICTS",
+    "function": "exec_load_dict_slice",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 121
+  },
+  {
+    "mnemonic": "PLDDICTS",
+    "function": "exec_load_dict_slice",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 121
+  },
+  {
+    "mnemonic": "LDDICT",
+    "function": "exec_load_dict",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 148
+  },
+  {
+    "mnemonic": "PLDDICT",
+    "function": "exec_load_dict",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 148
+  },
+  {
+    "mnemonic": "LDDICTQ",
+    "function": "exec_load_dict",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 148
+  },
+  {
+    "mnemonic": "PLDDICTQ",
+    "function": "exec_load_dict",
+    "score": 1.0,
+    "category": "dict_serial",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 148
+  },
+  {
+    "mnemonic": "DICTGET",
+    "function": "exec_dict_get",
+    "score": 1.0,
+    "category": "dict_get",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 207
+  },
+  {
+    "mnemonic": "DICTGETREF",
+    "function": "exec_dict_get_optref",
+    "score": 1.0,
+    "category": "dict_get",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 247
+  },
+  {
+    "mnemonic": "DICTIGET",
+    "function": "exec_dict_get",
+    "score": 1.0,
+    "category": "dict_get",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 207
+  },
+  {
+    "mnemonic": "DICTIGETREF",
+    "function": "exec_dict_get_optref",
+    "score": 1.0,
+    "category": "dict_get",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 247
+  },
+  {
+    "mnemonic": "DICTUGET",
+    "function": "exec_dict_get",
+    "score": 1.0,
+    "category": "dict_get",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 207
+  },
+  {
+    "mnemonic": "DICTUGETREF",
+    "function": "exec_dict_get_optref",
+    "score": 1.0,
+    "category": "dict_get",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 247
+  },
+  {
+    "mnemonic": "DICTSET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTSETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTISET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTISETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUSET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUSETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTSETGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTSETGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTISETGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTISETGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUSETGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUSETGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTREPLACE",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTREPLACEREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIREPLACE",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIREPLACEREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUREPLACE",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUREPLACEREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTREPLACEGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTREPLACEGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIREPLACEGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIREPLACEGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUREPLACEGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUREPLACEGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTADD",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTADDREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIADD",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIADDREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUADD",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUADDREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTADDGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTADDGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIADDGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIADDGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUADDGET",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUADDGETREF",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTSETB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTISETB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUSETB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTSETGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTISETGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTUSETGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTREPLACEB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIREPLACEB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUREPLACEB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTREPLACEGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTIREPLACEGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTUREPLACEGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTADDB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTIADDB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTUADDB",
+    "function": "exec_dict_set",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 271
+  },
+  {
+    "mnemonic": "DICTADDGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTIADDGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTUADDGETB",
+    "function": "exec_dict_setget",
+    "score": 1.0,
+    "category": "dict_set_builder",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 315
+  },
+  {
+    "mnemonic": "DICTDEL",
+    "function": "exec_dict_delete",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 374
+  },
+  {
+    "mnemonic": "DICTIDEL",
+    "function": "exec_dict_delete",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 374
+  },
+  {
+    "mnemonic": "DICTUDEL",
+    "function": "exec_dict_delete",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 374
+  },
+  {
+    "mnemonic": "DICTDELGET",
+    "function": "exec_dict_deleteget",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 401
+  },
+  {
+    "mnemonic": "DICTDELGETREF",
+    "function": "exec_dict_deleteget",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 401
+  },
+  {
+    "mnemonic": "DICTIDELGET",
+    "function": "exec_dict_deleteget",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 401
+  },
+  {
+    "mnemonic": "DICTIDELGETREF",
+    "function": "exec_dict_deleteget",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 401
+  },
+  {
+    "mnemonic": "DICTUDELGET",
+    "function": "exec_dict_deleteget",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 401
+  },
+  {
+    "mnemonic": "DICTUDELGETREF",
+    "function": "exec_dict_deleteget",
+    "score": 1.0,
+    "category": "dict_delete",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 401
+  },
+  {
+    "mnemonic": "DICTGETOPTREF",
+    "function": "exec_dict_get_optref",
+    "score": 1.0,
+    "category": "dict_mayberef",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 247
+  },
+  {
+    "mnemonic": "DICTIGETOPTREF",
+    "function": "exec_dict_get_optref",
+    "score": 1.0,
+    "category": "dict_mayberef",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 247
+  },
+  {
+    "mnemonic": "DICTUGETOPTREF",
+    "function": "exec_dict_get_optref",
+    "score": 1.0,
+    "category": "dict_mayberef",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 247
+  },
+  {
+    "mnemonic": "DICTSETGETOPTREF",
+    "function": "exec_dict_setget_optref",
+    "score": 1.0,
+    "category": "dict_mayberef",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 442
+  },
+  {
+    "mnemonic": "DICTISETGETOPTREF",
+    "function": "exec_dict_setget_optref",
+    "score": 1.0,
+    "category": "dict_mayberef",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 442
+  },
+  {
+    "mnemonic": "DICTUSETGETOPTREF",
+    "function": "exec_dict_setget_optref",
+    "score": 1.0,
+    "category": "dict_mayberef",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 442
+  },
+  {
+    "mnemonic": "PFXDICTSET",
+    "function": "exec_pfx_dict_set",
+    "score": 1.0,
+    "category": "dict_prefix",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 566
+  },
+  {
+    "mnemonic": "PFXDICTREPLACE",
+    "function": "exec_pfx_dict_set",
+    "score": 1.0,
+    "category": "dict_prefix",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 566
+  },
+  {
+    "mnemonic": "PFXDICTADD",
+    "function": "exec_pfx_dict_set",
+    "score": 1.0,
+    "category": "dict_prefix",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 566
+  },
+  {
+    "mnemonic": "PFXDICTDEL",
+    "function": "exec_pfx_dict_delete",
+    "score": 1.0,
+    "category": "dict_prefix",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 580
+  },
+  {
+    "mnemonic": "DICTGETNEXT",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTGETNEXTEQ",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTGETPREV",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTGETPREVEQ",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTIGETNEXT",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTIGETNEXTEQ",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTIGETPREV",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTIGETPREVEQ",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTUGETNEXT",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTUGETNEXTEQ",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTUGETPREV",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTUGETPREVEQ",
+    "function": "exec_dict_getnear",
+    "score": 1.0,
+    "category": "dict_next",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 523
+  },
+  {
+    "mnemonic": "DICTMIN",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTMINREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIMIN",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIMINREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUMIN",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUMINREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTMAX",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTMAXREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIMAX",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIMAXREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUMAX",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUMAXREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTREMMIN",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTREMMINREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIREMMIN",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIREMMINREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUREMMIN",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUREMMINREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTREMMAX",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTREMMAXREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIREMMAX",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIREMMAXREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUREMMAX",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTUREMMAXREF",
+    "function": "exec_dict_getmin",
+    "score": 1.0,
+    "category": "dict_min",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 470
+  },
+  {
+    "mnemonic": "DICTIGETJMP",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTUGETJMP",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTIGETEXEC",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTUGETEXEC",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTPUSHCONST",
+    "function": "exec_push_const_dict",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 620
+  },
+  {
+    "mnemonic": "PFXDICTGETQ",
+    "function": "exec_pfx_dict_get",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 658
+  },
+  {
+    "mnemonic": "PFXDICTGET",
+    "function": "exec_pfx_dict_get",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 658
+  },
+  {
+    "mnemonic": "PFXDICTGETJMP",
+    "function": "exec_pfx_dict_get",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 658
+  },
+  {
+    "mnemonic": "PFXDICTGETEXEC",
+    "function": "exec_pfx_dict_get",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 658
+  },
+  {
+    "mnemonic": "PFXDICTCONSTGETJMP",
+    "function": "exec_const_pfx_dict_switch",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 692
+  },
+  {
+    "mnemonic": "DICTIGETJMPZ",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTUGETJMPZ",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTIGETEXECZ",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "DICTUGETEXECZ",
+    "function": "exec_dict_get_exec",
+    "score": 1.0,
+    "category": "dict_special",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 593
+  },
+  {
+    "mnemonic": "SUBDICTGET",
+    "function": "exec_subdict_get",
+    "score": 1.0,
+    "category": "dict_sub",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 722
+  },
+  {
+    "mnemonic": "SUBDICTIGET",
+    "function": "exec_subdict_get",
+    "score": 1.0,
+    "category": "dict_sub",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 722
+  },
+  {
+    "mnemonic": "SUBDICTUGET",
+    "function": "exec_subdict_get",
+    "score": 1.0,
+    "category": "dict_sub",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 722
+  },
+  {
+    "mnemonic": "SUBDICTRPGET",
+    "function": "exec_subdict_get",
+    "score": 1.0,
+    "category": "dict_sub",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 722
+  },
+  {
+    "mnemonic": "SUBDICTIRPGET",
+    "function": "exec_subdict_get",
+    "score": 1.0,
+    "category": "dict_sub",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 722
+  },
+  {
+    "mnemonic": "SUBDICTURPGET",
+    "function": "exec_subdict_get",
+    "score": 1.0,
+    "category": "dict_sub",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp",
+    "source_line": 722
+  }
+]

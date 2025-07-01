@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-"""
-Match code-page-related mnemonics from cp0.json to exec_* handlers in contops.cpp.
-
-usage
------
-python matcher/match-codepage.py --cp0 cp0.json            # <- typical run
-       [--cpp contops.cpp]                                 # use local source
-       [--out match_codepage.json] [--append]              # merge/append
-"""
-
 from __future__ import annotations
 import argparse, json, logging, pathlib, re, requests
 from collections import OrderedDict

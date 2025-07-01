@@ -248,7 +248,7 @@ def main() -> None:
     ap.add_argument("--cp0", default="cp0.json", help="path to cp0.json")
     ap.add_argument("--cats", nargs="+", default=None, help="'all' or explicit list")
     ap.add_argument("--thr", type=float, default=0.70, help="min similarity threshold")
-    ap.add_argument("--out", default="match-report.json", help="output JSON file")
+    ap.add_argument("--out", default="match.json", help="output JSON file")
     ap.add_argument("--append", action="store_true", help="merge with existing report")
     ap.add_argument("--show-missing", action="store_true", help="exit 1 if anything unmatched")
     args = ap.parse_args()
