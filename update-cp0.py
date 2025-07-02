@@ -120,7 +120,7 @@ def main() -> None:
         logging.warning("The following mnemonics were requested but NOT exported:")
         for m in sorted(missing):
             phrase = ("absent in cp0.json" if m not in cp0_map
-                      else "absent in match_report.json")
+                      else "absent in match-report.json")
             logging.warning("  %-20s • %s", m, phrase)
         # exit with 1 so CI fails when something is missing
         sys.exit(1)

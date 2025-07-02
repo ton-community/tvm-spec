@@ -145,7 +145,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cp0", default="cp0.json")
     ap.add_argument("--cpp", help="Local dictops.cpp (else download)")
-    ap.add_argument("--out", default="match.json")
+    ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
