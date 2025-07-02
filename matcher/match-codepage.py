@@ -1,124 +1,152 @@
+#!/usr/bin/env python3
 from __future__ import annotations
-import argparse, json, logging, pathlib, re, requests
-from collections import OrderedDict
+
+import argparse
+import json
+import logging
+import re
+from pathlib import Path
 from typing import Dict, List, Tuple
+
+import requests
+from fuzzywuzzy import fuzz  # pip install fuzzywuzzy python-Levenshtein
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
+# ───── CONFIG ─────────────────────────────────────────────────────────
 CONTOPS_URL = (
     "https://raw.githubusercontent.com/ton-blockchain/ton/"
     "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp"
 )
+CATEGORY    = "codepage"
+FUZZ_THRESH = 0.70
 
-CATEGORY   = "codepage"                       # cp0 “doc.category”
-EXEC_RX    = re.compile(r"(?:int|void)\\s+(exec_[A-Za-z0-9_]+)\\s*\(")
-
-# ───────────────────────────────────────────────────────────────
+# Deterministic mappings for SETCP*/SETCPX
 RULES: List[Tuple[re.Pattern, str]] = [
-    (re.compile(r"^SETCP$")        , "exec_set_cp"),
-    (re.compile(r"^SETCP_SPECIAL$"), "exec_set_cp"),      # same handler
-    (re.compile(r"^SETCPX$")       , "exec_set_cpx"),
+    (re.compile(r"^SETCP$"),        "exec_set_cp"),
+    (re.compile(r"^SETCP_SPECIAL$"),"exec_set_cp"),
+    (re.compile(r"^SETCPX$"),       "exec_set_cp_any"),
 ]
 
-# ────────────────────────────────────────────────────
-
-def fetch_cpp(local: str | None) -> str:
+def fetch_cpp(local: str|None) -> str:
     if local:
-        return pathlib.Path(local).read_text(encoding="utf-8")
-    logging.info("Fetching contops.cpp from GitHub …")
+        return Path(local).read_text(encoding="utf-8")
+    logging.info("Downloading contops.cpp from GitHub…")
     resp = requests.get(CONTOPS_URL, timeout=30)
     resp.raise_for_status()
-    logging.info("  OK  (%d bytes)", len(resp.text))
+    logging.info("  ✓ %d bytes", len(resp.text))
     return resp.text
 
-
-def extract_exec_lines(src: str) -> Dict[str, int]:
-    """return {exec_fn → line_number}"""
-    lines: Dict[str, int] = {}
-    for m in EXEC_RX.finditer(src):
+def extract_exec_definitions(src: str) -> Dict[str,int]:
+    """
+    Find every `int|void exec_* ( ... ) {` definition and record its line number.
+    """
+    pattern = re.compile(
+        r'^\s*(?:int|void)\s+'
+        r'(exec_[A-Za-z0-9_]+)\s*'  # capture function name
+        r'\(.*?\)\s*'               # non-greedy match through signature
+        r'\{',                      # opening brace
+        re.MULTILINE | re.DOTALL
+    )
+    lines: Dict[str,int] = {}
+    for m in pattern.finditer(src):
         fn = m.group(1)
-        lines[fn] = src.count("\n", 0, m.start()) + 1
-    logging.info("Found %d exec_* handlers in contops.cpp", len(lines))
+        lineno = src.count("\n", 0, m.start()) + 1
+        lines[fn] = lineno
+    logging.info("Found %d exec_* definitions", len(lines))
     return lines
 
-
-def load_cp0(path: str) -> List[Dict]:
+def load_cp0(path: str) -> List[str]:
     data = json.load(open(path, encoding="utf-8"))
-    instr = data["instructions"] if "instructions" in data else data
+    instr = data.get("instructions", data)
     return [
-        i for i in instr
-        if (i.get("doc", {}).get("category") or i.get("category")) == CATEGORY
+        ins["mnemonic"]
+        for ins in instr
+        if (ins.get("doc",{}).get("category") or ins.get("category")) == CATEGORY
     ]
 
-
-def match_func(mnem: str) -> str | None:
+def rule_match(mnem: str) -> str|None:
     for rx, fn in RULES:
         if rx.fullmatch(mnem):
             return fn
     return None
 
-# ────────────────────────────────────────────────────
+def fuzzy_match(mnem: str, funcs: Dict[str,int]) -> Tuple[str|None,float]:
+    best_fn, best_score = None, 0.0
+    target = mnem.lower()
+    for fn in funcs:
+        name = fn.removeprefix("exec_").lower()
+        score = fuzz.ratio(name, target) / 100.0
+        if score > best_score:
+            best_fn, best_score = fn, score
+    return (best_fn, best_score) if best_score >= FUZZ_THRESH else (None, best_score)
 
 def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0",  default="cp0.json",
-                    help="path to cp0.json (default: ./cp0.json)")
-    ap.add_argument("--cpp",  help="local contops.cpp (else download)")
-    ap.add_argument("--out",  default="match-report.json")
-    ap.add_argument("--append", action="store_true",
-                    help="append / merge with existing output file")
-    args = ap.parse_args()
+    p = argparse.ArgumentParser(description="Match contops codepage mnemonics")
+    p.add_argument("--cp0",  default="cp0.json", help="path to cp0.json")
+    p.add_argument("--cpp",  help="local contops.cpp (else download)")
+    p.add_argument("--out",  default="match-report.json")
+    p.add_argument("--append", action="store_true")
+    args = p.parse_args()
 
-    cpp_src    = fetch_cpp(args.cpp)
-    exec_lines = extract_exec_lines(cpp_src)
+    # 1) grab C++ and index exec_* definitions
+    cpp_src  = fetch_cpp(args.cpp)
+    exec_map = extract_exec_definitions(cpp_src)
 
-    rows, unmatched = [], []
-    for ins in load_cp0(args.cp0):
-        mnem = ins["mnemonic"]
-        fn   = match_func(mnem)
+    # 2) load your cp0.json mnemonics for "codepage"
+    mnems    = load_cp0(args.cp0)
+
+    rows:       List[Dict] = []
+    unmatched:  List[str]   = []
+
+    # 3) match each mnemonic
+    for m in mnems:
+        fn = rule_match(m)
+        score = 1.0
+
+        # if no hard rule, try fuzzy
         if fn is None:
-            unmatched.append(mnem)
+            fn, score = fuzzy_match(m, exec_map)
+
+        if fn is None:
+            unmatched.append(m)
             continue
-        rows.append(
-            dict(
-                mnemonic    = mnem,
-                function    = fn,
-                score       = 1.0,                 # fully deterministic rule
-                category    = CATEGORY,
-                source_path = CONTOPS_URL if args.cpp is None
-                                           else pathlib.Path(args.cpp).as_uri(),
-                source_line = exec_lines.get(fn, 0)
-            )
-        )
 
-    total_cp0  = len(rows) + len(unmatched)
-    matched    = len(rows)
-    logging.info("Category '%s' in %s: %d mnemonics → %d matched, %d unmatched",
-                 CATEGORY, args.cp0, total_cp0, matched, len(unmatched))
-    if unmatched:
-        logging.warning("Unmatched mnemonics: %s", ", ".join(sorted(unmatched)))
+        rows.append({
+            "mnemonic":    m,
+            "function":    fn,
+            "score":       round(score, 2),
+            "category":    CATEGORY,
+            "source_path": Path(args.cpp).as_uri() if args.cpp else CONTOPS_URL,
+            "source_line": exec_map.get(fn, 0),
+        })
 
-    # ──────────── save / merge ───────────────────────
-    out_path = pathlib.Path(args.out)
+    # 4) merge / append into existing report if desired
+    out_path = Path(args.out)
     existing = json.load(open(out_path)) if args.append and out_path.exists() else []
-    merged: "OrderedDict[Tuple[str, str], Dict]" = OrderedDict(
-        ((r["mnemonic"], r["category"]), r) for r in existing
-    )
+    merged = { (r["mnemonic"],r["category"]): r for r in existing }
     for r in rows:
-        merged[(r["mnemonic"], r["category"])] = r
+        merged[(r["mnemonic"],r["category"])] = r
 
-    out_path.write_text(json.dumps(list(merged.values()), indent=2), encoding="utf-8")
-    logging.info("Wrote %d new rows → %s", matched, out_path)
+    out_list = list(merged.values())
+    out_path.write_text(json.dumps(out_list, indent=2), encoding="utf-8")
+    logging.info("Wrote %d entries → %s", len(out_list), out_path)
 
-    # ──────────── summary ────────────
-    handlers = {r["function"] for r in rows}
-    print("\n" + "═" * 66)
-    print("                             SUMMARY")
-    print("═" * 66)
-    print(f"• Categories      : {CATEGORY}")
-    print(f"• cp0.json        : {total_cp0} mnemonics")
-    print(f"• Matched (100%)   : {matched}/{total_cp0}  (100.0 %)")
-    print("═" * 66)
+    # 5) summary
+    total   = len(mnems)
+    matched = len(rows)
+    logging.info("\n" + "═"*60)
+    logging.info("SUMMARY")
+    logging.info("═"*60)
+    logging.info(f"• Category       : {CATEGORY}")
+    logging.info(f"• cp0.json       : {total} mnemonics")
+    logging.info(
+        f"• Matched (rule+fuzzy≥{int(FUZZ_THRESH*100)}%) : {matched}/{total} "
+        f"({matched/total*100:.1f}%)"
+    )
+    if unmatched:
+        logging.warning("⚠ Unmatched      : %s", ", ".join(unmatched))
+
 
 if __name__ == "__main__":
     main()
