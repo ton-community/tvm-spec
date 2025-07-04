@@ -769,27 +769,27 @@
   },
   {
     "mnemonic": "ADDDIVMOD",
-    "function": "exec_shldivmod",
+    "function": "exec_divmod",
     "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 595
+    "source_line": 266
   },
   {
     "mnemonic": "ADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_divmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 266
   },
   {
     "mnemonic": "ADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_divmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 266
   },
   {
     "mnemonic": "DIV",
@@ -865,627 +865,627 @@
   },
   {
     "mnemonic": "ADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "ADDRSHIFTMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "ADDRSHIFTMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTR_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTC_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "MODPOW2_VAR",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "MODPOW2R_VAR",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "MODPOW2C_VAR",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTMOD_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTMODR_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTMODC_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "ADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "ADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTC",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "MODPOW2",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "MODPOW2R",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "MODPOW2C",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTMOD",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTRMOD",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "RSHIFTCMOD",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "MULADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 434
   },
   {
     "mnemonic": "MULADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 434
   },
   {
     "mnemonic": "MULADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 434
   },
   {
     "mnemonic": "MULDIV",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULDIVR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULDIVC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULMODR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULMODC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULDIVMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULDIVMODR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULDIVMODC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "MULADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "MULADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "MULADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "MULRSHIFT_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTR_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTC_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULMODPOW2_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULMODPOW2R_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULMODPOW2C_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTMOD_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTRMOD_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTCMOD_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFT",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULMODPOW2",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULMODPOW2R",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULMODPOW2C",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTRMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "MULRSHIFTCMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "LSHIFTADDDIVMOD_VAR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTADDDIVMODR_VAR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTADDDIVMODC_VAR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIV_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVR_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVC_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTMOD_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTMODR_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTMODC_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVMOD_VAR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVMODR_VAR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVMODC_VAR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIV",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVC",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTMOD",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTMODR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTMODC",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVMOD",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVMODR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFTDIVMODC",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_div",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "LSHIFT",
@@ -1697,27 +1697,27 @@
   },
   {
     "mnemonic": "QADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_divmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 266
   },
   {
     "mnemonic": "QADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_divmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 266
   },
   {
     "mnemonic": "QADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_divmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 266
   },
   {
     "mnemonic": "QDIV",
@@ -1793,627 +1793,627 @@
   },
   {
     "mnemonic": "QADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QADDRSHIFTMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QADDRSHIFTMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTR_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTC_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QMODPOW2_VAR",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "QMODPOW2R_VAR",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "QMODPOW2C_VAR",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTMOD_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTMODR_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTMODC_VAR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTR",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTC",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QMODPOW2",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "QMODPOW2R",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "QMODPOW2C",
-    "function": "exec_pow2",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 758
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTMOD",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTRMOD",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QRSHIFTCMOD",
-    "function": "exec_rshift",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 749
+    "source_line": 336
   },
   {
     "mnemonic": "QMULADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 434
   },
   {
     "mnemonic": "QMULADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 434
   },
   {
     "mnemonic": "QMULADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 434
   },
   {
     "mnemonic": "QMULDIV",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULDIVR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULDIVC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULMODR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULMODC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULDIVMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULDIVMODR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULDIVMODC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_muldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 434
   },
   {
     "mnemonic": "QMULADDRSHIFTMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QMULADDRSHIFTRMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QMULADDRSHIFTCMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 336
   },
   {
     "mnemonic": "QMULRSHIFT_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTR_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTC_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULMODPOW2_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULMODPOW2R_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULMODPOW2C_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTMOD_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTRMOD_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTCMOD_VAR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFT",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTR",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTC",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULMODPOW2",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULMODPOW2R",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULMODPOW2C",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTRMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QMULRSHIFTCMOD",
-    "function": "exec_mul",
-    "score": 0.95,
+    "function": "exec_mulshrmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 231
+    "source_line": 497
   },
   {
     "mnemonic": "QLSHIFTADDDIVMOD_VAR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTADDDIVMODR_VAR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTADDDIVMODC_VAR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIV_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVR_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVC_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTMOD_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTMODR_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTMODC_VAR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVMOD_VAR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVMODR_VAR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVMODC_VAR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTADDDIVMOD",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTADDDIVMODR",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTADDDIVMODC",
-    "function": "exec_add",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 162
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIV",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVC",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTMOD",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTMODR",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTMODC",
-    "function": "exec_lshift",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 740
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVMOD",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVMODR",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFTDIVMODC",
-    "function": "exec_divmod",
-    "score": 0.95,
+    "function": "exec_shldivmod",
+    "score": 1.0,
     "category": "arithm_quiet",
     "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-    "source_line": 266
+    "source_line": 595
   },
   {
     "mnemonic": "QLSHIFT",

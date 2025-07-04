@@ -6207,8 +6207,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 497,
+          "function_name": "exec_mulshrmod"
         }
       ]
     },
@@ -6491,8 +6491,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 434,
+          "function_name": "exec_muldivmod"
         }
       ]
     },
@@ -7587,8 +7587,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 434,
+          "function_name": "exec_muldivmod"
         }
       ]
     },
@@ -9357,8 +9357,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 758,
-          "function_name": "exec_pow2"
+          "line": 336,
+          "function_name": "exec_shrmod"
         }
       ]
     },
@@ -11608,8 +11608,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 434,
+          "function_name": "exec_muldivmod"
         }
       ]
     },
@@ -14244,8 +14244,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 434,
+          "function_name": "exec_muldivmod"
         }
       ]
     },
@@ -15866,8 +15866,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 749,
-          "function_name": "exec_rshift"
+          "line": 336,
+          "function_name": "exec_shrmod"
         }
       ]
     },
@@ -16769,8 +16769,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 497,
+          "function_name": "exec_mulshrmod"
         }
       ]
     },
@@ -17995,8 +17995,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 749,
-          "function_name": "exec_rshift"
+          "line": 336,
+          "function_name": "exec_shrmod"
         }
       ]
     },
@@ -18170,8 +18170,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 434,
+          "function_name": "exec_muldivmod"
         }
       ]
     },
@@ -18877,8 +18877,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
+          "line": 595,
+          "function_name": "exec_shldivmod"
         }
       ]
     },
@@ -19850,8 +19850,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 740,
-          "function_name": "exec_lshift"
+          "line": 595,
+          "function_name": "exec_shldivmod"
         }
       ]
     },
@@ -19961,8 +19961,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 231,
-          "function_name": "exec_mul"
+          "line": 497,
+          "function_name": "exec_mulshrmod"
         }
       ]
     },
@@ -20024,8 +20024,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 266,
-          "function_name": "exec_divmod"
+          "line": 595,
+          "function_name": "exec_shldivmod"
         }
       ]
     },
@@ -20080,8 +20080,8 @@
         {
           "file": "arithops.cpp",
           "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
-          "line": 749,
-          "function_name": "exec_rshift"
+          "line": 336,
+          "function_name": "exec_shrmod"
         }
       ]
     },
