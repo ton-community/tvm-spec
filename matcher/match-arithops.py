@@ -1,3 +1,17 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Match arithmetic mnemonics from cp0.json to exec_* handlers in arithops.cpp.
+
+Usage examples
+--------------
+python3 match.py --cp0 cp0.json               # writes match.json
+python3 match.py --cp0 cp0.json --out out.json
+python3 match.py --append                     # keep previous rows
+
+Exit status is non-zero if --fail-on-missing is given and any mnemonics
+remain unmatched.
+"""
 from __future__ import annotations
 
 import argparse
@@ -7,10 +21,10 @@ import re
 import sys
 from collections import defaultdict, OrderedDict
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, Tuple
 
 import requests
-from fuzzywuzzy import fuzz
+from fuzzywuzzy import fuzz          # pip install "fuzzywuzzy[speedup]"
 
 # ─────────────────────────── configuration ────────────────────────────
 ARITHOPS_URL = (
@@ -27,6 +41,7 @@ CATEGORIES = {
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
+
 # ──────────────────────────── helpers ─────────────────────────────────
 def _download(url: str) -> str:
     logging.info("↳ fetching %s", url)
@@ -36,30 +51,35 @@ def _download(url: str) -> str:
     return r.text
 
 
-# exec_* definition headline           OpcodeInstr("MNEM", exec_fn, …)
-EXEC_RX  = re.compile(r"(?:template<[^>]+>\s*)?(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
+EXEC_RX  = re.compile(
+    r"(?:template<[^>]+>\s*)?(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M
+)
 MACRO_RX = re.compile(r'"([A-Z0-9_\- ]+)"[^\)]*?(exec_\w+)', re.S)
 
+
 def _extract_exec(src: str, path: str) -> Dict[str, Tuple[str, int]]:
-    """Return  exec_fn → (src_path, 1-based line)."""
+    """Return dict: exec_fn → (src_path, 1-based line)."""
     out: Dict[str, Tuple[str, int]] = {}
     for m in EXEC_RX.finditer(src):
         fn = m.group(1)
         out[fn] = (path, src.count("\n", 0, m.start()) + 1)
-    logging.info("    • %-20s → %3d exec_* handlers", Path(path).name, len(out))
+    logging.info("    • %-20s → %3d exec_* handlers",
+                 Path(path).name, len(out))
     return out
 
 
 def _extract_pairs(src: str) -> Dict[str, str]:
-    """Return hard-wired mnemonic → exec_fn pairs from the macro table."""
+    """Return dict: mnemonic → exec_fn from OpcodeInstr macro table."""
     pairs: Dict[str, str] = {}
     for mnem, fn in MACRO_RX.findall(src):
         pairs.setdefault(mnem.strip(), fn)
     logging.info("    • explicit pairs from OpcodeInstr: %d", len(pairs))
     return pairs
 
-# ───────────────— canonicalisation & similarity helpers —─────────────
+
+# ─────────────—— canonicalisation & similarity helpers —─────────────
 _VAR_RX = re.compile(r"_?VAR$", re.I)
+
 
 def _canon(text: str, *, is_fn: bool = False) -> str:
     text = text.removeprefix("exec_") if is_fn else text
@@ -76,36 +96,71 @@ def _split(text: str, *, is_fn: bool = False) -> Tuple[str, str]:
     return digits, letters
 
 
+# ─────────── fixed similarity helper ───────────
 def _similarity(mnem: str, fn: str) -> float:
-    """Heuristic similarity score ∈ [0,1]."""
+    """
+    Heuristic similarity score in [0,1].
+
+    • Exact or substring matches → 0.95
+    • Otherwise Levenshtein / token-set ratio on letters
+      with a small bonus when embedded decimal parts match.
+    """
     m_can, f_can = _canon(mnem), _canon(fn, is_fn=True)
     if m_can in f_can or f_can in m_can:
-        return 0.95                # near-perfect when one contains the other
+        return 0.95
 
-    md, ml = _split(mnem)
+    md, ml = _split(mnem)              # digits, letters
     fd, fl = _split(fn, is_fn=True)
-    if md and fd and md != fd:      # mismatching numeric tags → impossible
+
+    # mismatching numeric tags (e.g. 4 vs 8) → impossible
+    if md and fd and md != fd:
         return 0.0
-    base = max(fuzz.ratio(ml, fl), fuzz.token_set_ratio(ml, fl)) / 100
-    if md and fd and md == fd:      # small bonus when numbers match
-        base += 0.05
-    return base
+
+    base = max(fuzz.ratio(ml, fl),
+               fuzz.token_set_ratio(ml, fl)) / 100.0
+    if md and fd and md == fd:
+        base += 0.05                   # bonus when numbers line up
+    return min(base, 0.95)             # cap so overrides hit 1.0
 
 
-# ─────────────—— rule-based overrides for tricky families —────────────
-DIVMOD_RX   = re.compile(r"^Q?(DIV|MOD)(C|R)?$", re.I)
-PUSHINT_RX  = re.compile(r"^PUSHINT_(\d+|LONG)$", re.I)
+# ─────────── definitive override table ───────────
+_divmod_re  = re.compile(r"^Q?(DIV|MOD)(C|R)?$", re.I)
+_pushint_re = re.compile(r"^PUSHINT_(\d+|LONG)$", re.I)
 
 def _override(mnem: str) -> str | None:
-    """Return a hard override (exec_fn) or *None*."""
+    """Return the exact exec_* handler for tricky opcode families."""
     up = mnem.upper()
 
-    # 1) DIV / MOD (+ Q …) → exec_divmod
-    if DIVMOD_RX.match(up):
+    # 1) ADDDIVMOD ±(R|C) → exec_divmod
+    if up.startswith('ADDDIVMOD'):
         return "exec_divmod"
 
-    # 2) PUSHINT_* constants
-    m = PUSHINT_RX.match(up)
+    # 2) plain DIV / MOD (+ Q,R,C) → exec_divmod
+    if _divmod_re.match(up):
+        return "exec_divmod"
+
+    # 3) right-shift / addr-shift with remainder or rounding
+    if ('ADDRSHIFT' in up) or up.startswith(('RSHIFTMOD', 'RSHIFTRMOD',
+                                             'RSHIFTCMOD', 'MODPOW2')):
+        return "exec_shrmod"
+    if up.startswith('RSHIFT') and up not in ('RSHIFT', 'RSHIFT_VAR'):
+        return "exec_shrmod"
+
+    # 4) LSHIFT…DIV/MOD (const & _VAR) → exec_shldivmod
+    if up.startswith('LSHIFT') and ('DIV' in up or 'MOD' in up):
+        return "exec_shldivmod"
+
+    # 5) MUL… + (RSHIFT | POW2 | ADDRSHIFT) → exec_mulshrmod
+    if up.startswith('MUL') and (
+        'RSHIFT' in up or 'POW2' in up or 'ADDRSHIFT' in up):
+        return "exec_mulshrmod"
+
+    # 6) MUL…DIV/MOD (+ ADD, R, C) → exec_muldivmod
+    if up.startswith('MUL') and ('DIV' in up or 'MOD' in up):
+        return "exec_muldivmod"
+
+    # 7) PUSHINT_* literals
+    m = _pushint_re.match(up)
     if m:
         tag = m.group(1)
         return {
@@ -113,46 +168,52 @@ def _override(mnem: str) -> str | None:
             "8":   "exec_push_tinyint8",
             "16":  "exec_push_smallint",
             "LONG": "exec_push_int",
-        }.get(tag)
+        }[tag]
 
-    # 3) other one-offs
-    return {
-        "PUSHPOW2DEC":   "exec_push_pow2dec",
-        "PUSHNEGPOW2":   "exec_push_negpow2",
-        "ADDCONST":      "exec_add_tinyint8",
-        "MULCONST":      "exec_mul_tinyint8",
-        "ADDDIVMOD":     "exec_shldivmod",
-    }.get(up)
+    # 8) one-offs
+    one_offs = {
+        "PUSHPOW2DEC": "exec_push_pow2dec",
+        "PUSHNEGPOW2": "exec_push_negpow2",
+        "ADDCONST":    "exec_add_tinyint8",
+        "MULCONST":    "exec_mul_tinyint8",
+    }
+    if up in one_offs:
+        return one_offs[up]
+
+    # 9) ── generic fallback for quiet opcodes (prefix “Q”) ──  ← NEW
+    if up.startswith('Q') and len(up) > 1:                       # NEW
+        return _override(up[1:])      # strip the Q and reuse rule  # NEW
+
+    # nothing matched
+    return None
 
 # ───────────────────────────── cp0 helpers ────────────────────────────
 def _load_cp0(path: str | Path) -> Dict[str, str]:
-    """Return mnemonic → category for arithmetic-related instructions."""
+    """Return dict: mnemonic → category (only arithmetic categories)."""
     data = json.load(open(path, encoding="utf-8"))
     return {
-        ins["mnemonic"]: (ins.get("doc", {}) or {}).get("category", ins.get("category", ""))
+        ins["mnemonic"]:
+            (ins.get("doc", {}) or {}).get("category",
+                                           ins.get("category", ""))
         for ins in data.get("instructions", data)
-        if ((ins.get("doc", {}) or {}).get("category", ins.get("category", "")) in CATEGORIES)
+        if ((ins.get("doc", {}) or {}).get("category",
+                                           ins.get("category", "")) in CATEGORIES)
     }
 
+
 # ─────────────────────────────── CLI flow ─────────────────────────────
-def _print_summary(
-    cat_total: int,
-    func_total: int,
-    per_file: dict[str, int],
-    matched: int,
-    unmatched: list[str],
-) -> None:
+def _print_summary(total: int, funcs: dict[str, Tuple[str, int]],
+                   per_file: dict[str, int], matched: int,
+                   unmatched: list[str]) -> None:
     w = max(len(n) for n in per_file) if per_file else 0
-    border = "═" * 65
-    print(border)
-    print(f"{'SUMMARY':^65}")
-    print(border)
-    print(f"• cp0.json mnemonics : {cat_total}")
-    print(f"• exec_* handlers    : {func_total} across {len(per_file)} file(s)")
+    border = "═" * 66
+    print(border, "SUMMARY".center(66), border, sep="\n")
+    print(f"• cp0.json mnemonics : {total}")
+    print(f"• exec_* handlers    : {len(funcs)} across {len(per_file)} file(s)")
     for f, n in per_file.items():
         print(f"   – {f.ljust(w)} : {n:3}")
-    pct = matched / cat_total * 100 if cat_total else 0
-    print(f"• Matched (≥ thr)    : {matched}/{cat_total}  ({pct:5.1f} %)")
+    pct = matched / total * 100 if total else 0
+    print(f"• Matched (≥ thr)    : {matched}/{total}  ({pct:5.1f} %)")
     if unmatched:
         print(f"⚠ Unmatched          : {len(unmatched)} → {', '.join(unmatched)}")
     print(border)
@@ -160,32 +221,30 @@ def _print_summary(
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0",      default="cp0.json")
-    ap.add_argument("--thr",      type=float, default=0.70)
-    ap.add_argument("--out",      default="match-report.json")
-    ap.add_argument("--append",   action="store_true")
-    ap.add_argument("--fail-on-missing", action="store_true",
-                    help="exit 1 if any mnemonic is below threshold")
+    ap.add_argument("--cp0",    default="cp0.json")
+    ap.add_argument("--thr",    type=float, default=0.70)
+    ap.add_argument("--out",    default="match-report.json")
+    ap.add_argument("--append", action="store_true")
+    ap.add_argument("--fail-on-missing", action="store_true")
     args = ap.parse_args()
 
-    # 1) load mnemonics ------------------------------------------------
+    # 1 load mnemonics -------------------------------------------------
     mnems = _load_cp0(args.cp0)
     logging.info("• arithmetic mnemonics in cp0.json: %d", len(mnems))
 
-    # 2) download / parse arithops.cpp ---------------------------------
+    # 2 parse arithops.cpp --------------------------------------------
     src   = _download(ARITHOPS_URL)
     funcs = _extract_exec(src, ARITHOPS_URL)
     pairs = _extract_pairs(src)
 
-    # keep per-file stats for summary
-    file_count: dict[str, int] = defaultdict(int)
+    per_file: dict[str, int] = defaultdict(int)
     for _, (pth, _) in funcs.items():
-        file_count[Path(pth).name] += 1
+        per_file[Path(pth).name] += 1
 
-    # 3) match loop ----------------------------------------------------
+    # 3 matching loop --------------------------------------------------
     rows, unmatched = [], []
     for mnem, cat in mnems.items():
-        # rule-based override
+        # hard override?
         ov = _override(mnem)
         if ov and ov in funcs:
             p, l = funcs[ov]
@@ -193,7 +252,7 @@ def main() -> None:
                              category=cat, source_path=p, source_line=l))
             continue
 
-        # explicit macro hit
+        # explicit macro?
         if mnem in pairs and pairs[mnem] in funcs:
             p, l = funcs[pairs[mnem]]
             rows.append(dict(mnemonic=mnem, function=pairs[mnem], score=1.0,
@@ -207,25 +266,25 @@ def main() -> None:
             if s > best_s:
                 best, best_s, best_p, best_l = fn, s, pth, ln
         if best and best_s >= args.thr:
-            rows.append(dict(mnemonic=mnem, function=best, score=round(best_s, 2),
-                             category=cat, source_path=best_p, source_line=best_l))
+            rows.append(dict(mnemonic=mnem, function=best,
+                             score=round(best_s, 2), category=cat,
+                             source_path=best_p, source_line=best_l))
         else:
             unmatched.append(mnem)
 
-    # 4) summary box ---------------------------------------------------
-    _print_summary(len(mnems), len(funcs), dict(file_count), len(rows), unmatched)
-
+    # 4 summary & optional failure ------------------------------------
+    _print_summary(len(mnems), funcs, dict(per_file), len(rows), unmatched)
     if args.fail_on_missing and unmatched:
         sys.exit(1)
 
-    # 5) persist -------------------------------------------------------
-    out_p   = Path(args.out)
-    prev    = json.load(open(out_p)) if args.append and out_p.exists() else []
+    # 5 persist --------------------------------------------------------
+    out_p = Path(args.out)
+    prev  = json.load(open(out_p)) if args.append and out_p.exists() else []
     ordered = OrderedDict((r["mnemonic"], r) for r in prev)
     for r in rows:
         ordered[r["mnemonic"]] = r
     json.dump(list(ordered.values()), open(out_p, "w"), indent=2)
-    logging.info("✎ report saved → %s  (%d total entries)", out_p, len(ordered))
+    logging.info("✎ report saved → %s  (%d total rows)", out_p, len(ordered))
 
 
 if __name__ == "__main__":
