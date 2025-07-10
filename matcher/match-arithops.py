@@ -1,17 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Match arithmetic mnemonics from cp0.json to exec_* handlers in arithops.cpp.
-
-Usage examples
---------------
-python3 match.py --cp0 cp0.json               # writes match.json
-python3 match.py --cp0 cp0.json --out out.json
-python3 match.py --append                     # keep previous rows
-
-Exit status is non-zero if --fail-on-missing is given and any mnemonics
-remain unmatched.
-"""
 from __future__ import annotations
 
 import argparse
@@ -208,7 +194,7 @@ def _print_summary(total: int, funcs: dict[str, Tuple[str, int]],
     w = max(len(n) for n in per_file) if per_file else 0
     border = "═" * 66
     print(border, "SUMMARY".center(66), border, sep="\n")
-    print(f"• cp0.json mnemonics : {total}")
+    print(f"• cp0_legacy.json mnemonics : {total}")
     print(f"• exec_* handlers    : {len(funcs)} across {len(per_file)} file(s)")
     for f, n in per_file.items():
         print(f"   – {f.ljust(w)} : {n:3}")
@@ -221,7 +207,7 @@ def _print_summary(total: int, funcs: dict[str, Tuple[str, int]],
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0",    default="cp0.json")
+    ap.add_argument("--cp0",    default="cp0_legacy.json")
     ap.add_argument("--thr",    type=float, default=0.70)
     ap.add_argument("--out",    default="match-report.json")
     ap.add_argument("--append", action="store_true")
@@ -230,7 +216,7 @@ def main() -> None:
 
     # 1 load mnemonics -------------------------------------------------
     mnems = _load_cp0(args.cp0)
-    logging.info("• arithmetic mnemonics in cp0.json: %d", len(mnems))
+    logging.info("• arithmetic mnemonics in cp0_legacy.json: %d", len(mnems))
 
     # 2 parse arithops.cpp --------------------------------------------
     src   = _download(ARITHOPS_URL)

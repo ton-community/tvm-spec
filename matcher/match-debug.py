@@ -98,7 +98,7 @@ def fuzzy_match(mnem: str, funcs: Dict[str,int]) -> Tuple[str|None, float]:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Match debugops mnemonics to exec_* handlers.")
-    p.add_argument("--cp0", default="cp0.json", help="path to cp0.json")
+    p.add_argument("--cp0", default="cp0_legacy.json", help="path to legacy cp0.json")
     p.add_argument("--cpp", help="local debugops.cpp (else fetch)")
     p.add_argument("--out", default="match-report.json", help="output JSON file")
     p.add_argument("--append", action="store_true", help="merge into existing report")

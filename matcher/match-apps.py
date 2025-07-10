@@ -8,7 +8,7 @@ from collections import OrderedDict
 
 # ─── CONFIG ─────────────────────────────────────────────────────────────────────
 
-CP0_JSON    = Path(__file__).parent.parent / "cp0.json"
+CP0_JSON    = Path(__file__).parent.parent / "cp0_legacy.json"
 TONOPS_URL  = (
     "https://raw.githubusercontent.com/"
     "ton-blockchain/ton/"
@@ -27,7 +27,7 @@ def load_app_mnemonics():
     data = json.loads(CP0_JSON.read_text(encoding="utf-8"))
     ins = data.get("instructions") if isinstance(data, dict) else data
     if not isinstance(ins, list):
-        print("❌ cp0.json must be a list or dict with 'instructions'", file=sys.stderr)
+        print("❌ cp0_legacy.json must be a list or dict with 'instructions'", file=sys.stderr)
         sys.exit(1)
 
     apps = [

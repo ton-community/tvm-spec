@@ -98,7 +98,7 @@ def load_override(path: Path|None) -> Dict[str,str]:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--cats", nargs="+")
     ap.add_argument("--thr", type=float, default=0.70)
     ap.add_argument("--override", type=Path,
@@ -171,7 +171,7 @@ def main() -> None:
     print("                             SUMMARY")
     print("═" * 66)
     print(f"• Categories      : {', '.join(cat_list)}")
-    print(f"• cp0.json        : {total} mnemonics")
+    print(f"• cp0_legacy.json        : {total} mnemonics")
     print(f"• Matched (≥ {args.thr:.2f})   : {total}/{total}  (100.0 %)")
     print("═" * 66)
 

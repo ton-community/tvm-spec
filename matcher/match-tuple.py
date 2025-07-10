@@ -150,7 +150,7 @@ def pretty_summary(total_mnem: int,
 # ───────────────────────────── CLI --------------------------------------------
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--thr", type=float, default=0.70)
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")

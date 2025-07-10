@@ -143,7 +143,7 @@ def match_one(mnem: str) -> Tuple[str | None, str | None]:
 # ──────────────────────────────────────────────────────────────────────────
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--cpp", help="Local dictops.cpp (else download)")
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")

@@ -53,7 +53,7 @@ def load_src(local: str | None) -> Tuple[str, str]:
         return txt, REMOTE_CELL_OPS
 
 def wanted_mnemonics(cp0_path: Path) -> List[str]:
-    """Return all mnemonics in cp0.json with doc.category == compare_other."""
+    """Return all mnemonics in cp0_legacy.json with doc.category == compare_other."""
     data = json.load(cp0_path.open(encoding="utf-8"))
     instr = data.get("instructions", data)
     return [
@@ -109,7 +109,7 @@ def save_rows(rows: List[Dict[str,Any]], dest: Path, append: bool) -> None:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Match compare_other mnemonics → exec_*")
-    p.add_argument("--cp0",    default="cp0.json", help="path to cp0.json")
+    p.add_argument("--cp0",    default="cp0_legacy.json", help="path to legacy cp0.json")
     p.add_argument("--cpp",    help="local cellops.cpp (else fetch remote)")
     p.add_argument("--out",    default="match-report.json")
     p.add_argument("--append", action="store_true")
@@ -117,7 +117,7 @@ def main() -> None:
 
     # 1) load cp0
     wanted = wanted_mnemonics(Path(args.cp0))
-    print(f"• cp0.json          : {len(wanted)} compare_other mnemonics")
+    print(f"• cp0_legacy.json          : {len(wanted)} compare_other mnemonics")
 
     # 2) load & scan cellops.cpp (local or remote)
     src, source_path = load_src(args.cpp)
@@ -153,7 +153,7 @@ def main() -> None:
     # 6) summary
     bar = "═" * 65
     print(f"\n{bar}\n{'SUMMARY':^65}\n{bar}")
-    print(f"• cp0.json        : {len(wanted)} mnemonics")
+    print(f"• cp0_legacy.json        : {len(wanted)} mnemonics")
     print(f"✓ All mnemonics matched")
     print(bar)
 

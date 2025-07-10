@@ -75,9 +75,9 @@ def main() -> None:
                     help="text file with mnemonics (one per line)")
     ap.add_argument("--match", default="match-report.json",
                     help="file produced by matcher scripts")
-    ap.add_argument("--cp0", default="cp0.json",
-                    help="canonical cp0.json")
-    ap.add_argument("--out", default="cp0_new.json",
+    ap.add_argument("--cp0", default="cp0_legacy.json",
+                    help="canonical legacy cp0.json")
+    ap.add_argument("--out", default="cp0.json",
                     help="where to save the filtered cp0 subset")
     args = ap.parse_args()
 
@@ -119,7 +119,7 @@ def main() -> None:
     if missing:
         logging.warning("The following mnemonics were requested but NOT exported:")
         for m in sorted(missing):
-            phrase = ("absent in cp0.json" if m not in cp0_map
+            phrase = ("absent in cp0_legacy.json" if m not in cp0_map
                       else "absent in match-report.json")
             logging.warning("  %-20s • %s", m, phrase)
         # exit with 1 so CI fails when something is missing

@@ -83,7 +83,7 @@ def fuzzy_match(mnem: str, funcs: Dict[str,int]) -> Tuple[str|None,float]:
 
 def main() -> None:
     p = argparse.ArgumentParser(description="Match contops codepage mnemonics")
-    p.add_argument("--cp0",  default="cp0.json", help="path to cp0.json")
+    p.add_argument("--cp0",  default="cp0_legacy.json", help="path to cp0.json")
     p.add_argument("--cpp",  help="local contops.cpp (else download)")
     p.add_argument("--out",  default="match-report.json")
     p.add_argument("--append", action="store_true")
@@ -139,7 +139,7 @@ def main() -> None:
     logging.info("SUMMARY")
     logging.info("═"*60)
     logging.info(f"• Category       : {CATEGORY}")
-    logging.info(f"• cp0.json       : {total} mnemonics")
+    logging.info(f"• cp0_legacy.json       : {total} mnemonics")
     logging.info(
         f"• Matched (rule+fuzzy≥{int(FUZZ_THRESH*100)}%) : {matched}/{total} "
         f"({matched/total*100:.1f}%)"

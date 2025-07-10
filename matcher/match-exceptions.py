@@ -158,7 +158,7 @@ def _save_json(rows: List[Dict], out_path: Path, append: bool) -> None:
 # ─────────────────────────────────── CLI ──────────────────────────────────
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--cats", nargs="+", default=None)
     ap.add_argument("--thr", type=float, default=0.70)
     ap.add_argument("--out", default="match-report.json")

@@ -110,14 +110,14 @@ def save_json(rows: List[Dict], dest: Path, append: bool) -> None:
 # ───────────────────────────   CLI entry-point ─────────────────────────── 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
     args = ap.parse_args()
 
     # 1. cp0.json -------------------------------------------------------
     mnems = load_mnemonics(args.cp0)
-    logging.info("• cp0.json        : %d compare_int mnemonics", len(mnems))
+    logging.info("• cp0_legacy.json        : %d compare_int mnemonics", len(mnems))
 
     # 2. arithops.cpp ---------------------------------------------------
     cpp_text = fetch(ARITHOPS_URL)
@@ -133,7 +133,7 @@ def main() -> None:
     # 5. pretty summary -------------------------------------------------
     pct = len(rows) / len(mnems) * 100 if mnems else 100.0
     print(f"\n{_BAR}\n{'SUMMARY':^65}\n{_BAR}")
-    print(f"• cp0.json        : {len(mnems)} mnemonics")
+    print(f"• cp0_legacy.json        : {len(mnems)} mnemonics")
     print(f"• Matched         : {len(rows):>3}/{len(mnems)}  ({pct:5.1f} %)")
     if pct < 100.0:
         print("⚠ Something went wrong – not all mnemonics mapped!")

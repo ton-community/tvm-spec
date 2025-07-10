@@ -166,7 +166,7 @@ def _save_json(rows: List[Dict[str, Any]], dest: Path, append: bool) -> None:
 def main() -> None:
 
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json", help="path to cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json", help="path to cp0.json")
     ap.add_argument("--cats", nargs="+", default=None, help="'all' or list of categories")
     ap.add_argument(
         "--cpp",

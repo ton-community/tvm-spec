@@ -199,7 +199,7 @@ def _save_json(rows: List[Dict[str,Any]], path: Path, append: bool) -> None:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--cp0", default="cp0.json")
+    ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--cats", nargs="+", default=None)
     ap.add_argument("--thr", type=float, default=FUZZ_THRESH)
     ap.add_argument("--out", default="match-report.json")
@@ -212,7 +212,7 @@ def main():
     logging.info("• categories      : %s", ", ".join(cats))
 
     mnems = _load_cp0(args.cp0, cats)
-    logging.info("• cp0.json        : %d mnemonics", len(mnems))
+    logging.info("• cp0_legacy.json        : %d mnemonics", len(mnems))
 
     src   = _download(RAW_URL)
     funcs = _extract_exec_bodies(src, RAW_URL)
