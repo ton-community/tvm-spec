@@ -1,14 +1,27 @@
 # TVM Instructions Specification
-There is ~700 instructions in TVM, so it's quite painful to implement tools such as disassembler, decompiler, etc.
-This repo's goal is to provide machine-readable (JSON) description of TVM instructions: bytecode format, value flow and control flow information.
+There is ~300 instructions in TVM, so it's quite painful to implement tools such as disassembler, decompiler, etc.
+This repo's goal is to provide machine-readable (JSON) description of TVM instructions: bytecode format, value flow, control flow and implementation information.
 
 | Codepage | Specification
 | -------- | -------------
-| 0        | [cp0.json](./cp0.json)
+| 0        | [cp0.json](./cp0.json) (**current**)
+| -       | [cp0_legacy.json](./cp0_legacy.json) (**legacy**)
 
-JSON Schema of specifications is available in [schema.json](./schema.json). Generators such as [quicktype.io](https://app.quicktype.io/) can be used to generate wrappers for specific programming language.
 
-Based on [instructions.csv](https://github.com/ton-community/ton-docs/blob/main/docs/learn/tvm-instructions/instructions.csv).
+## Files Overview
+
+| File/Folder                | Purpose                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------ |
+| `.github/workflows/`       | CI for JSON/schema validation, matcher output checks                           |
+| `matcher/`                 | Python scripts that extract `exec_*` C++ functions and match them to mnemonics |
+| `cp0.json`                 | Current maintained spec (~365 instructions)                                   |
+| `cp0_legacy.json`          | Older file with 800+ instructions — still useful for comparison                |
+| `match-report.json`        | Output from matcher scripts with C++ line/function mapping                     |
+| `schema.json`              | JSON schema definition for runtime validation                                 |
+| `schema.ts`                | TypeScript schema for editor tooling, autocomplete, and static typing          |
+| `update-cp0.py`            | Script for regenerating `cp0.json`                                             |
+| `common-instructions.txt`  | List of the ~365 core instructions                                             |
+| `matcher/matcher-all.py`   | Runner for executing all matcher modules (stack, arith, etc.)                  |
 
 ## Features
 
@@ -19,11 +32,12 @@ Based on [instructions.csv](https://github.com/ton-community/ton-docs/blob/main/
 | value_flow   | ✅ Implemented | Describes how instruction changes current stack. This part of specification allows to analyze how instructions interact with each other, so it becomes possible to implement high-level tools such as decompilers.
 | control_flow | ✅ Implemented | Describes code flow (operations with cc register). It helps to reconstruct a control flow graph. This part mainly contains semantics of cont_* category instructions. For example, both JMPX and CALLX transfers execution to continuation on stack, but only CALLX returns and JMPX is not.
 | aliases | ✅ Implemented | Specifies instruction aliases. Can be used to provide to user information about special cases (for example, SWAP is a special case of XCHG_0i with i = 1).
+| implementation| ✅ Implemented   | Maps mnemonics to C++ source: function name, line number, and file path from the TON codebase. Helps trace and verify runtime behavior. |
 
 ## Usage
 Convenient way is to add submodule to your tool. This will greatly simplify debugging and upgrading process.
 ```bash
-git submodule add https://github.com/hacker-volodya/tvm-spec
+git submodule add https://github.com/ton-community/tvm-spec
 ```
 However, nothing can stop you from just copying `cp0.json` (and `schema.json` if necessary).
 
@@ -32,92 +46,53 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 2. [tvm-research](https://github.com/hacker-volodya/tvm-research), collection of tool prototypes with the power of tvm-spec
 3. [ton-opcode](https://github.com/tact-lang/ton-opcode), full-fledged TVM disassembler
 
-## Instruction Specification
-### Example
+## Instruction Specification Example
+
 ```json
-[
-    {
-      "mnemonic": "LDU",
-      "since_version": 0,
-      "doc": {
-        "category": "cell_parse",
-        "description": "Loads an unsigned `cc+1`-bit integer `x` from _Slice_ `s`.",
-        "gas": "26",
-        "fift": "[cc+1] LDU",
-        "fift_examples": [],
-        "opcode": "D3cc",
-        "stack": "s - x s'"
-      },
-      "bytecode": {
-        "tlb": "#D3 cc:uint8",
-        "prefix": "D3",
-        "operands": [
-          {
-            "name": "c",
-            "type": "uint",
-            "size": 8,
-            "min_value": 0,
-            "max_value": 255,
-            "display_hints": [{ "type": "add", "value": 1 }]
-          }
+{
+  "mnemonic": "XCHG_0I",
+  "since_version": 0,
+  "doc": {
+    "category": "stack_basic",
+    "description": "Interchanges `s0` with `s[i]`, `1 <= i <= 15`.",
+    "gas": "18",
+    "fift": "s[i] XCHG0",
+    "fift_examples": [],
+    "opcode": "0i",
+    "stack": ""
+  },
+  "bytecode": {
+    "tlb": "#0 i:(## 4) {1 <= i}",
+    "prefix": "0",
+    "operands_range_check": { "length": 4, "from": 1, "to": 15 },
+    "operands": [
+      {
+        "name": "i",
+        "type": "uint",
+        "size": 4,
+        "min_value": 1,
+        "max_value": 15,
+        "display_hints": [
+          { "type": "stack" }
         ]
-      },
-      "value_flow": {
-        "inputs": {
-          "stack": [
-            { "type": "simple", "name": "s", "value_types": ["Slice"] }
-          ],
-          "registers": []
-        },
-        "outputs": {
-          "stack": [
-            { "type": "simple", "name": "x", "value_types": ["Integer"] },
-            { "type": "simple", "name": "s2", "value_types": ["Slice"] }
-          ],
-          "registers": []
-        }
-      },
-      "control_flow": { "branches": [], "nobranch": true }
-    },
-    {
-      "mnemonic": "EXECUTE",
-      "since_version": 0,
-      "doc": {
-        "category": "cont_basic",
-        "description": "_Calls_, or _executes_, continuation `c`.",
-        "gas": "18",
-        "fift": "EXECUTE\nCALLX",
-        "fift_examples": [],
-        "opcode": "D8",
-        "stack": "c - "
-      },
-      "bytecode": { "tlb": "#D8", "prefix": "D8", "operands": [] },
-      "value_flow": {
-        "inputs": {
-          "stack": [
-            { "type": "simple", "name": "c", "value_types": ["Continuation"] }
-          ],
-          "registers": []
-        },
-        "outputs": { "stack": [], "registers": [] }
-      },
-      "control_flow": {
-        "branches": [
-          {
-            "type": "variable",
-            "var_name": "c",
-            "save": {
-              "c0": {
-                "type": "cc",
-                "save": { "c0": { "type": "register", "index": 0 } }
-              }
-            }
-          }
-        ],
-        "nobranch": false
       }
+    ]
+  },
+  "value_flow": {
+    "inputs": { "registers": [] },
+    "outputs": { "registers": [] }
+  },
+  "control_flow": { "branches": [], "nobranch": true },
+  "implementation": [
+    {
+      "file": "stackops.cpp",
+      "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+      "line": 43,
+      "function_name": "exec_xchg0"
     }
-]
+  ]
+}
+
 ```
 
 ### Documentation
@@ -155,6 +130,7 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 | control_flow | Information related to current cc modification by instruction. Required.
 | control_flow.branches | Array of possible branches of an instruction. Specifies all possible values of cc after instruction execution. Required. Each branch described by a `Continuation` object described below.
 | control_flow.nobranch | Can this instruction not perform any of specified branches in certain cases (do not modify cc)? Required. If instruction has no control flow, nobranch is true and branches are empty.
+| implementation | Array of source mappings that define where this instruction is implemented in the TON C++ codebase. Includes `file`, `path`, `line`, and `function_name`. Optional but recommended. |
 
 ### Operand Types Specification and Examples
 `display_hints` property is available for `uint`, `int`, `ref` and `subslice` operand types. For `ref` and `subslice` there is `continuation` and `dictionary` hint types, and for `uint` there is `add`, `stack`, `register`, `pushint4`, `optional_nargs` and `plduz` hints.
@@ -181,6 +157,7 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 }
 ```
 Type of unsigned `size`-bit integer with valid values in range `min_value`...`max_value`. Arguments `size`, `min_value`, `max_value` of type `number` and `display_hints` of type `array` are required.
+
 #### int
 ```json
 {
@@ -193,6 +170,7 @@ Type of unsigned `size`-bit integer with valid values in range `min_value`...`ma
 }
 ```
 Type of signed `size`-bit integer with valid values in range `min_value`...`max_value`. Arguments `size`, `min_value`, `max_value` of type `number` and `display_hints` of type `array` are required.
+
 #### ref
 ```json
 {
@@ -202,6 +180,7 @@ Type of signed `size`-bit integer with valid values in range `min_value`...`max_
 }
 ```
 Type of a single reference. Unlike `subslice` with `refs_add = 1`, should dereference instead of returning empty cell with a single reference.
+
 #### pushint_long
 ```json
 {
@@ -210,6 +189,7 @@ Type of a single reference. Unlike `subslice` with `refs_add = 1`, should derefe
 }
 ```
 Special type which currently is used only in `PUSHINT_LONG` instruction. Consists of 5-bit uint `size` and integer of bit size `8 * size + 19`.
+
 #### subslice
 ```json
 {
@@ -472,6 +452,7 @@ Specifies extraordinary continuation. `save` property does not apply here.
 | pushint | continuation next; integer value | Push `value` on stack, jump to `next`.
 
 ## Alias Specification
+
 ### Example
 ```json
 {
@@ -486,8 +467,6 @@ Specifies extraordinary continuation. `save` property does not apply here.
     }
 }
 ```
-
-### Documentation
 | Key | Description
 | --- | -----------
 | mnemonic | Alias name. Required.
@@ -496,3 +475,41 @@ Specifies extraordinary continuation. `save` property does not apply here.
 | doc_stack | Free-form description of stack inputs and outputs. Usually the form is `[inputs] - [outputs]` where `[inputs]` are consumed stack values and `outputs` are produced stack values (top of stack is the last value).
 | description | Free-form markdown description of alias. Optional.
 | operands | Values of original instruction operands which are fixed in this alias. Currently it can be integer or slice without references which is represented by string of '0' and '1's. Type should be inferred from original instruction operand loaders. Required.
+
+
+### Implementation Specification and Examples
+
+The `implementation` field maps a TVM instruction to one or more C++ functions in the [TON Virtual Machine source code](https://github.com/ton-blockchain/ton). This makes it possible to trace how an instruction is actually executed during runtime.
+
+Each object inside the `implementation` array includes:
+
+| Key             | Description |
+|------------------|-------------|
+| `file`           | Name of the source file in the TON codebase where the instruction is implemented (e.g., `stackops.cpp`). |
+| `path`           | Full raw GitHub URL pointing to the exact commit and file location. Used for linking to source directly. |
+| `line`           | Line number in the file where the C++ function begins. |
+| `function_name`  | Name of the C++ function that executes the instruction logic (e.g., `exec_xchg0`). |
+
+This is primarily used for:
+- Debugging and validating opcode behavior
+- Tooling (e.g., linking disassembler output back to implementation)
+- Verifying matcher output from scripts like `matcher-all.py`
+
+#### Example
+
+```json
+"implementation": [
+  {
+    "file": "stackops.cpp",
+    "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+    "line": 43,
+    "function_name": "exec_xchg0"
+  }
+]
+```
+
+If multiple function variants implement the same mnemonic (e.g., based on operand ranges), multiple entries can be listed in the array.
+
+#### Notes
+* Line numbers are based on static commits and may go out of sync if the underlying code changes. To update them, re-run the matchers.
+* These links are generated by matcher scripts under the `matcher/` directory and written to `match-report.json`.
