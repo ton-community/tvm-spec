@@ -1,5 +1,5 @@
 # TVM Instructions Specification
-There is ~300 instructions in TVM, so it's quite painful to implement tools such as disassembler, decompiler, etc.
+There is ~365 instructions in TVM, so it's quite painful to implement tools such as disassembler, decompiler, etc.
 This repo's goal is to provide machine-readable (JSON) description of TVM instructions: bytecode format, value flow, control flow and implementation information.
 
 | Codepage | Specification
