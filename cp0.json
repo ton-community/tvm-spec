@@ -22591,6 +22591,675 @@
           "function_name": "exec_divmod"
         }
       ]
+    },
+    {
+      "mnemonic": "ADDDIVMODR",
+      "since_version": 4,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "ADDDIVMODR",
+        "fift_examples": [],
+        "opcode": "A901",
+        "stack": "x w z - q=round((x+w)/z) r=(x+w)-zq"
+      },
+      "bytecode": { "tlb": "#A901", "prefix": "A901", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "w",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "z",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 266,
+          "function_name": "exec_divmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ADDDIVMODC",
+      "since_version": 4,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "ADDDIVMODC",
+        "fift_examples": [],
+        "opcode": "A902",
+        "stack": "x w y - q=ceil((x+w)/z) r=(x+w)-zq"
+      },
+      "bytecode": { "tlb": "#A902", "prefix": "A902", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "w",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 266,
+          "function_name": "exec_divmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ADDRSHIFTMOD",
+      "since_version": 4,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "34",
+        "fift": "[tt+1] ADDRSHIFT#MOD",
+        "fift_examples": [],
+        "opcode": "A930tt",
+        "stack": "x w - q=floor((x+w)/2^(tt+1)) r=(x+w)-q*2^(tt+1)"
+      },
+      "bytecode": {
+        "tlb": "#A930 tt:uint8",
+        "prefix": "A930",
+        "operands": [
+          {
+            "name": "t",
+            "type": "uint",
+            "size": 8,
+            "min_value": 0,
+            "max_value": 255,
+            "display_hints": [
+              { "type": "add", "value": 1 }
+            ]
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "w",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 336,
+          "function_name": "exec_shrmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ADDRSHIFTMODR",
+      "since_version": 4,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "ADDRSHIFTMODR",
+        "fift_examples": [],
+        "opcode": "A921",
+        "stack": "x w z - q=round((x+w)/2^z) r=(x+w)-q*2^z"
+      },
+      "bytecode": { "tlb": "#A921", "prefix": "A921", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "w",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "z",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 336,
+          "function_name": "exec_shrmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ADDRSHIFTMODC",
+      "since_version": 4,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "ADDRSHIFTMODC",
+        "fift_examples": [],
+        "opcode": "A922",
+        "stack": "x w z - q=ceil((x+w)/2^z) r=(x+w)-q*2^z"
+      },
+      "bytecode": { "tlb": "#A922", "prefix": "A922", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "w",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "z",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 336,
+          "function_name": "exec_shrmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "DIVMODR",
+      "since_version": 0,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "DIVMODR",
+        "fift_examples": [],
+        "opcode": "A90D",
+        "stack": "x y - q' r'"
+      },
+      "bytecode": { "tlb": "#A90D", "prefix": "A90D", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 266,
+          "function_name": "exec_divmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "DIVMODC",
+      "since_version": 0,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "DIVMODC",
+        "fift_examples": [],
+        "opcode": "A90E",
+        "stack": "x y - q'' r''"
+      },
+      "bytecode": { "tlb": "#A90E", "prefix": "A90E", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 266,
+          "function_name": "exec_divmod"
+        }
+      ]
+    },
+    {
+      "mnemonic": "INDEX2",
+      "since_version": 0,
+      "doc": {
+        "category": "tuple",
+        "description": "Recovers `x=(t_{i+1})_{j+1}` for `0 <= i,j <= 3`.\nEquivalent to `[i] INDEX` `[j] INDEX`.",
+        "gas": "26",
+        "fift": "[i] [j] INDEX2",
+        "fift_examples": [],
+        "opcode": "6FBij",
+        "stack": "t - x"
+      },
+      "bytecode": {
+        "tlb": "#6FB i:uint2 j:uint2",
+        "prefix": "6FB",
+        "operands": [
+          {
+            "name": "i",
+            "type": "uint",
+            "size": 2,
+            "min_value": 0,
+            "max_value": 3,
+            "display_hints": []
+          },
+          {
+            "name": "j",
+            "type": "uint",
+            "size": 2,
+            "min_value": 0,
+            "max_value": 3,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "t",
+              "value_types": [
+                "Tuple"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            { "type": "simple", "name": "x" }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tupleops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
+          "line": 320,
+          "function_name": "exec_tuple_index2"
+        }
+      ]
+    },
+    {
+      "mnemonic": "INDEX3",
+      "since_version": 0,
+      "doc": {
+        "category": "tuple",
+        "description": "Recovers `x=t_{i+1}_{j+1}_{k+1}`.\n`0 <= i,j,k <= 3`\nEquivalent to `[i] [j] INDEX2` `[k] INDEX`.",
+        "gas": "26",
+        "fift": "[i] [j] [k] INDEX3",
+        "fift_examples": [],
+        "opcode": "6FE_ijk",
+        "stack": "t - x"
+      },
+      "bytecode": {
+        "tlb": "#6FE_ i:uint2 j:uint2 k:uint2",
+        "prefix": "6FE_",
+        "operands": [
+          {
+            "name": "i",
+            "type": "uint",
+            "size": 2,
+            "min_value": 0,
+            "max_value": 3,
+            "display_hints": []
+          },
+          {
+            "name": "j",
+            "type": "uint",
+            "size": 2,
+            "min_value": 0,
+            "max_value": 3,
+            "display_hints": []
+          },
+          {
+            "name": "k",
+            "type": "uint",
+            "size": 2,
+            "min_value": 0,
+            "max_value": 3,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "t",
+              "value_types": [
+                "Tuple"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            { "type": "simple", "name": "x" }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tupleops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
+          "line": 340,
+          "function_name": "exec_tuple_index3"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ISTUPLE",
+      "since_version": 0,
+      "doc": {
+        "category": "tuple",
+        "description": "Returns `-1` or `0` depending on whether `t` is a _Tuple_.",
+        "gas": "26",
+        "fift": "ISTUPLE",
+        "fift_examples": [],
+        "opcode": "6F8A",
+        "stack": "t - ?"
+      },
+      "bytecode": { "tlb": "#6F8A", "prefix": "6F8A", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "t",
+              "value_types": [
+                "Tuple"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tupleops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp",
+          "line": 281,
+          "function_name": "exec_is_tuple"
+        }
+      ]
     }
   ],
   "aliases": []
