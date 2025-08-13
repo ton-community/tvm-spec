@@ -22035,6 +22035,562 @@
           "function_name": "exec_load_special_cell"
         }
       ]
+    },
+    {
+      "mnemonic": "NOP",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_basic",
+        "description": "Does nothing.",
+        "gas": "18",
+        "fift": "NOP",
+        "fift_examples": [],
+        "opcode": "00",
+        "stack": "-"
+      },
+      "bytecode": { "tlb": "#00", "prefix": "00", "operands": [] },
+      "value_flow": {
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 28,
+          "function_name": "exec_nop"
+        }
+      ]
+    },
+    {
+      "mnemonic": "PICK",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then performs `s[i] PUSH`.",
+        "gas": "18",
+        "fift": "PICK\nPUSHX",
+        "fift_examples": [],
+        "opcode": "60",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#60", "prefix": "60", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 400,
+          "function_name": "exec_pick"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ROLLX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then performs `1 [i] BLKSWAP`.",
+        "gas": "18",
+        "fift": "ROLLX",
+        "fift_examples": [],
+        "opcode": "61",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#61", "prefix": "61", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 410,
+          "function_name": "exec_roll"
+        }
+      ]
+    },
+    {
+      "mnemonic": "-ROLLX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then performs `[i] 1 BLKSWAP`.",
+        "gas": "18",
+        "fift": "-ROLLX\nROLLREVX",
+        "fift_examples": [],
+        "opcode": "62",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#62", "prefix": "62", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 423,
+          "function_name": "exec_rollrev"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLKPUSH",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Equivalent to `PUSH s(j)` performed `i` times.\n`1 <= i <= 15`, `0 <= j <= 15`.",
+        "gas": "26",
+        "fift": "[i] [j] BLKPUSH",
+        "fift_examples": [],
+        "opcode": "5Fij",
+        "stack": ""
+      },
+      "bytecode": {
+        "tlb": "#5F i:(## 4) j:uint4 {1 <= i}",
+        "prefix": "5F",
+        "operands_range_check": { "length": 4, "from": 1, "to": 15 },
+        "operands": [
+          {
+            "name": "i",
+            "type": "uint",
+            "size": 4,
+            "min_value": 1,
+            "max_value": 15,
+            "display_hints": []
+          },
+          {
+            "name": "j",
+            "type": "uint",
+            "size": 4,
+            "min_value": 0,
+            "max_value": 15,
+            "display_hints": []
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 389,
+          "function_name": "exec_blkpush"
+        }
+      ]
+    },
+    {
+      "mnemonic": "REVX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integers `i`,`j` from the stack, then performs `[i] [j] REVERSE`.",
+        "gas": "18",
+        "fift": "REVX",
+        "fift_examples": [],
+        "opcode": "64",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#64", "prefix": "64", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 452,
+          "function_name": "exec_reverse_x"
+        }
+      ]
+    },
+    {
+      "mnemonic": "DROPX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then performs `[i] BLKDROP`.",
+        "gas": "18",
+        "fift": "DROPX",
+        "fift_examples": [],
+        "opcode": "65",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#65", "prefix": "65", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 464,
+          "function_name": "exec_drop_x"
+        }
+      ]
+    },
+    {
+      "mnemonic": "XCHGX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then performs `s[i] XCHG`.",
+        "gas": "18",
+        "fift": "XCHGX",
+        "fift_examples": [],
+        "opcode": "67",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#67", "prefix": "67", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 483,
+          "function_name": "exec_xchg_x"
+        }
+      ]
+    },
+    {
+      "mnemonic": "DEPTH",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pushes the current depth of the stack.",
+        "gas": "18",
+        "fift": "DEPTH",
+        "fift_examples": [],
+        "opcode": "68",
+        "stack": "- depth"
+      },
+      "bytecode": { "tlb": "#68", "prefix": "68", "operands": [] },
+      "value_flow": {
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "depth",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 493,
+          "function_name": "exec_depth"
+        }
+      ]
+    },
+    {
+      "mnemonic": "CHKDEPTH",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then checks whether there are at least `i` elements, generating a stack underflow exception otherwise.",
+        "gas": "18/58",
+        "fift": "CHKDEPTH",
+        "fift_examples": [],
+        "opcode": "69",
+        "stack": "i -"
+      },
+      "bytecode": { "tlb": "#69", "prefix": "69", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "i",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 500,
+          "function_name": "exec_chkdepth"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ONLYTOPX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then removes all but the top `i` elements.",
+        "gas": "18",
+        "fift": "ONLYTOPX",
+        "fift_examples": [],
+        "opcode": "6A",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#6A", "prefix": "6A", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 509,
+          "function_name": "exec_onlytop_x"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ONLYX",
+      "since_version": 0,
+      "doc": {
+        "category": "stack_complex",
+        "description": "Pops integer `i` from the stack, then leaves only the bottom `i` elements. Approximately equivalent to `DEPTH` `SWAP` `SUB` `DROPX`.",
+        "gas": "18",
+        "fift": "ONLYX",
+        "fift_examples": [],
+        "opcode": "6B",
+        "stack": ""
+      },
+      "bytecode": { "tlb": "#6B", "prefix": "6B", "operands": [] },
+      "value_flow": {
+        "inputs": { "registers": [] },
+        "outputs": { "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "stackops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp",
+          "line": 526,
+          "function_name": "exec_only_x"
+        }
+      ]
+    },
+    {
+      "mnemonic": "AGAIN",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_loops",
+        "description": "Similar to `REPEAT`, but executes `c` infinitely many times. A `RET` only begins a new iteration of the infinite loop, which can be exited only by an exception, or a `RETALT` (or an explicit `JMPX`).",
+        "gas": "18",
+        "fift": "AGAIN",
+        "fift_examples": [
+          { "fift": "AGAIN:<{ code }> <{ code }>AGAIN", "description": "Equivalent to `<{ code }> CONT` `AGAIN`." }
+        ],
+        "opcode": "EA",
+        "stack": "c - "
+      },
+      "bytecode": { "tlb": "#EA", "prefix": "EA", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": {
+        "branches": [
+          {
+            "type": "special",
+            "name": "again",
+            "args": {
+              "body": { "type": "variable", "var_name": "c" }
+            }
+          }
+        ],
+        "nobranch": false
+      },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 542,
+          "function_name": "exec_again"
+        }
+      ]
+    },
+    {
+      "mnemonic": "AGAINBRK",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_loops",
+        "description": "Similar to `AGAIN`, but also modifies `c1` in the same way as `REPEATBRK`.",
+        "gas": "26",
+        "fift": "AGAINBRK",
+        "fift_examples": [
+          { "fift": "AGAINBRK:<{ code }>", "description": "Equivalent to `<{ code }> CONT` `AGAINBRK`." }
+        ],
+        "opcode": "E31A",
+        "stack": "c -"
+      },
+      "bytecode": { "tlb": "#E31A", "prefix": "E31A", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 542,
+          "function_name": "exec_again"
+        }
+      ]
+    },
+    {
+      "mnemonic": "AGAINENDBRK",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_loops",
+        "description": "Equivalent to `SAMEALTSAVE` `AGAINEND`.",
+        "gas": "26",
+        "fift": "AGAINENDBRK\nAGAINBRK:",
+        "fift_examples": [],
+        "opcode": "E31B",
+        "stack": "-"
+      },
+      "bytecode": { "tlb": "#E31B", "prefix": "E31B", "operands": [] },
+      "value_flow": {
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 550,
+          "function_name": "exec_again_end"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ADDDIVMOD",
+      "since_version": 4,
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "gas": "26",
+        "fift": "ADDDIVMOD",
+        "fift_examples": [],
+        "opcode": "A900",
+        "stack": "x w z - q=floor((x+w)/z) r=(x+w)-zq"
+      },
+      "bytecode": { "tlb": "#A900", "prefix": "A900", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "w",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "z",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "q",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 266,
+          "function_name": "exec_divmod"
+        }
+      ]
     }
   ],
   "aliases": []
