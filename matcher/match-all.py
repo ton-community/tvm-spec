@@ -1,7 +1,7 @@
 from __future__ import annotations
 import argparse, subprocess, sys, pathlib
 
-SCRIPTS = ("match-stack.py", "match-tuple.py", "match-contops.py", "match-compare.py", "match-compare-other.py", "match-arithops.py", "match-cell.py"), 
+SCRIPTS = ("match-stack.py", "match-tuple.py", "match-contops.py", "match-compare.py", "match-compare-other.py", "match-arithops.py", "match-cell.py",)
 
 def main() -> None:
     ap = argparse.ArgumentParser()
