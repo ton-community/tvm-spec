@@ -8,7 +8,6 @@ from collections import OrderedDict
 
 # ─── CONFIG ─────────────────────────────────────────────────────────────────────
 
-CP0_JSON    = Path(__file__).parent.parent / "cp0_legacy.json"
 TONOPS_URL  = (
     "https://raw.githubusercontent.com/"
     "ton-blockchain/ton/"
@@ -19,12 +18,11 @@ APP_CATEGORIES = {
     'app_actions','app_addr','app_config','app_crypto',
     'app_currency','app_gas','app_global','app_misc','app_rnd'
 }
-OUTPUT_FILE = Path("match-report.json")
 
 # ─── END CONFIG ─────────────────────────────────────────────────────────────────
 
-def load_app_mnemonics():
-    data = json.loads(CP0_JSON.read_text(encoding="utf-8"))
+def load_app_mnemonics(cp0_json):
+    data = json.loads(cp0_json.read_text(encoding="utf-8"))
     ins = data.get("instructions") if isinstance(data, dict) else data
     if not isinstance(ins, list):
         print("❌ cp0_legacy.json must be a list or dict with 'instructions'", file=sys.stderr)
@@ -84,11 +82,16 @@ def find_definitions(src_lines):
 def main():
     import argparse
     p = argparse.ArgumentParser()
+    p.add_argument("--cp0", default="cp0_legacy.json")
+    p.add_argument("--out", default="match-report.json")
     p.add_argument("--append", action="store_true",
                    help="merge into existing match-report.json instead of overwriting")
     args = p.parse_args()
 
-    apps  = load_app_mnemonics()
+    output_file = Path(args.out)
+    cp0_json = Path(args.cp0)
+
+    apps  = load_app_mnemonics(cp0_json)
     src   = fetch_tonops()
     regs  = build_registration_map(src)
     lines = src.splitlines()
@@ -106,8 +109,8 @@ def main():
 
     # load existing if appending
     existing = {}
-    if args.append and OUTPUT_FILE.exists():
-        for entry in json.loads(OUTPUT_FILE.read_text(encoding="utf-8")):
+    if args.append and output_file.exists():
+        for entry in json.loads(output_file.read_text(encoding="utf-8")):
             key = entry["mnemonic"]
             existing[key] = entry
 
@@ -127,9 +130,9 @@ def main():
         output[m] = entry
 
     # write out
-    OUTPUT_FILE.write_text(json.dumps(list(output.values()), indent=2),
+    output_file.write_text(json.dumps(list(output.values()), indent=2),
                            encoding="utf-8")
-    print(f"✔ Wrote mapping to {OUTPUT_FILE} ({len(output)} entries)")
+    print(f"✔ Wrote mapping to {output_file} ({len(output)} entries)")
 
     total   = len(output)
     matched = sum(1 for o in output.values() if o["function"])

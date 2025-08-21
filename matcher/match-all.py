@@ -9,6 +9,11 @@ SCRIPTS = (
     "match-compare-other.py",
     "match-arithops.py",
     "match-cell.py",
+    "match-apps.py",
+    "match-codepage.py",
+    "match-debug.py",
+    "match-dict.py",
+    "match-exceptions.py",
 )
 
 def main() -> None:
