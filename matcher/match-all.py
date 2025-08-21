@@ -1,7 +1,15 @@
 from __future__ import annotations
 import argparse, subprocess, sys, pathlib
 
-SCRIPTS = ("match-stack.py", "match-tuple.py", "match-contops.py", "match-compare.py", "match-compare-other.py", "match-arithops.py", "match-cell.py",)
+SCRIPTS = (
+    "match-stack.py",
+    "match-tuple.py",
+    "match-contops.py",
+    "match-compare.py",
+    "match-compare-other.py",
+    "match-arithops.py",
+    "match-cell.py",
+)
 
 def main() -> None:
     ap = argparse.ArgumentParser()
@@ -11,10 +19,13 @@ def main() -> None:
     ap.add_argument("-v", "--verbose", action="store_true", help="echo the commands")
     args = ap.parse_args()
 
+    script_dir = pathlib.Path(__file__).resolve().parent
+
     for idx, script in enumerate(SCRIPTS):
+        script_path = str(script_dir / script)
         cmd = [
             sys.executable,
-            pathlib.Path(script).as_posix(),
+            script_path,
             "--cp0", args.cp0,
             "--out", args.out,
         ]
