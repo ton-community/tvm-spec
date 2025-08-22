@@ -24618,6 +24618,1402 @@
           "function_name": "exec_shrmod"
         }
       ]
+    },
+    {
+      "mnemonic": "ATEXIT",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_registers",
+        "description": "Sets `c0` to `compose0(c, c0)`. In other words, `c` will be executed before exiting current subroutine.",
+        "gas": "26",
+        "fift": "ATEXIT",
+        "fift_examples": [
+          { "fift": "ATEXIT:<{ code }> <{ code }>ATEXIT", "description": "Equivalent to `<{ code }> CONT` `ATEXIT`." }
+        ],
+        "opcode": "EDF3",
+        "stack": "c - "
+      },
+      "bytecode": { "tlb": "#EDF3", "prefix": "EDF3", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": [
+            { "type": "constant", "index": 0 }
+          ]
+        },
+        "outputs": {
+          "stack": [],
+          "registers": [
+            { "type": "constant", "index": 0 }
+          ]
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 983,
+          "function_name": "exec_atexit"
+        }
+      ]
+    },
+    {
+      "mnemonic": "ATEXITALT",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_registers",
+        "description": "Sets `c1` to `compose1(c, c1)`. In other words, `c` will be executed before exiting current subroutine by its alternative return path.",
+        "gas": "26",
+        "fift": "ATEXITALT",
+        "fift_examples": [
+          { "fift": "ATEXITALT:<{ code }> <{ code }>ATEXITALT", "description": "Equivalent to `<{ code }> CONT` `ATEXITALT`." }
+        ],
+        "opcode": "EDF4",
+        "stack": "c - "
+      },
+      "bytecode": { "tlb": "#EDF4", "prefix": "EDF4", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": [
+            { "type": "constant", "index": 1 }
+          ]
+        },
+        "outputs": {
+          "stack": [],
+          "registers": [
+            { "type": "constant", "index": 1 }
+          ]
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 992,
+          "function_name": "exec_atexit_alt"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BBITREFS",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Returns the numbers of both data bits and cell references in `b`.",
+        "gas": "26",
+        "fift": "BBITREFS",
+        "fift_examples": [],
+        "opcode": "CF33",
+        "stack": "b - x y"
+      },
+      "bytecode": { "tlb": "#CF33", "prefix": "CF33", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 712,
+          "function_name": "exec_2int_builder_func"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKBITREFS",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `x` bits and `y` references can be stored into `b`, `0 <= x <= 1023`, `0 <= y <= 7`.",
+        "gas": "26/76",
+        "fift": "BCHKBITREFS",
+        "fift_examples": [],
+        "opcode": "CF3B",
+        "stack": "b x y - "
+      },
+      "bytecode": { "tlb": "#CF3B", "prefix": "CF3B", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKBITREFSQ",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `x` bits and `y` references can be stored into `b`, `0 <= x <= 1023`, `0 <= y <= 7`.",
+        "gas": "26",
+        "fift": "BCHKBITREFSQ",
+        "fift_examples": [],
+        "opcode": "CF3F",
+        "stack": "b x y - ?"
+      },
+      "bytecode": { "tlb": "#CF3F", "prefix": "CF3F", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKBITS",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `cc+1` bits can be stored into `b`, where `0 <= cc <= 255`.",
+        "gas": "34/84",
+        "fift": "[cc+1] BCHKBITS#",
+        "fift_examples": [],
+        "opcode": "CF38cc",
+        "stack": "b -"
+      },
+      "bytecode": {
+        "tlb": "#CF38 cc:uint8",
+        "prefix": "CF38",
+        "operands": [
+          {
+            "name": "c",
+            "type": "uint",
+            "size": 8,
+            "min_value": 0,
+            "max_value": 255,
+            "display_hints": [
+              { "type": "add", "value": 1 }
+            ]
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKBITSQ",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `cc+1` bits can be stored into `b`, where `0 <= cc <= 255`.",
+        "gas": "34",
+        "fift": "[cc+1] BCHKBITSQ#",
+        "fift_examples": [],
+        "opcode": "CF3Ccc",
+        "stack": "b - ?"
+      },
+      "bytecode": {
+        "tlb": "#CF3C cc:uint8",
+        "prefix": "CF3C",
+        "operands": [
+          {
+            "name": "c",
+            "type": "uint",
+            "size": 8,
+            "min_value": 0,
+            "max_value": 255,
+            "display_hints": [
+              { "type": "add", "value": 1 }
+            ]
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKBITS_VAR",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `x` bits can be stored into `b`, `0 <= x <= 1023`. If there is no space for `x` more bits in `b`, or if `x` is not within the range `0...1023`, throws an exception.",
+        "gas": "26/76",
+        "fift": "BCHKBITS",
+        "fift_examples": [],
+        "opcode": "CF39",
+        "stack": "b x - "
+      },
+      "bytecode": { "tlb": "#CF39", "prefix": "CF39", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKREFS",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `y` references can be stored into `b`, `0 <= y <= 7`.",
+        "gas": "26/76",
+        "fift": "BCHKREFS",
+        "fift_examples": [],
+        "opcode": "CF3A",
+        "stack": "b y - "
+      },
+      "bytecode": { "tlb": "#CF3A", "prefix": "CF3A", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": { "stack": [], "registers": [] }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BCHKREFSQ",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Checks whether `y` references can be stored into `b`, `0 <= y <= 7`.",
+        "gas": "26",
+        "fift": "BCHKREFSQ",
+        "fift_examples": [],
+        "opcode": "CF3E",
+        "stack": "b y - ?"
+      },
+      "bytecode": { "tlb": "#CF3E", "prefix": "CF3E", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 737,
+          "function_name": "exec_builder_chk_bits_refs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BDEPTH",
+      "since_version": 0,
+      "doc": {
+        "category": "cell_build",
+        "description": "Returns the depth of _Builder_ `b`. If no cell references are stored in `b`, then `x=0`; otherwise `x` is one plus the maximum of depths of cells referred to from `b`.",
+        "gas": "26",
+        "fift": "BDEPTH",
+        "fift_examples": [],
+        "opcode": "CF30",
+        "stack": "b - x"
+      },
+      "bytecode": { "tlb": "#CF30", "prefix": "CF30", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "b",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp",
+          "line": 704,
+          "function_name": "exec_int_builder_func"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BITSIZE",
+      "since_version": 0,
+      "doc": {
+        "category": "arithm_logical",
+        "description": "Computes smallest `c >= 0` such that `x` fits into a `c`-bit signed integer (`-2^(c-1) <= c < 2^(c-1)`).",
+        "gas": "26",
+        "fift": "BITSIZE",
+        "fift_examples": [],
+        "opcode": "B602",
+        "stack": "x - c"
+      },
+      "bytecode": { "tlb": "#B602", "prefix": "B602", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp",
+          "line": 856,
+          "function_name": "exec_bitsize"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLESSARGS",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_create",
+        "description": "`0 <= r <= 15`, `-1 <= n <= 14`\nEquivalent to `BLESS` `[r] [n] SETCONTARGS`.\nThe value of `n` is represented inside the instruction by the 4-bit integer `n mod 16`.",
+        "gas": "26",
+        "fift": "[r] [n] BLESSARGS",
+        "fift_examples": [],
+        "opcode": "EErn",
+        "stack": "x_1...x_r s - c"
+      },
+      "bytecode": {
+        "tlb": "#EE r:uint4 n:uint4",
+        "prefix": "EE",
+        "operands": [
+          {
+            "name": "r",
+            "type": "uint",
+            "size": 4,
+            "min_value": 0,
+            "max_value": 15,
+            "display_hints": []
+          },
+          {
+            "name": "n",
+            "type": "uint",
+            "size": 4,
+            "min_value": 0,
+            "max_value": 15,
+            "display_hints": [
+              { "type": "optional_nargs" }
+            ]
+          }
+        ]
+      },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "array",
+              "name": "args",
+              "length_var": "r",
+              "array_entry": [
+                { "type": "simple", "name": "x" }
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "s",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 759,
+          "function_name": "exec_bless_args"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLESSVARARGS",
+      "since_version": 0,
+      "doc": {
+        "category": "cont_create",
+        "description": "Equivalent to `ROT` `BLESS` `ROTREV` `SETCONTVARARGS`.",
+        "gas": "26+s''",
+        "fift": "BLESSVARARGS",
+        "fift_examples": [],
+        "opcode": "ED1F",
+        "stack": "x_1...x_r s r n - c"
+      },
+      "bytecode": { "tlb": "#ED1F", "prefix": "ED1F", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "array",
+              "name": "args",
+              "length_var": "r",
+              "array_entry": [
+                { "type": "simple", "name": "x" }
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "s",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "r",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "c",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp",
+          "line": 750,
+          "function_name": "exec_bless_varargs"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_AGGREGATE",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Aggregates signatures. `n>0`. Throw exception if `n=0` or if some `sig_i` is not a valid signature.",
+        "gas": "n*4350-2616",
+        "fift": "BLS_AGGREGATE",
+        "fift_examples": [],
+        "opcode": "F93001",
+        "stack": "sig_1 ... sig_n n - sig"
+      },
+      "bytecode": { "tlb": "#F93001", "prefix": "F93001", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "array",
+              "name": "signatures",
+              "length_var": "n",
+              "array_entry": [
+                {
+                  "type": "simple",
+                  "name": "sig",
+                  "value_types": [
+                    "Slice"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1102,
+          "function_name": "exec_bls_aggregate"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_AGGREGATEVERIFY",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Checks aggregated BLS signature for key-message pairs `pk_1 msg_1...pk_n msg_n`. Return true on success, false otherwise. Return false if `n=0`.",
+        "gas": "38534+n*22500",
+        "fift": "BLS_AGGREGATEVERIFY",
+        "fift_examples": [],
+        "opcode": "F93003",
+        "stack": "pk_1 msg_1 ... pk_n msg_n n sgn - bool"
+      },
+      "bytecode": { "tlb": "#F93003", "prefix": "F93003", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "array",
+              "name": "key_message_pairs",
+              "length_var": "n",
+              "array_entry": [
+                {
+                  "type": "simple",
+                  "name": "pk",
+                  "value_types": [
+                    "Slice"
+                  ]
+                },
+                {
+                  "type": "simple",
+                  "name": "msg",
+                  "value_types": [
+                    "Slice"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "sgn",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1133,
+          "function_name": "exec_bls_aggregate_verify"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_FASTAGGREGATEVERIFY",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Checks aggregated BLS signature for keys `pk_1...pk_n` and message `msg`. Return true on success, false otherwise. Return false if `n=0`.",
+        "gas": "58034+n*3000",
+        "fift": "BLS_FASTAGGREGATEVERIFY",
+        "fift_examples": [],
+        "opcode": "F93002",
+        "stack": "pk_1 ... pk_n n msg sig - bool"
+      },
+      "bytecode": { "tlb": "#F93002", "prefix": "F93002", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "array",
+              "name": "public_keys",
+              "length_var": "n",
+              "array_entry": [
+                {
+                  "type": "simple",
+                  "name": "pk",
+                  "value_types": [
+                    "Slice"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "n",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "msg",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "sig",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1116,
+          "function_name": "exec_bls_fast_aggregate_verify"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G1_INGROUP",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Checks that slice `x` represents a valid element of G1.",
+        "gas": "2984",
+        "fift": "BLS_G1_INGROUP",
+        "fift_examples": [],
+        "opcode": "F93017",
+        "stack": "x - bool"
+      },
+      "bytecode": { "tlb": "#F93017", "prefix": "F93017", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1224,
+          "function_name": "exec_bls_g1_in_group"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G1_ISZERO",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Checks that G1 point `x` is equal to zero.",
+        "gas": "34",
+        "fift": "BLS_G1_ISZERO",
+        "fift_examples": [],
+        "opcode": "F93018",
+        "stack": "x - bool"
+      },
+      "bytecode": { "tlb": "#F93018", "prefix": "F93018", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1233,
+          "function_name": "exec_bls_g1_is_zero"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G1_SUB",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Subtraction on G1.",
+        "gas": "3934",
+        "fift": "BLS_G1_SUB",
+        "fift_examples": [],
+        "opcode": "F93011",
+        "stack": "x y - x-y"
+      },
+      "bytecode": { "tlb": "#F93011", "prefix": "F93011", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1161,
+          "function_name": "exec_bls_g1_sub"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G1_ZERO",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Pushes zero point in G1.",
+        "gas": "34",
+        "fift": "BLS_G1_ZERO",
+        "fift_examples": [],
+        "opcode": "F93015",
+        "stack": "- zero"
+      },
+      "bytecode": { "tlb": "#F93015", "prefix": "F93015", "operands": [] },
+      "value_flow": {
+        "inputs": { "stack": [], "registers": [] },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "zero",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1208,
+          "function_name": "exec_bls_g1_zero"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G2_ADD",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Addition on G2.",
+        "gas": "6134",
+        "fift": "BLS_G2_ADD",
+        "fift_examples": [],
+        "opcode": "F93020",
+        "stack": "x y - x+y"
+      },
+      "bytecode": { "tlb": "#F93020", "prefix": "F93020", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "y",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1241,
+          "function_name": "exec_bls_g2_add"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G2_INGROUP",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Checks that slice `x` represents a valid element of G2.",
+        "gas": "4284",
+        "fift": "BLS_G2_INGROUP",
+        "fift_examples": [],
+        "opcode": "F93027",
+        "stack": "x - bool"
+      },
+      "bytecode": { "tlb": "#F93027", "prefix": "F93027", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1315,
+          "function_name": "exec_bls_g2_in_group"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G2_ISZERO",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Checks that G2 point `x` is equal to zero.",
+        "gas": "34",
+        "fift": "BLS_G2_ISZERO",
+        "fift_examples": [],
+        "opcode": "F93028",
+        "stack": "x - bool"
+      },
+      "bytecode": { "tlb": "#F93028", "prefix": "F93028", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1324,
+          "function_name": "exec_bls_g2_is_zero"
+        }
+      ]
+    },
+    {
+      "mnemonic": "BLS_G2_MUL",
+      "since_version": 4,
+      "doc": {
+        "category": "app_crypto",
+        "description": "Multiplies G2 point `x` by scalar `s`. Any `s` is valid, including negative.",
+        "gas": "10584",
+        "fift": "BLS_G2_MUL",
+        "fift_examples": [],
+        "opcode": "F93023",
+        "stack": "x s - x*s"
+      },
+      "bytecode": { "tlb": "#F93023", "prefix": "F93023", "operands": [] },
+      "value_flow": {
+        "inputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "x",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "type": "simple",
+              "name": "s",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ],
+          "registers": []
+        },
+        "outputs": {
+          "stack": [
+            {
+              "type": "simple",
+              "name": "result",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ],
+          "registers": []
+        }
+      },
+      "control_flow": { "branches": [], "nobranch": true },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tonops.cpp",
+          "line": 1272,
+          "function_name": "exec_bls_g2_mul"
+        }
+      ]
     }
   ],
   "aliases": []
