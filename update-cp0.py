@@ -15,10 +15,9 @@ def load_match(path: Path) -> Dict[str, dict]:
         return {d["mnemonic"]: d for d in json.load(f)}
 
 
-def load_cp0(path: Path) -> Dict[str, dict]:
+def load_cp0(path: Path) -> dict:
     with path.open(encoding="utf-8") as f:
-        data = json.load(f)
-    return {inst["mnemonic"]: inst for inst in data["instructions"]}
+        return json.load(f)
 
 
 def is_primitive(v):  # small util
@@ -76,14 +75,17 @@ def main() -> None:
     ap.add_argument("--match", default="match-report.json",
                     help="file produced by matcher scripts")
     ap.add_argument("--cp0", default="cp0_legacy.json",
-                    help="canonical legacy cp0.json")
+                    help="canonical legacy cp0.json (includes aliases)")
     ap.add_argument("--out", default="cp0.json",
                     help="where to save the filtered cp0 subset")
     args = ap.parse_args()
 
     popular_path = Path(args.popular)
     match_map = load_match(Path(args.match))
-    cp0_map = load_cp0(Path(args.cp0))
+    cp0_full = load_cp0(Path(args.cp0))
+
+    cp0_map = {inst["mnemonic"]: inst for inst in cp0_full["instructions"]}
+    aliases = cp0_full.get("aliases", [])
 
     picked: List[dict] = []
     missing: List[str] = []
@@ -122,16 +124,15 @@ def main() -> None:
             phrase = ("absent in cp0_legacy.json" if m not in cp0_map
                       else "absent in match-report.json")
             logging.warning("  %-20s • %s", m, phrase)
-        # exit with 1 so CI fails when something is missing
         sys.exit(1)
 
-    # ── write compact json ─────────────────────────────────────────────
+    # ── write compact json (with aliases merged) ─────────────────────────
     write_compact_json({
         "$schema": "./schema.json",
         "instructions": picked,
-        "aliases": []
+        "aliases": aliases
     }, Path(args.out))
-    logging.info("✅ wrote %d instructions → %s", len(picked), args.out)
+    logging.info("✅ wrote %d instructions + %d aliases → %s", len(picked), len(aliases), args.out)
 
 
 if __name__ == "__main__":

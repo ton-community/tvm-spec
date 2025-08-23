@@ -1,0 +1,709 @@
+[
+  {
+    "mnemonic": "SWAP",
+    "alias_of": "XCHG_0I",
+    "doc_fift": "SWAP",
+    "doc_stack": "x y - y x",
+    "description": "Same as `s1 XCHG0`.",
+    "operands": {
+      "i": 1
+    }
+  },
+  {
+    "mnemonic": "DUP",
+    "alias_of": "PUSH",
+    "doc_fift": "DUP",
+    "doc_stack": "x - x x",
+    "description": "Same as `s0 PUSH`.",
+    "operands": {
+      "i": 0
+    }
+  },
+  {
+    "mnemonic": "OVER",
+    "alias_of": "PUSH",
+    "doc_fift": "OVER",
+    "doc_stack": "x y - x y x",
+    "description": "Same as `s1 PUSH`.",
+    "operands": {
+      "i": 1
+    }
+  },
+  {
+    "mnemonic": "DROP",
+    "alias_of": "POP",
+    "doc_fift": "DROP",
+    "doc_stack": "x -",
+    "description": "Same as `s0 POP`, discards the top-of-stack value.",
+    "operands": {
+      "i": 0
+    }
+  },
+  {
+    "mnemonic": "NIP",
+    "alias_of": "POP",
+    "doc_fift": "NIP",
+    "doc_stack": "x y - y",
+    "description": "Same as `s1 POP`.",
+    "operands": {
+      "i": 1
+    }
+  },
+  {
+    "mnemonic": "ROT2",
+    "alias_of": "BLKSWAP",
+    "doc_fift": "ROT2\n2ROT",
+    "doc_stack": "a b c d e f - c d e f a b",
+    "description": "Rotates the three topmost pairs of stack entries.",
+    "operands": {
+      "i": 1,
+      "j": 3
+    }
+  },
+  {
+    "mnemonic": "ROLL",
+    "alias_of": "BLKSWAP",
+    "doc_fift": "[i+1] ROLL",
+    "doc_stack": "",
+    "description": "Rotates the top `i+1` stack entries.\nEquivalent to `1 [i+1] BLKSWAP`.",
+    "operands": {
+      "i": 0
+    }
+  },
+  {
+    "mnemonic": "ROLLREV",
+    "alias_of": "BLKSWAP",
+    "doc_fift": "[i+1] -ROLL\n[i+1] ROLLREV",
+    "doc_stack": "",
+    "description": "Rotates the top `i+1` stack entries in the other direction.\nEquivalent to `[i+1] 1 BLKSWAP`.",
+    "operands": {
+      "j": 0
+    }
+  },
+  {
+    "mnemonic": "NIL",
+    "alias_of": "TUPLE",
+    "doc_fift": "NIL",
+    "doc_stack": "- t",
+    "description": "Pushes the only _Tuple_ `t=()` of length zero.",
+    "operands": {
+      "n": 0
+    }
+  },
+  {
+    "mnemonic": "SINGLE",
+    "alias_of": "TUPLE",
+    "doc_fift": "SINGLE",
+    "doc_stack": "x - t",
+    "description": "Creates a singleton `t:=(x)`, i.e., a _Tuple_ of length one.",
+    "operands": {
+      "n": 1
+    }
+  },
+  {
+    "mnemonic": "PAIR",
+    "alias_of": "TUPLE",
+    "doc_fift": "PAIR\nCONS",
+    "doc_stack": "x y - t",
+    "description": "Creates pair `t:=(x,y)`.",
+    "operands": {
+      "n": 2
+    }
+  },
+  {
+    "mnemonic": "TRIPLE",
+    "alias_of": "TUPLE",
+    "doc_fift": "TRIPLE",
+    "doc_stack": "x y z - t",
+    "description": "Creates triple `t:=(x,y,z)`.",
+    "operands": {
+      "n": 3
+    }
+  },
+  {
+    "mnemonic": "FIRST",
+    "alias_of": "INDEX",
+    "doc_fift": "FIRST\nCAR",
+    "doc_stack": "t - x",
+    "description": "Returns the first element of a _Tuple_.",
+    "operands": {
+      "k": 0
+    }
+  },
+  {
+    "mnemonic": "SECOND",
+    "alias_of": "INDEX",
+    "doc_fift": "SECOND\nCDR",
+    "doc_stack": "t - y",
+    "description": "Returns the second element of a _Tuple_.",
+    "operands": {
+      "k": 1
+    }
+  },
+  {
+    "mnemonic": "THIRD",
+    "alias_of": "INDEX",
+    "doc_fift": "THIRD",
+    "doc_stack": "t - z",
+    "description": "Returns the third element of a _Tuple_.",
+    "operands": {
+      "k": 2
+    }
+  },
+  {
+    "mnemonic": "UNSINGLE",
+    "alias_of": "UNTUPLE",
+    "doc_fift": "UNSINGLE",
+    "doc_stack": "t - x",
+    "description": "Unpacks a singleton `t=(x)`.",
+    "operands": {
+      "n": 1
+    }
+  },
+  {
+    "mnemonic": "UNPAIR",
+    "alias_of": "UNTUPLE",
+    "doc_fift": "UNPAIR\nUNCONS",
+    "doc_stack": "t - x y",
+    "description": "Unpacks a pair `t=(x,y)`.",
+    "operands": {
+      "n": 2
+    }
+  },
+  {
+    "mnemonic": "UNTRIPLE",
+    "alias_of": "UNTUPLE",
+    "doc_fift": "UNTRIPLE",
+    "doc_stack": "t - x y z",
+    "description": "Unpacks a triple `t=(x,y,z)`.",
+    "operands": {
+      "n": 3
+    }
+  },
+  {
+    "mnemonic": "CHKTUPLE",
+    "alias_of": "UNPACKFIRST",
+    "doc_fift": "CHKTUPLE",
+    "doc_stack": "t -",
+    "description": "Checks whether `t` is a _Tuple_. If not, throws a type check exception.",
+    "operands": {
+      "k": 0
+    }
+  },
+  {
+    "mnemonic": "SETFIRST",
+    "alias_of": "SETINDEX",
+    "doc_fift": "SETFIRST",
+    "doc_stack": "t x - t'",
+    "description": "Sets the first component of _Tuple_ `t` to `x` and returns the resulting _Tuple_ `t'`.",
+    "operands": {
+      "k": 0
+    }
+  },
+  {
+    "mnemonic": "SETSECOND",
+    "alias_of": "SETINDEX",
+    "doc_fift": "SETSECOND",
+    "doc_stack": "t x - t'",
+    "description": "Sets the second component of _Tuple_ `t` to `x` and returns the resulting _Tuple_ `t'`.",
+    "operands": {
+      "k": 1
+    }
+  },
+  {
+    "mnemonic": "SETTHIRD",
+    "alias_of": "SETINDEX",
+    "doc_fift": "SETTHIRD",
+    "doc_stack": "t x - t'",
+    "description": "Sets the third component of _Tuple_ `t` to `x` and returns the resulting _Tuple_ `t'`.",
+    "operands": {
+      "k": 2
+    }
+  },
+  {
+    "mnemonic": "FIRSTQ",
+    "alias_of": "INDEXQ",
+    "doc_fift": "FIRSTQ\nCARQ",
+    "doc_stack": "t - x",
+    "description": "Returns the first element of a _Tuple_.",
+    "operands": {
+      "k": 0
+    }
+  },
+  {
+    "mnemonic": "SECONDQ",
+    "alias_of": "INDEXQ",
+    "doc_fift": "SECONDQ\nCDRQ",
+    "doc_stack": "t - y",
+    "description": "Returns the second element of a _Tuple_.",
+    "operands": {
+      "k": 1
+    }
+  },
+  {
+    "mnemonic": "THIRDQ",
+    "alias_of": "INDEXQ",
+    "doc_fift": "THIRDQ",
+    "doc_stack": "t - z",
+    "description": "Returns the third element of a _Tuple_.",
+    "operands": {
+      "k": 2
+    }
+  },
+  {
+    "mnemonic": "SETFIRSTQ",
+    "alias_of": "SETINDEXQ",
+    "doc_fift": "SETFIRSTQ",
+    "doc_stack": "t x - t'",
+    "description": "Sets the first component of _Tuple_ `t` to `x` and returns the resulting _Tuple_ `t'`.",
+    "operands": {
+      "k": 0
+    }
+  },
+  {
+    "mnemonic": "SETSECONDQ",
+    "alias_of": "SETINDEXQ",
+    "doc_fift": "SETSECONDQ",
+    "doc_stack": "t x - t'",
+    "description": "Sets the second component of _Tuple_ `t` to `x` and returns the resulting _Tuple_ `t'`.",
+    "operands": {
+      "k": 1
+    }
+  },
+  {
+    "mnemonic": "SETTHIRDQ",
+    "alias_of": "SETINDEXQ",
+    "doc_fift": "SETTHIRDQ",
+    "doc_stack": "t x - t'",
+    "description": "Sets the third component of _Tuple_ `t` to `x` and returns the resulting _Tuple_ `t'`.",
+    "operands": {
+      "k": 2
+    }
+  },
+  {
+    "mnemonic": "CADR",
+    "alias_of": "INDEX2",
+    "doc_fift": "CADR",
+    "doc_stack": "t - x",
+    "description": "Recovers `x=(t_2)_1`.",
+    "operands": {
+      "i": 1,
+      "j": 0
+    }
+  },
+  {
+    "mnemonic": "CDDR",
+    "alias_of": "INDEX2",
+    "doc_fift": "CDDR",
+    "doc_stack": "t - x",
+    "description": "Recovers `x=(t_2)_2`.",
+    "operands": {
+      "i": 1,
+      "j": 1
+    }
+  },
+  {
+    "mnemonic": "CADDR",
+    "alias_of": "INDEX3",
+    "doc_fift": "CADDR",
+    "doc_stack": "t - x",
+    "description": "Recovers `x=t_2_2_1`.",
+    "operands": {
+      "i": 1,
+      "j": 1,
+      "k": 0
+    }
+  },
+  {
+    "mnemonic": "CDDDR",
+    "alias_of": "INDEX3",
+    "doc_fift": "CDDDR",
+    "doc_stack": "t - x",
+    "description": "Recovers `x=t_2_2_2`.",
+    "operands": {
+      "i": 1,
+      "j": 1,
+      "k": 1
+    }
+  },
+  {
+    "mnemonic": "ZERO",
+    "alias_of": "PUSHINT_4",
+    "doc_fift": "ZERO\nFALSE",
+    "doc_stack": "- 0",
+    "description": "",
+    "operands": {
+      "i": 0
+    }
+  },
+  {
+    "mnemonic": "ONE",
+    "alias_of": "PUSHINT_4",
+    "doc_fift": "ONE",
+    "doc_stack": "- 1",
+    "description": "",
+    "operands": {
+      "i": 1
+    }
+  },
+  {
+    "mnemonic": "TWO",
+    "alias_of": "PUSHINT_4",
+    "doc_fift": "TWO",
+    "doc_stack": "- 2",
+    "description": "",
+    "operands": {
+      "i": 2
+    }
+  },
+  {
+    "mnemonic": "TEN",
+    "alias_of": "PUSHINT_4",
+    "doc_fift": "TEN",
+    "doc_stack": "- 10",
+    "description": "",
+    "operands": {
+      "i": 10
+    }
+  },
+  {
+    "mnemonic": "TRUE",
+    "alias_of": "PUSHINT_4",
+    "doc_fift": "TRUE",
+    "doc_stack": "- -1",
+    "description": "",
+    "operands": {
+      "i": 15
+    }
+  },
+  {
+    "mnemonic": "CHKBOOL",
+    "alias_of": "FITS",
+    "doc_fift": "CHKBOOL",
+    "doc_stack": "x - x",
+    "description": "Checks whether `x` is a ''boolean value'' (i.e., either 0 or -1).",
+    "operands": {
+      "c": 0
+    }
+  },
+  {
+    "mnemonic": "CHKBIT",
+    "alias_of": "UFITS",
+    "doc_fift": "CHKBIT",
+    "doc_stack": "x - x",
+    "description": "Checks whether `x` is a binary digit (i.e., zero or one).",
+    "operands": {
+      "c": 0
+    }
+  },
+  {
+    "mnemonic": "ISZERO",
+    "alias_of": "EQINT",
+    "doc_fift": "ISZERO",
+    "doc_stack": "x - x=0",
+    "description": "Checks whether an integer is zero. Corresponds to Forth's `0=`.",
+    "operands": {
+      "y": 0
+    }
+  },
+  {
+    "mnemonic": "ISNEG",
+    "alias_of": "LESSINT",
+    "doc_fift": "ISNEG",
+    "doc_stack": "x - x<0",
+    "description": "Checks whether an integer is negative. Corresponds to Forth's `0<`.",
+    "operands": {
+      "y": 0
+    }
+  },
+  {
+    "mnemonic": "ISNPOS",
+    "alias_of": "LESSINT",
+    "doc_fift": "ISNPOS",
+    "doc_stack": "x - x<=0",
+    "description": "Checks whether an integer is non-positive.",
+    "operands": {
+      "y": 1
+    }
+  },
+  {
+    "mnemonic": "ISPOS",
+    "alias_of": "GTINT",
+    "doc_fift": "ISPOS",
+    "doc_stack": "x - x>0",
+    "description": "Checks whether an integer is positive. Corresponds to Forth's `0>`.",
+    "operands": {
+      "y": 0
+    }
+  },
+  {
+    "mnemonic": "ISNNEG",
+    "alias_of": "GTINT",
+    "doc_fift": "ISNNEG",
+    "doc_stack": "x - x >=0",
+    "description": "Checks whether an integer is non-negative.",
+    "operands": {
+      "y": -1
+    }
+  },
+  {
+    "mnemonic": "STZERO",
+    "alias_of": "STSLICECONST",
+    "doc_fift": "STZERO",
+    "doc_stack": "b - b'",
+    "description": "Stores one binary zero.",
+    "operands": {
+      "x": 0,
+      "y": 0,
+      "sss": "0"
+    }
+  },
+  {
+    "mnemonic": "STONE",
+    "alias_of": "STSLICECONST",
+    "doc_fift": "STONE",
+    "doc_stack": "b - b'",
+    "description": "Stores one binary one.",
+    "operands": {
+      "x": 0,
+      "y": 0,
+      "sss": "1"
+    }
+  },
+  {
+    "mnemonic": "PLDREF",
+    "alias_of": "PLDREFIDX",
+    "doc_fift": "PLDREF",
+    "doc_stack": "s - c",
+    "description": "Preloads the first cell reference of a _Slice_.",
+    "operands": {
+      "n": 0
+    }
+  },
+  {
+    "mnemonic": "SETNUMARGS",
+    "alias_of": "SETCONTARGS_N",
+    "doc_fift": "[n] SETNUMARGS",
+    "doc_stack": "c - c'",
+    "description": "Sets `c.nargs` to `n` plus the current depth of `c`'s stack, where `0 <= n <= 14`. If `c.nargs` is already set to a non-negative value, does nothing.",
+    "operands": {
+      "r": 0
+    }
+  },
+  {
+    "mnemonic": "SETCONTARGS",
+    "alias_of": "SETCONTARGS_N",
+    "doc_fift": "[r] -1 SETCONTARGS",
+    "doc_stack": "x_1 x_2...x_r c - c'",
+    "description": "Pushes `0 <= r <= 15` values `x_1...x_r` into the stack of (a copy of) the continuation `c`, starting with `x_1`. If the final depth of `c`'s stack turns out to be greater than `c.nargs`, a stack overflow exception is generated.",
+    "operands": {
+      "n": -1
+    }
+  },
+  {
+    "mnemonic": "BLESSNUMARGS",
+    "alias_of": "BLESSARGS",
+    "doc_fift": "[n] BLESSNUMARGS",
+    "doc_stack": "s - c",
+    "description": "Also transforms a _Slice_ `s` into a _Continuation_ `c`, but sets `c.nargs` to `0 <= n <= 14`.",
+    "operands": {
+      "r": 0
+    }
+  },
+  {
+    "mnemonic": "PUSHROOT",
+    "alias_of": "PUSHCTR",
+    "doc_fift": "c4 PUSHCTR\nc4 PUSH",
+    "doc_stack": "- x",
+    "description": "Pushes the ''global data root'' cell reference, thus enabling access to persistent smart-contract data.",
+    "operands": {
+      "i": 4
+    }
+  },
+  {
+    "mnemonic": "POPROOT",
+    "alias_of": "POPCTR",
+    "doc_fift": "c4 POPCTR\nc4 POP",
+    "doc_stack": "x -",
+    "description": "Sets the ''global data root'' cell reference, thus allowing modification of persistent smart-contract data.",
+    "operands": {
+      "i": 4
+    }
+  },
+  {
+    "mnemonic": "NEWDICT",
+    "alias_of": "NULL",
+    "doc_fift": "NEWDICT",
+    "doc_stack": " - D",
+    "description": "Returns a new empty dictionary.\nIt is an alternative mnemonics for `PUSHNULL`.",
+    "operands": {}
+  },
+  {
+    "mnemonic": "DICTEMPTY",
+    "alias_of": "ISNULL",
+    "doc_fift": "DICTEMPTY",
+    "doc_stack": "D - ?",
+    "description": "Checks whether dictionary `D` is empty, and returns `-1` or `0` accordingly.\nIt is an alternative mnemonics for `ISNULL`.",
+    "operands": {}
+  },
+  {
+    "mnemonic": "STDICTS",
+    "alias_of": "STSLICE",
+    "doc_fift": "STDICTS\n",
+    "doc_stack": "s b - b'",
+    "description": "Stores a _Slice_-represented dictionary `s` into _Builder_ `b`.\nIt is actually a synonym for `STSLICE`.",
+    "operands": {}
+  },
+  {
+    "mnemonic": "NOW",
+    "alias_of": "GETPARAM",
+    "doc_fift": "NOW",
+    "doc_stack": " - x",
+    "description": "Returns the current Unix time as an _Integer_. If it is impossible to recover the requested value starting from `c7`, throws a type checking or range checking exception as appropriate.\nEquivalent to `3 GETPARAM`.",
+    "operands": {
+      "i": 3
+    }
+  },
+  {
+    "mnemonic": "BLOCKLT",
+    "alias_of": "GETPARAM",
+    "doc_fift": "BLOCKLT",
+    "doc_stack": " - x",
+    "description": "Returns the starting logical time of the current block.\nEquivalent to `4 GETPARAM`.",
+    "operands": {
+      "i": 4
+    }
+  },
+  {
+    "mnemonic": "LTIME",
+    "alias_of": "GETPARAM",
+    "doc_fift": "LTIME",
+    "doc_stack": " - x",
+    "description": "Returns the logical time of the current transaction.\nEquivalent to `5 GETPARAM`.",
+    "operands": {
+      "i": 5
+    }
+  },
+  {
+    "mnemonic": "RANDSEED",
+    "alias_of": "GETPARAM",
+    "doc_fift": "RANDSEED",
+    "doc_stack": " - x",
+    "description": "Returns the current random seed as an unsigned 256-bit _Integer_.\nEquivalent to `6 GETPARAM`.",
+    "operands": {
+      "i": 6
+    }
+  },
+  {
+    "mnemonic": "BALANCE",
+    "alias_of": "GETPARAM",
+    "doc_fift": "BALANCE",
+    "doc_stack": " - t",
+    "description": "Returns the remaining balance of the smart contract as a _Tuple_ consisting of an _Integer_ (the remaining Gram balance in nanograms) and a _Maybe Cell_ (a dictionary with 32-bit keys representing the balance of ''extra currencies'').\nEquivalent to `7 GETPARAM`.\nNote that `RAW` primitives such as `SENDRAWMSG` do not update this field.",
+    "operands": {
+      "i": 7
+    }
+  },
+  {
+    "mnemonic": "MYADDR",
+    "alias_of": "GETPARAM",
+    "doc_fift": "MYADDR",
+    "doc_stack": " - s",
+    "description": "Returns the internal address of the current smart contract as a _Slice_ with a `MsgAddressInt`. If necessary, it can be parsed further using primitives such as `PARSEMSGADDR` or `REWRITESTDADDR`.\nEquivalent to `8 GETPARAM`.",
+    "operands": {
+      "i": 8
+    }
+  },
+  {
+    "mnemonic": "CONFIGROOT",
+    "alias_of": "GETPARAM",
+    "doc_fift": "CONFIGROOT",
+    "doc_stack": " - D",
+    "description": "Returns the _Maybe Cell_ `D` with the current global configuration dictionary. Equivalent to `9 GETPARAM `.",
+    "operands": {
+      "i": 9
+    }
+  },
+  {
+    "mnemonic": "MYCODE",
+    "alias_of": "GETPARAM",
+    "doc_fift": "MYCODE",
+    "doc_stack": " - c",
+    "description": "Retrieves code of smart-contract from c7. Equivalent to `10 GETPARAM `.",
+    "operands": {
+      "i": 10
+    }
+  },
+  {
+    "mnemonic": "INCOMINGVALUE",
+    "alias_of": "GETPARAM",
+    "doc_fift": "INCOMINGVALUE",
+    "doc_stack": " - t",
+    "description": "Retrieves value of incoming message from c7. Equivalent to `11 GETPARAM `.",
+    "operands": {
+      "i": 11
+    }
+  },
+  {
+    "mnemonic": "STORAGEFEES",
+    "alias_of": "GETPARAM",
+    "doc_fift": "STORAGEFEES",
+    "doc_stack": " - i",
+    "description": "Retrieves value of storage phase fees from c7. Equivalent to `12 GETPARAM `.",
+    "operands": {
+      "i": 12
+    }
+  },
+  {
+    "mnemonic": "PREVBLOCKSINFOTUPLE",
+    "alias_of": "GETPARAM",
+    "doc_fift": "PREVBLOCKSINFOTUPLE",
+    "doc_stack": " - t",
+    "description": "Retrives PrevBlocksInfo: `[last_mc_blocks, prev_key_block]` from c7. Equivalent to `13 GETPARAM `.",
+    "operands": {
+      "i": 13
+    }
+  },
+  {
+    "mnemonic": "DUMPSTK",
+    "alias_of": "DEBUG",
+    "doc_fift": "DUMPSTK",
+    "doc_stack": "-",
+    "description": "Dumps the stack (at most the top 255 values) and shows the total stack depth. Does nothing on production versions of TVM.",
+    "operands": {
+      "i": 0,
+      "j": 0
+    }
+  },
+  {
+    "mnemonic": "STRDUMP",
+    "alias_of": "DEBUG",
+    "doc_fift": "STRDUMP",
+    "doc_stack": "-",
+    "description": "Dumps slice with length divisible by 8 from top of stack as a string. Does nothing on production versions of TVM.",
+    "operands": {
+      "i": 0,
+      "j": 0
+    }
+  },
+  {
+    "mnemonic": "DUMP",
+    "alias_of": "DEBUG",
+    "doc_fift": "s[j] DUMP",
+    "doc_stack": "-",
+    "description": "Dumps slice with length divisible by 8 from top of stack as a string. Does nothing on production versions of TVM.",
+    "operands": {
+      "i": 2
+    }
+  },
+  {
+    "mnemonic": "SETCP0",
+    "alias_of": "SETCP",
+    "doc_fift": "SETCP0",
+    "doc_stack": "-",
+    "description": "Selects TVM (test) codepage zero as described in this document.",
+    "operands": {
+      "n": 0
+    }
+  }
+]
