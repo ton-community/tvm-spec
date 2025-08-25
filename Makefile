@@ -14,3 +14,10 @@ update-ton-commit:
 
 .PHONY: match-all
 match-all: run-match-all sort-report
+
+.PHONY: update-cp0
+update-cp0:
+	python3 update-cp0.py
+
+.PHONY: update-all
+update-all: match-all update-cp0

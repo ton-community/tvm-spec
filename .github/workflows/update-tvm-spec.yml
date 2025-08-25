@@ -1,0 +1,57 @@
+name: Update TVM spec
+
+on:
+  workflow_call:
+    inputs:
+      branch:
+        type: string
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-tvm-spec:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch }}
+          fetch-depth: 0  # needed to push later
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update ton commit
+        run: make update-ton-commit
+
+      - name: Update all
+        run: make update-all
+
+      - name: Check for changes
+        id: git-diff
+        run: |
+          git add .
+          git diff --cached --name-only > changed_files.txt
+          echo "changed=$(cat changed_files.txt)" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request if needed
+        if: ${{ steps.git-diff.outputs.changed != '' }}
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Update TVM spec"
+          title: "Update TVM spec"
+          body: |
+            Automated update of TVM spec.
+            Includes regenerated files from `make update-all`.
+          branch: "update-tvm-spec/${{ github.run_id }}"
+          base: ${{ inputs.branch }}
+          add-paths: |
+            match-report.json
+            cp0.json
+          token: ${{ secrets.GITHUB_TOKEN }}
