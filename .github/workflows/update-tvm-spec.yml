@@ -12,6 +12,10 @@ on:
         type: string
         required: true
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   update-tvm-spec:
     runs-on: ubuntu-latest
