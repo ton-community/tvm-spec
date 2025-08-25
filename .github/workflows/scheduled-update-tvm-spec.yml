@@ -1,0 +1,14 @@
+name: Regular check on ton-blockchain updates
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 */2 * * *'
+
+jobs:
+  update-tvm-spec:
+    uses: ton-community/tvm-spec/.github/workflows/update-tvm-spec.yml@dev
+    permissions:
+      contents: write
+      pull-requests: write
+    with:
+      branch: dev
