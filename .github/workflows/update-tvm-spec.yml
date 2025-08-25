@@ -1,3 +1,8 @@
+#
+# Update update-tvm-spec.md before touching this workflow,
+# perhaps update only doc and use ChatGPT to regenerate this workflow
+#
+
 name: Update TVM spec
 
 on:
