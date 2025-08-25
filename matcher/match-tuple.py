@@ -16,10 +16,6 @@ logging.basicConfig(level=logging.INFO,
                     format="%(levelname)s: %(message)s")
 
 # ─────────────────────────── constants ──────────────────────────────
-CPP_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/tupleops.cpp"
-)
 CATEGORY = "tuple"
 EXEC_HEAD_RX = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
 
@@ -154,6 +150,8 @@ def main() -> None:
     ap.add_argument("--thr", type=float, default=0.70)
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     # load tuple mnemonics -------------------------------------------------
@@ -166,8 +164,9 @@ def main() -> None:
     logging.info("• mnemonics loaded : %d", len(mnems))
 
     # grab & parse tupleops.cpp -------------------------------------------
-    code  = download_cpp(CPP_URL)
-    funcs = extract_exec_bodies(code, CPP_URL)
+    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/tupleops.cpp"
+    code  = download_cpp(url)
+    funcs = extract_exec_bodies(code, url)
     regs  = extract_macro_pairs(code)
     add_index_aliases(regs, funcs)
 

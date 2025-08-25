@@ -13,10 +13,6 @@ import requests
 
 
 #  ───────────────────────────  Constants & tiny helpers ─────────────────────────── 
-ARITHOPS_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp"
-)
 CATEGORY = "compare_int"
 
 _BAR = "═" * 65
@@ -62,7 +58,7 @@ def load_mnemonics(cp0_path: str | Path) -> List[str]:
     ]
 
 #  ───────────────────────────  Build rows (deterministic map) ─────────────────────────── 
-def build_rows(mnems: List[str], lines: Dict[str, int]) -> List[Dict]:
+def build_rows(mnems: List[str], lines: Dict[str, int], url: str) -> List[Dict]:
     """Create the JSON-serialisable rows for the report."""
     # fixed mapping tables
     special = {
@@ -91,7 +87,7 @@ def build_rows(mnems: List[str], lines: Dict[str, int]) -> List[Dict]:
                 "function":   fn,
                 "score":      1.0,
                 "category":   CATEGORY,
-                "source_path": ARITHOPS_URL,
+                "source_path": url,
                 "source_line": lines[fn],
             }
         )
@@ -113,6 +109,8 @@ def main() -> None:
     ap.add_argument("--cp0", default="cp0_legacy.json")
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     # 1. cp0.json -------------------------------------------------------
@@ -120,11 +118,12 @@ def main() -> None:
     logging.info("• cp0_legacy.json        : %d compare_int mnemonics", len(mnems))
 
     # 2. arithops.cpp ---------------------------------------------------
-    cpp_text = fetch(ARITHOPS_URL)
+    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/arithops.cpp"
+    cpp_text = fetch(url)
     line_tbl = exec_lines(cpp_text)
 
     # 3. build rows -----------------------------------------------------
-    rows = build_rows(mnems, line_tbl)
+    rows = build_rows(mnems, line_tbl, url)
     logging.info("• rows generated  : %d", len(rows))
 
     # 4. save / merge ---------------------------------------------------

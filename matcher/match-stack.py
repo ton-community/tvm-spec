@@ -19,11 +19,6 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 DEFAULT_CATEGORIES = ["stack_basic", "stack_complex"]
 CATEGORY_ORDER = {c: i for i, c in enumerate(DEFAULT_CATEGORIES)}
 
-CPP_FALLBACK_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/stackops.cpp"
-)
-
 EXEC_HEAD_RX = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
 _SPLIT_NON_ALPHA = re.compile(r"[^A-Za-z]")
 
@@ -171,13 +166,15 @@ def main() -> None:
     ap.add_argument(
         "--cpp",
         nargs="+",
-        default=[CPP_FALLBACK_URL],
+        default=None,
         help="one or more GitHub raw URLs with exec_* defs",
     )
     ap.add_argument("--thr", type=float, default=0.70, help="min similarity threshold (0-1)")
     ap.add_argument("--out", default="match-report.json", help="output JSON path")
     ap.add_argument("--append", action="store_true", help="merge with existing JSON")
     ap.add_argument("--fail-on-missing", action="store_true", help="exit 1 if any unmapped mnemonic")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     # 1. categories
@@ -196,7 +193,8 @@ def main() -> None:
 
     # 3. collect exec_* handlers
     funcs: Dict[str, Dict[str, Any]] = {}
-    for url in args.cpp:
+    urls = args.cpp or [f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/stackops.cpp"]
+    for url in urls:
         funcs.update(_extract_exec_bodies(_download_cpp(url), url))
     logging.info("• exec_* handlers : %d", len(funcs))
 
@@ -213,7 +211,7 @@ def main() -> None:
     print("═" * 65)
     print(f"• Categories      : {', '.join(cats)}")
     print(f"• cp0.json        : {len(mnems)} mnemonics")
-    for url in args.cpp:
+    for url in urls:
         print(f"   – {Path(url).name:<18}: {len([f for f in funcs if funcs[f]['path'] == url]):3d}")
     print(f"• Matched (≥ {args.thr:0.2f}) : {matched_cnt}/{len(mnems)}  ({matched_cnt/len(mnems)*100:5.1f} %)")
     if unmatched:

@@ -11,10 +11,6 @@ from fuzzywuzzy import fuzz  # pip install fuzzywuzzy python-Levenshtein
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-RAW_URL      = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp"
-)
 DEFAULT_CATS = ["const_data", "cell_build", "cell_parse"]
 FUZZ_THRESH  = 0.70
 
@@ -141,6 +137,7 @@ def _match_all(
     funcs: Dict[str,Dict[str,Any]],
     regs:  Dict[str,Tuple[str,int]],
     thr:   float,
+    default_path: str,
 ) -> Tuple[List[Dict[str,Any]], List[str]]:
     rows, missing = [], []
 
@@ -148,7 +145,7 @@ def _match_all(
         # 1) explicit macro registrations
         if mnem in regs:
             fn, reg_line = regs[mnem]
-            info = funcs.get(fn, {"path": RAW_URL, "line": reg_line})
+            info = funcs.get(fn, {"path": default_path, "line": reg_line})
             rows.append({
                 "mnemonic":    mnem,
                 "function":    fn,
@@ -205,6 +202,8 @@ def main():
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
     ap.add_argument("--show-missing", action="store_true")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     cats = DEFAULT_CATS if args.cats is None \
@@ -214,12 +213,13 @@ def main():
     mnems = _load_cp0(args.cp0, cats)
     logging.info("• cp0_legacy.json        : %d mnemonics", len(mnems))
 
-    src   = _download(RAW_URL)
-    funcs = _extract_exec_bodies(src, RAW_URL)
+    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/cellops.cpp"
+    src   = _download(url)
+    funcs = _extract_exec_bodies(src, url)
     regs  = _extract_reg_pairs(src)
     logging.info("• exec_* handlers : %d", len(funcs))
 
-    rows, missing = _match_all(mnems, funcs, regs, args.thr)
+    rows, missing = _match_all(mnems, funcs, regs, args.thr, url)
     ok = len(rows)
     logging.info("• matched (≥%.2f): %d/%d (%.1f%%)",
                  args.thr, ok, len(mnems), ok/len(mnems)*100)

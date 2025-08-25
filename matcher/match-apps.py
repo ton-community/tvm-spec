@@ -8,12 +8,6 @@ from collections import OrderedDict
 
 # ─── CONFIG ─────────────────────────────────────────────────────────────────────
 
-TONOPS_URL  = (
-    "https://raw.githubusercontent.com/"
-    "ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/"
-    "crypto/vm/tonops.cpp"
-)
 APP_CATEGORIES = {
     'app_actions','app_addr','app_config','app_crypto',
     'app_currency','app_gas','app_global','app_misc','app_rnd'
@@ -37,9 +31,9 @@ def load_app_mnemonics(cp0_json):
     print(f"→ Loaded {len(apps)} mnemonics in categories {sorted(APP_CATEGORIES)}")
     return apps
 
-def fetch_tonops():
-    print(f"→ Downloading tonops.cpp from {TONOPS_URL}")
-    r = requests.get(TONOPS_URL)
+def fetch_tonops(url: str):
+    print(f"→ Downloading tonops.cpp from {url}")
+    r = requests.get(url)
     r.raise_for_status()
     src = r.text
     print(f"→ Retrieved {len(src.splitlines())} lines of C++")
@@ -86,13 +80,16 @@ def main():
     p.add_argument("--out", default="match-report.json")
     p.add_argument("--append", action="store_true",
                    help="merge into existing match-report.json instead of overwriting")
+    p.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                   help="TON repo revision (commit/tag) to fetch sources from")
     args = p.parse_args()
 
     output_file = Path(args.out)
     cp0_json = Path(args.cp0)
 
     apps  = load_app_mnemonics(cp0_json)
-    src   = fetch_tonops()
+    url   = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/tonops.cpp"
+    src   = fetch_tonops(url)
     regs  = build_registration_map(src)
     lines = src.splitlines()
     defs  = find_definitions(lines)
@@ -124,7 +121,7 @@ def main():
             "mnemonic":    m,
             "function":    fn or None,
             "category":    e["doc"]["category"],
-            "source_path": TONOPS_URL if def_line else "implicit",
+            "source_path": url if def_line else "implicit",
             "source_line": def_line,
         }
         output[m] = entry

@@ -11,11 +11,6 @@ from typing import Dict, List, Tuple
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-DICTOPS_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/dictops.cpp"
-)
-
 DICT_CATEGORIES = {
     "dict_serial", "dict_get", "dict_set", "dict_set_builder", "dict_delete",
     "dict_mayberef", "dict_prefix", "dict_next", "dict_min",
@@ -104,11 +99,11 @@ RULES: List[Tuple[re.Pattern, Dict[str, str]]] = [
 ]
 
 # ──────────────────────────────────────────────────────────────────────────
-def fetch_cpp(local: str | None) -> str:
+def fetch_cpp(local: str | None, url: str) -> str:
     if local:
         return pathlib.Path(local).read_text(encoding="utf-8")
     logging.info("Downloading dictops.cpp …")
-    r = requests.get(DICTOPS_URL, timeout=30)
+    r = requests.get(url, timeout=30)
     r.raise_for_status()
     logging.info("  OK  (%d bytes)", len(r.text))
     return r.text
@@ -147,9 +142,12 @@ def main() -> None:
     ap.add_argument("--cpp", help="Local dictops.cpp (else download)")
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
-    cpp_src = fetch_cpp(args.cpp)
+    dictops_url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/dictops.cpp"
+    cpp_src = fetch_cpp(args.cpp, dictops_url)
     exec_lines = extract_exec_lines(cpp_src)
 
     rows, missed = [], []
@@ -165,9 +163,7 @@ def main() -> None:
                 function=fn,
                 score=1.0,  # deterministic rule
                 category=cat,
-                source_path=DICTOPS_URL
-                if args.cpp is None
-                else pathlib.Path(args.cpp).as_uri(),
+                source_path=dictops_url if args.cpp is None else pathlib.Path(args.cpp).as_uri(),
                 source_line=exec_lines.get(fn, 0)
             )
         )

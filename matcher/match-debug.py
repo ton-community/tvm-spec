@@ -15,10 +15,6 @@ import requests
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ──────────────── CONFIG ────────────────────────
-DEBUGOPS_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/debugops.cpp"
-)
 CATEGORY = "debug"
 FUZZ_MIN_SCORE = 0.80
 
@@ -38,11 +34,11 @@ except ImportError:
     _have_fuzzy = False
 
 # ──────────────── UTILITIES ─────────────────────────
-def fetch_cpp(local: str | None) -> str:
+def fetch_cpp(local: str | None, url: str) -> str:
     if local:
         return pathlib.Path(local).read_text(encoding="utf-8")
     logging.info("Fetching debugops.cpp from GitHub …")
-    resp = requests.get(DEBUGOPS_URL, timeout=30)
+    resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     logging.info("  OK  (%d bytes)", len(resp.text))
     return resp.text
@@ -103,9 +99,12 @@ def main() -> None:
     p.add_argument("--out", default="match-report.json", help="output JSON file")
     p.add_argument("--append", action="store_true", help="merge into existing report")
     p.add_argument("--show-missing", action="store_true", help="exit non-zero if missing")
+    p.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                   help="TON repo revision (commit/tag) to fetch sources from")
     args = p.parse_args()
 
-    src = fetch_cpp(args.cpp)
+    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/debugops.cpp"
+    src = fetch_cpp(args.cpp, url)
     exec_pos = extract_exec_positions(src)
     mnems = load_debug_mnems(args.cp0)
 
@@ -126,7 +125,7 @@ def main() -> None:
             "function":    fn,
             "score":       round(score, 2),
             "category":    CATEGORY,
-            "source_path": DEBUGOPS_URL if args.cpp is None else pathlib.Path(args.cpp).as_uri(),
+            "source_path": url if args.cpp is None else pathlib.Path(args.cpp).as_uri(),
             "source_line": exec_pos.get(fn, 0)
         })
 

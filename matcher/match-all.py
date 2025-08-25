@@ -22,6 +22,8 @@ def main() -> None:
     ap.add_argument("--out", default="match_report.json",
                     help="output JSON (both scripts write here)")
     ap.add_argument("-v", "--verbose", action="store_true", help="echo the commands")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to forward to all matchers")
     args = ap.parse_args()
 
     script_dir = pathlib.Path(__file__).resolve().parent
@@ -33,6 +35,7 @@ def main() -> None:
             script_path,
             "--cp0", args.cp0,
             "--out", args.out,
+            "--rev", args.rev,
         ]
         if idx:                       # second script: merge instead of clobber
             cmd.append("--append")

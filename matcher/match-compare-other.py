@@ -13,10 +13,6 @@ from typing import Any, Dict, List, Tuple
 import requests
 
 # ────────────────────────── constants ──────────────────────────────
-REMOTE_CELL_OPS = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/cellops.cpp"
-)
 CATEGORY     = "compare_other"
 
 # macro-name → exec_* handler mapping
@@ -34,7 +30,7 @@ REG_RX = re.compile(
     re.S,
 )
 
-def load_src(local: str | None) -> Tuple[str, str]:
+def load_src(local: str | None, url: str) -> Tuple[str, str]:
     """
     Returns (text, source_path). If `local` is set, read that file;
     otherwise fetch from GitHub.
@@ -45,12 +41,12 @@ def load_src(local: str | None) -> Tuple[str, str]:
         print(f"↳ loaded local {p.as_posix()} ({len(txt):,} bytes)")
         return txt, p.as_uri()
     else:
-        print(f"↳ fetching {REMOTE_CELL_OPS}")
-        r = requests.get(REMOTE_CELL_OPS, timeout=30)
+        print(f"↳ fetching {url}")
+        r = requests.get(url, timeout=30)
         r.raise_for_status()
         txt = r.text
         print(f"  ✓ downloaded remote ({len(txt):,} bytes)")
-        return txt, REMOTE_CELL_OPS
+        return txt, url
 
 def wanted_mnemonics(cp0_path: Path) -> List[str]:
     """Return all mnemonics in cp0_legacy.json with doc.category == compare_other."""
@@ -113,6 +109,8 @@ def main() -> None:
     p.add_argument("--cpp",    help="local cellops.cpp (else fetch remote)")
     p.add_argument("--out",    default="match-report.json")
     p.add_argument("--append", action="store_true")
+    p.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                   help="TON repo revision (commit/tag) to fetch sources from")
     args = p.parse_args()
 
     # 1) load cp0
@@ -120,7 +118,7 @@ def main() -> None:
     print(f"• cp0_legacy.json          : {len(wanted)} compare_other mnemonics")
 
     # 2) load & scan cellops.cpp (local or remote)
-    src, source_path = load_src(args.cpp)
+    src, source_path = load_src(args.cpp, f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/cellops.cpp")
     pairs = extract_pairs(src)
     defs  = extract_definitions(src)
 

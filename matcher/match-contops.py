@@ -9,9 +9,6 @@ from fuzzywuzzy import fuzz   # pip install fuzzywuzzy[speedup]
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-RAW_CONT = ("https://raw.githubusercontent.com/ton-blockchain/ton/"
-            "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp")
-
 DEFAULT_CATS = [
     "cont_basic", "cont_conditional", "cont_loops", "cont_registers",
     "cont_create", "cont_stack", "cont_dict"
@@ -106,6 +103,8 @@ def main() -> None:
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
     ap.add_argument("--show-missing", action="store_true")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                   help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     cats = args.cats or DEFAULT_CATS
@@ -116,8 +115,9 @@ def main() -> None:
 
     overrides = {**BUILTIN_OVERRIDES, **load_override(args.override)}
 
-    cont_src = download(RAW_CONT)
-    funcs    = extract_exec(cont_src, RAW_CONT)
+    cont_url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/contops.cpp"
+    cont_src = download(cont_url)
+    funcs    = extract_exec(cont_src, cont_url)
     pairs    = extract_pairs(cont_src)
 
     rows, missing = [], []

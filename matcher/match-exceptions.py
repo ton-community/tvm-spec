@@ -7,10 +7,6 @@ from fuzzywuzzy import fuzz
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
-RAW_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp"
-)
 DEFAULT_CATS = ["exceptions"]
 
 # ───────────────────────────── cp0 helpers ─────────────────────────────
@@ -105,7 +101,7 @@ def _best_match(mnem: str, funcs: Dict[str, Dict]) -> Tuple[str | None, float, s
 
 # ───────────────────────────── master matcher ──────────────────────────────
 def _match_all(
-    mnems: Dict[str, Dict], funcs: Dict[str, Dict], regs: Dict[str, str], raw_src: str
+    mnems: Dict[str, Dict], funcs: Dict[str, Dict], regs: Dict[str, str], raw_src: str, default_path: str
 ) -> List[Dict]:
     rows: List[Dict] = []
     for mnem, meta in mnems.items():
@@ -128,7 +124,7 @@ def _match_all(
         if fn and fn in funcs:
             info = funcs[fn]
         elif fn:
-            info = {"path": RAW_URL, "line": _find_func_line(raw_src, fn) or 0}
+            info = {"path": default_path, "line": _find_func_line(raw_src, fn) or 0}
         else:
             fn, score, p, l = _best_match(mnem, funcs)
             info = {"path": p, "line": l}
@@ -163,6 +159,8 @@ def main() -> None:
     ap.add_argument("--thr", type=float, default=0.70)
     ap.add_argument("--out", default="match-report.json")
     ap.add_argument("--append", action="store_true")
+    ap.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     cats = (
@@ -175,11 +173,12 @@ def main() -> None:
     mnems = _load_cp0(args.cp0, cats)
     logging.info("Loaded %d mnemonics", len(mnems))
 
-    src = _download(RAW_URL)
-    funcs = _extract_exec_bodies(src, RAW_URL)
+    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/contops.cpp"
+    src = _download(url)
+    funcs = _extract_exec_bodies(src, url)
     regs = _extract_reg_pairs(src)
 
-    rows = [r for r in _match_all(mnems, funcs, regs, src) if r["score"] >= args.thr]
+    rows = [r for r in _match_all(mnems, funcs, regs, src, url) if r["score"] >= args.thr]
     logging.info("Matched %d mnemonics (≥ %.2f)", len(rows), args.thr)
 
     _save_json(rows, Path(args.out), append=args.append)

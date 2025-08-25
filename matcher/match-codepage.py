@@ -14,10 +14,6 @@ from fuzzywuzzy import fuzz  # pip install fuzzywuzzy python-Levenshtein
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ───── CONFIG ─────────────────────────────────────────────────────────
-CONTOPS_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/contops.cpp"
-)
 CATEGORY    = "codepage"
 FUZZ_THRESH = 0.70
 
@@ -28,11 +24,11 @@ RULES: List[Tuple[re.Pattern, str]] = [
     (re.compile(r"^SETCPX$"),       "exec_set_cp_any"),
 ]
 
-def fetch_cpp(local: str|None) -> str:
+def fetch_cpp(local: str|None, url: str) -> str:
     if local:
         return Path(local).read_text(encoding="utf-8")
     logging.info("Downloading contops.cpp from GitHub…")
-    resp = requests.get(CONTOPS_URL, timeout=30)
+    resp = requests.get(url, timeout=30)
     resp.raise_for_status()
     logging.info("  ✓ %d bytes", len(resp.text))
     return resp.text
@@ -87,10 +83,14 @@ def main() -> None:
     p.add_argument("--cpp",  help="local contops.cpp (else download)")
     p.add_argument("--out",  default="match-report.json")
     p.add_argument("--append", action="store_true")
+    p.add_argument("--rev", default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                   help="TON repo revision (commit/tag) to fetch sources from")
     args = p.parse_args()
 
+    contops_url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/contops.cpp"
+
     # 1) grab C++ and index exec_* definitions
-    cpp_src  = fetch_cpp(args.cpp)
+    cpp_src  = fetch_cpp(args.cpp, contops_url)
     exec_map = extract_exec_definitions(cpp_src)
 
     # 2) load your cp0.json mnemonics for "codepage"
@@ -117,7 +117,7 @@ def main() -> None:
             "function":    fn,
             "score":       round(score, 2),
             "category":    CATEGORY,
-            "source_path": Path(args.cpp).as_uri() if args.cpp else CONTOPS_URL,
+            "source_path": Path(args.cpp).as_uri() if args.cpp else contops_url,
             "source_line": exec_map.get(fn, 0),
         })
 

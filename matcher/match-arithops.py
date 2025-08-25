@@ -13,10 +13,6 @@ import requests
 from fuzzywuzzy import fuzz          # pip install "fuzzywuzzy[speedup]"
 
 # ─────────────────────────── configuration ────────────────────────────
-ARITHOPS_URL = (
-    "https://raw.githubusercontent.com/ton-blockchain/ton/"
-    "cee4c674ea999fecc072968677a34a7545ac9c4d/crypto/vm/arithops.cpp"
-)
 CATEGORIES = {
     "const_int",
     "arithm_basic",
@@ -212,6 +208,8 @@ def main() -> None:
     ap.add_argument("--out",    default="match-report.json")
     ap.add_argument("--append", action="store_true")
     ap.add_argument("--fail-on-missing", action="store_true")
+    ap.add_argument("--rev",    default="cee4c674ea999fecc072968677a34a7545ac9c4d",
+                    help="TON repo revision (commit/tag) to fetch sources from")
     args = ap.parse_args()
 
     # 1 load mnemonics -------------------------------------------------
@@ -219,8 +217,9 @@ def main() -> None:
     logging.info("• arithmetic mnemonics in cp0_legacy.json: %d", len(mnems))
 
     # 2 parse arithops.cpp --------------------------------------------
-    src   = _download(ARITHOPS_URL)
-    funcs = _extract_exec(src, ARITHOPS_URL)
+    url   = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/arithops.cpp"
+    src   = _download(url)
+    funcs = _extract_exec(src, url)
     pairs = _extract_pairs(src)
 
     per_file: dict[str, int] = defaultdict(int)
