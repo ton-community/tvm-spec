@@ -9,7 +9,7 @@ import requests
 DEFAULT_REPO = "ton-blockchain/ton"
 
 
-def github_raw_url(repo: str, revision: str, file_path: str) -> str:
+def _github_raw_url(repo: str, revision: str, file_path: str) -> str:
     """
     Construct a raw.githubusercontent.com URL for a file in a GitHub repo.
 
@@ -55,7 +55,7 @@ def download_github_file(revision: str, file_path: str, repo: str = DEFAULT_REPO
     Returns (response_text, url) and logs progress.
     """
     effective_sha = _latest_commit_sha_for_path(repo, revision, file_path)
-    url = github_raw_url(repo, effective_sha, file_path)
+    url = _github_raw_url(repo, effective_sha, file_path)
     logging.info("↳ fetching %s", url)
     r = requests.get(url, timeout=30)
     r.raise_for_status()
