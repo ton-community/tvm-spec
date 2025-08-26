@@ -8,7 +8,7 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-import requests
+from matcher.common import download_github_file
 from fuzzywuzzy import fuzz
 
 # ───────────────────────────── logging ──────────────────────────────
@@ -20,12 +20,11 @@ CATEGORY = "tuple"
 EXEC_HEAD_RX = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
 
 # ─────────────────────── C++ helpers ────────────────────────────────
-def download_cpp(url: str) -> str:
+def download_cpp(rev: str) -> tuple[str, str]:
+    src, url = download_github_file(rev, "crypto/vm/tupleops.cpp", repo="ton-blockchain/ton")
     logging.info("↳ fetching %s", url)
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    logging.info("  ✓ %-18s (%d bytes)", Path(url).name, len(resp.text))
-    return resp.text
+    logging.info("  ✓ %-18s (%d bytes)", Path(url).name, len(src))
+    return src, url
 
 
 def extract_exec_bodies(code: str, src_path: str) -> Dict[str, Dict[str, Any]]:
@@ -164,8 +163,7 @@ def main() -> None:
     logging.info("• mnemonics loaded : %d", len(mnems))
 
     # grab & parse tupleops.cpp -------------------------------------------
-    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/tupleops.cpp"
-    code  = download_cpp(url)
+    code, url  = download_cpp(args.rev)
     funcs = extract_exec_bodies(code, url)
     regs  = extract_macro_pairs(code)
     add_index_aliases(regs, funcs)

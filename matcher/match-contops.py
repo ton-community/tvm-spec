@@ -4,8 +4,8 @@ import argparse, json, logging, re, sys
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-import requests
 from fuzzywuzzy import fuzz   # pip install fuzzywuzzy[speedup]
+from matcher.common import download_github_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -24,12 +24,11 @@ BUILTIN_OVERRIDES: Dict[str, str] = {
 
 # ════════════════════ helpers ════════════════════
 
-def download(url: str) -> str:
+def download(url_rev: str) -> tuple[str, str]:
+    src, url = download_github_file(url_rev, "crypto/vm/contops.cpp", repo="ton-blockchain/ton")
     logging.info("Fetching %s …", url)
-    r = requests.get(url, timeout=30)
-    r.raise_for_status()
-    logging.info("  OK  (%d bytes)", len(r.text))
-    return r.text
+    logging.info("  OK  (%d bytes)", len(src))
+    return src, url
 
 
 EXEC_RX = re.compile(r"(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*{", re.M)
@@ -115,8 +114,7 @@ def main() -> None:
 
     overrides = {**BUILTIN_OVERRIDES, **load_override(args.override)}
 
-    cont_url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/contops.cpp"
-    cont_src = download(cont_url)
+    cont_src, cont_url = download(args.rev)
     funcs    = extract_exec(cont_src, cont_url)
     pairs    = extract_pairs(cont_src)
 

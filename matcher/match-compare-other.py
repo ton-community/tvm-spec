@@ -10,7 +10,7 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
-import requests
+from matcher.common import download_github_file
 
 # ────────────────────────── constants ──────────────────────────────
 CATEGORY     = "compare_other"
@@ -30,7 +30,7 @@ REG_RX = re.compile(
     re.S,
 )
 
-def load_src(local: str | None, url: str) -> Tuple[str, str]:
+def load_src(local: str | None, rev: str) -> Tuple[str, str]:
     """
     Returns (text, source_path). If `local` is set, read that file;
     otherwise fetch from GitHub.
@@ -41,12 +41,10 @@ def load_src(local: str | None, url: str) -> Tuple[str, str]:
         print(f"↳ loaded local {p.as_posix()} ({len(txt):,} bytes)")
         return txt, p.as_uri()
     else:
+        src, url = download_github_file(rev, "crypto/vm/cellops.cpp", repo="ton-blockchain/ton")
         print(f"↳ fetching {url}")
-        r = requests.get(url, timeout=30)
-        r.raise_for_status()
-        txt = r.text
-        print(f"  ✓ downloaded remote ({len(txt):,} bytes)")
-        return txt, url
+        print(f"  ✓ downloaded remote ({len(src):,} bytes)")
+        return src, url
 
 def wanted_mnemonics(cp0_path: Path) -> List[str]:
     """Return all mnemonics in cp0_legacy.json with doc.category == compare_other."""
@@ -118,7 +116,7 @@ def main() -> None:
     print(f"• cp0_legacy.json          : {len(wanted)} compare_other mnemonics")
 
     # 2) load & scan cellops.cpp (local or remote)
-    src, source_path = load_src(args.cpp, f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/cellops.cpp")
+    src, source_path = load_src(args.cpp, args.rev)
     pairs = extract_pairs(src)
     defs  = extract_definitions(src)
 

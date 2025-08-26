@@ -10,7 +10,7 @@ import sys
 from collections import OrderedDict
 from typing import Dict, List, Tuple
 
-import requests
+from matcher.common import download_github_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -34,14 +34,13 @@ except ImportError:
     _have_fuzzy = False
 
 # ──────────────── UTILITIES ─────────────────────────
-def fetch_cpp(local: str | None, url: str) -> str:
+def fetch_cpp(local: str | None, rev: str) -> tuple[str,str]:
     if local:
         return pathlib.Path(local).read_text(encoding="utf-8")
     logging.info("Fetching debugops.cpp from GitHub …")
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    logging.info("  OK  (%d bytes)", len(resp.text))
-    return resp.text
+    src, url = download_github_file(rev, "crypto/vm/debugops.cpp", repo="ton-blockchain/ton")
+    logging.info("  OK  (%d bytes) from %s", len(src), url)
+    return src, url
 
 
 def extract_exec_positions(src: str) -> Dict[str,int]:
@@ -103,8 +102,7 @@ def main() -> None:
                    help="TON repo revision (commit/tag) to fetch sources from")
     args = p.parse_args()
 
-    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/debugops.cpp"
-    src = fetch_cpp(args.cpp, url)
+    src, url = fetch_cpp(args.cpp, args.rev)
     exec_pos = extract_exec_positions(src)
     mnems = load_debug_mnems(args.cp0)
 

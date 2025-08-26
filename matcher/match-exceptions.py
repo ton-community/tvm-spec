@@ -1,9 +1,10 @@
 from __future__ import annotations
-import argparse, json, logging, re, requests
+import argparse, json, logging, re
 from pathlib import Path
 from collections import OrderedDict
 from typing import Dict, List, Set, Tuple
 from fuzzywuzzy import fuzz
+from matcher.common import download_github_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -25,13 +26,7 @@ def _discover_all_cats(path: Path | str) -> Set[str]:
     data = json.load(open(path, encoding="utf-8"))
     return {ins.get("doc", {}).get("category", "") for ins in data["instructions"]}
 
-# ────────────────────────── download + C++ helpers ─────────────────────────
-def _download(url: str) -> str:
-    logging.info("Fetching %s …", url)
-    r = requests.get(url, timeout=30)
-    r.raise_for_status()
-    logging.info("  OK (%d bytes)", len(r.text))
-    return r.text
+# ────────────────────────── C++ helpers ─────────────────────────
 
 def _extract_exec_bodies(src: str, src_path: str) -> Dict[str, Dict]:
     rx = re.compile(r"(?:template<[^>]+>\s*)?(?:int|void)\s+(exec_\w+)\s*\([^)]*\)\s*\{", re.M)
@@ -173,8 +168,7 @@ def main() -> None:
     mnems = _load_cp0(args.cp0, cats)
     logging.info("Loaded %d mnemonics", len(mnems))
 
-    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/contops.cpp"
-    src = _download(url)
+    src, url = download_github_file(args.rev, "crypto/vm/contops.cpp", repo="ton-blockchain/ton")
     funcs = _extract_exec_bodies(src, url)
     regs = _extract_reg_pairs(src)
 
@@ -183,8 +177,7 @@ def main() -> None:
 
     _save_json(rows, Path(args.out), append=args.append)
 
-
-        # Print summary box
+    # Print summary box
     total = len(mnems)
     matched = len(rows)
     unmatched = total - matched

@@ -2,9 +2,10 @@
 import re
 import sys
 import json
-import requests
 from pathlib import Path
 from collections import OrderedDict
+
+from matcher.common import download_github_file
 
 # ─── CONFIG ─────────────────────────────────────────────────────────────────────
 
@@ -31,13 +32,11 @@ def load_app_mnemonics(cp0_json):
     print(f"→ Loaded {len(apps)} mnemonics in categories {sorted(APP_CATEGORIES)}")
     return apps
 
-def fetch_tonops(url: str):
+def fetch_tonops(rev: str):
+    src, url = download_github_file(rev, "crypto/vm/tonops.cpp", repo="ton-blockchain/ton")
     print(f"→ Downloading tonops.cpp from {url}")
-    r = requests.get(url)
-    r.raise_for_status()
-    src = r.text
     print(f"→ Retrieved {len(src.splitlines())} lines of C++")
-    return src
+    return src, url
 
 def build_registration_map(src):
     reg = {}
@@ -88,8 +87,7 @@ def main():
     cp0_json = Path(args.cp0)
 
     apps  = load_app_mnemonics(cp0_json)
-    url   = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/tonops.cpp"
-    src   = fetch_tonops(url)
+    src, url = fetch_tonops(args.rev)
     regs  = build_registration_map(src)
     lines = src.splitlines()
     defs  = find_definitions(lines)

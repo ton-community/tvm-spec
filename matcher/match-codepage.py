@@ -8,12 +8,13 @@ import re
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-import requests
 from fuzzywuzzy import fuzz  # pip install fuzzywuzzy python-Levenshtein
+from matcher.common import download_github_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 # ───── CONFIG ─────────────────────────────────────────────────────────
+
 CATEGORY    = "codepage"
 FUZZ_THRESH = 0.70
 
@@ -24,14 +25,13 @@ RULES: List[Tuple[re.Pattern, str]] = [
     (re.compile(r"^SETCPX$"),       "exec_set_cp_any"),
 ]
 
-def fetch_cpp(local: str|None, url: str) -> str:
+def fetch_cpp(local: str|None, rev: str) -> Tuple[str, str]:
     if local:
         return Path(local).read_text(encoding="utf-8")
     logging.info("Downloading contops.cpp from GitHub…")
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    logging.info("  ✓ %d bytes", len(resp.text))
-    return resp.text
+    src, url = download_github_file(rev, "crypto/vm/contops.cpp", repo="ton-blockchain/ton")
+    logging.info("  ✓ %d bytes from %s", len(src), url)
+    return src, url
 
 def extract_exec_definitions(src: str) -> Dict[str,int]:
     """
@@ -87,10 +87,8 @@ def main() -> None:
                    help="TON repo revision (commit/tag) to fetch sources from")
     args = p.parse_args()
 
-    contops_url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/contops.cpp"
-
     # 1) grab C++ and index exec_* definitions
-    cpp_src  = fetch_cpp(args.cpp, contops_url)
+    cpp_src, contops_url  = fetch_cpp(args.cpp, args.rev)
     exec_map = extract_exec_definitions(cpp_src)
 
     # 2) load your cp0.json mnemonics for "codepage"

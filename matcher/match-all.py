@@ -2,18 +2,18 @@ from __future__ import annotations
 import argparse, subprocess, sys, pathlib, re, requests
 
 SCRIPTS = (
-    "match-stack.py",
-    "match-tuple.py",
-    "match-contops.py",
-    "match-compare.py",
-    "match-compare-other.py",
-    "match-arithops.py",
-    "match-cell.py",
-    "match-apps.py",
-    "match-codepage.py",
-    "match-debug.py",
-    "match-dict.py",
-    "match-exceptions.py",
+    "match-stack",
+    "match-tuple",
+    "match-contops",
+    "match-compare",
+    "match-compare-other",
+    "match-arithops",
+    "match-cell",
+    "match-apps",
+    "match-codepage",
+    "match-debug",
+    "match-dict",
+    "match-exceptions",
 )
 
 _GITHUB_COMMITS_API = "https://api.github.com/repos/ton-blockchain/ton/commits/"
@@ -50,14 +50,13 @@ def main() -> None:
                     help="ton-blockchain/ton revision (commit/tag) to use for source code parsing")
     args = ap.parse_args()
 
-    script_dir = pathlib.Path(__file__).resolve().parent
     resolved_rev = _resolve_rev(args.rev)
 
     for idx, script in enumerate(SCRIPTS):
-        script_path = str(script_dir / script)
         cmd = [
             sys.executable,
-            script_path,
+            "-m",
+            f"matcher.{script}",
             "--cp0", args.cp0,
             "--out", args.out,
             "--rev", resolved_rev,

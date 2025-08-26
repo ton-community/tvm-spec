@@ -11,6 +11,7 @@ from typing import Any, Dict, List, Set, Tuple
 
 import requests
 from fuzzywuzzy import fuzz
+from matcher.common import download_github_file
 
 # ─────────────────────────────── logging ──────────────────────────────
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -51,7 +52,7 @@ def _discover_all_categories(path: Path | str) -> Set[str]:
 
 
 # ───────────────────────────── C++ helpers ────────────────────────────
-def _download_cpp(url: str) -> str:
+def _download_cpp_url(url: str) -> str:
     logging.info("↳ fetching %s", url)
     resp = requests.get(url, timeout=30)
     resp.raise_for_status()
@@ -193,9 +194,14 @@ def main() -> None:
 
     # 3. collect exec_* handlers
     funcs: Dict[str, Dict[str, Any]] = {}
-    urls = args.cpp or [f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/stackops.cpp"]
-    for url in urls:
-        funcs.update(_extract_exec_bodies(_download_cpp(url), url))
+    if args.cpp:
+        urls: List[str] = args.cpp
+        for url in urls:
+            funcs.update(_extract_exec_bodies(_download_cpp_url(url), url))
+    else:
+        src, url = download_github_file(args.rev, "crypto/vm/stackops.cpp", repo="ton-blockchain/ton")
+        urls = [url]
+        funcs.update(_extract_exec_bodies(src, url))
     logging.info("• exec_* handlers : %d", len(funcs))
 
     # 4. match

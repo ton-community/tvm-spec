@@ -6,8 +6,8 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Any, Dict, List, Set, Tuple
 
-import requests
 from fuzzywuzzy import fuzz  # pip install fuzzywuzzy python-Levenshtein
+from matcher.common import download_github_file
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
@@ -29,13 +29,6 @@ def _discover_all_cats(path: Path|str) -> Set[str]:
     data = json.load(open(path, encoding="utf-8"))
     return {ins.get("doc",{}).get("category","") for ins in data["instructions"]}
 
-def _download(url: str) -> str:
-    logging.info("↳ fetching %s", url)
-    r = requests.get(url, timeout=30)
-    r.raise_for_status()
-    txt = r.text
-    logging.info("  ✓ %d bytes", len(txt))
-    return txt
 
 def _extract_exec_bodies(src: str, src_path: str) -> Dict[str,Dict[str,Any]]:
     """
@@ -59,6 +52,7 @@ def _extract_exec_bodies(src: str, src_path: str) -> Dict[str,Dict[str,Any]]:
     return out
 
 _MACRO_RX = re.compile(r'"([A-Z0-9_ ]+)"[^\)]*?(exec_\w+)', re.S)
+
 def _extract_reg_pairs(src: str) -> Dict[str,Tuple[str,int]]:
     pairs: Dict[str,Tuple[str,int]] = {}
     for m in _MACRO_RX.finditer(src):
@@ -107,6 +101,7 @@ def _override_from_pattern(mnem: str, funcs: Dict[str,Any]) -> str|None:
     return None
 
 _SPLIT = re.compile(r"[^A-Za-z]")
+
 def _split(txt: str, *, strip_exec: bool=False) -> Tuple[str,str]:
     if strip_exec and txt.startswith("exec_"):
         txt = txt[5:]
@@ -213,8 +208,7 @@ def main():
     mnems = _load_cp0(args.cp0, cats)
     logging.info("• cp0_legacy.json        : %d mnemonics", len(mnems))
 
-    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/cellops.cpp"
-    src   = _download(url)
+    src, url = download_github_file(args.rev, "crypto/vm/cellops.cpp", repo="ton-blockchain/ton")
     funcs = _extract_exec_bodies(src, url)
     regs  = _extract_reg_pairs(src)
     logging.info("• exec_* handlers : %d", len(funcs))

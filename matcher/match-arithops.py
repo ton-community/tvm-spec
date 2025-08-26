@@ -11,6 +11,7 @@ from typing import Dict, Tuple
 
 import requests
 from fuzzywuzzy import fuzz          # pip install "fuzzywuzzy[speedup]"
+from matcher.common import download_github_file
 
 # ─────────────────────────── configuration ────────────────────────────
 CATEGORIES = {
@@ -25,12 +26,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 
 # ──────────────────────────── helpers ─────────────────────────────────
-def _download(url: str) -> str:
-    logging.info("↳ fetching %s", url)
-    r = requests.get(url, timeout=30)
-    r.raise_for_status()
-    logging.info("  ✓ %s (%d bytes)", Path(url).name, len(r.text))
-    return r.text
+# REMOVED local _download in favour of common.download_github_file
 
 
 EXEC_RX  = re.compile(
@@ -108,6 +104,7 @@ def _similarity(mnem: str, fn: str) -> float:
 # ─────────── definitive override table ───────────
 _divmod_re  = re.compile(r"^Q?(DIV|MOD)(C|R)?$", re.I)
 _pushint_re = re.compile(r"^PUSHINT_(\d+|LONG)$", re.I)
+
 
 def _override(mnem: str) -> str | None:
     """Return the exact exec_* handler for tricky opcode families."""
@@ -217,8 +214,7 @@ def main() -> None:
     logging.info("• arithmetic mnemonics in cp0_legacy.json: %d", len(mnems))
 
     # 2 parse arithops.cpp --------------------------------------------
-    url   = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/arithops.cpp"
-    src   = _download(url)
+    src, url = download_github_file(args.rev, "crypto/vm/arithops.cpp", repo="ton-blockchain/ton")
     funcs = _extract_exec(src, url)
     pairs = _extract_pairs(src)
 

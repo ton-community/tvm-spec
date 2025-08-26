@@ -9,7 +9,7 @@ from collections import OrderedDict
 from pathlib import Path
 from typing import Dict, List, Tuple
 
-import requests
+from matcher.common import download_github_file
 
 
 #  ───────────────────────────  Constants & tiny helpers ─────────────────────────── 
@@ -18,13 +18,12 @@ CATEGORY = "compare_int"
 _BAR = "═" * 65
 
 
-def fetch(url: str) -> str:
-    """Download *url* and return its text."""
-    logging.info("↳ fetching %s", url)
-    r = requests.get(url, timeout=30)
-    r.raise_for_status()
-    logging.info("  ✓ %-12s (%d bytes)", Path(url).name, len(r.text))
-    return r.text
+def fetch(rev: str) -> tuple[str, str]:
+    """Download arithops.cpp and return (text, url)."""
+    src, url = download_github_file(rev, "crypto/vm/arithops.cpp", repo="ton-blockchain/ton")
+    logging.info("↳ fetched %s", url)
+    logging.info("  ✓ %d bytes", len(src))
+    return src, url
 
 
 def exec_lines(code: str) -> Dict[str, int]:
@@ -118,8 +117,7 @@ def main() -> None:
     logging.info("• cp0_legacy.json        : %d compare_int mnemonics", len(mnems))
 
     # 2. arithops.cpp ---------------------------------------------------
-    url = f"https://raw.githubusercontent.com/ton-blockchain/ton/{args.rev}/crypto/vm/arithops.cpp"
-    cpp_text = fetch(url)
+    cpp_text, url = fetch(args.rev)
     line_tbl = exec_lines(cpp_text)
 
     # 3. build rows -----------------------------------------------------
