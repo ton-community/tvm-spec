@@ -55,6 +55,25 @@ jobs:
           CHANGED_FILES=$(git diff --cached --name-only | tr '\n' ' ')
           echo "changed=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
+      - name: Close previous update PRs
+        if: ${{ steps.git-diff.outputs.changed != '' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const openPrs = await github.paginate(github.rest.pulls.list, {
+              owner,
+              repo,
+              state: 'open',
+              per_page: 100,
+            });
+            for (const pr of openPrs) {
+              if (pr.title === 'Update TVM spec' && (pr.head.ref || '').startsWith('update-tvm-spec/')) {
+                core.info(`Closing previous PR #${pr.number} on branch ${pr.head.ref}`);
+                await github.rest.pulls.update({ owner, repo, pull_number: pr.number, state: 'closed' });
+              }
+            }
+
       - name: Create Pull Request if needed
         if: ${{ steps.git-diff.outputs.changed != '' }}
         uses: peter-evans/create-pull-request@v6
@@ -64,7 +83,7 @@ jobs:
           body: |
             Automated update of TVM spec.
             Includes regenerated files from `make update-all`.
-          branch: "update-tvm-spec/${{ github.run_id }}"
+          branch: "update-tvm-spec"
           base: ${{ inputs.branch }}
           add-paths: |
             match-report.json
