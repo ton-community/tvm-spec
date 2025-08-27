@@ -303,7 +303,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1130,
           "function_name": "exec_throw_fixed"
         }
@@ -631,7 +631,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 347,
           "function_name": "exec_if_jmp"
         }
@@ -736,8 +736,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1530,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1533,
           "function_name": "exec_load_message_addr"
         }
       ]
@@ -972,8 +972,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 212,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 215,
           "function_name": "exec_get_global"
         }
       ]
@@ -1024,7 +1024,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 794,
           "function_name": "exec_pop_ctr"
         }
@@ -1136,7 +1136,7 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
           "line": 152,
           "function_name": "exec_get_var_param"
         }
@@ -1189,8 +1189,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 242,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 245,
           "function_name": "exec_set_global"
         }
       ]
@@ -1338,7 +1338,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1130,
           "function_name": "exec_throw_fixed"
         }
@@ -1465,7 +1465,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1130,
           "function_name": "exec_throw_fixed"
         }
@@ -1514,8 +1514,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 609,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 612,
           "function_name": "exec_compute_hash"
         }
       ]
@@ -1670,7 +1670,7 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
           "line": 81,
           "function_name": "exec_accept"
         }
@@ -1733,8 +1733,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 719,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 722,
           "function_name": "exec_ed25519_check_signature"
         }
       ]
@@ -1888,7 +1888,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1236,
           "function_name": "exec_set_cp"
         }
@@ -1931,7 +1931,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 377,
           "function_name": "exec_ifnotret"
         }
@@ -1987,8 +1987,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1447,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1450,
           "function_name": "exec_load_var_integer"
         }
       ]
@@ -2039,7 +2039,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 765,
           "function_name": "exec_push_ctr"
         }
@@ -2162,7 +2162,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1092,
           "function_name": "exec_calldict_short"
         }
@@ -2218,8 +2218,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1468,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1471,
           "function_name": "exec_store_var_integer"
         }
       ]
@@ -3031,7 +3031,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 385,
           "function_name": "exec_if_else"
         }
@@ -3263,7 +3263,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1130,
           "function_name": "exec_throw_fixed"
         }
@@ -3318,7 +3318,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 459,
           "function_name": "exec_if_bit_jmpref"
         }
@@ -3559,8 +3559,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1756,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1759,
           "function_name": "exec_send_raw_message"
         }
       ]
@@ -4215,7 +4215,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 325,
           "function_name": "exec_if"
         }
@@ -4264,8 +4264,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 609,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 612,
           "function_name": "exec_compute_hash"
         }
       ]
@@ -4556,7 +4556,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1153,
           "function_name": "exec_throw_any"
         }
@@ -4862,8 +4862,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1663,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1666,
           "function_name": "exec_rewrite_message_addr"
         }
       ]
@@ -5093,7 +5093,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 193,
           "function_name": "exec_ifref_elseref"
         }
@@ -5476,7 +5476,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 513,
           "function_name": "exec_until"
         }
@@ -5521,7 +5521,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1153,
           "function_name": "exec_throw_any"
         }
@@ -5684,7 +5684,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 862,
           "function_name": "exec_samealt"
         }
@@ -5938,7 +5938,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 526,
           "function_name": "exec_while"
         }
@@ -5991,7 +5991,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 873,
           "function_name": "exec_savealt_ctr"
         }
@@ -6072,7 +6072,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 33,
           "function_name": "exec_execute"
         }
@@ -6321,7 +6321,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 369,
           "function_name": "exec_ifret"
         }
@@ -7083,7 +7083,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 358,
           "function_name": "exec_ifnot_jmp"
         }
@@ -7251,7 +7251,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 193,
           "function_name": "exec_ifref_elseref"
         }
@@ -7671,7 +7671,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 174,
           "function_name": "exec_ifelse_ref"
         }
@@ -7714,7 +7714,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 369,
           "function_name": "exec_ifret"
         }
@@ -7777,7 +7777,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 336,
           "function_name": "exec_ifnot"
         }
@@ -7835,8 +7835,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 303,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 306,
           "function_name": "exec_get_gas_fee"
         }
       ]
@@ -7900,7 +7900,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 489,
           "function_name": "exec_repeat"
         }
@@ -8001,8 +8001,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 2021,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 2024,
           "function_name": "exec_reserve_raw"
         }
       ]
@@ -8130,7 +8130,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 807,
           "function_name": "exec_setcont_ctr"
         }
@@ -8344,7 +8344,7 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
           "line": 102,
           "function_name": "exec_commit"
         }
@@ -8451,7 +8451,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1153,
           "function_name": "exec_throw_any"
         }
@@ -8496,8 +8496,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 558,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 561,
           "function_name": "exec_set_rand"
         }
       ]
@@ -8642,8 +8642,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 185,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 188,
           "function_name": "exec_get_config_param"
         }
       ]
@@ -8731,7 +8731,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1130,
           "function_name": "exec_throw_fixed"
         }
@@ -8846,8 +8846,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 328,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 331,
           "function_name": "exec_get_forward_fee"
         }
       ]
@@ -9512,8 +9512,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 545,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 548,
           "function_name": "exec_rand_int"
         }
       ]
@@ -9733,8 +9733,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 539,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 542,
           "function_name": "exec_randu256"
         }
       ]
@@ -9789,7 +9789,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 961,
           "function_name": "exec_compos"
         }
@@ -9869,7 +9869,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1186,
           "function_name": "exec_try"
         }
@@ -9909,7 +9909,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1130,
           "function_name": "exec_throw_fixed"
         }
@@ -10093,8 +10093,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 629,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 632,
           "function_name": "exec_compute_sha256"
         }
       ]
@@ -10176,8 +10176,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1468,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1471,
           "function_name": "exec_store_var_integer"
         }
       ]
@@ -10386,7 +10386,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 678,
           "function_name": "exec_setcont_varargs"
         }
@@ -10431,8 +10431,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 2045,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 2048,
           "function_name": "exec_set_code"
         }
       ]
@@ -10489,8 +10489,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 347,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 350,
           "function_name": "exec_get_original_fwd_fee"
         }
       ]
@@ -10613,7 +10613,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 39,
           "function_name": "exec_callx_args"
         }
@@ -10668,7 +10668,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 398,
           "function_name": "exec_condsel"
         }
@@ -10769,7 +10769,7 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
           "line": 86,
           "function_name": "exec_set_gas_limit"
         }
@@ -11117,7 +11117,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1099,
           "function_name": "exec_calldict"
         }
@@ -11243,8 +11243,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1663,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1666,
           "function_name": "exec_rewrite_message_addr"
         }
       ]
@@ -11306,8 +11306,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 719,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 722,
           "function_name": "exec_ed25519_check_signature"
         }
       ]
@@ -11376,8 +11376,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1409,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1412,
           "function_name": "exec_compute_data_size"
         }
       ]
@@ -11481,8 +11481,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1447,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1450,
           "function_name": "exec_load_var_integer"
         }
       ]
@@ -11746,8 +11746,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1150,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1153,
           "function_name": "exec_bls_g1_add"
         }
       ]
@@ -11802,8 +11802,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1181,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1184,
           "function_name": "exec_bls_g1_mul"
         }
       ]
@@ -12002,8 +12002,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 314,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 317,
           "function_name": "exec_get_storage_fee"
         }
       ]
@@ -12122,8 +12122,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -12457,7 +12457,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 733,
           "function_name": "exec_bless"
         }
@@ -12546,8 +12546,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1409,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1412,
           "function_name": "exec_compute_data_size"
         }
       ]
@@ -12701,8 +12701,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 340,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 343,
           "function_name": "exec_get_precompiled_gas"
         }
       ]
@@ -12968,8 +12968,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 372,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 375,
           "function_name": "exec_get_forward_fee_simple"
         }
       ]
@@ -13205,7 +13205,7 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
           "line": 96,
           "function_name": "exec_gas_consumed"
         }
@@ -13288,7 +13288,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 39,
           "function_name": "exec_callx_args"
         }
@@ -13524,8 +13524,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 558,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 561,
           "function_name": "exec_set_rand"
         }
       ]
@@ -13773,8 +13773,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 755,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 758,
           "function_name": "exec_ecrecover"
         }
       ]
@@ -13839,7 +13839,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 377,
           "function_name": "exec_ifnotret"
         }
@@ -14398,8 +14398,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1172,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1175,
           "function_name": "exec_bls_g1_neg"
         }
       ]
@@ -14468,8 +14468,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1332,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1335,
           "function_name": "exec_bls_pairing"
         }
       ]
@@ -14560,7 +14560,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 53,
           "function_name": "exec_jmpx"
         }
@@ -14782,7 +14782,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1113,
           "function_name": "exec_preparedict"
         }
@@ -14973,8 +14973,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -15336,8 +15336,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1623,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1626,
           "function_name": "exec_parse_message_addr"
         }
       ]
@@ -15619,8 +15619,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1530,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1533,
           "function_name": "exec_load_message_addr"
         }
       ]
@@ -15801,8 +15801,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1409,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1412,
           "function_name": "exec_compute_data_size"
         }
       ]
@@ -15985,8 +15985,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 2057,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 2060,
           "function_name": "exec_set_lib_code"
         }
       ]
@@ -16133,8 +16133,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 256,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 259,
           "function_name": "exec_get_prev_blocks_info"
         }
       ]
@@ -16510,8 +16510,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1794,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1797,
           "function_name": "exec_send_message"
         }
       ]
@@ -16654,7 +16654,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 421,
           "function_name": "exec_ifretalt"
         }
@@ -16697,8 +16697,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 256,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 259,
           "function_name": "exec_get_prev_blocks_info"
         }
       ]
@@ -17016,8 +17016,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 971,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 974,
           "function_name": "exec_ristretto255_mul"
         }
       ]
@@ -17248,8 +17248,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -17297,8 +17297,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1002,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1005,
           "function_name": "exec_ristretto255_mul_base"
         }
       ]
@@ -17342,8 +17342,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 218,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 221,
           "function_name": "exec_get_global_var"
         }
       ]
@@ -17930,8 +17930,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 361,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 364,
           "function_name": "exec_get_gas_fee_simple"
         }
       ]
@@ -18601,8 +18601,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 273,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 276,
           "function_name": "exec_get_global_id"
         }
       ]
@@ -18749,7 +18749,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 96,
           "function_name": "exec_jmpx_data"
         }
@@ -18947,8 +18947,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -19003,8 +19003,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 869,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 872,
           "function_name": "exec_ristretto255_from_hash"
         }
       ]
@@ -19041,8 +19041,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1027,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1030,
           "function_name": "exec_ristretto255_push_l"
         }
       ]
@@ -19097,8 +19097,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 933,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 936,
           "function_name": "exec_ristretto255_sub"
         }
       ]
@@ -19365,7 +19365,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1140,
           "function_name": "exec_throw_arg_fixed"
         }
@@ -19889,7 +19889,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 33,
           "function_name": "exec_execute"
         }
@@ -20472,8 +20472,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 890,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 893,
           "function_name": "exec_ristretto255_validate"
         }
       ]
@@ -20903,7 +20903,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 429,
           "function_name": "exec_ifnotretalt"
         }
@@ -21237,7 +21237,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 550,
           "function_name": "exec_again_end"
         }
@@ -21589,8 +21589,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1192,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1195,
           "function_name": "exec_bls_g1_multiexp"
         }
       ]
@@ -21664,8 +21664,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1663,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1666,
           "function_name": "exec_rewrite_message_addr"
         }
       ]
@@ -21727,8 +21727,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 824,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 827,
           "function_name": "exec_p256_chksign"
         }
       ]
@@ -21807,7 +21807,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 665,
           "function_name": "exec_setcontargs"
         }
@@ -22332,7 +22332,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 542,
           "function_name": "exec_again"
         }
@@ -22372,7 +22372,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 542,
           "function_name": "exec_again"
         }
@@ -22399,7 +22399,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 550,
           "function_name": "exec_again_end"
         }
@@ -24877,7 +24877,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 983,
           "function_name": "exec_atexit"
         }
@@ -24924,7 +24924,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 992,
           "function_name": "exec_atexit_alt"
         }
@@ -25536,7 +25536,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 759,
           "function_name": "exec_bless_args"
         }
@@ -25607,7 +25607,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 750,
           "function_name": "exec_bless_varargs"
         }
@@ -25670,8 +25670,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1102,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1105,
           "function_name": "exec_bls_aggregate"
         }
       ]
@@ -25747,8 +25747,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1133,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1136,
           "function_name": "exec_bls_aggregate_verify"
         }
       ]
@@ -25824,8 +25824,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1116,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1119,
           "function_name": "exec_bls_fast_aggregate_verify"
         }
       ]
@@ -25873,8 +25873,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1224,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1227,
           "function_name": "exec_bls_g1_in_group"
         }
       ]
@@ -25922,8 +25922,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1233,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1236,
           "function_name": "exec_bls_g1_is_zero"
         }
       ]
@@ -25978,8 +25978,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1161,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1164,
           "function_name": "exec_bls_g1_sub"
         }
       ]
@@ -26016,8 +26016,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1208,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1211,
           "function_name": "exec_bls_g1_zero"
         }
       ]
@@ -26072,8 +26072,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1241,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1244,
           "function_name": "exec_bls_g2_add"
         }
       ]
@@ -26121,8 +26121,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1315,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1318,
           "function_name": "exec_bls_g2_in_group"
         }
       ]
@@ -26170,8 +26170,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1324,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1327,
           "function_name": "exec_bls_g2_is_zero"
         }
       ]
@@ -26226,8 +26226,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1272,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1275,
           "function_name": "exec_bls_g2_mul"
         }
       ]
@@ -26296,8 +26296,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1283,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1286,
           "function_name": "exec_bls_g2_multiexp"
         }
       ]
@@ -26345,8 +26345,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1263,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1266,
           "function_name": "exec_bls_g2_neg"
         }
       ]
@@ -26401,8 +26401,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1252,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1255,
           "function_name": "exec_bls_g2_sub"
         }
       ]
@@ -26439,8 +26439,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1299,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1302,
           "function_name": "exec_bls_g2_zero"
         }
       ]
@@ -26488,8 +26488,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1215,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1218,
           "function_name": "exec_bls_map_to_g1"
         }
       ]
@@ -26537,8 +26537,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1306,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1309,
           "function_name": "exec_bls_map_to_g2"
         }
       ]
@@ -26575,8 +26575,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1346,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1349,
           "function_name": "exec_bls_push_r"
         }
       ]
@@ -26638,8 +26638,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1090,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1093,
           "function_name": "exec_bls_verify"
         }
       ]
@@ -26725,7 +26725,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1037,
           "function_name": "exec_booleval"
         }
@@ -26769,7 +26769,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 82,
           "function_name": "exec_ret_bool"
         }
@@ -27015,7 +27015,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 87,
           "function_name": "exec_callcc"
         }
@@ -27089,7 +27089,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 103,
           "function_name": "exec_callcc_args"
         }
@@ -27154,7 +27154,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 139,
           "function_name": "exec_callcc_varargs"
         }
@@ -27230,7 +27230,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 114,
           "function_name": "exec_callx_varargs"
         }
@@ -27400,8 +27400,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 2081,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 2084,
           "function_name": "exec_change_lib"
         }
       ]
@@ -27721,7 +27721,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 961,
           "function_name": "exec_compos"
         }
@@ -27777,7 +27777,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 961,
           "function_name": "exec_compos"
         }
@@ -27822,7 +27822,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 398,
           "function_name": "exec_condsel"
         }
@@ -27867,7 +27867,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 408,
           "function_name": "exec_condsel_chk"
         }
@@ -27912,8 +27912,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 179,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 182,
           "function_name": "exec_get_config_dict"
         }
       ]
@@ -27982,8 +27982,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 185,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 188,
           "function_name": "exec_get_config_param"
         }
       ]
@@ -34677,8 +34677,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -34748,8 +34748,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -34819,8 +34819,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -34890,8 +34890,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -34961,8 +34961,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35032,8 +35032,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35103,8 +35103,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35174,8 +35174,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35245,8 +35245,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35316,8 +35316,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35380,8 +35380,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35451,8 +35451,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35515,8 +35515,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35586,8 +35586,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35657,8 +35657,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35728,8 +35728,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 647,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 650,
           "function_name": "exec_hash_ext"
         }
       ]
@@ -35802,7 +35802,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 437,
           "function_name": "exec_if_bit_jmp"
         }
@@ -35876,7 +35876,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 459,
           "function_name": "exec_if_bit_jmpref"
         }
@@ -35950,7 +35950,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 437,
           "function_name": "exec_if_bit_jmp"
         }
@@ -36024,7 +36024,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 459,
           "function_name": "exec_if_bit_jmpref"
         }
@@ -36063,7 +36063,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1029,
           "function_name": "exec_invert"
         }
@@ -36119,7 +36119,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1106,
           "function_name": "exec_jmpdict"
         }
@@ -36163,7 +36163,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 459,
           "function_name": "exec_if_bit_jmpref"
         }
@@ -36207,7 +36207,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 209,
           "function_name": "exec_ret_data"
         }
@@ -36271,7 +36271,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 59,
           "function_name": "exec_jmpx_args"
         }
@@ -36336,7 +36336,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 130,
           "function_name": "exec_jmpx_varargs"
         }
@@ -37868,8 +37868,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1447,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1450,
           "function_name": "exec_load_var_integer"
         }
       ]
@@ -37924,8 +37924,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1447,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1450,
           "function_name": "exec_load_var_integer"
         }
       ]
@@ -41466,8 +41466,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 824,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 827,
           "function_name": "exec_p256_chksign"
         }
       ]
@@ -41534,8 +41534,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1623,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1626,
           "function_name": "exec_parse_message_addr"
         }
       ]
@@ -43232,7 +43232,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 904,
           "function_name": "exec_pop_ctr_var"
         }
@@ -43287,7 +43287,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 836,
           "function_name": "exec_popsave_ctr"
         }
@@ -43332,7 +43332,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 894,
           "function_name": "exec_push_ctr_var"
         }
@@ -50448,8 +50448,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 2021,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 2024,
           "function_name": "exec_reserve_raw"
         }
       ]
@@ -50526,7 +50526,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 489,
           "function_name": "exec_repeat"
         }
@@ -50577,7 +50577,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 501,
           "function_name": "exec_repeat_end"
         }
@@ -50633,7 +50633,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 501,
           "function_name": "exec_repeat_end"
         }
@@ -50665,7 +50665,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 66,
           "function_name": "exec_ret"
         }
@@ -50697,7 +50697,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 77,
           "function_name": "exec_ret_alt"
         }
@@ -50754,7 +50754,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 71,
           "function_name": "exec_ret_args"
         }
@@ -50786,7 +50786,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 209,
           "function_name": "exec_ret_data"
         }
@@ -50826,7 +50826,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 722,
           "function_name": "exec_return_args"
         }
@@ -50853,7 +50853,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 728,
           "function_name": "exec_return_varargs"
         }
@@ -50922,7 +50922,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 123,
           "function_name": "exec_ret_varargs"
         }
@@ -50997,8 +50997,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1663,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1666,
           "function_name": "exec_rewrite_message_addr"
         }
       ]
@@ -51053,8 +51053,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 909,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 912,
           "function_name": "exec_ristretto255_add"
         }
       ]
@@ -51128,8 +51128,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 909,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 912,
           "function_name": "exec_ristretto255_add"
         }
       ]
@@ -51203,8 +51203,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 971,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 974,
           "function_name": "exec_ristretto255_mul"
         }
       ]
@@ -51271,8 +51271,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1002,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1005,
           "function_name": "exec_ristretto255_mul_base"
         }
       ]
@@ -51346,8 +51346,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 933,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 936,
           "function_name": "exec_ristretto255_sub"
         }
       ]
@@ -51395,8 +51395,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 890,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 893,
           "function_name": "exec_ristretto255_validate"
         }
       ]
@@ -51635,7 +51635,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 277,
           "function_name": "exec_runvmx"
         }
@@ -51672,7 +51672,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 862,
           "function_name": "exec_samealt"
         }
@@ -51725,7 +51725,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 862,
           "function_name": "exec_samealt"
         }
@@ -51780,7 +51780,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 882,
           "function_name": "exec_saveboth_ctr"
         }
@@ -52249,8 +52249,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1409,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1412,
           "function_name": "exec_compute_data_size"
         }
       ]
@@ -52879,7 +52879,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 827,
           "function_name": "exec_setalt_ctr"
         }
@@ -52936,7 +52936,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 914,
           "function_name": "exec_setcont_ctr_var"
         }
@@ -52974,7 +52974,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1242,
           "function_name": "exec_set_cp_any"
         }
@@ -53017,7 +53017,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1236,
           "function_name": "exec_set_cp"
         }
@@ -53063,7 +53063,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1001,
           "function_name": "exec_setexit_alt"
         }
@@ -53109,8 +53109,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 249,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 252,
           "function_name": "exec_set_global_var"
         }
       ]
@@ -53165,7 +53165,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 687,
           "function_name": "exec_setnum_varargs"
         }
@@ -53219,7 +53219,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 818,
           "function_name": "exec_setret_ctr"
         }
@@ -56063,8 +56063,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1468,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1471,
           "function_name": "exec_store_var_integer"
         }
       ]
@@ -56119,8 +56119,8 @@
       "implementation": [
         {
           "file": "tonops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/5fe152621bf9a255a07391a7f4444a715815de4a/crypto/vm/tonops.cpp",
-          "line": 1468,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/3fbab2c601380eba5ba68048f45d24a359bd2936/crypto/vm/tonops.cpp",
+          "line": 1471,
           "function_name": "exec_store_var_integer"
         }
       ]
@@ -56679,7 +56679,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1011,
           "function_name": "exec_thenret"
         }
@@ -56730,7 +56730,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1020,
           "function_name": "exec_thenret_alt"
         }
@@ -56769,7 +56769,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1153,
           "function_name": "exec_throw_any"
         }
@@ -56815,7 +56815,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1153,
           "function_name": "exec_throw_any"
         }
@@ -56861,7 +56861,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1153,
           "function_name": "exec_throw_any"
         }
@@ -56913,7 +56913,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1140,
           "function_name": "exec_throw_arg_fixed"
         }
@@ -56965,7 +56965,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1140,
           "function_name": "exec_throw_arg_fixed"
         }
@@ -57072,7 +57072,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 1186,
           "function_name": "exec_try"
         }
@@ -57155,7 +57155,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 513,
           "function_name": "exec_until"
         }
@@ -57199,7 +57199,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 520,
           "function_name": "exec_until_end"
         }
@@ -57249,7 +57249,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 520,
           "function_name": "exec_until_end"
         }
@@ -57321,7 +57321,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 526,
           "function_name": "exec_while"
         }
@@ -57378,7 +57378,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 535,
           "function_name": "exec_while_end"
         }
@@ -57416,7 +57416,7 @@
       "implementation": [
         {
           "file": "contops.cpp",
-          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/0fff1bd8c78e89aee179192e40f98545e825b28b/crypto/vm/contops.cpp",
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp",
           "line": 535,
           "function_name": "exec_while_end"
         }
