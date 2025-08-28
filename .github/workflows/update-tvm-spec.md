@@ -15,4 +15,5 @@ Does following:
   it should make pull request, otherwise finish
 - before creating a new PR, it closes any existing open PRs titled "Update TVM spec"
   and reuses the fixed branch `update-tvm-spec` to avoid duplicate PRs
+- triggers [validate.yml](validate.yml) on the created PR
 - exposes the PR URL as workflow output `pr-url` and adds it to the job summary
