@@ -43,6 +43,9 @@
         "commit": {
           "type": "string"
         },
+        "file": {
+          "type": "string"
+        },
         "function_name": {
           "type": "string"
         },
@@ -54,6 +57,7 @@
         }
       },
       "required": [
+        "file",
         "path",
         "line"
       ],

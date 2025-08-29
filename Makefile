@@ -30,4 +30,5 @@ generate-schema:
 check-schema:
 	@tmp=$$(mktemp) && \
 		npx --yes ts-json-schema-generator -p schema.ts -t root_schema -e all --no-top-ref -o $$tmp && \
-		diff -u $$tmp schema.generated.json
+		diff -u $$tmp schema.generated.json || \
+		(echo 'schema.generated.json is outdated. Check logs, run `make generate-schema` locally' && false)
