@@ -14,6 +14,14 @@ jobs:
         with:
           fetch-depth: 
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify generated schema is up-to-date
+        run: make check-schema
+
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:

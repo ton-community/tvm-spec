@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: generate-schema
+        name: generate schema.generated.json from schema.ts
+        entry: bash -c 'make generate-schema && git add schema.generated.json'
+        language: system
+        files: ^schema\.ts$
+

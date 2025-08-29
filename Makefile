@@ -21,3 +21,13 @@ update-cp0:
 
 .PHONY: update-all
 update-all: match-all update-cp0
+
+.PHONY: generate-schema
+generate-schema:
+	npx --yes ts-json-schema-generator -p schema.ts -t root_schema -e all --no-top-ref -o schema.generated.json
+
+.PHONY: check-schema
+check-schema:
+	@tmp=$$(mktemp) && \
+		npx --yes ts-json-schema-generator -p schema.ts -t root_schema -e all --no-top-ref -o $$tmp && \
+		diff -u $$tmp schema.generated.json
