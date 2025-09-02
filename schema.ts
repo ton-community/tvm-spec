@@ -197,6 +197,7 @@ export type continuation =
 
 
 export interface code_location {
+  file: string;
   path: string;
   line: number;
   function_name?: string;
