@@ -10920,7 +10920,7 @@
         "category": "arithm_quiet",
         "description": "",
         "gas": "42",
-        "fift": "[tt+1] LSHIFT#MODR",
+        "fift": "[tt+1] QLSHIFT#MODR",
         "fift_examples": [],
         "opcode": "B7A9D9tt",
         "stack": "x y - 2^(tt+1)*x mod y"
@@ -11177,7 +11177,7 @@
         "category": "arithm_quiet",
         "description": "`0 <= cc <= 255`",
         "gas": "26",
-        "fift": "[cc+1] RSHIFT#",
+        "fift": "[cc+1] QRSHIFT#",
         "fift_examples": [],
         "opcode": "B7ABcc",
         "stack": "x - floor(x/2^(cc+1))"
