@@ -6701,7 +6701,7 @@
       "doc": {
         "category": "arithm_div",
         "description": "",
-        "gas": "26",
+        "gas": "34",
         "fift": "[tt+1] LSHIFT#DIVC",
         "fift_examples": [],
         "opcode": "A9D6tt",
@@ -7044,7 +7044,7 @@
       "doc": {
         "category": "arithm_logical",
         "description": "`0 <= cc <= 255`",
-        "gas": "18",
+        "gas": "26",
         "fift": "[cc+1] RSHIFT#",
         "fift_examples": [],
         "opcode": "ABcc",
@@ -7265,7 +7265,7 @@
       "doc": {
         "category": "arithm_logical",
         "description": "Bitwise not of an integer.",
-        "gas": "26",
+        "gas": "18",
         "fift": "NOT",
         "fift_examples": [],
         "opcode": "B3",
@@ -8873,7 +8873,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "gas": "42",
+        "gas": "34",
         "fift": "[tt+1] QRSHIFT#MOD",
         "fift_examples": [],
         "opcode": "A93Ctt",
@@ -8916,7 +8916,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "gas": "42",
+        "gas": "34",
         "fift": "[tt+1] QRSHIFTR#MOD",
         "fift_examples": [],
         "opcode": "A93Dtt",
@@ -10150,7 +10150,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "gas": "42",
+        "gas": "34",
         "fift": "QMULRSHIFT#MOD",
         "fift_examples": [],
         "opcode": "B7A9BC",
@@ -10180,7 +10180,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "gas": "42",
+        "gas": "34",
         "fift": "QMULRSHIFTR#MOD",
         "fift_examples": [],
         "opcode": "B7A9BD",
@@ -10210,7 +10210,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "gas": "42",
+        "gas": "34",
         "fift": "QMULRSHIFTC#MOD",
         "fift_examples": [],
         "opcode": "B7A9BE",
@@ -10833,7 +10833,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "gas": "34",
+        "gas": "42",
         "fift": "[tt+1] QLSHIFT#DIVC",
         "fift_examples": [],
         "opcode": "B7A9D6tt",
@@ -11176,7 +11176,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "`0 <= cc <= 255`",
-        "gas": "26",
+        "gas": "34",
         "fift": "[cc+1] RSHIFT#",
         "fift_examples": [],
         "opcode": "B7ABcc",
