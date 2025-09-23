@@ -13413,7 +13413,7 @@
         "description": "",
         "fift": "[tt+1] LSHIFT#DIVC",
         "fift_examples": [],
-        "gas": "26",
+        "gas": "34",
         "opcode": "A9D6tt",
         "stack": "x y - ceil(2^(tt+1)*x/y)"
       },
@@ -14022,7 +14022,7 @@
         "description": "`0 <= cc <= 255`",
         "fift": "[cc+1] RSHIFT#",
         "fift_examples": [],
-        "gas": "18",
+        "gas": "26",
         "opcode": "ABcc",
         "stack": "x - floor(x/2^(cc+1))"
       },
@@ -14449,7 +14449,7 @@
         "description": "Bitwise not of an integer.",
         "fift": "NOT",
         "fift_examples": [],
-        "gas": "26",
+        "gas": "18",
         "opcode": "B3",
         "stack": "x - ~x"
       },
@@ -17753,7 +17753,7 @@
         "description": "",
         "fift": "[tt+1] QRSHIFT#MOD",
         "fift_examples": [],
-        "gas": "42",
+        "gas": "34",
         "opcode": "A93Ctt",
         "stack": "x - q=floor(x/2^(tt+1)) r=x-q*2^(tt+1)"
       },
@@ -17830,7 +17830,7 @@
         "description": "",
         "fift": "[tt+1] QRSHIFTR#MOD",
         "fift_examples": [],
-        "gas": "42",
+        "gas": "34",
         "opcode": "A93Dtt",
         "stack": "x - q=round(x/2^(tt+1)) r=x-q*2^(tt+1)"
       },
@@ -20462,7 +20462,7 @@
         "description": "",
         "fift": "QMULRSHIFT#MOD",
         "fift_examples": [],
-        "gas": "42",
+        "gas": "34",
         "opcode": "B7A9BC",
         "stack": "x y - q=floor(x*y/2^(tt+1)) r=xy-q*2^(tt+1)"
       },
@@ -20525,7 +20525,7 @@
         "description": "",
         "fift": "QMULRSHIFTR#MOD",
         "fift_examples": [],
-        "gas": "42",
+        "gas": "34",
         "opcode": "B7A9BD",
         "stack": "x y - q=round(x*y/2^(tt+1)) r=xy-q*2^(tt+1)"
       },
@@ -20588,7 +20588,7 @@
         "description": "",
         "fift": "QMULRSHIFTC#MOD",
         "fift_examples": [],
-        "gas": "42",
+        "gas": "34",
         "opcode": "B7A9BE",
         "stack": "x y - q=ceil(x*y/2^(tt+1)) r=xy-q*2^(tt+1)"
       },
@@ -21932,7 +21932,7 @@
         "description": "",
         "fift": "[tt+1] QLSHIFT#DIVC",
         "fift_examples": [],
-        "gas": "34",
+        "gas": "42",
         "opcode": "B7A9D6tt",
         "stack": "x y - ceil(2^(tt+1)*x/y)"
       },
@@ -22084,7 +22084,7 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "",
-        "fift": "[tt+1] LSHIFT#MODR",
+        "fift": "[tt+1] QLSHIFT#MODR",
         "fift_examples": [],
         "gas": "42",
         "opcode": "B7A9D9tt",
@@ -22539,9 +22539,9 @@
       "doc": {
         "category": "arithm_quiet",
         "description": "`0 <= cc <= 255`",
-        "fift": "[cc+1] RSHIFT#",
+        "fift": "[cc+1] QRSHIFT#",
         "fift_examples": [],
-        "gas": "26",
+        "gas": "34",
         "opcode": "B7ABcc",
         "stack": "x - floor(x/2^(cc+1))"
       },
