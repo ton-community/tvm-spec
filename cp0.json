@@ -19972,8 +19972,8 @@
       "doc": {
         "category": "arithm_div",
         "description": "",
-        "gas": "42",
-        "fift": "[tt+1] LSHIFT#MODR",
+        "gas": "26",
+        "fift": "LSHIFTDIVMODR",
         "fift_examples": [],
         "opcode": "A9CD",
         "stack": "x y z - q=round(2^z*x/y) r=2^z*x-q*y"
