@@ -3,6 +3,43 @@
   "type": "object",
   "additionalProperties": false,
   "definitions": {
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "type": "string",
+          "title": "Source file",
+          "examples": [
+            "arithops.cpp",
+            "tonops.cpp"
+          ]
+        },
+        "function_name": {
+          "type": "string",
+          "title": "Implementation function name",
+          "examples": [
+            "exec_shrmod",
+            "exec_rshift"
+          ]
+        },
+        "line": {
+          "type": "number",
+          "title": "Implementation line number",
+          "examples": [
+            749,
+            225
+          ]
+        },
+        "path": {
+          "type": "string",
+          "title": "GitHub source file url",
+          "examples": [
+            "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+          ]
+        }
+      }
+    },
     "alias": {
       "type": "object",
       "additionalProperties": false,
@@ -904,23 +941,12 @@
           }
         },
         "implementation": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": ["file", "body"],
-          "properties": {
-            "file": {
-              "type": "string",
-              "title": "Source file",
-              "description": "Name of the source file containing the implementation"
-            },
-            "body": {
-              "type": "string",
-              "title": "Implementation body",
-              "description": "Code snippet showing the actual implementation of the handler function"
-            }
-          }
+          "type": "array",
+          "title": "Implementations of the instruction",
+          "description": "List of source code snippets implementing this instruction",
+          "items": { "$ref": "#/definitions/implementation" },
+          "additionalItems": false
         }
-      
       },
       "required": [
         "mnemonic",
@@ -928,7 +954,8 @@
         "bytecode",
         "value_flow",
         "control_flow",
-        "since_version"
+        "since_version",
+        "implementation"
       ]
     }
   },
