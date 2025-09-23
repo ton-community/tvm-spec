@@ -27,3 +27,9 @@ jobs:
         env:
           INPUT_SCHEMA: ./schema.generated.json
           INPUT_JSONS: ./cp0.json
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Verify JSON canonical format
+        run: ./.github/workflows/verify-json-format.sh
