@@ -22,7 +22,7 @@ jobs:
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
-          INPUT_SCHEMA: ./schema.generated.json
+          INPUT_SCHEMA: ./schema.json
           INPUT_JSONS: ./cp0.json
 
       - name: Install jq
