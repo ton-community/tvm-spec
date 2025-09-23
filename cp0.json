@@ -19972,8 +19972,8 @@
       "doc": {
         "category": "arithm_div",
         "description": "",
-        "gas": "26",
-        "fift": "LSHIFTDIVMODR",
+        "gas": "42",
+        "fift": "[tt+1] LSHIFT#MODR",
         "fift_examples": [],
         "opcode": "A9CD",
         "stack": "x y z - q=round(2^z*x/y) r=2^z*x-q*y"
@@ -20329,10 +20329,10 @@
       "mnemonic": "SDBEGINS",
       "since_version": 0,
       "doc": {
-        "category": "cell_parse",
-        "description": "Checks whether `s` begins with constant bitstring `sss` of length `8x+3` (with continuation bit assumed), where `0 <= x <= 127`, and removes `sss` from `s` on success.",
-        "gas": "31",
-        "fift": "[slice] SDBEGINS",
+        "category": "arithm_quiet",
+        "description": "`0 <= cc <= 255`",
+        "gas": "26",
+        "fift": "[cc+1] RSHIFT#",
         "fift_examples": [],
         "opcode": "D72A_xsss",
         "stack": "s - s''"
