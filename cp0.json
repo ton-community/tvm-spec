@@ -17727,8 +17727,8 @@
             "type": "uint"
           }
         ],
-        "prefix": "A93C",
-        "tlb": "#A93C tt:uint8"
+        "prefix": "B7A93C",
+        "tlb": "#B7A93C tt:uint8"
       },
       "control_flow": {
         "branches": [],
@@ -17739,8 +17739,8 @@
         "description": "",
         "fift": "[tt+1] QRSHIFT#MOD",
         "fift_examples": [],
-        "gas": "34",
-        "opcode": "A93Ctt",
+        "gas": "42",
+        "opcode": "B7A93Ctt",
         "stack": "x - q=floor(x/2^(tt+1)) r=x-q*2^(tt+1)"
       },
       "implementation": [
@@ -17804,8 +17804,8 @@
             "type": "uint"
           }
         ],
-        "prefix": "A93D",
-        "tlb": "#A93D tt:uint8"
+        "prefix": "B7A93D",
+        "tlb": "#B7A93D tt:uint8"
       },
       "control_flow": {
         "branches": [],
@@ -17816,8 +17816,8 @@
         "description": "",
         "fift": "[tt+1] QRSHIFTR#MOD",
         "fift_examples": [],
-        "gas": "34",
-        "opcode": "A93Dtt",
+        "gas": "42",
+        "opcode": "B7A93Dtt",
         "stack": "x - q=round(x/2^(tt+1)) r=x-q*2^(tt+1)"
       },
       "implementation": [
