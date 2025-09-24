@@ -10622,6 +10622,258 @@
     {
       "bytecode": {
         "operands": [],
+        "prefix": "A9A0",
+        "tlb": "#A9A0"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "fift": "MULADDRSHIFTMOD",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "A9A0",
+        "stack": "x y w z - q=floor((xy+w)/2^z) r=(xy+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_mulshrmod",
+          "line": 497,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "MULADDRSHIFTMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "y",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "A9A1",
+        "tlb": "#A9A1"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "fift": "MULADDRSHIFTRMOD",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "A9A1",
+        "stack": "x y w z - q=round((xy+w)/2^z) r=(xy+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_mulshrmod",
+          "line": 497,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "MULADDRSHIFTRMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "y",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "A9A2",
+        "tlb": "#A9A2"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "fift": "MULADDRSHIFTCMOD",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "A9A2",
+        "stack": "x y w z - q=ceil((xy+w)/2^z) r=(xy+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_mulshrmod",
+          "line": 497,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "MULADDRSHIFTCMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "y",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
         "prefix": "A9A4",
         "tlb": "#A9A4"
       },
@@ -16523,6 +16775,83 @@
     {
       "bytecode": {
         "operands": [],
+        "prefix": "B7A920",
+        "tlb": "#B7A920"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_quiet",
+        "description": "",
+        "fift": "QADDRSHIFTMOD",
+        "fift_examples": [],
+        "gas": "34",
+        "opcode": "B7A920",
+        "stack": "x w z - q=floor((x+w)/2^z) r=(x+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_shrmod",
+          "line": 336,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "QADDRSHIFTMOD",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
         "prefix": "B7A921",
         "tlb": "#B7A921"
       },
@@ -19171,6 +19500,258 @@
           "stack": [
             {
               "name": "result",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "B7A9A0",
+        "tlb": "#B7A9A0"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_quiet",
+        "description": "",
+        "fift": "QMULADDRSHIFTMOD",
+        "fift_examples": [],
+        "gas": "34",
+        "opcode": "B7A9A0",
+        "stack": "x y w z - q=floor((xy+w)/2^z) r=(xy+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_mulshrmod",
+          "line": 497,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "QMULADDRSHIFTMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "y",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "B7A9A1",
+        "tlb": "#B7A9A1"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_quiet",
+        "description": "",
+        "fift": "QMULADDRSHIFTRMOD",
+        "fift_examples": [],
+        "gas": "34",
+        "opcode": "B7A9A1",
+        "stack": "x y w z - q=round((xy+w)/2^z) r=(xy+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_mulshrmod",
+          "line": 497,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "QMULADDRSHIFTRMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "y",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "B7A9A2",
+        "tlb": "#B7A9A2"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_quiet",
+        "description": "",
+        "fift": "QMULADDRSHIFTCMOD",
+        "fift_examples": [],
+        "gas": "34",
+        "opcode": "B7A9A2",
+        "stack": "x y w z - q=ceil((xy+w)/2^z) r=(xy+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_mulshrmod",
+          "line": 497,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "QMULADDRSHIFTCMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "y",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
               "type": "simple",
               "value_types": [
                 "Integer"
