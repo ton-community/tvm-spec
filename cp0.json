@@ -7878,6 +7878,83 @@
     {
       "bytecode": {
         "operands": [],
+        "prefix": "A920",
+        "tlb": "#A920"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "arithm_div",
+        "description": "",
+        "fift": "ADDRSHIFTMOD",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "A920",
+        "stack": "x w z - q=floor((x+w)/2^z) r=(x+w)-q*2^z"
+      },
+      "implementation": [
+        {
+          "file": "arithops.cpp",
+          "function_name": "exec_shrmod",
+          "line": 336,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp"
+        }
+      ],
+      "mnemonic": "ADDRSHIFTMOD_VAR",
+      "since_version": 4,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "w",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "z",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "q",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "r",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
         "prefix": "A921",
         "tlb": "#A921"
       },
