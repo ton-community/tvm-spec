@@ -1,14 +1,32 @@
 name: Validate JSONs
 
-on: [pull_request, push]
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
 
 jobs:
   verify-json-validation:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
           INPUT_SCHEMA: ./schema.json
           INPUT_JSONS: ./cp0.json
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Verify JSON canonical format
+        run: ./.github/workflows/verify-json-format.sh

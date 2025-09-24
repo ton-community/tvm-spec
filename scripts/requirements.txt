@@ -1,0 +1,4 @@
+pathlib
+requests
+fuzzywuzzy
+python-Levenshtein
