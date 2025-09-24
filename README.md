@@ -7,26 +7,8 @@ control flow and implementation information.
 | Codepage | Specification                                     |
 |----------|---------------------------------------------------|
 | 0        | [cp0.json](./cp0.json) (**current**)              |
-| -        | [cp0_legacy.json](./cp0_legacy.json) (**legacy**) |
 
 ## Files Overview
-
-| File/Folder                                                      | Purpose                                                                                             |
-|------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
-| [`.github/workflows/`](.github/workflows)                        | CI for JSON/schema validation, schema drift check, matcher output checks                            |
-| [`.pre-commit-config.yaml`](.pre-commit-config.yaml)             | Pre-commit hook to auto-generate `schema.generated.json` when `schema.ts` changes                   |
-| [`Makefile`](Makefile)                                           | Common tasks to keep everything up-to-date                                                          |
-| [`matcher/`](matcher)                                            | Python scripts that extract `exec_*` C++ functions and match them to mnemonics                      |
-| [`matcher/match-all.py`](matcher/match-all.py)                   | Runner for executing all matcher modules (stack, arith, etc.)                                       |
-| [`match-report.json`](match-report.json)                         | Output from matcher scripts with C++ line/function mapping                                          |
-| [`cp0.json`](cp0.json)                                           | Current maintained spec (~365 instructions)                                                         |
-| [`cp0_legacy.json`](cp0_legacy.json)                             | Older file with 800+ instructions — still useful for comparison                                     |
-| [`schema.json`](schema.json)                                     | JSON schema definition for runtime validation - will be abandoned in favor of schema.generated.json |
-| [`schema.ts`](schema.ts)                                         | TypeScript schema for editor tooling, autocomplete, and static typing                               |
-| [`schema.generated.json`](schema.generated.json)                 | Generated JSON schema from `schema.ts` (via `ts-json-schema-generator`). Do not edit manually       |
-| [`update-cp0.py`](update-cp0.py)                                 | Script for regenerating `cp0.json`                                                                  |
-| [`common-instructions.txt`](common-instructions.txt)             | List of the ~365 core instructions                                                                  |
-| [`ton-blockchain.revision.txt`](ton-blockchain.revision.txt)     | Revision of [ton-blockchain/ton](https://github.com/ton-blockchain/ton) used for TVM sync           |
 
 ## Features
 
@@ -53,6 +35,8 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 1. [tvm-spec-example](https://github.com/hacker-volodya/tvm-spec-example), tiny TVM disassembler.
 2. [tvm-research](https://github.com/hacker-volodya/tvm-research), collection of tool prototypes with the power of tvm-spec.
 3. [ton-opcode](https://github.com/tact-lang/ton-opcode), full-fledged TVM disassembler.
+4. [tsa](https://github.com/espritoxyz/tsa), symbolic execution framework.
+5. [tvm-web-viewer](https://github.com/ton-blockchain/tvm-web-viewer) ([retracer.ton.org](https://retracer.ton.org)), transaction debugger.
 
 ## Instruction Specification Example
 
@@ -139,7 +123,7 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 | control_flow                        | Information related to current cc modification by instruction. Required.                                                                                                                                                                                          |
 | control_flow.branches               | Array of possible branches of an instruction. Specifies all possible values of cc after instruction execution. Required. Each branch described by a `Continuation` object described below.                                                                        |
 | control_flow.nobranch               | Can this instruction not perform any of specified branches in certain cases (do not modify cc)? Required. If instruction has no control flow, nobranch is true and branches are empty.                                                                            |
-| implementation                      | Array of source mappings that define where this instruction is implemented in the TON C++ codebase. Includes `file`, `path`, `line`, and `function_name`. Optional but recommended.                                                                               |
+| implementation                      | Array of source mappings that define where this instruction is implemented in the TON C++ codebase. Includes `file`, `path`, `line`, and `function_name`.                                                                             |
 
 ### Operand Types Specification and Examples
 
@@ -586,12 +570,3 @@ This is primarily used for:
   }
 ]
 ```
-
-If multiple function variants implement the same mnemonic (e.g., based on operand ranges), multiple entries can be
-listed in the array.
-
-#### Notes
-
-* Line numbers are based on static commits and may go out of sync if the underlying code changes. To update them, re-run
-  the matchers.
-* These links are generated by matcher scripts under the `matcher/` directory and written to `match-report.json`.
