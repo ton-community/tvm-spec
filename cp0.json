@@ -57475,7 +57475,16 @@
           "registers": []
         },
         "outputs": {
-          "registers": []
+          "registers": [],
+          "stack": [
+            {
+              "name": "i",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
         }
       }
     },
