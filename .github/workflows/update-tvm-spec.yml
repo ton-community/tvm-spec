@@ -7,10 +7,6 @@ name: Update TVM spec
 
 on:
   workflow_call:
-    inputs:
-      branch:
-        type: string
-        required: true
     outputs:
       pr-url:
         description: URL of the created pull request (empty if none)
@@ -31,7 +27,6 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch }}
           fetch-depth: 0  # needed for pushing later
 
       - name: Set up Python
@@ -92,7 +87,6 @@ jobs:
             Automated update of TVM spec.
             Includes regenerated files from `make update-all`.
           branch: "update-tvm-spec"
-          base: ${{ inputs.branch }}
           add-paths: |
             match-report.json
             cp0.json
