@@ -102,6 +102,14 @@
     "source_line": 336
   },
   {
+    "mnemonic": "ADDRSHIFTMOD_VAR",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_div",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
     "mnemonic": "ADDRSHIFTRMOD",
     "function": "exec_shrmod",
     "score": 1.0,
@@ -3188,6 +3196,14 @@
     "source_line": 336
   },
   {
+    "mnemonic": "MULADDRSHIFTCMOD_VAR",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_div",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
     "mnemonic": "MULADDRSHIFTMOD",
     "function": "exec_shrmod",
     "score": 1.0,
@@ -3196,7 +3212,23 @@
     "source_line": 336
   },
   {
+    "mnemonic": "MULADDRSHIFTMOD_VAR",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_div",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
     "mnemonic": "MULADDRSHIFTRMOD",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_div",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
+    "mnemonic": "MULADDRSHIFTRMOD_VAR",
     "function": "exec_shrmod",
     "score": 1.0,
     "category": "arithm_div",
@@ -4654,6 +4686,14 @@
     "source_line": 336
   },
   {
+    "mnemonic": "QMULADDRSHIFTCMOD_VAR",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_quiet",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
     "mnemonic": "QMULADDRSHIFTMOD",
     "function": "exec_shrmod",
     "score": 1.0,
@@ -4662,7 +4702,23 @@
     "source_line": 336
   },
   {
+    "mnemonic": "QMULADDRSHIFTMOD_VAR",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_quiet",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
     "mnemonic": "QMULADDRSHIFTRMOD",
+    "function": "exec_shrmod",
+    "score": 1.0,
+    "category": "arithm_quiet",
+    "source_path": "https://raw.githubusercontent.com/ton-blockchain/ton/9d0569645231b8f764635883ff344aad27786682/crypto/vm/arithops.cpp",
+    "source_line": 336
+  },
+  {
+    "mnemonic": "QMULADDRSHIFTRMOD_VAR",
     "function": "exec_shrmod",
     "score": 1.0,
     "category": "arithm_quiet",

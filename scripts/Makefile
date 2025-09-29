@@ -1,6 +1,6 @@
 .PHONY: run-match-all
 run-match-all:
-	python3 matcher/match-all.py --out match-report.json --rev $$(cat ton-blockchain.revision.txt)
+	python3 matcher/match-all.py --cp0 ../cp0.json --out match-report.json --rev $$(cat ton-blockchain.revision.txt)
 
 .PHONY: sort-report
 sort-report:

@@ -1,12 +1,15 @@
 from __future__ import annotations
 
 import logging
+import os
+
 from pathlib import Path
 
 import requests
 
 
 DEFAULT_REPO = "ton-blockchain/ton"
+GITHUB_TOKEN = os.environ.get('GITHUB_TOKEN')
 
 
 def _github_raw_url(repo: str, revision: str, file_path: str) -> str:
@@ -28,6 +31,8 @@ def _latest_commit_sha_for_path(repo: str, revision: str, file_path: str) -> str
     """
     api_url = f"https://api.github.com/repos/{repo}/commits"
     headers = {"Accept": "application/vnd.github+json"}
+    if GITHUB_TOKEN is not None:
+        headers['Authorization'] = f"Bearer {GITHUB_TOKEN}"
     params = {
         "sha": revision,
         "path": file_path,
@@ -57,7 +62,10 @@ def download_github_file(revision: str, file_path: str, repo: str = DEFAULT_REPO
     effective_sha = _latest_commit_sha_for_path(repo, revision, file_path)
     url = _github_raw_url(repo, effective_sha, file_path)
     logging.info("↳ fetching %s", url)
-    r = requests.get(url, timeout=30)
+    headers = {}
+    if GITHUB_TOKEN is not None:
+        headers['Authorization'] = f"Bearer {GITHUB_TOKEN}"
+    r = requests.get(url, timeout=30, headers=headers)
     r.raise_for_status()
     logging.info("  ✓ %s (%d bytes)", Path(file_path).name, len(r.text))
     return r.text, url 
