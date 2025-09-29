@@ -6,7 +6,7 @@ on:
 
 jobs:
   update-tvm-spec:
-    uses: ton-community/tvm-spec/.github/workflows/update-tvm-spec.yml@main
+    uses: ton-community/tvm-spec/.github/workflows/update-tvm-spec.yml@master
     permissions:
       contents: write
       pull-requests: write
