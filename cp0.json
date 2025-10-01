@@ -684,8 +684,8 @@
       "doc_stack": "-",
       "mnemonic": "STRDUMP",
       "operands": {
-        "i": 0,
-        "j": 0
+        "i": 1,
+        "j": 4
       }
     },
     {
