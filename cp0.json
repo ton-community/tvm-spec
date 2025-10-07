@@ -37769,10 +37769,10 @@
       },
       "implementation": [
         {
-          "file": "<manual>",
+          "file": "contops.cpp",
           "function_name": "exec_do_with_ref",
-          "line": 0,
-          "path": "<manual>"
+          "line": 152,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/ffa872c2fb8677e7851dcca4a8dcc4d59013a7c7/crypto/vm/contops.cpp"
         }
       ],
       "mnemonic": "CALLREF",
