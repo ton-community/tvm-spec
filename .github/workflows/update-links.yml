@@ -29,8 +29,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apt update
-          apt install -y universal-ctags
+          sudo apt update
+          sudo apt install -y universal-ctags
 
       - name: Set up Git
         run: |
