@@ -48,7 +48,7 @@ jobs:
       - name: Check for changes
         id: git-diff
         run: |
-          git add .
+          git add cp0.json
           CHANGED_FILES=$(git diff --cached --name-only | tr '\n' ' ')
           echo "changed=$CHANGED_FILES" >> $GITHUB_OUTPUT
 
