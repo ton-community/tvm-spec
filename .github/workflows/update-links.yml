@@ -7,10 +7,6 @@ on:
         description: "ton-blockchain/ton git ref (SHA/branch/tag), default is master"
         required: false
         default: "master"
-    outputs:
-      pr-url:
-        description: URL of the created pull request (empty if none)
-        value: ${{ jobs.update-tvm-spec.outputs.pr-url }}
 
 permissions:
   contents: write
@@ -20,9 +16,6 @@ permissions:
 jobs:
   update-tvm-spec:
     runs-on: ubuntu-latest
-    outputs:
-      pr-url: ${{ steps.cpr.outputs.pull-request-url }}
-
     steps:
       - name: Checkout branch
         uses: actions/checkout@v4
@@ -70,13 +63,3 @@ jobs:
           add-paths: |
             cp0.json
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish PR URL summary
-        run: |
-          if [ -n "${{ steps.cpr.outputs.pull-request-url }}" ]; then
-            echo "PR created: ${{ steps.cpr.outputs.pull-request-url }}" >> "$GITHUB_STEP_SUMMARY"
-            echo "pr_url=${{ steps.cpr.outputs.pull-request-url }}" >> "$GITHUB_OUTPUT"
-          else
-            echo "No PR created (no changes)" >> "$GITHUB_STEP_SUMMARY"
-            echo "pr_url=" >> "$GITHUB_OUTPUT"
-          fi
