@@ -43,7 +43,7 @@ jobs:
         run: git clone https://github.com/ton-blockchain/ton && git checkout $INPUT_REF
 
       - name: Update ton commit
-        run: python3 .github/workflows/update-links.py
+        run: python3 .github/workflows/update-links.py cp0.json ton
 
       - name: Check for changes
         id: git-diff
