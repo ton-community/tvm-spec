@@ -1,0 +1,65 @@
+name: Update implementation links
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "ton-blockchain/ton git ref (SHA/branch/tag), default is master"
+        required: false
+        default: "master"
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  update-tvm-spec:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # needed for pushing later
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          sudo apt install -y universal-ctags
+
+      - name: Set up Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Clone ton-blockchain/ton
+        env:
+          INPUT_REF: ${{ inputs.ref }}
+        run: git clone https://github.com/ton-blockchain/ton && git checkout $INPUT_REF
+
+      - name: Update ton commit
+        run: python3 .github/workflows/update-links.py cp0.json ton
+
+      - name: Check for changes
+        id: git-diff
+        run: |
+          git add .
+          CHANGED_FILES=$(git diff --cached --name-only | tr '\n' ' ')
+          echo "changed=$CHANGED_FILES" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request if needed
+        if: ${{ steps.git-diff.outputs.changed != '' }}
+        id: cpr
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "feat(cp0): update implementation links"
+          title: "Update implementation links"
+          branch: "update-links"
+          add-paths: |
+            cp0.json
+          token: ${{ secrets.GITHUB_TOKEN }}
