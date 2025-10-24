@@ -37,6 +37,7 @@ However, nothing can stop you from just copying `cp0.json` (and `schema.json` if
 3. [ton-opcode](https://github.com/tact-lang/ton-opcode), full-fledged TVM disassembler.
 4. [tsa](https://github.com/espritoxyz/tsa), symbolic execution framework.
 5. [tvm-web-viewer](https://github.com/ton-blockchain/tvm-web-viewer) ([retracer.ton.org](https://retracer.ton.org)), transaction debugger.
+6. [pytonasm](https://github.com/yxsec/pytonasm), Python TVM bytecode disassembler with instruction analysis and statistics.
 
 ## Instruction Specification Example
 
