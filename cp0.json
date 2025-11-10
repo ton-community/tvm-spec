@@ -59238,7 +59238,7 @@
       },
       "doc": {
         "category": "app_config",
-        "description": "Calculate `fwd_fee * 2^16 / first_frac`. Can be used to get the original `fwd_fee` of the message.",
+        "description": "Calculate `(fwd_fee * 2^16) / (2^16 - first_frac)`. Can be used to get the original `fwd_fee` of the message.",
         "fift": "GETORIGINALFWDFEE",
         "fift_examples": [],
         "gas": "",
