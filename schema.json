@@ -24,7 +24,7 @@
           ]
         },
         "line": {
-          "type": "number",
+          "type": "integer",
           "title": "Implementation line number",
           "examples": [
             749,
@@ -123,7 +123,7 @@
           "required": ["type", "index"],
           "properties": {
             "type": { "const": "constant" },
-            "index": { "type": "number" }
+            "index": { "type": "integer" }
           }
         },
         {
@@ -265,7 +265,7 @@
             "value": {
               "title": "Constant value",
               "type": [
-                "number",
+                "integer",
                 "null"
               ]
             }
@@ -373,7 +373,7 @@
           "required": ["type", "value"],
           "properties": {
             "type": { "const": "add" },
-            "value": { "type": "number" }
+            "value": { "type": "integer" }
           }
         },
         {
@@ -438,15 +438,15 @@
             "type": { "const": "uint" },
             "display_hints": { "$ref": "#/definitions/display_hints" },
             "size": {
-              "type": "number",
+              "type": "integer",
               "title": "Integer size, bits"
             },
             "max_value": {
-              "type": "number",
+              "type": "integer",
               "title": "Maximum integer value"
             },
             "min_value": {
-              "type": "number",
+              "type": "integer",
               "title": "Minimum integer value"
             }
           }
@@ -460,15 +460,15 @@
             "type": { "const": "int" },
             "display_hints": { "$ref": "#/definitions/display_hints" },
             "size": {
-              "type": "number",
+              "type": "integer",
               "title": "Integer size, bits"
             },
             "max_value": {
-              "type": "number",
+              "type": "integer",
               "title": "Maximum integer value"
             },
             "min_value": {
-              "type": "number",
+              "type": "integer",
               "title": "Minimum integer value"
             }
           }
@@ -501,20 +501,20 @@
             "type": { "const": "subslice" },
             "display_hints": { "$ref": "#/definitions/display_hints" },
             "bits_length_var_size": {
-              "type": "number",
+              "type": "integer",
               "title": "Size of bit length operand"
             },
             "bits_padding": {
-              "type": "number",
+              "type": "integer",
               "title": "Constant integer value to add to length of bitstring to load."
             },
             "refs_length_var_size": {
-              "type": "number",
+              "type": "integer",
               "title": "Size of ref count operand",
               "description": "Optional, no refs in this operand in case of absence."
             },
             "refs_add": {
-              "type": "number",
+              "type": "integer",
               "title": "Constant integer value to add to ref count",
               "default": 0
             },
@@ -525,22 +525,22 @@
               "markdownDescription": "Determines completion tag presense: trailing `'1' + '0' * x` in bitstring"
             },
             "max_bits": {
-              "type": "number",
+              "type": "integer",
               "title": "Max bit size",
               "description": "Hint for maximum bits available to store for this operand"
             },
             "min_bits": {
-              "type": "number",
+              "type": "integer",
               "title": "Min bit size",
               "description": "Hint for minimum bits available to store for this operand"
             },
             "max_refs": {
-              "type": "number",
+              "type": "integer",
               "title": "Max ref size",
               "description": "Hint for maximum refs available to store for this operand"
             },
             "min_refs": {
-              "type": "number",
+              "type": "integer",
               "title": "Min ref size",
               "description": "Hint for minimum refs available to store for this operand"
             }
@@ -729,7 +729,7 @@
           ]
         },
         "since_version": {
-          "type": "number",
+          "type": "integer",
           "title": "Since global version",
           "description": "Global version (ConfigParam 8) which enables this instruction. Version 9999 means that instruction has no global version and currently unavailable in mainnet."
         },
