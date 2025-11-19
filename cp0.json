@@ -667,6 +667,126 @@
       }
     },
     {
+      "alias_of": "GETPARAM",
+      "description": "Retrives tuple that contains some config parameters as cell slices. If the parameter is absent from the config, the value is null. Values: \n* **0**: `StoragePrices` from `ConfigParam 18`. Not the whole dict, but only the one StoragePrices entry (one which corresponds to the current time).\n  * **2**: ConfigParam 19` (global id).\n  * **2**: `ConfigParam 20` (mc gas prices).\n  * **3**: `ConfigParam 21` (gas prices).\n  * **4**: `ConfigParam 24` (mc fwd fees).\n  * **5**: `ConfigParam 25` (fwd fees).\n  * **6**: `ConfigParam 43` (size limits).",
+      "doc_fift": "UNPACKEDCONFIGTUPLE",
+      "doc_stack": " - t",
+      "mnemonic": "UNPACKEDCONFIGTUPLE",
+      "operands": {
+        "i": 14
+      }
+    },
+    {
+      "alias_of": "GETPARAM",
+      "description": "Retrives current debt for storage fee (nanotons).",
+      "doc_fift": "DUEPAYMENT",
+      "doc_stack": " - t",
+      "mnemonic": "DUEPAYMENT",
+      "operands": {
+        "i": 15
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives `bounce` flag of incoming message.",
+      "doc_fift": "INMSG_BOUNCE",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_BOUNCE",
+      "operands": {
+        "i": 0
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives `bounced` flag of incoming message.",
+      "doc_fift": "INMSG_BOUNCED",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_BOUNCED",
+      "operands": {
+        "i": 1
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives `src` flag of incoming message.",
+      "doc_fift": "INMSG_SRC",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_SRC",
+      "operands": {
+        "i": 2
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives `fwd_fee` field of incoming message.",
+      "doc_fift": "INMSG_FWDFEE",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_FWDFEE",
+      "operands": {
+        "i": 3
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives `lt` field of incoming message.",
+      "doc_fift": "INMSG_LT",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_LT",
+      "operands": {
+        "i": 4
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives `utime` field of incoming message.",
+      "doc_fift": "INMSG_UTIME",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_UTIME",
+      "operands": {
+        "i": 5
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives original value of the message. This is sometimes different from the value in `INCOMINGVALUE` and TVM stack because of storage fees.",
+      "doc_fift": "INMSG_ORIGVALUE",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_ORIGVALUE",
+      "operands": {
+        "i": 6
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrives value of the message after deducting storage fees. This is same as in `INCOMINGVALUE` and TVM stack.",
+      "doc_fift": "INMSG_VALUE",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_VALUE",
+      "operands": {
+        "i": 7
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Same as in `INCOMINGVALUE`.",
+      "doc_fift": "INMSG_VALUEEXTRA",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_VALUEEXTRA",
+      "operands": {
+        "i": 8
+      }
+    },
+    {
+      "alias_of": "INMSGPARAM",
+      "description": "Retrieves `init` field of the incoming message.",
+      "doc_fift": "INMSG_STATEINIT",
+      "doc_stack": " - x",
+      "mnemonic": "INMSG_STATEINIT",
+      "operands": {
+        "i": 9
+      }
+    },
+    {
       "alias_of": "DEBUG",
       "description": "Dumps the stack (at most the top 255 values) and shows the total stack depth. Does nothing on production versions of TVM.",
       "doc_fift": "DUMPSTK",
@@ -30121,6 +30241,62 @@
     },
     {
       "bytecode": {
+        "operands": [],
+        "prefix": "CF50",
+        "tlb": "#CF50"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "cell_build",
+        "description": "Same as `ENDC CTOS`, but without gas cost for cell creation and loading.",
+        "fift": "BTOS",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "CF50",
+        "stack": "b - s"
+      },
+      "implementation": [
+        {
+          "file": "cellops.cpp",
+          "function_name": "exec_builder_to_slice",
+          "line": 767,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/cellops.cpp"
+        }
+      ],
+      "mnemonic": "BTOS",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "b",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "s",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
         "operands": [
           {
             "bits_length_var_size": 3,
@@ -42079,6 +42255,143 @@
             },
             {
               "name": "i",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "c2",
+              "type": "simple",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [
+          {
+            "display_hints": [],
+            "max_value": 255,
+            "min_value": 0,
+            "name": "mask",
+            "size": 8,
+            "type": "uint"
+          }
+        ],
+        "prefix": "EDE3",
+        "tlb": "#EDE3"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "cont_registers",
+        "description": "Takes continuation, performs the equivalent of `c[i] PUSHCTR SWAP c[i] SETCONTCNR` for each `i` that is set in `mask` (mask is in `0..255`).",
+        "fift": "SETCONTCTRMANY\nSETCONTMANY",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "EDE3",
+        "stack": "c - c'"
+      },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "function_name": "exec_setcont_ctr_many",
+          "line": 926,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/contops.cpp"
+        }
+      ],
+      "mnemonic": "SETCONTCTRMANY",
+      "since_version": 9,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "c",
+              "type": "simple",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "c2",
+              "type": "simple",
+              "value_types": [
+                "Continuation"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [
+          {
+            "display_hints": [],
+            "max_value": 255,
+            "min_value": 0,
+            "name": "mask",
+            "size": 8,
+            "type": "uint"
+          }
+        ],
+        "prefix": "EDE4",
+        "tlb": "#EDE4"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "cont_registers",
+        "description": "Takes continuation, performs the equivalent of `c[i] PUSHCTR SWAP c[i] SETCONTCNR` for each `i` that is set in `mask` (mask is in `0..255`).",
+        "fift": "SETCONTCTRMANYX\nSETCONTMANYX",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "EDE4",
+        "stack": "c mask - c'"
+      },
+      "implementation": [
+        {
+          "file": "contops.cpp",
+          "function_name": "exec_setcont_ctr_many_var",
+          "line": 943,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/contops.cpp"
+        }
+      ],
+      "mnemonic": "SETCONTCTRMANYX",
+      "since_version": 9,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "c",
+              "type": "simple",
+              "value_types": [
+                "Continuation"
+              ]
+            },
+            {
+              "name": "mask",
               "type": "simple",
               "value_types": [
                 "Integer"
@@ -58898,6 +59211,59 @@
     {
       "bytecode": {
         "operands": [],
+        "prefix": "F83402",
+        "tlb": "#F83402"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_config",
+        "description": "Retrives `last_mc_blocks_divisible_by_100` part of PrevBlocksInfo from c7 (parameter 13).",
+        "fift": "PREVMCBLOCKS_100",
+        "fift_examples": [],
+        "gas": "",
+        "opcode": "F83402",
+        "stack": "- t"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_get_prev_blocks_info",
+          "line": 259,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/4ebd7412c52248360464c2df5f434c8aaa3edfe1/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "PREVMCBLOCKS_100",
+      "since_version": 9,
+      "value_flow": {
+        "inputs": {
+          "registers": [
+            {
+              "index": 7,
+              "type": "constant"
+            }
+          ],
+          "stack": []
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "t",
+              "type": "simple",
+              "value_types": [
+                "Tuple"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
         "prefix": "F835",
         "tlb": "#F835"
       },
@@ -59687,6 +60053,187 @@
             }
           ],
           "stack": []
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "F880",
+        "tlb": "#F880"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_global",
+        "description": "Takes id of the extra currency (integer in range `0..2^32-1`), returns the amount of this extra currency on the account balance.",
+        "fift": "GETEXTRABALANCE",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "F880",
+        "stack": "id - amount"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_get_extra_currency_balance",
+          "line": 388,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "GETEXTRABALANCE",
+      "since_version": 10,
+      "value_flow": {
+        "inputs": {
+          "registers": [
+            {
+              "index": 7,
+              "type": "constant"
+            }
+          ],
+          "stack": [
+            {
+              "name": "id",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "amount",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [
+          {
+            "display_hints": [],
+            "max_value": 255,
+            "min_value": 0,
+            "name": "i",
+            "size": 8,
+            "type": "uint"
+          }
+        ],
+        "prefix": "F881",
+        "tlb": "#F881 i:uint8"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_config",
+        "description": "Returns the `i`-th parameter from the _Tuple_ provided at `c7` for `0 <= i <= 255`. Equivalent to `c7 PUSHCTR` `FIRST` `[i] INDEX`.\nIf one of these internal operations fails, throws an appropriate type checking or range checking exception.",
+        "fift": "[i] GETPARAMLONG",
+        "fift_examples": [],
+        "gas": "34",
+        "opcode": "F881ii",
+        "stack": " - x"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_get_var_param_long",
+          "line": 158,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "GETPARAMLONG",
+      "since_version": 11,
+      "value_flow": {
+        "inputs": {
+          "registers": [
+            {
+              "index": 7,
+              "type": "constant"
+            }
+          ],
+          "stack": []
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": []
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [
+          {
+            "display_hints": [],
+            "max_value": 15,
+            "min_value": 0,
+            "name": "i",
+            "size": 4,
+            "type": "uint"
+          }
+        ],
+        "prefix": "F89",
+        "tlb": "#F89 i:uint8"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_config",
+        "description": "Equivalent to `INMSGPARAMS` `i INDEX`",
+        "fift": "[i] INMSGPARAM",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "F89i",
+        "stack": " - x"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_get_var_in_msg_param",
+          "line": 176,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "INMSGPARAM",
+      "since_version": 11,
+      "value_flow": {
+        "inputs": {
+          "registers": [
+            {
+              "index": 7,
+              "type": "constant"
+            }
+          ],
+          "stack": []
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "x",
+              "type": "simple",
+              "value_types": []
+            }
+          ]
         }
       }
     },
@@ -61646,6 +62193,105 @@
     {
       "bytecode": {
         "operands": [],
+        "prefix": "F913",
+        "tlb": "#F913"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_crypto",
+        "description": "performs [`secp256k1_xonly_pubkey_tweak_add`](https://github.com/bitcoin-core/secp256k1/blob/master/include/secp256k1_extrakeys.h#L120). `key` and `tweak` are 256-bit unsigned integers. 65-byte public key is returned as `uint8 f`, `uint256 x, y` (as in `ECRECOVER`).",
+        "fift": "SECP256K1_XONLY_PUBKEY_TWEAK_ADD",
+        "fift_examples": [],
+        "gas": "1576",
+        "opcode": "F913",
+        "stack": "key tweak - 0 or f x y -1"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_secp256k1_xonly_pubkey_tweak_add",
+          "line": 798,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "SECP256K1_XONLY_PUBKEY_TWEAK_ADD",
+      "since_version": 9,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "key",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            },
+            {
+              "name": "tweak",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "match": [
+                {
+                  "stack": [],
+                  "value": 0
+                },
+                {
+                  "stack": [
+                    {
+                      "name": "f",
+                      "type": "simple",
+                      "value_types": [
+                        "Integer"
+                      ]
+                    },
+                    {
+                      "name": "x",
+                      "type": "simple",
+                      "value_types": [
+                        "Integer"
+                      ]
+                    },
+                    {
+                      "name": "y",
+                      "type": "simple",
+                      "value_types": [
+                        "Integer"
+                      ]
+                    }
+                  ],
+                  "value": -1
+                }
+              ],
+              "name": "status",
+              "type": "conditional"
+            },
+            {
+              "name": "status",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
         "prefix": "F914",
         "tlb": "#F914"
       },
@@ -61774,6 +62420,62 @@
           "stack": [
             {
               "name": "result",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "F916",
+        "tlb": "#F916"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_crypto",
+        "description": "Same as `ENDC HASHCU`, but without gas cost for cell creation.",
+        "fift": "HASHBU",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "F916",
+        "stack": "b - hash"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_compute_hash",
+          "line": 612,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "HASHBU",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "b",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "hash",
               "type": "simple",
               "value_types": [
                 "Integer"
@@ -65507,6 +66209,650 @@
                       "type": "simple",
                       "value_types": [
                         "Slice"
+                      ]
+                    }
+                  ],
+                  "value": -1
+                }
+              ],
+              "name": "status",
+              "type": "conditional"
+            },
+            {
+              "name": "status",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA48",
+        "tlb": "#FA48"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "Loads `addr_std$10`, if address is not `addr_std`, throws an error 9 (`cannot load a MsgAddressInt`).",
+        "fift": "LDSTDADDR",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA48",
+        "stack": "s - a s'"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_load_std_message_addr",
+          "line": 1568,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "LDSTDADDR",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "s",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "a",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "name": "s2",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA49",
+        "tlb": "#FA49"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "A quiet version of primitive `LDSTDADDR`.",
+        "fift": "LDSTDADDRQ",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA49",
+        "stack": "s - a s' -1 or s 0"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_load_std_message_addr",
+          "line": 1568,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "LDSTDADDRQ",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "s",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "match": [
+                {
+                  "stack": [
+                    {
+                      "name": "s",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice"
+                      ]
+                    }
+                  ],
+                  "value": 0
+                },
+                {
+                  "stack": [
+                    {
+                      "name": "a",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice"
+                      ]
+                    },
+                    {
+                      "name": "s'",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice"
+                      ]
+                    }
+                  ],
+                  "value": -1
+                }
+              ],
+              "name": "status",
+              "type": "conditional"
+            },
+            {
+              "name": "status",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA50",
+        "tlb": "#FA50"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "Loads `addr_std$10` or `addr_none$00`, if address is `addr_none$00` pushes a Null, if address is not `addr_std` or `addr_none`, throws an error 9 (`cannot load a MsgAddressInt`).",
+        "fift": "LDOPTSTDADDR",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA50",
+        "stack": "s - a s'"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_load_opt_std_message_addr",
+          "line": 1586,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "LDOPTSTDADDR",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "s",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "a",
+              "type": "simple",
+              "value_types": [
+                "Slice",
+                "Null"
+              ]
+            },
+            {
+              "name": "s2",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA51",
+        "tlb": "#FA51"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "A quiet version of primitive `LDOPTSTDADDR`.",
+        "fift": "LDOPTSTDADDRQ",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA51",
+        "stack": "s - a s' -1 or s 0"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_load_opt_std_message_addr",
+          "line": 1586,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "LDOPTSTDADDRQ",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "s",
+              "type": "simple",
+              "value_types": [
+                "Slice",
+                "Null"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "match": [
+                {
+                  "stack": [
+                    {
+                      "name": "s",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice"
+                      ]
+                    }
+                  ],
+                  "value": 0
+                },
+                {
+                  "stack": [
+                    {
+                      "name": "a",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice",
+                        "Null"
+                      ]
+                    },
+                    {
+                      "name": "s'",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice"
+                      ]
+                    }
+                  ],
+                  "value": -1
+                }
+              ],
+              "name": "status",
+              "type": "conditional"
+            },
+            {
+              "name": "status",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA52",
+        "tlb": "#FA52"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "Stores `addr_std$10`, if address is not `addr_std`, throws an error 9 (`cannot load a MsgAddressInt`).",
+        "fift": "STSTDADDR",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA52",
+        "stack": "a b - b'"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_store_std_address",
+          "line": 1822,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "STSTDADDR",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "a",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "name": "b",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "b2",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA53",
+        "tlb": "#FA53"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "A quiet version of primitive `STSTDADDR`.",
+        "fift": "STSTDADDRQ",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA53",
+        "stack": "a b - b' 0 or a b -1"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_store_std_address",
+          "line": 1822,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "STSTDADDRQ",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "a",
+              "type": "simple",
+              "value_types": [
+                "Slice"
+              ]
+            },
+            {
+              "name": "b",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "match": [
+                {
+                  "stack": [
+                    {
+                      "name": "b2",
+                      "type": "simple",
+                      "value_types": [
+                        "Builder"
+                      ]
+                    }
+                  ],
+                  "value": 0
+                },
+                {
+                  "stack": [
+                    {
+                      "name": "a",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice"
+                      ]
+                    },
+                    {
+                      "name": "b",
+                      "type": "simple",
+                      "value_types": [
+                        "Builder"
+                      ]
+                    }
+                  ],
+                  "value": -1
+                }
+              ],
+              "name": "status",
+              "type": "conditional"
+            },
+            {
+              "name": "status",
+              "type": "simple",
+              "value_types": [
+                "Integer"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA54",
+        "tlb": "#FA54"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "stores `addr_std$10` or Null. Null is stored as `addr_none$00`, if address is not `addr_std`, throws an error 9 (`cannot load a MsgAddressInt`).",
+        "fift": "STOPTSTDADDR",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA54",
+        "stack": "a b - b'"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_store_opt_std_address",
+          "line": 1855,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "STOPTSTDADDR",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "a",
+              "type": "simple",
+              "value_types": [
+                "Slice",
+                "Null"
+              ]
+            },
+            {
+              "name": "b",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "b2",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "bytecode": {
+        "operands": [],
+        "prefix": "FA55",
+        "tlb": "#FA55"
+      },
+      "control_flow": {
+        "branches": [],
+        "nobranch": true
+      },
+      "doc": {
+        "category": "app_addr",
+        "description": "A quiet version of primitive `STOPTSTDADDR`.",
+        "fift": "STOPTSTDADDRQ",
+        "fift_examples": [],
+        "gas": "26",
+        "opcode": "FA55",
+        "stack": "a b - b' 0 or a b -1"
+      },
+      "implementation": [
+        {
+          "file": "tonops.cpp",
+          "function_name": "exec_store_opt_std_address",
+          "line": 1855,
+          "path": "https://raw.githubusercontent.com/ton-blockchain/ton/f58297f1b668c7b49e8b30b65062951ca7c18acc/crypto/vm/tonops.cpp"
+        }
+      ],
+      "mnemonic": "STOPTSTDADDRQ",
+      "since_version": 12,
+      "value_flow": {
+        "inputs": {
+          "registers": [],
+          "stack": [
+            {
+              "name": "a",
+              "type": "simple",
+              "value_types": [
+                "Slice",
+                "Null"
+              ]
+            },
+            {
+              "name": "b",
+              "type": "simple",
+              "value_types": [
+                "Builder"
+              ]
+            }
+          ]
+        },
+        "outputs": {
+          "registers": [],
+          "stack": [
+            {
+              "match": [
+                {
+                  "stack": [
+                    {
+                      "name": "b2",
+                      "type": "simple",
+                      "value_types": [
+                        "Builder"
+                      ]
+                    }
+                  ],
+                  "value": 0
+                },
+                {
+                  "stack": [
+                    {
+                      "name": "a",
+                      "type": "simple",
+                      "value_types": [
+                        "Slice",
+                        "Null"
+                      ]
+                    },
+                    {
+                      "name": "b",
+                      "type": "simple",
+                      "value_types": [
+                        "Builder"
                       ]
                     }
                   ],
