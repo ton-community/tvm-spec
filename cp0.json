@@ -42289,7 +42289,7 @@
           }
         ],
         "prefix": "EDE3",
-        "tlb": "#EDE3"
+        "tlb": "#EDE3 mask:uint8"
       },
       "control_flow": {
         "branches": [],
@@ -42300,8 +42300,8 @@
         "description": "Takes continuation, performs the equivalent of `c[i] PUSHCTR SWAP c[i] SETCONTCNR` for each `i` that is set in `mask` (mask is in `0..255`).",
         "fift": "SETCONTCTRMANY\nSETCONTMANY",
         "fift_examples": [],
-        "gas": "26",
-        "opcode": "EDE3",
+        "gas": "34",
+        "opcode": "EDE3mm",
         "stack": "c - c'"
       },
       "implementation": [
@@ -42343,16 +42343,7 @@
     },
     {
       "bytecode": {
-        "operands": [
-          {
-            "display_hints": [],
-            "max_value": 255,
-            "min_value": 0,
-            "name": "mask",
-            "size": 8,
-            "type": "uint"
-          }
-        ],
+        "operands": [],
         "prefix": "EDE4",
         "tlb": "#EDE4"
       },
