@@ -60059,7 +60059,7 @@
       },
       "doc": {
         "category": "app_global",
-        "description": "Takes id of the extra currency (integer in range `0..2^32-1`), returns the amount of this extra currency on the account balance.",
+        "description": "Takes id of the extra currency (integer in range `0..2^32-1`), returns the amount of this extra currency on the account balance. The first `5` executions of `GETEXTRABALANCE` consume at most `26 + 200` gas each. The subsequent executions incur the full gas cost of `26` (normal instruction cost) plus gas for loading cells (up to `3300` if the dictionary has maximum depth).",
         "fift": "GETEXTRABALANCE",
         "fift_examples": [],
         "gas": "26",
