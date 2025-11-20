@@ -66084,7 +66084,7 @@
       },
       "doc": {
         "category": "app_addr",
-        "description": "A variant of `REWRITESTDADDR` that returns the (rewritten) address as a _Slice_ `s`, even if it is not exactly 256 bit long (represented by a `msg_addr_var`).",
+        "description": "`msg_addr_var` not allowed since TVM v10, so it behaves like `REWRITESTDADDR`, but returns account id in `Slice`, not `Integer`: parses address `s` into workchain `x` and account id `s`.",
         "fift": "REWRITEVARADDR",
         "fift_examples": [],
         "gas": "26",
