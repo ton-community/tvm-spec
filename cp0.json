@@ -30137,8 +30137,8 @@
             "type": "subslice"
           }
         ],
-        "prefix": "CFC0_",
-        "tlb": "#CFC0_ x:(## 2) y:(## 3) c:(x * ^Cell) sss:((8 * y + 2) * Bit)"
+        "prefix": "CFC_",
+        "tlb": "#CFC_ x:(## 2) y:(## 3) c:(x * ^Cell) sss:((8 * y + 2) * Bit)"
       },
       "control_flow": {
         "branches": [],
@@ -30150,7 +30150,7 @@
         "fift": "[slice] STSLICECONST",
         "fift_examples": [],
         "gas": "24",
-        "opcode": "CFC0_xysss",
+        "opcode": "CFC_xysss",
         "stack": "b - b'"
       },
       "implementation": [
