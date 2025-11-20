@@ -34104,7 +34104,7 @@
         "description": "Transforms an ordinary or exotic cell into a _Slice_, as if it were an ordinary cell. A flag is returned indicating whether `c` is exotic. If that be the case, its type can later be deserialized from the first eight bits of `s`.",
         "fift": "XCTOS",
         "fift_examples": [],
-        "gas": "",
+        "gas": "126/51",
         "opcode": "D739",
         "stack": "c - s ?"
       },
@@ -34167,7 +34167,7 @@
         "description": "Loads an exotic cell `c` and returns an ordinary cell `c'`. If `c` is already ordinary, does nothing. If `c` cannot be loaded, throws an exception.",
         "fift": "XLOAD",
         "fift_examples": [],
-        "gas": "",
+        "gas": "126/51",
         "opcode": "D73A",
         "stack": "c - c'"
       },
@@ -34223,7 +34223,7 @@
         "description": "Loads an exotic cell `c` and returns an ordinary cell `c'`. If `c` is already ordinary, does nothing. If `c` cannot be loaded, returns 0.",
         "fift": "XLOADQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "126/51",
         "opcode": "D73B",
         "stack": "c - c' -1 or c 0"
       },
@@ -38143,7 +38143,7 @@
         "description": "Runs child VM with code `code` and stack `x_1...x_n`. Returns the resulting stack `x'_1...x'_m` and exitcode. Other arguments and return values are enabled by flags.",
         "fift": "flags RUNVM",
         "fift_examples": [],
-        "gas": "",
+        "gas": "74",
         "opcode": "DB4fff",
         "stack": "x_1 ... x_n n code [r] [c4] [c7] [g_l] [g_m] - x'_1 ... x'_m exitcode [data'] [c4'] [c5] [g_c]"
       },
@@ -38181,7 +38181,7 @@
         "description": "Runs child VM with code `code` and stack `x_1...x_n`. Returns the resulting stack `x'_1...x'_m` and exitcode. Other arguments and return values are enabled by flags.",
         "fift": "RUNVMX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "66",
         "opcode": "DB50",
         "stack": "x_1 ... x_n n code [r] [c4] [c7] [g_l] [g_m] flags - x'_1 ... x'_m exitcode [data'] [c4'] [c5] [g_c]"
       },
@@ -43212,7 +43212,7 @@
         "description": "Calls the continuation in `c3`, pushing integer `0 <= nn <= 255` into its stack as an argument.\nApproximately equivalent to `[nn] PUSHINT` `c3 PUSHCTR` `EXECUTE`.",
         "fift": "[nn] CALL\n[nn] CALLDICT",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F0nn",
         "stack": "- nn"
       },
@@ -43285,7 +43285,7 @@
         "description": "For `0 <= n < 2^14`, an encoding of `[n] CALL` for larger values of `n`.",
         "fift": "[n] CALL\n[n] CALLDICT",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F12_n",
         "stack": "- n"
       },
@@ -43347,7 +43347,7 @@
         "description": "Jumps to the continuation in `c3`, pushing integer `0 <= n < 2^14` as its argument.\nApproximately equivalent to `n PUSHINT` `c3 PUSHCTR` `JMPX`.",
         "fift": "[n] JMP",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F16_n",
         "stack": " - n"
       },
@@ -43404,7 +43404,7 @@
         "description": "Equivalent to `n PUSHINT` `c3 PUSHCTR`, for `0 <= n < 2^14`.\nIn this way, `[n] CALL` is approximately equivalent to `[n] PREPARE` `EXECUTE`, and `[n] JMP` is approximately equivalent to `[n] PREPARE` `JMPX`.\nOne might use, for instance, `CALLXARGS` or `CALLCC` instead of `EXECUTE` here.",
         "fift": "[n] PREPARE\n[n] PREPAREDICT",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F1A_n",
         "stack": " - n c"
       },
@@ -45072,7 +45072,7 @@
         "description": "Looks up key `k` (represented by a _Slice_, the first `0 <= n <= 1023` data bits of which are used as a key) in dictionary `D` of type `HashmapE(n,X)` with `n`-bit keys.\nOn success, returns the value found as a _Slice_ `x`.",
         "fift": "DICTGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F40A",
         "stack": "k D n - x -1 or 0"
       },
@@ -45165,7 +45165,7 @@
         "description": "Similar to `DICTGET`, but with a `LDREF` `ENDS` applied to `x` on success.\nThis operation is useful for dictionaries of type `HashmapE(n,^Y)`.",
         "fift": "DICTGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F40B",
         "stack": "k D n - c -1 or 0"
       },
@@ -45258,7 +45258,7 @@
         "description": "Similar to `DICTGET`, but with a signed (big-endian) `n`-bit _Integer_ `i` as a key. If `i` does not fit into `n` bits, returns `0`. If `i` is a `NaN`, throws an integer overflow exception.",
         "fift": "DICTIGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F40C",
         "stack": "i D n - x -1 or 0"
       },
@@ -45351,7 +45351,7 @@
         "description": "Combines `DICTIGET` with `DICTGETREF`: it uses signed `n`-bit _Integer_ `i` as a key and returns a _Cell_ instead of a _Slice_ on success.",
         "fift": "DICTIGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F40D",
         "stack": "i D n - c -1 or 0"
       },
@@ -45444,7 +45444,7 @@
         "description": "Similar to `DICTIGET`, but with _unsigned_ (big-endian) `n`-bit _Integer_ `i` used as a key.",
         "fift": "DICTUGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F40E",
         "stack": "i D n - x -1 or 0"
       },
@@ -45537,7 +45537,7 @@
         "description": "Similar to `DICTIGETREF`, but with an unsigned `n`-bit _Integer_ key `i`.",
         "fift": "DICTUGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F40F",
         "stack": "i D n - c -1 or 0"
       },
@@ -45630,7 +45630,7 @@
         "description": "Sets the value associated with `n`-bit key `k` (represented by a _Slice_ as in `DICTGET`) in dictionary `D` (also represented by a _Slice_) to value `x` (again a _Slice_), and returns the resulting dictionary as `D'`.",
         "fift": "DICTSET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F412",
         "stack": "x k D n - D'"
       },
@@ -45708,7 +45708,7 @@
         "description": "Similar to `DICTSET`, but with the value set to a reference to _Cell_ `c`.",
         "fift": "DICTSETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F413",
         "stack": "c k D n - D'"
       },
@@ -45786,7 +45786,7 @@
         "description": "Similar to `DICTSET`, but with the key represented by a (big-endian) signed `n`-bit integer `i`. If `i` does not fit into `n` bits, a range check exception is generated.",
         "fift": "DICTISET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F414",
         "stack": "x i D n - D'"
       },
@@ -45864,7 +45864,7 @@
         "description": "Similar to `DICTSETREF`, but with the key a signed `n`-bit integer as in `DICTISET`.",
         "fift": "DICTISETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F415",
         "stack": "c i D n - D'"
       },
@@ -45942,7 +45942,7 @@
         "description": "Similar to `DICTISET`, but with `i` an _unsigned_ `n`-bit integer.",
         "fift": "DICTUSET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F416",
         "stack": "x i D n - D'"
       },
@@ -46020,7 +46020,7 @@
         "description": "Similar to `DICTISETREF`, but with `i` unsigned.",
         "fift": "DICTUSETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F417",
         "stack": "c i D n - D'"
       },
@@ -46098,7 +46098,7 @@
         "description": "Combines `DICTSET` with `DICTGET`: it sets the value corresponding to key `k` to `x`, but also returns the old value `y` associated with the key in question, if present.",
         "fift": "DICTSETGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F41A",
         "stack": "x k D n - D' y -1 or D' 0"
       },
@@ -46213,7 +46213,7 @@
         "description": "Combines `DICTSETREF` with `DICTGETREF` similarly to `DICTSETGET`.",
         "fift": "DICTSETGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F41B",
         "stack": "c k D n - D' c' -1 or D' 0"
       },
@@ -46328,7 +46328,7 @@
         "description": "`DICTISETGET`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTISETGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F41C",
         "stack": "x i D n - D' y -1 or D' 0"
       },
@@ -46443,7 +46443,7 @@
         "description": "`DICTISETGETREF`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTISETGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F41D",
         "stack": "c i D n - D' c' -1 or D' 0"
       },
@@ -46558,7 +46558,7 @@
         "description": "`DICTISETGET`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUSETGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F41E",
         "stack": "x i D n - D' y -1 or D' 0"
       },
@@ -46673,7 +46673,7 @@
         "description": "`DICTISETGETREF`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUSETGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F41F",
         "stack": "c i D n - D' c' -1 or D' 0"
       },
@@ -46788,7 +46788,7 @@
         "description": "A _Replace_ operation, which is similar to `DICTSET`, but sets the value of key `k` in dictionary `D` to `x` only if the key `k` was already present in `D`.",
         "fift": "DICTREPLACE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F422",
         "stack": "x k D n - D' -1 or D 0"
       },
@@ -46897,7 +46897,7 @@
         "description": "A _Replace_ counterpart of `DICTSETREF`.",
         "fift": "DICTREPLACEREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F423",
         "stack": "c k D n - D' -1 or D 0"
       },
@@ -47006,7 +47006,7 @@
         "description": "`DICTREPLACE`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIREPLACE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F424",
         "stack": "x i D n - D' -1 or D 0"
       },
@@ -47115,7 +47115,7 @@
         "description": "`DICTREPLACEREF`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIREPLACEREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F425",
         "stack": "c i D n - D' -1 or D 0"
       },
@@ -47224,7 +47224,7 @@
         "description": "`DICTREPLACE`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUREPLACE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F426",
         "stack": "x i D n - D' -1 or D 0"
       },
@@ -47333,7 +47333,7 @@
         "description": "`DICTREPLACEREF`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUREPLACEREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F427",
         "stack": "c i D n - D' -1 or D 0"
       },
@@ -47442,7 +47442,7 @@
         "description": "A _Replace_ counterpart of `DICTSETGET`: on success, also returns the old value associated with the key in question.",
         "fift": "DICTREPLACEGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F42A",
         "stack": "x k D n - D' y -1 or D 0"
       },
@@ -47558,7 +47558,7 @@
         "description": "A _Replace_ counterpart of `DICTSETGETREF`.",
         "fift": "DICTREPLACEGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F42B",
         "stack": "c k D n - D' c' -1 or D 0"
       },
@@ -47674,7 +47674,7 @@
         "description": "`DICTREPLACEGET`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIREPLACEGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F42C",
         "stack": "x i D n - D' y -1 or D 0"
       },
@@ -47790,7 +47790,7 @@
         "description": "`DICTREPLACEGETREF`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIREPLACEGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F42D",
         "stack": "c i D n - D' c' -1 or D 0"
       },
@@ -47906,7 +47906,7 @@
         "description": "`DICTREPLACEGET`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUREPLACEGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F42E",
         "stack": "x i D n - D' y -1 or D 0"
       },
@@ -48022,7 +48022,7 @@
         "description": "`DICTREPLACEGETREF`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUREPLACEGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F42F",
         "stack": "c i D n - D' c' -1 or D 0"
       },
@@ -48138,7 +48138,7 @@
         "description": "An _Add_ counterpart of `DICTSET`: sets the value associated with key `k` in dictionary `D` to `x`, but only if it is not already present in `D`.",
         "fift": "DICTADD",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F432",
         "stack": "x k D n - D' -1 or D 0"
       },
@@ -48246,7 +48246,7 @@
         "description": "An _Add_ counterpart of `DICTSETREF`.",
         "fift": "DICTADDREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F433",
         "stack": "c k D n - D' -1 or D 0"
       },
@@ -48354,7 +48354,7 @@
         "description": "`DICTADD`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIADD",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F434",
         "stack": "x i D n - D' -1 or D 0"
       },
@@ -48462,7 +48462,7 @@
         "description": "`DICTADDREF`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIADDREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F435",
         "stack": "c i D n - D' -1 or D 0"
       },
@@ -48570,7 +48570,7 @@
         "description": "`DICTADD`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUADD",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F436",
         "stack": "x i D n - D' -1 or D 0"
       },
@@ -48678,7 +48678,7 @@
         "description": "`DICTADDREF`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUADDREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F437",
         "stack": "c i D n - D' -1 or D 0"
       },
@@ -48786,7 +48786,7 @@
         "description": "An _Add_ counterpart of `DICTSETGET`: sets the value associated with key `k` in dictionary `D` to `x`, but only if key `k` is not already present in `D`. Otherwise, just returns the old value `y` without changing the dictionary.",
         "fift": "DICTADDGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F43A",
         "stack": "x k D n - D' -1 or D y 0"
       },
@@ -48901,7 +48901,7 @@
         "description": "An _Add_ counterpart of `DICTSETGETREF`.",
         "fift": "DICTADDGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F43B",
         "stack": "c k D n - D' -1 or D c' 0"
       },
@@ -49016,7 +49016,7 @@
         "description": "`DICTADDGET`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIADDGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F43C",
         "stack": "x i D n - D' -1 or D y 0"
       },
@@ -49131,7 +49131,7 @@
         "description": "`DICTADDGETREF`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIADDGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F43D",
         "stack": "c i D n - D' -1 or D c' 0"
       },
@@ -49246,7 +49246,7 @@
         "description": "`DICTADDGET`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUADDGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F43E",
         "stack": "x i D n - D' -1 or D y 0"
       },
@@ -49361,7 +49361,7 @@
         "description": "`DICTADDGETREF`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUADDGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F43F",
         "stack": "c i D n - D' -1 or D c' 0"
       },
@@ -49476,7 +49476,7 @@
         "description": "",
         "fift": "DICTSETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F441",
         "stack": "b k D n - D'"
       },
@@ -49554,7 +49554,7 @@
         "description": "",
         "fift": "DICTISETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F442",
         "stack": "b i D n - D'"
       },
@@ -49632,7 +49632,7 @@
         "description": "",
         "fift": "DICTUSETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F443",
         "stack": "b i D n - D'"
       },
@@ -49710,7 +49710,7 @@
         "description": "",
         "fift": "DICTSETGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F445",
         "stack": "b k D n - D' y -1 or D' 0"
       },
@@ -49825,7 +49825,7 @@
         "description": "",
         "fift": "DICTISETGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F446",
         "stack": "b i D n - D' y -1 or D' 0"
       },
@@ -49940,7 +49940,7 @@
         "description": "",
         "fift": "DICTUSETGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F447",
         "stack": "b i D n - D' y -1 or D' 0"
       },
@@ -50055,7 +50055,7 @@
         "description": "",
         "fift": "DICTREPLACEB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F449",
         "stack": "b k D n - D' -1 or D 0"
       },
@@ -50163,7 +50163,7 @@
         "description": "",
         "fift": "DICTIREPLACEB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F44A",
         "stack": "b i D n - D' -1 or D 0"
       },
@@ -50271,7 +50271,7 @@
         "description": "",
         "fift": "DICTUREPLACEB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F44B",
         "stack": "b i D n - D' -1 or D 0"
       },
@@ -50379,7 +50379,7 @@
         "description": "",
         "fift": "DICTREPLACEGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F44D",
         "stack": "b k D n - D' y -1 or D 0"
       },
@@ -50494,7 +50494,7 @@
         "description": "",
         "fift": "DICTIREPLACEGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F44E",
         "stack": "b i D n - D' y -1 or D 0"
       },
@@ -50609,7 +50609,7 @@
         "description": "",
         "fift": "DICTUREPLACEGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F44F",
         "stack": "b i D n - D' y -1 or D 0"
       },
@@ -50724,7 +50724,7 @@
         "description": "",
         "fift": "DICTADDB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F451",
         "stack": "b k D n - D' -1 or D 0"
       },
@@ -50832,7 +50832,7 @@
         "description": "",
         "fift": "DICTIADDB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F452",
         "stack": "b i D n - D' -1 or D 0"
       },
@@ -50940,7 +50940,7 @@
         "description": "",
         "fift": "DICTUADDB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F453",
         "stack": "b i D n - D' -1 or D 0"
       },
@@ -51048,7 +51048,7 @@
         "description": "",
         "fift": "DICTADDGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F455",
         "stack": "b k D n - D' -1 or D y 0"
       },
@@ -51163,7 +51163,7 @@
         "description": "",
         "fift": "DICTIADDGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F456",
         "stack": "b i D n - D' -1 or D y 0"
       },
@@ -51278,7 +51278,7 @@
         "description": "",
         "fift": "DICTUADDGETB",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F457",
         "stack": "b i D n - D' -1 or D y 0"
       },
@@ -51393,7 +51393,7 @@
         "description": "Deletes `n`-bit key, represented by a _Slice_ `k`, from dictionary `D`. If the key is present, returns the modified dictionary `D'` and the success flag `-1`. Otherwise, returns the original dictionary `D` and `0`.",
         "fift": "DICTDEL",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F459",
         "stack": "k D n - D' -1 or D 0"
       },
@@ -51496,7 +51496,7 @@
         "description": "A version of `DICTDEL` with the key represented by a signed `n`-bit _Integer_ `i`. If `i` does not fit into `n` bits, simply returns `D` `0` (''key not found, dictionary unmodified'').",
         "fift": "DICTIDEL",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F45A",
         "stack": "i D n - D' ?"
       },
@@ -51599,7 +51599,7 @@
         "description": "Similar to `DICTIDEL`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUDEL",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F45B",
         "stack": "i D n - D' ?"
       },
@@ -51702,7 +51702,7 @@
         "description": "Deletes `n`-bit key, represented by a _Slice_ `k`, from dictionary `D`. If the key is present, returns the modified dictionary `D'`, the original value `x` associated with the key `k` (represented by a _Slice_), and the success flag `-1`. Otherwise, returns the original dictionary `D` and `0`.",
         "fift": "DICTDELGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F462",
         "stack": "k D n - D' x -1 or D 0"
       },
@@ -51812,7 +51812,7 @@
         "description": "Similar to `DICTDELGET`, but with `LDREF` `ENDS` applied to `x` on success, so that the value returned `c` is a _Cell_.",
         "fift": "DICTDELGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F463",
         "stack": "k D n - D' c -1 or D 0"
       },
@@ -51922,7 +51922,7 @@
         "description": "`DICTDELGET`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIDELGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F464",
         "stack": "i D n - D' x -1 or D 0"
       },
@@ -52032,7 +52032,7 @@
         "description": "`DICTDELGETREF`, but with `i` a signed `n`-bit integer.",
         "fift": "DICTIDELGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F465",
         "stack": "i D n - D' c -1 or D 0"
       },
@@ -52142,7 +52142,7 @@
         "description": "`DICTDELGET`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUDELGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F466",
         "stack": "i D n - D' x -1 or D 0"
       },
@@ -52252,7 +52252,7 @@
         "description": "`DICTDELGETREF`, but with `i` an unsigned `n`-bit integer.",
         "fift": "DICTUDELGETREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F467",
         "stack": "i D n - D' c -1 or D 0"
       },
@@ -52362,7 +52362,7 @@
         "description": "A variant of `DICTGETREF` that returns _Null_ instead of the value `c^?` if the key `k` is absent from dictionary `D`.",
         "fift": "DICTGETOPTREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F469",
         "stack": "k D n - c^?"
       },
@@ -52434,7 +52434,7 @@
         "description": "`DICTGETOPTREF`, but with `i` a signed `n`-bit integer. If the key `i` is out of range, also returns _Null_.",
         "fift": "DICTIGETOPTREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F46A",
         "stack": "i D n - c^?"
       },
@@ -52506,7 +52506,7 @@
         "description": "`DICTGETOPTREF`, but with `i` an unsigned `n`-bit integer. If the key `i` is out of range, also returns _Null_.",
         "fift": "DICTUGETOPTREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F46B",
         "stack": "i D n - c^?"
       },
@@ -52578,7 +52578,7 @@
         "description": "A variant of both `DICTGETOPTREF` and `DICTSETGETREF` that sets the value corresponding to key `k` in dictionary `D` to `c^?` (if `c^?` is _Null_, then the key is deleted instead), and returns the old value `~c^?` (if the key `k` was absent before, returns _Null_ instead).",
         "fift": "DICTSETGETOPTREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F46D",
         "stack": "c^? k D n - D' ~c^?"
       },
@@ -52666,7 +52666,7 @@
         "description": "Similar to primitive `DICTSETGETOPTREF`, but using signed `n`-bit _Integer_ `i` as a key. If `i` does not fit into `n` bits, throws a range checking exception.",
         "fift": "DICTISETGETOPTREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F46E",
         "stack": "c^? i D n - D' ~c^?"
       },
@@ -52754,7 +52754,7 @@
         "description": "Similar to primitive `DICTSETGETOPTREF`, but using unsigned `n`-bit _Integer_ `i` as a key.",
         "fift": "DICTUSETGETOPTREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F46F",
         "stack": "c^? i D n - D' ~c^?"
       },
@@ -52842,7 +52842,7 @@
         "description": "",
         "fift": "PFXDICTSET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F470",
         "stack": "x k D n - D' -1 or D 0"
       },
@@ -52952,7 +52952,7 @@
         "description": "",
         "fift": "PFXDICTREPLACE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F471",
         "stack": "x k D n - D' -1 or D 0"
       },
@@ -53062,7 +53062,7 @@
         "description": "",
         "fift": "PFXDICTADD",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F472",
         "stack": "x k D n - D' -1 or D 0"
       },
@@ -53172,7 +53172,7 @@
         "description": "",
         "fift": "PFXDICTDEL",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F473",
         "stack": "k D n - D' -1 or D 0"
       },
@@ -53275,7 +53275,7 @@
         "description": "Computes the minimal key `k'` in dictionary `D` that is lexicographically greater than `k`, and returns `k'` (represented by a _Slice_) along with associated value `x'` (also represented by a _Slice_).",
         "fift": "DICTGETNEXT",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F474",
         "stack": "k D n - x' k' -1 or 0"
       },
@@ -53375,7 +53375,7 @@
         "description": "Similar to `DICTGETNEXT`, but computes the minimal key `k'` that is lexicographically greater than or equal to `k`.",
         "fift": "DICTGETNEXTEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F475",
         "stack": "k D n - x' k' -1 or 0"
       },
@@ -53475,7 +53475,7 @@
         "description": "Similar to `DICTGETNEXT`, but computes the maximal key `k'` lexicographically smaller than `k`.",
         "fift": "DICTGETPREV",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F476",
         "stack": "k D n - x' k' -1 or 0"
       },
@@ -53575,7 +53575,7 @@
         "description": "Similar to `DICTGETPREV`, but computes the maximal key `k'` lexicographically smaller than or equal to `k`.",
         "fift": "DICTGETPREVEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F477",
         "stack": "k D n - x' k' -1 or 0"
       },
@@ -53675,7 +53675,7 @@
         "description": "Similar to `DICTGETNEXT`, but interprets all keys in dictionary `D` as big-endian signed `n`-bit integers, and computes the minimal key `i'` that is larger than _Integer_ `i` (which does not necessarily fit into `n` bits).",
         "fift": "DICTIGETNEXT",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F478",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -53775,7 +53775,7 @@
         "description": "Similar to `DICTGETNEXTEQ`, but interprets keys as signed `n`-bit integers.",
         "fift": "DICTIGETNEXTEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F479",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -53875,7 +53875,7 @@
         "description": "Similar to `DICTGETPREV`, but interprets keys as signed `n`-bit integers.",
         "fift": "DICTIGETPREV",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F47A",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -53975,7 +53975,7 @@
         "description": "Similar to `DICTGETPREVEQ`, but interprets keys as signed `n`-bit integers.",
         "fift": "DICTIGETPREVEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F47B",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -54075,7 +54075,7 @@
         "description": "Similar to `DICTGETNEXT`, but interprets all keys in dictionary `D` as big-endian unsigned `n`-bit integers, and computes the minimal key `i'` that is larger than _Integer_ `i` (which does not necessarily fit into `n` bits, and is not necessarily non-negative).",
         "fift": "DICTUGETNEXT",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F47C",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -54175,7 +54175,7 @@
         "description": "Similar to `DICTGETNEXTEQ`, but interprets keys as unsigned `n`-bit integers.",
         "fift": "DICTUGETNEXTEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F47D",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -54275,7 +54275,7 @@
         "description": "Similar to `DICTGETPREV`, but interprets keys as unsigned `n`-bit integers.",
         "fift": "DICTUGETPREV",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F47E",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -54375,7 +54375,7 @@
         "description": "Similar to `DICTGETPREVEQ`, but interprets keys a unsigned `n`-bit integers.",
         "fift": "DICTUGETPREVEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F47F",
         "stack": "i D n - x' i' -1 or 0"
       },
@@ -54475,7 +54475,7 @@
         "description": "Computes the minimal key `k` (represented by a _Slice_ with `n` data bits) in dictionary `D`, and returns `k` along with the associated value `x`.",
         "fift": "DICTMIN",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F482",
         "stack": "D n - x k -1 or 0"
       },
@@ -54568,7 +54568,7 @@
         "description": "Similar to `DICTMIN`, but returns the only reference in the value as a _Cell_ `c`.",
         "fift": "DICTMINREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F483",
         "stack": "D n - c k -1 or 0"
       },
@@ -54661,7 +54661,7 @@
         "description": "Similar to `DICTMIN`, but computes the minimal key `i` under the assumption that all keys are big-endian signed `n`-bit integers. Notice that the key and value returned may differ from those computed by `DICTMIN` and `DICTUMIN`.",
         "fift": "DICTIMIN",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F484",
         "stack": "D n - x i -1 or 0"
       },
@@ -54754,7 +54754,7 @@
         "description": "Similar to `DICTIMIN`, but returns the only reference in the value.",
         "fift": "DICTIMINREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F485",
         "stack": "D n - c i -1 or 0"
       },
@@ -54847,7 +54847,7 @@
         "description": "Similar to `DICTMIN`, but returns the key as an unsigned `n`-bit _Integer_ `i`.",
         "fift": "DICTUMIN",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F486",
         "stack": "D n - x i -1 or 0"
       },
@@ -54940,7 +54940,7 @@
         "description": "Similar to `DICTUMIN`, but returns the only reference in the value.",
         "fift": "DICTUMINREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F487",
         "stack": "D n - c i -1 or 0"
       },
@@ -55033,7 +55033,7 @@
         "description": "Computes the maximal key `k` (represented by a _Slice_ with `n` data bits) in dictionary `D`, and returns `k` along with the associated value `x`.",
         "fift": "DICTMAX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F48A",
         "stack": "D n - x k -1 or 0"
       },
@@ -55126,7 +55126,7 @@
         "description": "Similar to `DICTMAX`, but returns the only reference in the value.",
         "fift": "DICTMAXREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F48B",
         "stack": "D n - c k -1 or 0"
       },
@@ -55219,7 +55219,7 @@
         "description": "Similar to `DICTMAX`, but computes the maximal key `i` under the assumption that all keys are big-endian signed `n`-bit integers. Notice that the key and value returned may differ from those computed by `DICTMAX` and `DICTUMAX`.",
         "fift": "DICTIMAX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F48C",
         "stack": "D n - x i -1 or 0"
       },
@@ -55312,7 +55312,7 @@
         "description": "Similar to `DICTIMAX`, but returns the only reference in the value.",
         "fift": "DICTIMAXREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F48D",
         "stack": "D n - c i -1 or 0"
       },
@@ -55405,7 +55405,7 @@
         "description": "Similar to `DICTMAX`, but returns the key as an unsigned `n`-bit _Integer_ `i`.",
         "fift": "DICTUMAX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F48E",
         "stack": "D n - x i -1 or 0"
       },
@@ -55498,7 +55498,7 @@
         "description": "Similar to `DICTUMAX`, but returns the only reference in the value.",
         "fift": "DICTUMAXREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F48F",
         "stack": "D n - c i -1 or 0"
       },
@@ -55591,7 +55591,7 @@
         "description": "Computes the minimal key `k` (represented by a _Slice_ with `n` data bits) in dictionary `D`, removes `k` from the dictionary, and returns `k` along with the associated value `x` and the modified dictionary `D'`.",
         "fift": "DICTREMMIN",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F492",
         "stack": "D n - D' x k -1 or D 0"
       },
@@ -55701,7 +55701,7 @@
         "description": "Similar to `DICTREMMIN`, but returns the only reference in the value as a _Cell_ `c`.",
         "fift": "DICTREMMINREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F493",
         "stack": "D n - D' c k -1 or D 0"
       },
@@ -55811,7 +55811,7 @@
         "description": "Similar to `DICTREMMIN`, but computes the minimal key `i` under the assumption that all keys are big-endian signed `n`-bit integers. Notice that the key and value returned may differ from those computed by `DICTREMMIN` and `DICTUREMMIN`.",
         "fift": "DICTIREMMIN",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F494",
         "stack": "D n - D' x i -1 or D 0"
       },
@@ -55921,7 +55921,7 @@
         "description": "Similar to `DICTIREMMIN`, but returns the only reference in the value.",
         "fift": "DICTIREMMINREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F495",
         "stack": "D n - D' c i -1 or D 0"
       },
@@ -56031,7 +56031,7 @@
         "description": "Similar to `DICTREMMIN`, but returns the key as an unsigned `n`-bit _Integer_ `i`.",
         "fift": "DICTUREMMIN",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F496",
         "stack": "D n - D' x i -1 or D 0"
       },
@@ -56141,7 +56141,7 @@
         "description": "Similar to `DICTUREMMIN`, but returns the only reference in the value.",
         "fift": "DICTUREMMINREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F497",
         "stack": "D n - D' c i -1 or D 0"
       },
@@ -56251,7 +56251,7 @@
         "description": "Computes the maximal key `k` (represented by a _Slice_ with `n` data bits) in dictionary `D`, removes `k` from the dictionary, and returns `k` along with the associated value `x` and the modified dictionary `D'`.",
         "fift": "DICTREMMAX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F49A",
         "stack": "D n - D' x k -1 or D 0"
       },
@@ -56361,7 +56361,7 @@
         "description": "Similar to `DICTREMMAX`, but returns the only reference in the value as a _Cell_ `c`.",
         "fift": "DICTREMMAXREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F49B",
         "stack": "D n - D' c k -1 or D 0"
       },
@@ -56471,7 +56471,7 @@
         "description": "Similar to `DICTREMMAX`, but computes the minimal key `i` under the assumption that all keys are big-endian signed `n`-bit integers. Notice that the key and value returned may differ from those computed by `DICTREMMAX` and `DICTUREMMAX`.",
         "fift": "DICTIREMMAX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F49C",
         "stack": "D n - D' x i -1 or D 0"
       },
@@ -56581,7 +56581,7 @@
         "description": "Similar to `DICTIREMMAX`, but returns the only reference in the value.",
         "fift": "DICTIREMMAXREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F49D",
         "stack": "D n - D' c i -1 or D 0"
       },
@@ -56691,7 +56691,7 @@
         "description": "Similar to `DICTREMMAX`, but returns the key as an unsigned `n`-bit _Integer_ `i`.",
         "fift": "DICTUREMMAX",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F49E",
         "stack": "D n - D' x i -1 or D 0"
       },
@@ -56801,7 +56801,7 @@
         "description": "Similar to `DICTUREMMAX`, but returns the only reference in the value.",
         "fift": "DICTUREMMAXREF",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F49F",
         "stack": "D n - D' c i -1 or D 0"
       },
@@ -56916,7 +56916,7 @@
         "description": "Similar to `DICTIGET`, but with `x` `BLESS`ed into a continuation with a subsequent `JMPX` to it on success. On failure, does nothing. This is useful for implementing `switch`/`case` constructions.",
         "fift": "DICTIGETJMP",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4A0",
         "stack": "i D n - "
       },
@@ -56984,7 +56984,7 @@
         "description": "Similar to `DICTIGETJMP`, but performs `DICTUGET` instead of `DICTIGET`.",
         "fift": "DICTUGETJMP",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4A1",
         "stack": "i D n - "
       },
@@ -57063,7 +57063,7 @@
         "description": "Similar to `DICTIGETJMP`, but with `EXECUTE` instead of `JMPX`.",
         "fift": "DICTIGETEXEC",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4A2",
         "stack": "i D n - "
       },
@@ -57142,7 +57142,7 @@
         "description": "Similar to `DICTUGETJMP`, but with `EXECUTE` instead of `JMPX`.",
         "fift": "DICTUGETEXEC",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4A3",
         "stack": "i D n - "
       },
@@ -57280,7 +57280,7 @@
         "description": "Looks up the unique prefix of _Slice_ `s` present in the prefix code dictionary represented by `Cell^?` `D` and `0 <= n <= 1023`. If found, the prefix of `s` is returned as `s'`, and the corresponding value (also a _Slice_) as `x`. The remainder of `s` is returned as a _Slice_ `s''`. If no prefix of `s` is a key in prefix code dictionary `D`, returns the unchanged `s` and a zero flag to indicate failure.",
         "fift": "PFXDICTGETQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4A8",
         "stack": "s D n - s' x s'' -1 or s 0"
       },
@@ -57395,7 +57395,7 @@
         "description": "Similar to `PFXDICTGET`, but throws a cell deserialization failure exception on failure.",
         "fift": "PFXDICTGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4A9",
         "stack": "s D n - s' x s''"
       },
@@ -57485,7 +57485,7 @@
         "description": "Similar to `PFXDICTGETQ`, but on success `BLESS`es the value `x` into a _Continuation_ and transfers control to it as if by a `JMPX`. On failure, returns `s` unchanged and continues execution.",
         "fift": "PFXDICTGETJMP",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4AA",
         "stack": "s D n - s' s'' or s"
       },
@@ -57539,7 +57539,7 @@
         "description": "Similar to `PFXDICTGETJMP`, but `EXEC`utes the continuation found instead of jumping to it. On failure, throws a cell deserialization exception.",
         "fift": "PFXDICTGETEXEC",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4AB",
         "stack": "s D n - s' s''"
       },
@@ -57641,7 +57641,7 @@
         "description": "Combines `[n] DICTPUSHCONST` for `0 <= n <= 1023` with `PFXDICTGETJMP`.",
         "fift": "[ref] [n] PFXDICTCONSTGETJMP\n[ref] [n] PFXDICTSWITCH",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F4AE_n",
         "stack": "s - s' s'' or s"
       },
@@ -57684,7 +57684,7 @@
         "description": "A variant of `DICTIGETJMP` that returns index `i` on failure.",
         "fift": "DICTIGETJMPZ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4BC",
         "stack": "i D n - i or nothing"
       },
@@ -57760,7 +57760,7 @@
         "description": "A variant of `DICTUGETJMP` that returns index `i` on failure.",
         "fift": "DICTUGETJMPZ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4BD",
         "stack": "i D n - i or nothing"
       },
@@ -57823,7 +57823,7 @@
         "description": "A variant of `DICTIGETEXEC` that returns index `i` on failure.",
         "fift": "DICTIGETEXECZ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4BE",
         "stack": "i D n - i or nothing"
       },
@@ -57877,7 +57877,7 @@
         "description": "A variant of `DICTUGETEXEC` that returns index `i` on failure.",
         "fift": "DICTUGETEXECZ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4BF",
         "stack": "i D n - i or nothing"
       },
@@ -57915,7 +57915,7 @@
         "description": "Constructs a subdictionary consisting of all keys beginning with prefix `k` (represented by a _Slice_, the first `0 <= l <= n <= 1023` data bits of which are used as a key) of length `l` in dictionary `D` of type `HashmapE(n,X)` with `n`-bit keys. On success, returns the new subdictionary of the same type `HashmapE(n,X)` as a _Slice_ `D'`.",
         "fift": "SUBDICTGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4B1",
         "stack": "k l D n - D'"
       },
@@ -57994,7 +57994,7 @@
         "description": "Variant of `SUBDICTGET` with the prefix represented by a signed big-endian `l`-bit _Integer_ `x`, where necessarily `l <= 257`.",
         "fift": "SUBDICTIGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4B2",
         "stack": "x l D n - D'"
       },
@@ -58073,7 +58073,7 @@
         "description": "Variant of `SUBDICTGET` with the prefix represented by an unsigned big-endian `l`-bit _Integer_ `x`, where necessarily `l <= 256`.",
         "fift": "SUBDICTUGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4B3",
         "stack": "x l D n - D'"
       },
@@ -58152,7 +58152,7 @@
         "description": "Similar to `SUBDICTGET`, but removes the common prefix `k` from all keys of the new dictionary `D'`, which becomes of type `HashmapE(n-l,X)`.",
         "fift": "SUBDICTRPGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4B5",
         "stack": "k l D n - D'"
       },
@@ -58231,7 +58231,7 @@
         "description": "Variant of `SUBDICTRPGET` with the prefix represented by a signed big-endian `l`-bit _Integer_ `x`, where necessarily `l <= 257`.",
         "fift": "SUBDICTIRPGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4B6",
         "stack": "x l D n - D'"
       },
@@ -58310,7 +58310,7 @@
         "description": "Variant of `SUBDICTRPGET` with the prefix represented by an unsigned big-endian `l`-bit _Integer_ `x`, where necessarily `l <= 256`.",
         "fift": "SUBDICTURPGET",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F4B7",
         "stack": "x l D n - D'"
       },
@@ -58963,7 +58963,7 @@
         "description": "Returns the value of the global configuration parameter with integer index `i` as a _Cell_ `c`, and a flag to indicate success.\nEquivalent to `CONFIGDICT` `DICTIGETREF`.",
         "fift": "CONFIGPARAM",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F832",
         "stack": "i - c -1 or 0"
       },
@@ -59046,7 +59046,7 @@
         "description": "Returns the value of the global configuration parameter with integer index `i` as a _Maybe Cell_ `c^?`.\nEquivalent to `CONFIGDICT` `DICTIGETOPTREF`.",
         "fift": "CONFIGOPTPARAM",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F833",
         "stack": "i - c^?"
       },
@@ -59108,7 +59108,7 @@
         "description": "Retrives `last_mc_blocks` part of PrevBlocksInfo from c7 (parameter 13).",
         "fift": "PREVMCBLOCKS",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F83400",
         "stack": "- t"
       },
@@ -59161,7 +59161,7 @@
         "description": "Retrives `prev_key_block` part of PrevBlocksInfo from c7 (parameter 13).",
         "fift": "PREVKEYBLOCK",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F83401",
         "stack": "- t"
       },
@@ -59214,7 +59214,7 @@
         "description": "Retrives `last_mc_blocks_divisible_by_100` part of PrevBlocksInfo from c7 (parameter 13).",
         "fift": "PREVMCBLOCKS_100",
         "fift_examples": [],
-        "gas": "",
+        "gas": "34",
         "opcode": "F83402",
         "stack": "- t"
       },
@@ -59267,7 +59267,7 @@
         "description": "Retrieves `global_id` from 19 network config.",
         "fift": "GLOBALID",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F835",
         "stack": "- i"
       },
@@ -59320,7 +59320,7 @@
         "description": "Calculates gas fee",
         "fift": "GETGASFEE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F836",
         "stack": "gas_used is_mc - price"
       },
@@ -59388,7 +59388,7 @@
         "description": "Calculates storage fees (only current StoragePrices entry is used).",
         "fift": "GETSTORAGEFEE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F837",
         "stack": "cells bits seconds is_mc - price"
       },
@@ -59470,7 +59470,7 @@
         "description": "Calculates forward fee.",
         "fift": "GETFORWARDFEE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F838",
         "stack": "cells bits is_mc - price"
       },
@@ -59545,7 +59545,7 @@
         "description": "Returns gas usage for the current contract if it is precompiled, `null` otherwise.",
         "fift": "GETPRECOMPILEDGAS",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F839",
         "stack": "- x"
       },
@@ -59598,7 +59598,7 @@
         "description": "Calculate `(fwd_fee * 2^16) / (2^16 - first_frac)`. Can be used to get the original `fwd_fee` of the message.",
         "fift": "GETORIGINALFWDFEE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F83A",
         "stack": "fwd_fee is_mc - orig_fwd_fee"
       },
@@ -59666,7 +59666,7 @@
         "description": "Same as `GETGASFEE`, but without flat price (just `(gas_used * price) / 2^16)`.",
         "fift": "GETGASFEESIMPLE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F83B",
         "stack": "gas_used is_mc - price"
       },
@@ -59734,7 +59734,7 @@
         "description": "Same as `GETFORWARDFEE`, but without lump price (just (`bits*bit_price + cells*cell_price) / 2^16`).",
         "fift": "GETFORWARDFEESIMPLE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F83C",
         "stack": "cells bits is_mc - price"
       },
@@ -64793,7 +64793,7 @@
         "description": "Recursively computes the count of distinct cells `x`, data bits `y`, and cell references `z` in the dag rooted at _Cell_ `c`, effectively returning the total storage used by this dag taking into account the identification of equal cells. The values of `x`, `y`, and `z` are computed by a depth-first traversal of this dag, with a hash table of visited cell hashes used to prevent visits of already-visited cells. The total count of visited cells `x` cannot exceed non-negative _Integer_ `n`; otherwise the computation is aborted before visiting the `(n+1)`-st cell and a zero is returned to indicate failure. If `c` is _Null_, returns `x=y=z=0`.",
         "fift": "CDATASIZEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F940",
         "stack": "c n - x y z -1 or 0"
       },
@@ -64892,7 +64892,7 @@
         "description": "A non-quiet version of `CDATASIZEQ` that throws a cell overflow exception (8) on failure.",
         "fift": "CDATASIZE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F941",
         "stack": "c n - x y z"
       },
@@ -64969,7 +64969,7 @@
         "description": "Similar to `CDATASIZEQ`, but accepting a _Slice_ `s` instead of a _Cell_. The returned value of `x` does not take into account the cell that contains the slice `s` itself; however, the data bits and the cell references of `s` are accounted for in `y` and `z`.",
         "fift": "SDATASIZEQ",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F942",
         "stack": "s n - x y z -1 or 0"
       },
@@ -65068,7 +65068,7 @@
         "description": "A non-quiet version of `SDATASIZEQ` that throws a cell overflow exception (8) on failure.",
         "fift": "SDATASIZE",
         "fift_examples": [],
-        "gas": "",
+        "gas": "26",
         "opcode": "F943",
         "stack": "s n - x y z"
       },
