@@ -668,7 +668,7 @@
     },
     {
       "alias_of": "GETPARAM",
-      "description": "Retrives tuple that contains some config parameters as cell slices. If the parameter is absent from the config, the value is null. Values: \n* **0**: `StoragePrices` from `ConfigParam 18`. Not the whole dict, but only the one StoragePrices entry (one which corresponds to the current time).\n  * **1**: ConfigParam 19` (global id).\n  * **2**: `ConfigParam 20` (mc gas prices).\n  * **3**: `ConfigParam 21` (gas prices).\n  * **4**: `ConfigParam 24` (mc fwd fees).\n  * **5**: `ConfigParam 25` (fwd fees).\n  * **6**: `ConfigParam 43` (size limits).",
+      "description": "Retrives tuple that contains some config parameters as cell slices. If the parameter is absent from the config, the value is null. Values: \n* **0**: `StoragePrices` from `ConfigParam 18`. Not the whole dict, but only the one StoragePrices entry (one which corresponds to the current time).\n  * **1**: `ConfigParam 19` (global id).\n  * **2**: `ConfigParam 20` (mc gas prices).\n  * **3**: `ConfigParam 21` (gas prices).\n  * **4**: `ConfigParam 24` (mc fwd fees).\n  * **5**: `ConfigParam 25` (fwd fees).\n  * **6**: `ConfigParam 43` (size limits).",
       "doc_fift": "UNPACKEDCONFIGTUPLE",
       "doc_stack": " - t",
       "mnemonic": "UNPACKEDCONFIGTUPLE",
