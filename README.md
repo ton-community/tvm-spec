@@ -1,3 +1,6 @@
+> [!CAUTION]
+> Deprecated. Use [tvm-specification](https://github.com/ton-blockchain/tvm-specification) instead.
+
 # TVM Instructions Specification
 
 There is ~365 instructions in TVM, so it's quite painful to implement tools such as disassembler, decompiler, etc.
